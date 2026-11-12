@@ -25,3 +25,7 @@ Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kayna
 ## Ekip fotoğrafı
 
 `img/ekip-toplu.jpg` ("Envesu toplu foto" dosyasından, 2200 px genişlik).
+
+## Sözleşme bedelleri
+
+`index.html` içindeki `BEDELLER` listesi proje kartlarında ve proje sayfalarında gösterilir: `"proje-id":["bedel","açıklama"]`. Değerler şirket profilindeki proje kartlarının "Sözleşme Bedeli" kutularından alındı. Bir projenin bedelini gizlemek için satırını silin.
