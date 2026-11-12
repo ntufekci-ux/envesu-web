@@ -884,6 +884,41 @@ html.lbx-open{overflow:hidden}
 .pbed{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:-4px;padding-top:12px;border-top:1px solid var(--line)}
 .pbed .mono{color:var(--ink-3);font-size:.66rem}.pbed b{font-weight:500;font-variant-numeric:tabular-nums;color:var(--brand-ink)}
 .pd-facts .pd-bed b{color:var(--brand-ink)}.pd-facts .pd-bed small{font-size:.84rem;color:var(--ink-3);line-height:1.35}
+/* v13: endüstriyel tesis BIM */
+.bim-svg.ind .pad{fill:rgba(242,246,243,.10);stroke:rgba(242,246,243,.3);stroke-width:1}
+.bim-svg.ind .ug{fill:none;stroke:#4AC1E0;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;opacity:.7;transition:stroke-dashoffset 1.4s var(--ease) .3s}
+.bim-svg.ind.s1 .ug{stroke-dashoffset:0}
+.bim-svg.ind .tb{fill:url(#bimCyl);stroke:rgba(242,246,243,.7);stroke-width:1}
+.bim-svg.ind .tt{fill:rgba(242,246,243,.3);stroke:rgba(242,246,243,.8);stroke-width:1}
+.bim-svg.ind .tband{fill:none;stroke:rgba(242,246,243,.32);stroke-width:1}
+.bim-svg.ind .leg{stroke:rgba(242,246,243,.55);stroke-width:1.6}
+.bim-svg.ind .stl{stroke:#cfd9d3;stroke-width:2.2;stroke-linecap:round}
+.bim-svg.ind .stb{stroke:#cfd9d3;stroke-width:1.5;stroke-linecap:round;opacity:.85}
+.bim-svg.ind .grt{fill:rgba(242,246,243,.1);stroke:rgba(242,246,243,.45);stroke-width:1}
+.bim-svg.ind .bx.t{fill:rgba(242,246,243,.32);stroke:rgba(242,246,243,.7);stroke-width:1}.bim-svg.ind .bx.f{fill:rgba(242,246,243,.18);stroke:rgba(242,246,243,.6);stroke-width:1}.bim-svg.ind .bx.r{fill:rgba(242,246,243,.08);stroke:rgba(242,246,243,.6);stroke-width:1}
+.bim-svg.ind .mcc.t{fill:rgba(252,220,62,.3)}.bim-svg.ind .mcc.f{fill:rgba(252,220,62,.16)}
+.bim-svg.ind .g-site,.bim-svg.ind .g-ele .mcc{opacity:0;transition:opacity .6s}
+.bim-svg.ind.s1 .g-site{opacity:1}.bim-svg.ind.s5 .g-ele .mcc{opacity:1}
+.bim-svg.ind .bent{opacity:0;transform:translateY(-34px);transition:opacity .5s,transform .8s var(--ease);transition-delay:calc(var(--k)*.09s)}
+.bim-svg.ind.s2 .bent{opacity:1;transform:none}
+.bim-svg.ind .eqi{opacity:0;transform:scaleY(.15);transform-origin:50% 100%;transform-box:fill-box;transition:opacity .5s,transform 1s var(--ease);transition-delay:calc(var(--k)*.14s)}
+.bim-svg.ind.s3 .eqi{opacity:1;transform:none}
+.bim-svg.ind .pu{fill:none;stroke:#071a11;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.bim-svg.ind .pp{fill:none;stroke:var(--c);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.bim-svg.ind .pu,.bim-svg.ind .pp{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--ease);transition-delay:calc(var(--k)*.18s)}
+.bim-svg.ind.s4 .pu,.bim-svg.ind.s4 .pp{stroke-dashoffset:0}
+.bim-svg.ind .fl{fill:none;stroke:#fff;stroke-width:1.3;stroke-linecap:round;stroke-dasharray:.008 .045;opacity:0;transition:opacity .6s}
+.bim-svg.ind.s7 .fl{opacity:.8;animation:pflow 4s linear infinite}
+@keyframes pflow{to{stroke-dashoffset:-.53}}
+.bim-svg.ind .tray{fill:none;stroke:#FCDC3E;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s var(--ease)}
+.bim-svg.ind.s5 .tray{stroke-dashoffset:0}
+.bim-svg.ind .ins{fill:#FCDC3E;opacity:0;transition:opacity .4s;transition-delay:calc(.8s + var(--k)*.12s)}
+.bim-svg.ind.s5 .ins{opacity:1;animation:insb 1.6s ease-in-out infinite;animation-delay:calc(var(--k)*.3s)}
+@keyframes insb{50%{opacity:.35}}
+.bim-svg.ind.s6:not(.s7) .scan{animation:scan2 1.5s linear;opacity:.7}
+@keyframes scan2{from{transform:translateY(20px)}to{transform:translateY(480px)}}
+@media (prefers-reduced-motion:reduce){.bim-svg.ind .fl,.bim-svg.ind .ins{animation:none}}
+.bim-vis{display:flex;flex-direction:column-reverse;gap:10px}.bim-vis .bim-badge{position:static;align-self:flex-start}
 </style>
 </head>
 <body>
@@ -2056,41 +2091,68 @@ function buildFlow(host,items,o){
   if(svc){if(a1>a0)travel(sp,1600+(a1-a0)*500,true);else{place(pts[a0][0],pts[a0][1]);dot.classList.add("pulse")}}
 }
 
-/* ---------- BIM animasyonu ---------- */
+/* ---------- BIM animasyonu: endüstriyel tesis ---------- */
 (function(){
   var host=$("[data-bim]"); if(!host) return;
-  var u=25,OX=290,OY=300;
-  function P(x,y,z){return [(OX+(x-y)*u*.866).toFixed(1),(OY+(x+y)*u*.5-z*u).toFixed(1)]}
-  function poly(ps,cls){return '<polygon class="'+cls+'" points="'+ps.map(function(p){return P(p[0],p[1],p[2]).join(",")}).join(" ")+'"/>'}
-  function line(a,b,cls,len){var p=P(a[0],a[1],a[2]),q=P(b[0],b[1],b[2]);return '<line class="'+cls+'" x1="'+p[0]+'" y1="'+p[1]+'" x2="'+q[0]+'" y2="'+q[1]+'"'+(len?' pathLength="1"':'')+'/>'}
-  function pl(ps,cls){return '<polyline class="'+cls+'" pathLength="1" points="'+ps.map(function(p){return P(p[0],p[1],p[2]).join(",")}).join(" ")+'"/>'}
-  var WX=6,WY=4,h=2.6,t=.22,s='';
-  // saha ve altyapı
-  s+='<g class="g-site">';for(var i=-2;i<=8;i++)s+=line([i,-2,0],[i,6,0],"grid");for(var j=-2;j<=6;j++)s+=line([-2,j,0],[8,j,0],"grid");
-  s+=pl([[-2,5.2,0],[3,5.2,0],[3,4.4,0]],"infra")+pl([[8,-1,0],[7,-1,0],[7,3,0],[6.4,3,0]],"infra")+'<circle class="mh" cx="'+P(3,5.2,0)[0]+'" cy="'+P(3,5.2,0)[1]+'" r="5"/></g>';
-  // katlar
-  for(var f=0;f<3;f++){var z=f*h;s+='<g class="g-f" style="--k:'+f+'">'+poly([[0,0,z],[WX,0,z],[WX,WY,z],[0,WY,z]],"slab-t")+poly([[0,WY,z],[WX,WY,z],[WX,WY,z-t],[0,WY,z-t]],"slab-s")+poly([[WX,0,z],[WX,WY,z],[WX,WY,z-t],[WX,0,z-t]],"slab-s2");
-    [0,2,4,6].forEach(function(x){[0,2,4].forEach(function(y){s+=line([x,y,z],[x,y,z+h],"col")})});s+='</g>'}
-  s+='<g class="g-f" style="--k:3">'+poly([[0,0,3*h],[WX,0,3*h],[WX,WY,3*h],[0,WY,3*h]],"slab-t roof")+poly([[0,WY,3*h],[WX,WY,3*h],[WX,WY,3*h-t],[0,WY,3*h-t]],"slab-s")+poly([[WX,0,3*h],[WX,WY,3*h],[WX,WY,3*h-t],[WX,0,3*h-t]],"slab-s2")+'</g>';
-  // mimari cephe
-  s+='<g class="g-arc">';for(f=0;f<3;f++){z=f*h;s+=poly([[0,WY,z+.05],[WX,WY,z+.05],[WX,WY,z+h-t],[0,WY,z+h-t]],"glass")+poly([[WX,0,z+.05],[WX,WY,z+.05],[WX,WY,z+h-t],[WX,0,z+h-t]],"glass g2");
-    for(i=1;i<WX;i++)s+=line([i,WY,z],[i,WY,z+h-t],"mul");for(j=1;j<WY;j++)s+=line([WX,j,z],[WX,j,z+h-t],"mul")}s+='</g>';
-  // mekanik: kanal + proses borusu
-  s+='<g class="g-mep">';for(f=0;f<3;f++){z=f*h;s+=pl([[.4,1,z+h-.55],[5.2,1,z+h-.55],[5.2,1,z+h-.55]],"duct")+pl([[.4,3,z+.7],[3,3,z+.7],[3,1.6,z+.7],[5.6,1.6,z+.7]],"pipe")}
-  s+=pl([[5.2,1,.2],[5.2,1,3*h-.4]],"duct")+pl([[5.6,1.6,.1],[5.6,1.6,3*h-.4]],"pipe")+'</g>';
-  // elektrik
-  s+='<g class="g-ele">';for(f=0;f<3;f++){z=f*h;s+=pl([[.6,2.2,z+h-.35],[5.6,2.2,z+h-.35]],"tray")}s+=pl([[.6,2.2,.15],[.6,2.2,3*h-.4]],"tray")+'</g>';
-  // çakışma
-  var C=P(3,1.6,h+.7);s+='<g class="g-clash"><circle class="cr" cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><circle class="cr2" cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><g class="ok"><circle cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><path d="M'+(C[0]-5)+' '+C[1]+'l3.5 3.5 6.5-7"/></g></g>';
-  s+='<rect class="scan" x="40" y="0" width="520" height="2"/>';
-  var ST=[["Altyapı ve saha","Arazi, mevcut şebekeler ve altyapı bağlantıları modele işlenir."],["Statik","Taşıyıcı sistem; kolon, döşeme ve perde elemanları."],["Mimari","Kabuk, cephe ve iç düzen aynı modelde."],["Mekanik ve tesisat","HVAC kanalları ve proses borulama güzergâhları."],["Elektrik","Kablo tavaları, panolar ve aydınlatma."],["Çakışma kontrolü","Disiplinler arası çakışmalar sahaya çıkmadan çözülür."]];
-  host.innerHTML='<div class="bim-vis"><svg class="bim-svg" viewBox="30 70 540 420" role="img" aria-label="BIM modelinde disiplinlerin katman katman birleşmesi">'+s+'</svg><span class="bim-badge mono"><i></i>Tek model · 5 disiplin</span></div><div class="bim-side"><p class="kicker">Modelin kuruluşu</p><ol class="bim-steps">'+ST.map(function(x,i){return '<li data-s="'+(i+1)+'"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><div><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></div></li>'}).join('')+'</ol></div>';
-  var svg=$("svg",host),lis=$$(".bim-steps li",host),step=0,tm=null,vis=false;
+  var u=24,OX=214,OY=190,K=.8660254,RX=1.2247*u,RY=.7071*u;
+  function P(x,y,z){return [OX+(x-y)*u*K,OY+(x+y)*u*.5-z*u]}
+  function f(n){return n.toFixed(1)}
+  function pts(a){return a.map(function(p){var q=P(p[0],p[1],p[2]);return f(q[0])+","+f(q[1])}).join(" ")}
+  function poly(a,c){return '<polygon class="'+c+'" points="'+pts(a)+'"/>'}
+  function ln(a,b,c){var p=P(a[0],a[1],a[2]),q=P(b[0],b[1],b[2]);return '<line class="'+c+'" x1="'+f(p[0])+'" y1="'+f(p[1])+'" x2="'+f(q[0])+'" y2="'+f(q[1])+'"/>'}
+  function box(x0,y0,z0,x1,y1,z1,c){return poly([[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]],c+" t")+poly([[x0,y1,z0],[x1,y1,z0],[x1,y1,z1],[x0,y1,z1]],c+" f")+poly([[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[x1,y0,z1]],c+" r")}
+  function vtank(cx,cy,z0,z1,r,k,bands){var b=P(cx,cy,z0),t=P(cx,cy,z1),rx=RX*r,ry=RY*r,s='<g class="eqi" style="--k:'+k+'">';
+    s+='<path class="tb" d="M'+f(t[0]-rx)+' '+f(t[1])+'L'+f(b[0]-rx)+' '+f(b[1])+'A'+f(rx)+' '+f(ry)+' 0 0 0 '+f(b[0]+rx)+' '+f(b[1])+'L'+f(t[0]+rx)+' '+f(t[1])+'Z"/>';
+    (bands||[]).forEach(function(z){var m=P(cx,cy,z);s+='<path class="tband" d="M'+f(m[0]-rx)+' '+f(m[1])+'A'+f(rx)+' '+f(ry)+' 0 0 0 '+f(m[0]+rx)+' '+f(m[1])+'"/>'});
+    return s+'<ellipse class="tt" cx="'+f(t[0])+'" cy="'+f(t[1])+'" rx="'+f(rx)+'" ry="'+f(ry)+'"/></g>'}
+  function hull(p){p.sort(function(a,b){return a[0]-b[0]||a[1]-b[1]});function cr(o,a,b){return (a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0])}var lo=[],up=[],i;
+    for(i=0;i<p.length;i++){while(lo.length>1&&cr(lo[lo.length-2],lo[lo.length-1],p[i])<=0)lo.pop();lo.push(p[i])}
+    for(i=p.length-1;i>=0;i--){while(up.length>1&&cr(up[up.length-2],up[up.length-1],p[i])<=0)up.pop();up.push(p[i])}up.pop();lo.pop();return lo.concat(up)}
+  function hdrum(x0,x1,cy,cz,r,k){var A=[],E=[];for(var i=0;i<32;i++){var a=i/32*2*Math.PI,y=cy+r*Math.cos(a),z=cz+r*Math.sin(a);A.push(P(x0,y,z));A.push(P(x1,y,z));E.push(P(x1,y,z))}
+    var j=function(L){return L.map(function(q){return f(q[0])+","+f(q[1])}).join(" ")};
+    return '<g class="eqi" style="--k:'+k+'"><polygon class="tb" points="'+j(hull(A))+'"/><polygon class="tt" points="'+j(E)+'"/>'+ln([x0+.5,cy,cz-r],[x0+.5,cy,0],"leg")+ln([x1-.5,cy,cz-r],[x1-.5,cy,0],"leg")+'</g>'}
+  var s='<defs><linearGradient id="bimCyl" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e9f0ec" stop-opacity=".42"/><stop offset=".45" stop-color="#e9f0ec" stop-opacity=".2"/><stop offset="1" stop-color="#e9f0ec" stop-opacity=".07"/></linearGradient></defs>';
+  // 1 saha
+  s+='<g class="g-site">';for(var i=0;i<=14;i++)s+=ln([i,0,0],[i,9,0],"grid");for(var j=0;j<=9;j++)s+=ln([0,j,0],[14,j,0],"grid");
+  [[2,1.6,1],[5.2,1.6,1.3],[9.6,1.8,1.8],[12.3,1.6,.8]].forEach(function(t){s+=poly([[t[0]-t[2],t[1]-t[2],0],[t[0]+t[2],t[1]-t[2],0],[t[0]+t[2],t[1]+t[2],0],[t[0]-t[2],t[1]+t[2],0]],"pad")});
+  s+='<polyline class="ug" pathLength="1" points="'+pts([[0,8.6,0],[6.5,8.6,0],[6.5,6.2,0],[14,6.2,0]])+'"/></g>';
+  // 3a ekipman (arka)
+  s+='<g class="g-eq">'+vtank(2,1.6,0,8.2,.75,0,[2,4,6])+vtank(5.2,1.6,0,5,1.05,1,[1.7,3.4])+vtank(9.6,1.8,0,3.2,1.5,2,[1.1,2.2])+vtank(12.3,1.6,0,4,.6,3,[2])+'</g>';
+  // 2 çelik: boru köprüsü
+  s+='<g class="g-st">';[1,3,5,7,9,11,13].forEach(function(x,k){s+='<g class="bent" style="--k:'+k+'">'+ln([x,4,0],[x,4,4.2],"stl")+ln([x,5.4,0],[x,5.4,4.2],"stl")+ln([x,4,2.6],[x,5.4,2.6],"stb")+ln([x,4,4.2],[x,5.4,4.2],"stb")+'</g>'});
+  s+='<g class="bent" style="--k:7">'+ln([1,4,2.6],[13,4,2.6],"stb")+ln([1,5.4,2.6],[13,5.4,2.6],"stb")+ln([1,4,4.2],[13,4,4.2],"stb")+ln([1,5.4,4.2],[13,5.4,4.2],"stb")+'</g></g>';
+  // 4 borular
+  var PIPES=[
+   ["#93D500",[[2.75,1.6,6],[2.75,4.3,6],[2.75,4.3,4.35],[11.5,4.3,4.35],[11.5,7.7,4.35],[11.5,7.7,4.4]]],
+   ["#4AC1E0",[[6.25,1.6,1.4],[6.8,1.6,1.4],[6.8,1.6,2.75],[6.8,4.5,2.75],[3.2,4.5,2.75],[3.2,7.4,2.75],[3.2,7.4,1.85]]],
+   ["#9FCFCA",[[11.1,1.8,.6],[11.6,1.8,.6],[11.6,1.8,2.75],[11.6,4.8,2.75],[5.5,4.8,2.75],[5.5,6.8,2.75],[5.5,6.8,.6]]],
+   ["#F08A5D",[[1,4.9,4.35],[13,4.9,4.35]]],
+   ["#F08A5D",[[5.2,4.9,4.35],[5.2,4.9,5.6],[5.2,1.6,5.6],[5.2,1.6,5]]],
+   ["#F08A5D",[[12.3,4.9,4.35],[12.3,4.9,4.7],[12.3,1.6,4.7],[12.3,1.6,4]]],
+   ["#4AC1E0",[[1,5.1,2.75],[13.6,5.1,2.75],[13.6,7.7,2.75],[13.6,7.7,3.6],[13,7.7,3.6]]],
+   ["#93D500",[[2,2.35,.5],[2,4.2,.5],[2,4.2,2.75],[8,4.2,2.75],[8,7,2.75],[8,7,.6]]]
+  ];
+  var pp='',fl='';PIPES.forEach(function(p,k){var a=pts(p[1]);pp+='<polyline class="pu" pathLength="1" style="--k:'+k+'" points="'+a+'"/><polyline class="pp" pathLength="1" style="--k:'+k+';--c:'+p[0]+'" points="'+a+'"/>';fl+='<polyline class="fl" pathLength="1" style="--k:'+k+'" points="'+a+'"/>'});
+  // 3b ön ekipman + çelik modül
+  var front='<g class="g-st"><g class="bent" style="--k:8">';[[10,6.6],[13.4,6.6],[10,8.8],[13.4,8.8]].forEach(function(c){front+=ln([c[0],c[1],0],[c[0],c[1],2.8],"stl")});
+  front+=poly([[10,6.6,2.8],[13.4,6.6,2.8],[13.4,8.8,2.8],[10,8.8,2.8]],"grt")+'</g></g>';
+  front+='<g class="g-eq">'+hdrum(1.6,4.8,7.4,1.1,.75,4)+hdrum(10.3,13,7.7,3.6,.75,5)+'<g class="eqi" style="--k:6">'+box(5.1,6.5,0,5.9,7.1,.6,"bx")+box(7.6,6.7,0,8.4,7.3,.6,"bx")+'</g></g>';
+  s+='<g class="g-pipe">'+pp+'</g>'+front+'<g class="g-pipe">'+fl+'</g>';
+  // 5 elektrik ve enstrümantasyon
+  s+='<g class="g-ele">'+box(.2,6.4,0,1.4,7.6,1.5,"bx mcc")+'<polyline class="tray" pathLength="1" points="'+pts([[.8,6.4,1.5],[.8,4.15,1.5],[.8,4.15,4.7],[13,4.15,4.7]])+'"/><polyline class="tray" pathLength="1" points="'+pts([[1.2,6.4,1.2],[1.2,5.25,1.2],[1.2,5.25,4.7],[13,5.25,4.7]])+'"/>';
+  [[2.75,3,6],[6.8,3,2.75],[11.6,3.3,2.75],[8,5.8,2.75],[3.2,6,2.75]].forEach(function(q,k){var c=P(q[0],q[1],q[2]);s+='<circle class="ins" style="--k:'+k+'" cx="'+f(c[0])+'" cy="'+f(c[1])+'" r="3"/>'});
+  s+='</g>';
+  // 6 çakışma
+  var C=P(6.9,4.05,2.65);s+='<g class="g-clash"><circle class="cr" cx="'+f(C[0])+'" cy="'+f(C[1])+'" r="10"/><circle class="cr2" cx="'+f(C[0])+'" cy="'+f(C[1])+'" r="10"/><g class="ok"><circle cx="'+f(C[0])+'" cy="'+f(C[1])+'" r="10"/><path d="M'+f(C[0]-4.5)+' '+f(C[1])+'l3.2 3.2 6-6.4"/></g></g>';
+  s+='<rect class="scan" x="0" y="0" width="560" height="2"/>';
+  var ST=[["Saha ve temeller","Arazi modeli, temeller ve yer altı altyapısı."],["Çelik yapı ve boru köprüsü","Boru köprüsü, platformlar ve taşıyıcı çelik."],["Ekipman","Kolonlar, tanklar, tamburlar ve pompalar yerleşir."],["Proses borulama","Hatlar boru köprüsü üzerinden ekipmanlara bağlanır."],["Elektrik ve enstrümantasyon","Kablo tavaları, MCC ve saha enstrümanları."],["Çakışma kontrolü","Disiplinler arası çakışmalar sahaya çıkmadan çözülür."]];
+  host.innerHTML='<div class="bim-vis"><svg class="bim-svg ind" viewBox="14 22 506 452" role="img" aria-label="Endüstriyel tesisin BIM modelinde disiplinlerin katman katman birleşmesi: saha, çelik yapı, ekipman, proses borulama, elektrik ve çakışma kontrolü">'+s+'</svg><span class="bim-badge mono"><i></i>Endüstriyel tesis · tek model</span></div><div class="bim-side"><p class="kicker">Modelin kuruluşu</p><ol class="bim-steps">'+ST.map(function(x,i){return '<li data-s="'+(i+1)+'"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><div><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></div></li>'}).join('')+'</ol></div>';
+  var svg=$("svg",host),lis=$$(".bim-steps li",host),step=0,tm=null,vis=false,DUR=[900,1500,1700,1800,2800,1700,1500,5200];
   function apply(){for(var k=1;k<=7;k++)svg.classList.toggle("s"+k,step>=k);lis.forEach(function(li,k){li.classList.toggle("on",k+1===Math.min(step,6));li.classList.toggle("done",k+1<step||step>=7)})}
-  function tick(){if(!vis)return;step++;if(step>9){step=0}apply()}
+  function next(){tm=null;if(!vis)return;step=step>=7?0:step+1;apply();tm=setTimeout(next,DUR[step])}
   if(RM){step=7;apply();return}
-  new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!tm){tm=setInterval(tick,1500)}if(!vis&&tm){clearInterval(tm);tm=null}},{threshold:.3}).observe(host);
-  lis.forEach(function(li,k){li.addEventListener("click",function(){step=k+1;apply()})});
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!tm)tm=setTimeout(next,DUR[step]);if(!vis&&tm){clearTimeout(tm);tm=null}},{threshold:.3}).observe(host);
+  lis.forEach(function(li,k){li.addEventListener("click",function(){clearTimeout(tm);step=k+1;apply();tm=setTimeout(next,DUR[step]+2000)})});
 })();
 
 /* ---------- Kurumsal içerikler ---------- */
