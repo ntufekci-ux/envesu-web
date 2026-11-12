@@ -121,6 +121,9 @@ button{font:inherit;color:inherit}
   .nav>a,.nav .dd>button{font-size:1.7rem;font-weight:300;padding:12px 0;justify-content:space-between;width:100%;border-bottom:1px solid var(--night-line)}
   .nav>a::after,.nav .dd>button::after{display:none}
   .dd-menu{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:0;box-shadow:none;color:var(--night-ink);padding:6px 0 10px;min-width:0}
+  .dd-menu{display:none}
+  .dd.open .dd-menu{display:grid}
+  .dd-menu a[aria-current="page"]{color:var(--lime)}
   .dd-menu a span{display:none}
   .dd-menu a{padding:8px 0 8px 16px;color:var(--night-mute)}
   .dd-menu a:hover{background:transparent;color:#fff}
@@ -718,6 +721,35 @@ form{display:grid;gap:22px}
 .lc-step:focus-visible,.lg:focus-visible,.tl button:focus-visible,.ulegend button:focus-visible,.copy:focus-visible,.pin:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
 .pin:focus{outline:none}.pin:focus-visible .c{stroke:#fff;stroke-width:2.5}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* v6: menüden açılan alt sayfalar */
+[data-sec][hidden]{display:none!important}
+.dd-menu.dd-r{left:auto;right:-6px}
+@media (min-width:1021px){.dd-menu a[aria-current="page"]{background:var(--mist)}.dd-menu a[aria-current="page"] b{color:var(--brand-ink)}}
+h1[tabindex="-1"]:focus{outline:none}
+.spager{border-top:1px solid var(--line);background:var(--paper)}
+.spager-in{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.spager a{display:grid;gap:8px;text-decoration:none;color:var(--ink);padding:clamp(28px,4vw,44px) 0}
+.spager a .mono{color:var(--ink-3)}
+.spager a b{font-weight:300;font-size:clamp(1.4rem,2.6vw,2.1rem);letter-spacing:-.015em;line-height:1.1;transition:color .3s,transform .5s var(--ease)}
+.spager .sp-next{text-align:right;justify-items:end}
+.spager .sp-prev:hover b{color:var(--brand-ink);transform:translateX(-6px)}
+.spager .sp-next:hover b{color:var(--brand-ink);transform:translateX(6px)}
+@media (max-width:560px){.spager-in{grid-template-columns:1fr;gap:0}.spager a+a,.spager span+a{border-top:1px solid var(--line)}.spager span:empty{display:none}}
+/* v8: logo duvarı */
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:4px;overflow:hidden}
+.lt{margin:0;background:#fff;color:#0e1a14;display:grid;grid-template-rows:1fr auto;gap:10px;padding:26px 22px 18px;min-height:170px;position:relative;transition:background .3s}
+.lt-im{display:grid;place-items:center;min-height:84px}
+.lt-im img{max-height:58px;max-width:78%;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.78;transition:filter .45s,opacity .45s,transform .6s var(--ease)}
+.lt:hover .lt-im img{filter:none;opacity:1;transform:scale(1.04)}
+.lt figcaption{font-size:.8rem;line-height:1.35;color:#6b7a72;text-align:center;min-height:2.7em}
+.lt.txt b{font-weight:400;font-size:1.08rem;line-height:1.25;text-align:center;letter-spacing:-.005em;color:#2a3a32;transition:color .3s}
+.lt.txt b.big{font-weight:500;font-size:1.65rem;letter-spacing:.02em}
+.lt:hover{background:#fbfcfb}
+.lt.txt:hover b{color:#006937}
+@media (min-width:900px){.logos[data-logos="fin"]{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (hover:none){.lt-im img{filter:none;opacity:1}}
+.logo-note{margin-top:18px;font-size:.82rem;color:var(--ink-3)}
+@media (max-width:560px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}.lt{min-height:140px;padding:18px 12px 14px}.lt-im img{max-height:44px;max-width:88%}.lt.txt b.big{font-size:1.3rem}.lt.txt b{font-size:.95rem}}
 </style>
 </head>
 <body>
@@ -731,10 +763,16 @@ form{display:grid;gap:22px}
         <button type="button" aria-expanded="false">Hizmetler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
         <div class="dd-menu dd-wide" data-svcmenu></div>
       </div>
-      <a href="#yaklasim">Yaklaşım</a>
+      <div class="dd" data-group="yaklasim">
+        <button type="button" aria-expanded="false">Yaklaşım <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="dd-menu"><a href="#yaklasim"><b>Yaşam döngüsü</b><span>Fizibiliteden işletmeye altı aşama</span></a><a href="#yaklasim-yonetim"><b>Proje yönetimi</b><span>Dokuz yönetim alanı, teslim aşamaları</span></a><a href="#yaklasim-ufk"><b>Finans kuruluşları</b><span>UFK süreçleri ve uzman profilleri</span></a><a href="#yaklasim-kalite"><b>Kalite</b><span>Entegre yönetim sistemi, Kalite Planı</span></a><a href="#yaklasim-dijital"><b>Dijital ve BIM</b><span>Tek model, bulut tabanlı iş akışı</span></a><a href="#yaklasim-cevre"><b>Çevre ve sosyal</b><span>Politika ve sahadaki uygulama</span></a></div>
+      </div>
       <a href="#referanslar">Referanslar</a>
       <a href="#makaleler">Makaleler</a>
-      <a href="#hakkimizda">Hakkımızda</a>
+      <div class="dd" data-group="hakkimizda">
+        <button type="button" aria-expanded="false">Hakkımızda <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="dd-menu dd-r"><a href="#hakkimizda"><b>Biz kimiz</b><span>Kuruluş, büyüme ve ofisler</span></a><a href="#baskanin-mesaji"><b>Başkanın mesajı</b><span>Yönetim Kurulu Başkanı Fikret Azılı</span></a><a href="#hakkimizda-degerler"><b>Misyon ve değerler</b><span>Misyon, vizyon, ilkeler</span></a><a href="#hakkimizda-ekip"><b>Ekip</b><span>Kadro ve organizasyon</span></a><a href="#hakkimizda-isverenler"><b>İşverenler</b><span>Birlikte çalıştığımız kurumlar</span></a><a href="#kariyer"><b>Kariyer</b><span>Açık pozisyonlar ve başvuru</span></a></div>
+      </div>
       <a class="cta" href="#iletisim">İletişim</a>
     </nav>
     <button class="burger" id="burger" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="nav"><i></i></button>
@@ -778,9 +816,9 @@ form{display:grid;gap:22px}
       <p class="kicker" data-r>ENVESU · 2021'den bu yana</p>
       <p class="manifest" data-manifest style="margin-top:28px">İklim değişikliğinin yarattığı sorunlara, teknik açıdan sağlam ve çevreye duyarlı altyapılarla yanıt veriyoruz. Kamu kurumları, uluslararası finans kuruluşları ve özel sektör yatırımcıları için projeyi ilk fikirden işletmeye kadar zaman, maliyet ve kalite disipliniyle yönetiyoruz.</p>
       <div class="pillars">
-        <div class="pillar" data-r><span class="mono">Sözleşme çerçevesi</span><span class="big">FIDIC · PRAG</span><p>Uluslararası finansmanlı projelerde tasarım ve denetim sorumluluklarını bu sözleşme çerçeveleri içinde yürütüyoruz.</p><a class="link" href="#ufk">Finans kuruluşlarıyla çalışma</a></div>
-        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#kalite">Kalite ve sertifikalar</a></div>
-        <div class="pillar" data-r style="--d:.2s"><span class="mono">Dijital mühendislik</span><span class="big">130.000 m²+ BIM</span><p>Her disiplin tek modelde; sözleşme, ilerleme, maliyet ve doküman tek bulut platformunda.</p><a class="link" href="#dijital">Dijital mühendislik</a></div>
+        <div class="pillar" data-r><span class="mono">Sözleşme çerçevesi</span><span class="big">FIDIC · PRAG</span><p>Uluslararası finansmanlı projelerde tasarım ve denetim sorumluluklarını bu sözleşme çerçeveleri içinde yürütüyoruz.</p><a class="link" href="#yaklasim-ufk">Finans kuruluşlarıyla çalışma</a></div>
+        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#yaklasim-kalite">Kalite ve sertifikalar</a></div>
+        <div class="pillar" data-r style="--d:.2s"><span class="mono">Dijital mühendislik</span><span class="big">130.000 m²+ BIM</span><p>Her disiplin tek modelde; sözleşme, ilerleme, maliyet ve doküman tek bulut platformunda.</p><a class="link" href="#yaklasim-dijital">Dijital mühendislik</a></div>
       </div>
     </div>
   </section>
@@ -877,19 +915,18 @@ form{display:grid;gap:22px}
 <!-- ================= YÖNTEM ================= -->
 <div class="view" data-view="yaklasim" hidden>
   <section class="ph"><div class="ph-bg"><img src="img/p09.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE4" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE4)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb"><a href="#anasayfa">Anasayfa</a> / Yaklaşım</p>
+    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Yaklaşım</p>
     <h1 tabindex="-1">Yaklaşım</h1>
     <p class="sub">Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Bunları nasıl kurduğumuzu anlatıyoruz.</p>
   </div></section>
-  <nav class="subnav" aria-label="Yaklaşım bölümleri"><div class="wrap"><div class="subnav-in" data-subnav="yaklasim"></div></div></nav>
 
-  <section class="sec" data-sec="dongu" data-label="Yaşam döngüsü"><div class="wrap">
+  <section class="sec" data-sec="dongu" data-title="Yaşam döngüsü" data-sub="Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Fizibiliteden işletmeye her aşamada aynı sorumlulukla çalışıyoruz." data-img="p09"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Yaşam döngüsü</p><h2 class="h2" data-r>Altı aşama, kesintisiz sorumluluk.</h2></div>
       <p class="lede" data-r>Planlamadan işletmeye her aşamada aynı ekip; bir aşamanın çıktısı, bir sonrakinin girdisi.</p></div>
     <div class="lc" data-lc></div>
   </div></section>
 
-  <section class="sec mist" data-sec="yonetim" data-label="Proje yönetimi"><div class="wrap">
+  <section class="sec mist" data-sec="yonetim" data-title="Proje yönetimi" data-sub="Kapsamdan riske dokuz yönetim alanını tek bir bütünleşik yapı içinde, tanımlı teslim aşamalarıyla yürütüyoruz." data-img="p04b"><div class="wrap">
     <div class="cols">
       <div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yönetimi</p><h2 class="h2" data-r>Dokuz yönetim alanı, tek bütünleşik yapı.</h2>
         <div class="prose" data-r><p>Zaman, maliyet ve kalite etkilerini birlikte değerlendirir; kilometre taşlarını, riskleri ve önlemleri tanımlayarak uygulama öncesi ve sonrası dâhil proje süresi boyunca müşterilerimizi destekleriz.</p></div></div>
@@ -901,7 +938,7 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="ufk" data-label="Finans kuruluşları"><div class="wrap">
+  <section class="sec" data-sec="ufk" data-title="Finans kuruluşları" data-sub="Uluslararası finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerine uygun çalışıyoruz." data-img="p12"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Uluslararası finans kuruluşları</p><h2 class="h2" data-r>UFK süreçlerine hâkimiz.</h2></div>
       <p class="lede" data-r>Politika çerçevesinden kapanış raporuna kadar her adımda Proje Uygulama Birimlerine uygulama desteği veriyor; FIDIC ve PRAG çerçevelerinde çalışıyoruz.</p></div>
     <div class="chips donors" data-donorchips data-r></div>
@@ -920,7 +957,7 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec mist" data-sec="kalite" data-label="Kalite"><div class="wrap">
+  <section class="sec mist" data-sec="kalite" data-title="Kalite" data-sub="ISO 9001, 14001 ve 45001 entegre yönetim sistemi ve her proje için ayrı bir Kalite Planı." data-img="h3"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Kalite</p><h2 class="h2" data-r>Her proje için ayrı bir Kalite Planı.</h2></div>
       <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
     <div class="certs">
@@ -934,7 +971,7 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="dijital" data-label="Dijital ve BIM"><div class="wrap">
+  <section class="sec" data-sec="dijital" data-title="Dijital ve BIM" data-sub="Tüm disiplinleri tek modelde buluşturan BIM ve bulut tabanlı proje yönetimi." data-img="p03"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Dijital mühendislik ve BIM</p><h2 class="h2" data-r>Tek model, her disiplin.</h2></div>
       <p class="lede" data-r>Yapı Bilgi Modellemesi'ni tamamen bulut tabanlı bir yönetim platformuyla birleştiriyoruz; sözleşmeler, ilerleme, maliyetler ve dokümanlar FIDIC ile uyumlu tek bir sistemde.</p></div>
     <div class="bigfig" data-r>
@@ -958,7 +995,7 @@ form{display:grid;gap:22px}
     <div style="margin-top:clamp(56px,7vw,96px)"><p class="kicker" style="margin-bottom:28px">Dijital iş akışı</p><ol class="flow" data-flow></ol></div>
   </div></section>
 
-  <section class="sec mist" data-sec="cevre" data-label="Çevre ve sosyal"><div class="wrap cols r">
+  <section class="sec mist" data-sec="cevre" data-title="Çevre ve sosyal" data-sub="Çevresel ve sosyal etkileri tasarımdan sahaya kadar yönetiyoruz." data-img="p25"><div class="wrap cols r">
     <div style="display:grid;gap:34px">
       <div style="display:grid;gap:22px"><p class="kicker" data-r>Çevre ve sosyal politika</p><h2 class="h2" data-r>Yapıların ötesinde, daha güçlü topluluklar.</h2></div>
       <p class="lede" data-r>Alınan derslere dayanarak yalnızca teknik tasarım çözümlerini değil; ekonomik, çevresel ve sosyal etkileri de birlikte ele alıyoruz.</p>
@@ -975,18 +1012,18 @@ form{display:grid;gap:22px}
       <ul class="ticks"><li><a class="link" href="#proje-izsu-pid">İZSU PID, ÇED ve ÇSYP</a></li><li><a class="link" href="#proje-mrf">Belediye Dayanıklılık Projeleri: Ç&amp;S izleme sistemi</a></li></ul>
     </div>
   </div></section>
+  <div data-pager></div>
 </div>
 
 <!-- ================= KURUMSAL ================= -->
 <div class="view" data-view="hakkimizda" hidden>
   <section class="ph"><div class="ph-bg"><img src="img/p08.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE5" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE5)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb"><a href="#anasayfa">Anasayfa</a> / Hakkımızda</p>
+    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Hakkımızda</p>
     <h1 tabindex="-1">Hakkımızda</h1>
     <p class="sub">2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü.</p>
   </div></section>
-  <nav class="subnav" aria-label="Hakkımızda bölümleri"><div class="wrap"><div class="subnav-in" data-subnav="hakkimizda"></div></div></nav>
 
-  <section class="sec" data-sec="hikaye" data-label="Biz kimiz"><div class="wrap cols r">
+  <section class="sec" data-sec="biz-kimiz" data-title="Biz kimiz" data-sub="2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü." data-img="p08"><div class="wrap cols r">
     <div style="display:grid;gap:34px">
       <p class="quote" data-r>“Sürdürülebilir ve dayanıklı bir gelecek için mühendislik” ilkesiyle; hem teknik açıdan sağlam hem de çevreye duyarlı altyapılar sunuyoruz.</p>
       <div class="prose" data-r>
@@ -998,7 +1035,7 @@ form{display:grid;gap:22px}
     <figure class="figimg" data-r><img src="img/p02a.jpg" alt="TAMEK Karacabey Tesisleri yönetim binası görselleştirmesi" loading="lazy"><figcaption>TAMEK Karacabey Tesisleri · Kapasite artırımı ve modernizasyon</figcaption></figure>
   </div></section>
 
-  <section class="night sec" data-sec="baskan" data-label="Başkanın mesajı"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
+  <section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
     <figure class="portrait" data-portrait data-r></figure>
     <div style="display:grid;gap:26px;align-content:center">
       <p class="kicker" data-r>Yönetim Kurulu Başkanı'nın mesajı</p>
@@ -1008,7 +1045,7 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec mist" data-sec="degerler" data-label="Misyon ve değerler"><div class="wrap">
+  <section class="sec mist" data-sec="degerler" data-title="Misyon ve değerler" data-sub="Her işimize yön veren misyon, vizyon ve ilkeler." data-img="h5"><div class="wrap">
     <div class="cols">
       <div style="display:grid;gap:18px" data-r><p class="kicker">Misyonumuz</p><p class="quote">En yüksek uluslararası ve ulusal standartlarda mühendislik ve danışmanlık hizmeti sunarken, sürdürülebilir ve sosyal açıdan sorumlu uygulamaları her işin içine yerleştirmek.</p></div>
       <div style="display:grid;gap:18px;--d:.1s" data-r><p class="kicker">Vizyonumuz</p><p class="quote">Sürdürülebilir ve yenilikçilik odaklı danışmanlığın önde gelen sağlayıcısı olmak; teknik mükemmellik, uluslararası finans ve uzun vadeli değer arasında köprü kurmak.</p></div>
@@ -1021,7 +1058,7 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="ekip" data-label="Ekip"><div class="wrap">
+  <section class="sec" data-sec="ekip" data-title="Ekip" data-sub="Mühendis, mimar ve uzmanlardan oluşan çok disiplinli kadromuz ve organizasyon yapımız." data-img="p27"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Profesyonel kadro</p><h2 class="h2" data-r>128 kişilik kadro, tek tek.</h2></div>
       <p class="lede" data-r>Her nokta bir kişi. Bir grubun üzerine gelerek dağılımı görün. Kaynak: şirket profili, profesyonel kadro tablosu.</p></div>
     <div class="units" data-units></div>
@@ -1040,26 +1077,18 @@ form{display:grid;gap:22px}
     </div>
   </div></section>
 
-  <section class="sec mist" data-sec="paydaslar" data-label="İşverenler"><div class="wrap cols">
-    <div style="display:grid;gap:22px"><p class="kicker" data-r>İşverenler ve paydaşlar</p><h2 class="h2" data-r>Birlikte çalıştığımız kurumlar.</h2><p class="lede" data-r>Bakanlıklar, su idareleri, belediyeler, organize sanayi bölgeleri ve sanayi grupları.</p></div>
-    <ul class="names" data-clients style="columns:2 220px" data-r></ul>
+  <section class="sec mist" data-sec="isverenler" data-title="İşverenler" data-sub="Birlikte çalıştığımız kamu kurumları ve özel sektör işverenleri." data-img="p22"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Finans kuruluşları ve donörler</p><h2 class="h2" data-r>Projelerimizi finanse eden kuruluşlar.</h2></div><p class="lede" data-r>Uluslararası finans kuruluşlarının finanse ettiği projelerde, onların satın alma ve raporlama kurallarına göre çalışıyoruz.</p></div>
+    <div class="logos" data-logos="fin" data-r></div>
+    <div class="sec-head split" style="margin-top:clamp(72px,9vw,120px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>İşverenler</p><h2 class="h2" data-r>Birlikte çalıştığımız kurumlar.</h2></div><p class="lede" data-r>Bakanlıklar, su idareleri, belediyeler, organize sanayi bölgeleri ve sanayi grupları.</p></div>
+    <div class="logos" data-logos="isv" data-r></div>
+    <p class="logo-note">Logolar ve markalar ilgili kuruluşlara aittir.</p>
   </div></section>
 
-  <section class="sec" data-sec="kunye" data-label="Künye"><div class="wrap cols">
-    <div style="display:grid;gap:22px"><p class="kicker" data-r>Künye</p><h2 class="h2" data-r>Şirket bilgileri.</h2></div>
-    <dl class="facts" style="margin:0" data-r>
-      <div><dt>Unvan</dt><dd>Envesu Çevre Enerji İnş. ve Müş. A.Ş.</dd></div>
-      <div><dt>Kuruluş</dt><dd>2021</dd></div>
-      <div><dt>Merkez</dt><dd>Atatürk Mah. Ertuğrul Gazi Sk. Metropol İstanbul A/22, Ataşehir / İstanbul</dd></div>
-      <div><dt>Ofisler</dt><dd>İstanbul (merkez) · Ankara · Özbekistan</dd></div>
-      <div><dt>Ticaret sicil no</dt><dd>298340-5</dd></div>
-      <div><dt>Vergi dairesi / no</dt><dd>Kozyatağı V.D. · 3361137179</dd></div>
-      <div><dt>Yönetim Kurulu Başkanı</dt><dd>Fikret Azılı</dd></div>
-      <div><dt>Genel Müdür</dt><dd>Numan Tüfekçi</dd></div>
-    </dl>
-  </div></section>
 
-  <section class="night sec" data-sec="kariyer-t" data-label="Kariyer"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE7" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE7)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap cta-big">
+  <div data-pager></div>
+
+  <section class="night sec"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE7" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE7)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap cta-big">
     <h2 data-r>Ekibimize <em>katılın.</em></h2>
     <div class="cta-side" data-r><p>Uluslararası finansmanlı altyapı, enerji ve endüstri projelerinde çalışmak isteyen mühendis, mimar ve uzmanları bekliyoruz.</p><div class="btns"><a class="btn lime" href="#kariyer">Kariyer ve başvuru <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div></div>
   </div></section>
@@ -1200,7 +1229,7 @@ form{display:grid;gap:22px}
         <p class="slogan">Sürdürülebilir gelecek için mühendislik.</p>
       </div>
       <div><h4>Hizmetler</h4><ul data-svcfoot></ul></div>
-      <div><h4>Şirket</h4><ul><li><a href="#hakkimizda">Hakkımızda</a></li><li><a href="#baskanin-mesaji">Başkanın mesajı</a></li><li><a href="#yaklasim">Yaklaşım</a></li><li><a href="#makaleler">Makaleler</a></li><li><a href="#kalite">Kalite ve sertifikalar</a></li><li><a href="#dijital">Dijital mühendislik</a></li><li><a href="#referanslar">Referanslar</a></li><li><a href="#kariyer">Kariyer</a></li></ul></div>
+      <div><h4>Şirket</h4><ul><li><a href="#hakkimizda">Hakkımızda</a></li><li><a href="#baskanin-mesaji">Başkanın mesajı</a></li><li><a href="#yaklasim">Yaklaşım</a></li><li><a href="#makaleler">Makaleler</a></li><li><a href="#yaklasim-kalite">Kalite ve sertifikalar</a></li><li><a href="#yaklasim-dijital">Dijital mühendislik</a></li><li><a href="#referanslar">Referanslar</a></li><li><a href="#kariyer">Kariyer</a></li></ul></div>
       <div><h4>İletişim</h4><ul><li>Metropol İstanbul A/22<br>Ataşehir / İstanbul</li><li>+90 216 771 44 43</li><li>info@envesu.com</li><li><a href="#iletisim">Tüm ofisler →</a></li></ul></div>
     </div>
     <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
@@ -1296,6 +1325,42 @@ var MAKALELER=[
    ["p","ENVESU, Projetaş ile kurduğu ortak girişimle DSİ için Dünya Bankası finansmanlı Türkiye Taşkın ve Kuraklık Yönetimi Projesi (TFDMP) kapsamında Çorum Sungurlu ve Artvin'deki dere ıslahı alt projelerinin ÇSYP'lerini hazırlıyor. Çalışma; ESF ile uyum ve ESS 1, 2, 3, 4, 5, 6, 8 ve 10 standartlarını, mevcut durum analizini, risk değerlendirmesini, azaltıcı önlemler ve izleme planını, paydaş katılım toplantılarını ve İSG uzmanı katılımını kapsıyor."],
    ["p","İZSU için yürütülen Konak-Bayraklı atıksu ve yağmursuyu ayrıştırma çalışması ile İzmir'deki köprü ve alt geçitlerin fizibilitesinde de çevresel ve sosyal yönetim planları, teknik çalışmalarla birlikte hazırlandı."]
   ]}
+];
+
+/* ===== FİNANS KURULUŞLARI VE İŞVERENLER (Hakkımızda › İşverenler) =====
+   logo: img/logo/<ad>.png dosyası. Logo yoksa boş bırakın; kısa ad ve tür yazıyla gösterilir.
+   Yeni logo eklemek için dosyayı img/logo/ klasörüne koyup "logo" alanına dosya adını (uzantısız) yazın. */
+var FINANSORLAR=[
+ {ad:"Avrupa Birliği", kisa:"AB", logo:"eu"},
+ {ad:"Dünya Bankası", kisa:"WB", logo:"wb"},
+ {ad:"Avrupa Yatırım Bankası", kisa:"EIB", logo:"eib"},
+ {ad:"Fransız Kalkınma Ajansı", kisa:"AFD", logo:"afd"},
+ {ad:"Alman Kalkınma Bankası", kisa:"KfW", logo:"kfw"},
+ {ad:"Asya Altyapı Yatırım Bankası", kisa:"AIIB", logo:"aiib"},
+ {ad:"Avrupa Konseyi Kalkınma Bankası", kisa:"CEB", logo:"ceb"},
+ {ad:"Japonya Uluslararası İş Birliği Ajansı", kisa:"JICA", logo:"jica"}
+];
+var ISVERENLER=[
+ {ad:"OYAK İnşaat A.Ş.", kisa:"OYAK İnşaat", tur:"Özel sektör", logo:"oyak-insaat"},
+ {ad:"TAMEK Grup Gıda Üretim A.Ş.", kisa:"TAMEK", tur:"Özel sektör", logo:"tamek"},
+ {ad:"SAGRA Gıda Üretim A.Ş.", kisa:"SAGRA", tur:"Özel sektör", logo:"sagra"},
+ {ad:"HEKTAŞ / HEKTAŞ ASIA LLC FE", kisa:"HEKTAŞ", tur:"Özel sektör", logo:"hektas"},
+ {ad:"OYAK Enerji", kisa:"OYAK Enerji", tur:"Özel sektör", logo:"oyak-enerji"},
+ {ad:"Halk GYO A.Ş.", kisa:"Halk GYO", tur:"Gayrimenkul", logo:"halkgyo"},
+ {ad:"Sanayi ve Teknoloji Bakanlığı — Sanayi Bölgeleri Genel Müdürlüğü", kisa:"Sanayi ve Teknoloji Bakanlığı", tur:"Bakanlık", logo:"santek"},
+ {ad:"Sağlık Bakanlığı", kisa:"Sağlık Bakanlığı", tur:"Bakanlık", logo:""},
+ {ad:"Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", kisa:"Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", tur:"Bakanlık", logo:"csidb"},
+ {ad:"İller Bankası A.Ş.", kisa:"İLBANK", tur:"Kamu bankası", logo:"ilbank"},
+ {ad:"İstanbul Proje Koordinasyon Birimi", kisa:"İPKB", tur:"Kamu kurumu", logo:"ipkb"},
+ {ad:"İzmir Büyükşehir Belediyesi", kisa:"İzmir Büyükşehir Belediyesi", tur:"Belediye", logo:"izmirbb"},
+ {ad:"İzmir Su ve Kanalizasyon İdaresi", kisa:"İZSU", tur:"Su idaresi", logo:"izsu"},
+ {ad:"Hatay Su ve Kanalizasyon İdaresi", kisa:"HATSU", tur:"Su idaresi", logo:"hatsu"},
+ {ad:"Kahramanmaraş Su ve Kanalizasyon İdaresi", kisa:"KASKİ", tur:"Su idaresi", logo:""},
+ {ad:"Mersin Su ve Kanalizasyon İdaresi", kisa:"MESKİ", tur:"Su idaresi", logo:"meski"},
+ {ad:"Erbaa Belediyesi", kisa:"Erbaa Belediyesi", tur:"Belediye", logo:"erbaa"},
+ {ad:"Niksar Belediyesi", kisa:"Niksar Belediyesi", tur:"Belediye", logo:"niksar"},
+ {ad:"Gebze Organize Sanayi Bölgesi", kisa:"GOSB", tur:"OSB", logo:""},
+ {ad:"İzmir Atatürk Organize Sanayi Bölgesi", kisa:"İAOSB", tur:"OSB", logo:"iaosb"}
 ];
 </script>
 <script>
@@ -1795,6 +1860,13 @@ $$("[data-marquee]").forEach(function(el){
 
 /* ---------- Kurumsal içerikler ---------- */
 $$("[data-clients]").forEach(function(el){el.innerHTML=CLIENTS.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
+function ltile(o){
+  var lab=o.tur?'<span class="lt-t">'+esc(o.tur)+'</span>':'';
+  if(o.logo) return '<figure class="lt has" title="'+esc(o.ad)+'"><span class="lt-im"><img src="img/logo/'+o.logo+'.png" alt="'+esc(o.ad)+'" loading="lazy"></span><figcaption>'+esc(o.ad)+'</figcaption></figure>';
+  var big=o.kisa.length<=12;
+  return '<figure class="lt txt" title="'+esc(o.ad)+'"><span class="lt-im"><b class="'+(big?'big':'')+'">'+esc(o.kisa)+'</b></span><figcaption>'+(o.kisa!==o.ad?esc(o.ad):lab)+'</figcaption></figure>';
+}
+$$("[data-logos]").forEach(function(el){var L=el.getAttribute("data-logos")==="fin"?FINANSORLAR:ISVERENLER;el.innerHTML=L.map(ltile).join('')});
 $$("[data-mgmt]").forEach(function(el){el.innerHTML=MGMT.map(function(m){return '<div data-r><dt style="font-family:var(--f-sans);font-size:1.08rem;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500;padding-top:0">'+esc(m)+'</dt><dd style="color:var(--ink-2)">'+esc(MGMT_D[m]||"")+'</dd></div>'}).join('')});
 $$("[data-experts]").forEach(function(el){el.innerHTML=EXPERTS.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
 $$("[data-qplan]").forEach(function(el){el.innerHTML=QPLAN.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
@@ -1881,20 +1953,28 @@ $$("#nav .dd>button").forEach(function(b){b.addEventListener("click",function(){
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){$$("#nav .dd").forEach(function(x){x.classList.remove("open")});closeMenu()}});
 document.addEventListener("click",function(e){if(!e.target.closest(".dd"))$$("#nav .dd").forEach(function(x){x.classList.remove("open")})});
 
-/* ---------- Bölüm alt menüsü ---------- */
-$$("[data-subnav]").forEach(function(nav){
-  var view=nav.closest("[data-view]"), secs=$$("[data-sec]",view);
-  nav.innerHTML=secs.map(function(s){return '<button type="button" data-to="'+s.getAttribute("data-sec")+'">'+esc(s.getAttribute("data-label"))+'</button>'}).join('');
-  var bs=$$("button",nav);
-  bs.forEach(function(b){b.addEventListener("click",function(){var t=$('[data-sec="'+b.getAttribute("data-to")+'"]',view);t.scrollIntoView({behavior:RM?"auto":"smooth"})})});
-  function spy(){ if(view.hidden) return; var cur=0; secs.forEach(function(s,i){if(s.getBoundingClientRect().top<window.innerHeight*.42)cur=i});
-    bs.forEach(function(b,i){var on=i===cur;if(on&&!b.classList.contains("on")){var l=b.offsetLeft-nav.clientWidth/2+b.offsetWidth/2;nav.scrollTo({left:l,behavior:"smooth"})}b.classList.toggle("on",on)}) }
-  window.addEventListener("scroll",spy,{passive:true}); nav._spy=spy;
-});
+/* ---------- Alt sayfalar (menüden açılan bölümler) ---------- */
+var SUBBASE={yaklasim:"Yaklaşım",hakkimizda:"Hakkımızda"};
+function subKeys(v){var ks=[];$$("[data-sec]",v).forEach(function(x){var k=x.getAttribute("data-sec");if(ks.indexOf(k)<0)ks.push(k)});return ks}
+function subHref(view,k,i){return "#"+(i===0?view:view+"-"+k)}
+function showSub(view,v,sec){
+  var ks=subKeys(v); if(!ks.length) return null;
+  if(ks.indexOf(sec)<0) sec=ks[0];
+  $$("[data-sec]",v).forEach(function(x){x.hidden=x.getAttribute("data-sec")!==sec});
+  var m=$('[data-sec="'+sec+'"][data-title]',v), i=ks.indexOf(sec), base=SUBBASE[view];
+  $("h1",v).textContent=m.getAttribute("data-title");
+  $(".ph .sub",v).textContent=m.getAttribute("data-sub");
+  var im=$(".ph-bg img",v); if(im) im.src="img/"+m.getAttribute("data-img")+".jpg";
+  $("[data-phcrumb]",v).innerHTML='<a href="#anasayfa">Anasayfa</a> / '+(i===0?esc(base):'<a href="#'+view+'">'+esc(base)+'</a> / '+esc(m.getAttribute("data-title")));
+  function lnk(j,dir){var k=ks[j],t=$('[data-sec="'+k+'"][data-title]',v).getAttribute("data-title");
+    return '<a class="sp-'+dir+'" href="'+subHref(view,k,j)+'"><span class="mono">'+(dir==="prev"?"← Önceki":"Sonraki →")+'</span><b>'+esc(t)+'</b></a>'}
+  $("[data-pager]",v).innerHTML='<nav class="spager" aria-label="'+esc(base)+' sayfaları"><div class="wrap spager-in">'+(i>0?lnk(i-1,"prev"):'<span></span>')+(i<ks.length-1?lnk(i+1,"next"):'<span></span>')+'</div></nav>';
+  return sec;
+}
 
 /* ---------- Yönlendirme (yalın #ad) ---------- */
 var VIEWS=["anasayfa","hizmetler","hizmet","referanslar","proje","yaklasim","hakkimizda","baskan","makaleler","makale","kariyer","iletisim","kvkk"];
-var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda","hikaye"],"insan-kaynagi":["hakkimizda","ekip"],"kunye":["hakkimizda","kunye"],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["yaklasim","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"sektorler":["hizmetler",null],"uzmanlik":["hizmetler",null],"projeler":["referanslar",null]};
+var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","ekip"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["yaklasim","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"sektorler":["hizmetler",null],"uzmanlik":["hizmetler",null],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"referanslar",proje:"referanslar",yaklasim:"yaklasim",hakkimizda:"hakkimizda",kariyer:"hakkimizda",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null;
 function route(){
@@ -1905,6 +1985,8 @@ function route(){
   else if(h.indexOf("hizmet-")===0){view="hizmet";arg=h.slice(7)}
   else if(h.indexOf("makale-")===0){view="makale";arg=h.slice(7)}
   else if(h==="baskanin-mesaji"){view="baskan"}
+  else if(h.indexOf("yaklasim-")===0){view="yaklasim";sec=h.slice(9)}
+  else if(h.indexOf("hakkimizda-")===0){view="hakkimizda";sec=h.slice(11)}
   else if(h.indexOf("projeler-")===0){view="referanslar"}
   else if(h.indexOf("uzmanlik-")===0){view="hizmetler"}
   if(VIEWS.indexOf(view)<0) view="anasayfa";
@@ -1914,10 +1996,13 @@ function route(){
   if(view==="makaleler"&&curView!=="makaleler"){ACAT=null;renderArticles()}
   if(view==="referanslar"){if(arg&&!SById[arg])arg=null;if(curView!=="referanslar"){PST=null;SECF=null}renderRefs(arg)}
   var keepScroll=(view==="referanslar"&&curView==="referanslar");
+  var curHref=location.hash||"#anasayfa";
+  if(SUBBASE[view]){var vv=$('[data-view="'+view+'"]'),ss=showSub(view,vv,sec),kk=subKeys(vv);curHref=subHref(view,ss,kk.indexOf(ss))} sec=null;
   $$("[data-view]").forEach(function(s){var on=s.getAttribute("data-view")===view;s.hidden=!on;if(on&&!first&&!keepScroll){s.classList.remove("enter");void s.offsetWidth;s.classList.add("enter")}});
   var nk=NAVK[view];
   $$("#nav>a").forEach(function(a){var k=a.getAttribute("href").slice(1);if(k===nk)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  $$("#nav .dd").forEach(function(d){d.classList.toggle("cur",nk===d.getAttribute("data-group"));d.classList.remove("open")});
+  $$("#nav .dd").forEach(function(d){d.classList.toggle("cur",nk===d.getAttribute("data-group"));d.classList.remove("open");$("button",d).setAttribute("aria-expanded","false")});
+  $$("#nav .dd-menu a").forEach(function(a){if(a.getAttribute("href")===curHref)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   closeMenu();
   var v=$('[data-view="'+view+'"]');
   if(!keepScroll){
@@ -1926,7 +2011,6 @@ function route(){
     if(!first){hd.classList.remove("hide");var h1=$("h1",v);if(h1&&!sec){try{h1.focus({preventScroll:true})}catch(e){}}}
   }
   observe(v);
-  var sn=$("[data-subnav]",v); if(sn&&sn._spy) setTimeout(sn._spy,60);
   curView=view; first=false; onScroll(); readProg();
 }
 window.addEventListener("hashchange",route);

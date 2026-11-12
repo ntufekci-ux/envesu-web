@@ -12,3 +12,8 @@ Başkanın Mesajı bölümlerindeki portre `img/fikret-azili.jpg` dosyasıdır (
 
 ## Yeni makale ekleme
 `index.html` içinde `var MAKALELER=[` dizisine yeni bir öğe ekleyin (dosyanın başındaki açıklamada alanlar anlatılıyor). Kapak görselini `img/` klasörüne koyup `gorsel` alanına dosya adını (uzantısız, .jpg) yazın. Henüz onaylanmamış bir makaleye `taslak:true` yazarsanız kartta ve metin sonunda "Taslak" ibaresi görünür; onaylananlarda `taslak:false` kalmalı.
+
+## Kurum logoları (Hakkımızda › İşverenler)
+
+`index.html` içindeki `FINANSORLAR` ve `ISVERENLER` listeleri bu sayfayı oluşturur. Logo dosyaları `img/logo/` klasöründedir (PNG). Yeni logo eklemek için dosyayı bu klasöre koyup ilgili satırın `logo` alanına dosya adını (uzantısız) yazın; alan boşsa kurum adı yazıyla gösterilir.
+Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kaynak listesi: `Web sitesi\Logo arşivi\_kaynaklar.tsv`. HEKTAŞ logosu şirket profilinden alındı (düşük çözünürlük). Sağlık Bakanlığı, KASKİ ve GOSB logoları bulunamadı.
