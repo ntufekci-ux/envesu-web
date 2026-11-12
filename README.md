@@ -29,3 +29,10 @@ Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kayna
 ## Sözleşme bedelleri
 
 `index.html` içindeki `BEDELLER` listesi proje kartlarında ve proje sayfalarında gösterilir: `"proje-id":["bedel","açıklama"]`. Değerler şirket profilindeki proje kartlarının "Sözleşme Bedeli" kutularından alındı. Bir projenin bedelini gizlemek için satırını silin.
+
+## Etkileşimli grafikler ve video (profil s.7, 8, 9, 17)
+
+- Hakkımızda › Misyon ve değerler: "Her işin üç bileşeni" diyagramı (profil s.7).
+- Yaklaşım › Proje yönetimi: dokuz yönetim alanı çarkı (s.8) ve teslim aşamalarını bir köprünün aşama aşama gelişimiyle anlatan akış (s.9). Aşama içerikleri `TESLIM` listesindedir.
+- Yaklaşım › Dijital ve BIM: BIM yaşam döngüsü çarkı (s.17); kısa açıklamalar `index.html` içinde, Claude tarafından yazıldı, kontrol edilmeli.
+- NRW animasyonu: `media/nrw-animasyon.mp4` (sessiz, 10 sn). NRW Kılavuzu proje sayfasında ve "Şebeke kayıpları" makalesinde oynar. Video İngilizcedir.
