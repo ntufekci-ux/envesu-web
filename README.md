@@ -16,4 +16,12 @@ Başkanın Mesajı bölümlerindeki portre `img/fikret-azili.jpg` dosyasıdır (
 ## Kurum logoları (Hakkımızda › İşverenler)
 
 `index.html` içindeki `FINANSORLAR` ve `ISVERENLER` listeleri bu sayfayı oluşturur. Logo dosyaları `img/logo/` klasöründedir (PNG). Yeni logo eklemek için dosyayı bu klasöre koyup ilgili satırın `logo` alanına dosya adını (uzantısız) yazın; alan boşsa kurum adı yazıyla gösterilir.
-Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kaynak listesi: `Web sitesi\Logo arşivi\_kaynaklar.tsv`. HEKTAŞ logosu şirket profilinden alındı (düşük çözünürlük). Sağlık Bakanlığı, KASKİ ve GOSB logoları bulunamadı.
+Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kaynak listesi: `Web sitesi\Logo arşivi\_kaynaklar.tsv`. HEKTAŞ logosu şirket profilinden alındı (düşük çözünürlük).
+
+## Kalite belgeleri (Yaklaşım › Kalite)
+
+`SERTIFIKALAR` ve `SERTIFIKA_BILGI` listeleri sayfayı oluşturur. Belge görselleri `img/cert/`, PDF'ler `doc/` klasöründedir (BBS Belgelendirme, ilk belge 13.01.2026, geçerlilik 12.01.2029). Belgeler yenilendiğinde aynı adla dosyaları değiştirip tarihleri güncelleyin. Kaynak: SharePoint › 02 TEKLİF ve GELİŞTİRME › 03_Envesu › 01.envesu profil › envesu ISO › ISO 2026-2029.
+
+## Ekip fotoğrafı
+
+`img/ekip-toplu.jpg` ("Envesu toplu foto" dosyasından, 2200 px genişlik).

@@ -750,6 +750,136 @@ h1[tabindex="-1"]:focus{outline:none}
 @media (hover:none){.lt-im img{filter:none;opacity:1}}
 .logo-note{margin-top:18px;font-size:.82rem;color:var(--ink-3)}
 @media (max-width:560px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}.lt{min-height:140px;padding:18px 12px 14px}.lt-im img{max-height:44px;max-width:88%}.lt.txt b.big{font-size:1.3rem}.lt.txt b{font-size:.95rem}}
+/* v10: akış bileşeni */
+.flw-scroll{overflow-x:auto;scrollbar-width:thin;margin-inline:-8px;padding:8px}
+.flw-stage{position:relative;aspect-ratio:1000/240;min-width:780px}
+.flw-stage svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fb{fill:none;stroke:var(--line-2);stroke-width:2}
+.fs{fill:none;stroke:var(--brand-ink);stroke-width:2;stroke-dasharray:2 14;opacity:.45;animation:fsflow 1.6s linear infinite}
+@keyframes fsflow{to{stroke-dashoffset:-32}}
+.ff{fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset .9s var(--ease)}
+.fspan{fill:none;stroke:none}
+.fn{all:unset;position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:2}
+.fn i{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line-2);font-family:var(--f-mono);font-style:normal;font-size:.8rem;color:var(--ink-3);transition:background .35s,color .35s,border-color .35s,transform .45s var(--ease),box-shadow .45s}
+.fn b{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:500;font-size:1rem;color:var(--ink-2);transition:color .3s}
+.fn.hi b{bottom:calc(100% + 12px)}.fn.lo b{top:calc(100% + 12px)}
+.fn:hover i{border-color:var(--ink);color:var(--ink)}
+.fn:focus-visible i{outline:2px solid var(--sky);outline-offset:3px}
+.fn.done i{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fn.on i{background:var(--lime);border-color:var(--lime);color:var(--on-lime);transform:scale(1.14);box-shadow:0 0 0 9px rgba(147,213,0,.16)}
+.fn.on b{color:var(--ink)}
+.flw-svc .fn:not(.act) i{opacity:.55}.flw-svc .fn:not(.act) b{color:var(--ink-3)}
+.flw-svc .fn.act i{border-color:var(--brand-ink);border-width:2px;color:var(--brand-ink)}
+.flw-svc .fn.act.on i{color:var(--on-lime);border-color:var(--lime)}
+.fdot{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(147,213,0,.25),0 0 22px rgba(147,213,0,.9);transform:translate(-50%,-50%);pointer-events:none;z-index:3}
+.fdot.pulse{animation:fdp 1.8s ease-out infinite}
+@keyframes fdp{0%{box-shadow:0 0 0 0 rgba(147,213,0,.5)}100%{box-shadow:0 0 0 22px rgba(147,213,0,0)}}
+.flw-body{margin-top:26px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:36px;align-items:start}
+.fbh{display:grid;gap:10px;justify-items:start}.fbh .mono{color:var(--ink-3)}.fbh h3{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.fbd{display:grid;gap:16px}.fbd p{font-size:1.12rem;color:var(--ink-2);max-width:60ch}
+.ftag{font-size:.85rem;border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;color:var(--ink-3)}
+.ftag.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
+.flw-ctrl{display:flex;align-items:center;gap:14px;margin-top:26px}
+.flw-ctrl button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+.flw-ctrl button svg{width:15px;height:15px}.flw-ctrl button:hover{background:var(--ink);color:var(--paper)}
+.flw-prog{flex:0 1 200px;height:2px;background:var(--line);overflow:hidden}.flw-prog i{display:block;height:100%;background:var(--ink);transform:scaleX(0);transform-origin:left}
+.flw.run.vis .flw-prog i{animation:prog 4.5s linear forwards}.flw.paused .flw-prog i{animation-play-state:paused}
+.flw-n{color:var(--ink-3);white-space:nowrap}
+.flw-del .fdot{opacity:0;transition:opacity .25s}.flw-del .fdot.mv{opacity:1}
+@media (max-width:760px){.flw-body{grid-template-columns:1fr;gap:14px}}
+/* v10: logo bandı */
+.mq.lg{gap:72px;align-items:center}
+.mq span.mql{display:inline-flex;align-items:center;height:60px;gap:0;font-size:1rem}
+.mq span.mql::after,.mq.rev span.mql::after{content:none}
+.mql img{height:48px;width:auto;max-width:190px;object-fit:contain;filter:grayscale(1);opacity:.62;transition:filter .4s,opacity .4s}
+.mq.rev .mql img{height:44px}
+.mql:hover img{filter:none;opacity:1}
+.mql.t{font-weight:500;color:var(--ink-3)}
+@media (hover:none){.mql img{filter:none;opacity:.9}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mq span.mql{background:#fff;border-radius:8px;padding:6px 14px}}
+:root[data-theme="dark"] .mq span.mql{background:#fff;border-radius:8px;padding:6px 14px}
+.srow:hover .go{background:transparent;color:inherit;border-color:var(--line-2);transform:none}
+/* v10: sertifikalar */
+.cert2{display:grid;gap:20px;align-content:start}
+.cert-im{all:unset;cursor:zoom-in;position:relative;display:block;aspect-ratio:1/1.414;border-radius:4px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.cert-im img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.cert-im:hover img{transform:scale(1.05)}
+.cert-im:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+.zoom-ic{position:absolute;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;transform:rotate(-45deg);opacity:0;transition:opacity .3s}
+.zoom-ic svg{width:15px;height:15px}.cert-im:hover .zoom-ic{opacity:1}
+.cert-tx{display:grid;gap:8px;justify-items:start}.cert-tx .mono{color:var(--ink-3)}
+.cert-tx b{font-size:clamp(1.9rem,2.8vw,2.4rem);font-weight:300;letter-spacing:-.02em;line-height:1}
+.cert-tx h3{font-size:1.1rem;font-weight:500;letter-spacing:0}
+.cert-tx dl{display:flex;gap:28px;margin:6px 0 4px}.cert-tx dt{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.cert-tx dd{margin:2px 0 0;font-variant-numeric:tabular-nums}
+.cert-meta{margin-top:30px;color:var(--ink-3);font-size:.92rem;max-width:90ch}.cert-meta b{color:var(--ink-2);font-weight:500}
+.lbx{position:fixed;inset:0;z-index:200;background:rgba(7,26,17,.9);display:grid;place-items:center;padding:24px;cursor:zoom-out}
+.lbx[hidden]{display:none}.lbx img{max-height:92vh;max-width:min(92vw,900px);width:auto;height:auto;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#fff}
+.lbx-x{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:1.6rem;cursor:pointer}
+html.lbx-open{overflow:hidden}
+/* v10: ekip */
+.team-photo{margin:0;position:relative;border-radius:6px;overflow:hidden;background:var(--mist)}
+.team-photo img{width:100%;height:auto;aspect-ratio:2200/803;object-fit:cover;min-height:220px}
+.team-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 18px;background:linear-gradient(0deg,rgba(7,26,17,.75),rgba(7,26,17,0));color:#fff;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.units{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:start}
+.dotgrid{max-width:none!important;grid-template-columns:repeat(16,var(--dot,24px))!important;justify-content:space-between;align-content:space-between;row-gap:6px;column-gap:0!important}
+.dotgrid i{width:var(--dot,24px);height:var(--dot,24px)}
+@media (max-width:900px){.units{grid-template-columns:1fr!important}}
+/* v10: özgeçmiş alanı */
+.flab{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.fld .drop{position:relative;display:flex;gap:16px;align-items:center;border:1.5px dashed var(--line-2);border-radius:12px;padding:18px 20px;cursor:pointer;transition:border-color .25s,background .25s;font-family:var(--f-sans);text-transform:none;letter-spacing:0;font-size:1rem;color:var(--ink)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.drop-ic{width:46px;height:46px;border-radius:50%;background:var(--mist);display:grid;place-items:center;flex:none;color:var(--brand-ink);transition:background .25s,color .25s}
+.drop-ic svg{width:20px;height:20px}
+.drop-t{display:grid;gap:3px;min-width:0}.drop-t b{font-weight:500;overflow-wrap:anywhere}.drop-t small{color:var(--ink-3);font-size:.86rem}
+.drop:hover,.drop.over{border-color:var(--brand-ink);background:var(--mist)}
+.drop.over .drop-ic,.drop.ok .drop-ic{background:var(--lime);color:var(--on-lime)}
+.drop.ok{border-style:solid;border-color:var(--brand-ink)}
+.drop.bad{border-color:#c0392b}.drop.bad .drop-t b{color:#c0392b}
+.drop:focus-within{outline:2px solid var(--sky);outline-offset:3px}
+/* v10: BIM animasyonu */
+.bim{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,4vw,56px);align-items:center;background:var(--night);color:var(--night-ink);border-radius:6px;padding:clamp(20px,3vw,40px);overflow:hidden;position:relative}
+.bim-vis{position:relative}
+.bim-svg{width:100%;height:auto;display:block;overflow:visible}
+.bim-svg .grid{stroke:rgba(242,246,243,.08);stroke-width:1}
+.bim-svg .infra{fill:none;stroke:var(--sky);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--ease) .2s}
+.bim-svg .mh{fill:var(--night);stroke:var(--sky);stroke-width:2;opacity:0;transition:opacity .4s .9s}
+.bim-svg .slab-t{fill:rgba(242,246,243,.10);stroke:rgba(242,246,243,.55);stroke-width:1}
+.bim-svg .slab-s{fill:rgba(242,246,243,.22);stroke:rgba(242,246,243,.5);stroke-width:1}
+.bim-svg .slab-s2{fill:rgba(242,246,243,.15);stroke:rgba(242,246,243,.5);stroke-width:1}
+.bim-svg .col{stroke:rgba(242,246,243,.6);stroke-width:2}
+.bim-svg .glass{fill:rgba(74,193,224,.16);stroke:rgba(74,193,224,.55);stroke-width:1}.bim-svg .glass.g2{fill:rgba(74,193,224,.10)}
+.bim-svg .mul{stroke:rgba(74,193,224,.45);stroke-width:1}
+.bim-svg .duct{fill:none;stroke:#4AC1E0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.bim-svg .pipe{fill:none;stroke:#93D500;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.bim-svg .tray{fill:none;stroke:#FCDC3E;stroke-width:2;stroke-dasharray:.02 .015}
+.bim-svg .g-mep polyline,.bim-svg .g-ele polyline{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s var(--ease)}
+.bim-svg .g-ele polyline{stroke-dasharray:1}
+.bim-svg .g-site,.bim-svg .g-arc,.bim-svg .g-f,.bim-svg .g-clash>*{opacity:0;transition:opacity .6s,transform .8s var(--ease)}
+.bim-svg .g-f{transform:translateY(-46px);transition-delay:calc(var(--k)*.22s)}
+.bim-svg.s1 .g-site{opacity:1}.bim-svg.s1 .infra{stroke-dashoffset:0}.bim-svg.s1 .mh{opacity:1}
+.bim-svg.s2 .g-f{opacity:1;transform:none}
+.bim-svg.s3 .g-arc{opacity:1}
+.bim-svg.s4 .g-mep polyline{stroke-dashoffset:0}
+.bim-svg.s5 .g-ele polyline{stroke-dashoffset:0}
+.bim-svg .cr,.bim-svg .cr2{fill:rgba(224,60,49,.25);stroke:#e03c31;stroke-width:2}
+.bim-svg.s6 .cr{opacity:1}.bim-svg.s6 .cr2{opacity:1;animation:clash 1.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.bim-svg .ok circle{fill:var(--lime);stroke:none}.bim-svg .ok path{fill:none;stroke:var(--on-lime);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.bim-svg.s7 .cr,.bim-svg.s7 .cr2{opacity:0;animation:none}.bim-svg.s7 .ok{opacity:1}
+@keyframes clash{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+.bim-svg .scan{fill:var(--lime);opacity:0}
+.bim-svg.s6:not(.s7) .scan{animation:scan 1.5s linear;opacity:.7}
+@keyframes scan{from{transform:translateY(70px)}to{transform:translateY(490px)}}
+.bim-badge{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:8px;color:var(--night-mute)}
+.bim-badge i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(147,213,0,.2)}
+.bim-side .kicker{color:var(--night-mute);margin-bottom:18px}
+.bim-steps{display:grid}
+.bim-steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--night-line);cursor:pointer;opacity:.45;transition:opacity .4s}
+.bim-steps li .mono{color:var(--night-mute);padding-top:3px}
+.bim-steps li b{display:block;font-weight:500}.bim-steps li small{display:block;color:var(--night-mute);font-size:.88rem;max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.bim-steps li.done{opacity:.8}.bim-steps li.done .mono{color:var(--lime)}
+.bim-steps li.on{opacity:1}.bim-steps li.on .mono{color:var(--lime)}.bim-steps li.on small{max-height:60px}
+@media (max-width:860px){.bim{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.fs{animation:none}}
 </style>
 </head>
 <body>
@@ -860,7 +990,7 @@ h1[tabindex="-1"]:focus{outline:none}
   </section>
 
   <section class="sec tight" aria-label="Finansman kuruluşları ve işverenler">
-    <div class="wrap" style="margin-bottom:34px"><p class="kicker">Finansman kuruluşları ve işverenler</p></div>
+    <div class="wrap" style="margin-bottom:34px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap"><p class="kicker">Finansman kuruluşları ve işverenler</p><a class="link" href="#hakkimizda-isverenler">Tüm kurumlar</a></div>
     <div class="marquee" data-marquee></div>
   </section>
 
@@ -934,14 +1064,14 @@ h1[tabindex="-1"]:focus{outline:none}
     </div>
     <div style="margin-top:clamp(64px,8vw,110px)">
       <div class="sec-head"><p class="kicker" data-r>Proje teslim aşamaları</p><h2 class="h2" data-r>Kamulaştırmadan kusur sorumluluk süresine.</h2></div>
-      <div data-tl></div>
+      <div data-flow-del></div>
     </div>
   </div></section>
 
   <section class="sec" data-sec="ufk" data-title="Finans kuruluşları" data-sub="Uluslararası finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerine uygun çalışıyoruz." data-img="p12"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Uluslararası finans kuruluşları</p><h2 class="h2" data-r>UFK süreçlerine hâkimiz.</h2></div>
       <p class="lede" data-r>Politika çerçevesinden kapanış raporuna kadar her adımda Proje Uygulama Birimlerine uygulama desteği veriyor; FIDIC ve PRAG çerçevelerinde çalışıyoruz.</p></div>
-    <div class="chips donors" data-donorchips data-r></div>
+    <div class="logos" data-logos="fin" data-r></div>
     <div class="mtx" data-r style="margin-top:44px"><table>
       <thead><tr><th>Politika ve kurumsal çevre</th><th>Proje planlama</th><th>Proje geliştirme</th><th>Proje uygulama</th><th>İzleme ve değerlendirme</th></tr></thead>
       <tbody>
@@ -960,11 +1090,8 @@ h1[tabindex="-1"]:focus{outline:none}
   <section class="sec mist" data-sec="kalite" data-title="Kalite" data-sub="ISO 9001, 14001 ve 45001 entegre yönetim sistemi ve her proje için ayrı bir Kalite Planı." data-img="h3"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Kalite</p><h2 class="h2" data-r>Her proje için ayrı bir Kalite Planı.</h2></div>
       <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
-    <div class="certs">
-      <div class="cert" data-r><span class="seal">TS EN<br>ISO</span><b>9001:2015</b><h3>Kalite Yönetim Sistemi</h3><p>TS EN ISO 9001:2015</p></div>
-      <div class="cert" data-r style="--d:.1s"><span class="seal">TS EN<br>ISO</span><b>14001:2015</b><h3>Çevre Yönetim Sistemi</h3><p>TS EN ISO 14001:2015</p></div>
-      <div class="cert" data-r style="--d:.2s"><span class="seal">TS<br>ISO</span><b>45001:2018</b><h3>İş Sağlığı ve Güvenliği Yönetim Sistemi</h3><p>TS ISO 45001:2018</p></div>
-    </div>
+    <div class="certs" data-certs></div>
+    <p class="cert-meta" data-certmeta data-r></p>
     <div class="cols" style="margin-top:clamp(56px,7vw,96px)">
       <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
       <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
@@ -980,6 +1107,7 @@ h1[tabindex="-1"]:focus{outline:none}
       <div><b><span data-count="10">10</span><small>+</small></b><span>deneyimli personel</span></div>
       <div><b><span data-count="12">12</span><small>+</small></b><span>entegre platform modülü</span></div>
     </div>
+    <div class="bim" data-bim data-r></div>
     <div class="cols" style="margin:clamp(56px,7vw,96px) 0">
       <div class="prose" data-r><p>ENVESU veri odaklı tasarım yöntemlerini erken benimsedi; her disiplinin tek ve koordineli bir model üzerinde çalıştığı yenilikçi, sürdürülebilir ve maliyet etkin planlama sunuyor.</p>
         <div class="chips"><span class="chip">Mimari</span><span class="chip">Statik</span><span class="chip">Mekanik</span><span class="chip">Elektrik</span><span class="chip">Altyapı</span></div></div>
@@ -1059,8 +1187,8 @@ h1[tabindex="-1"]:focus{outline:none}
   </div></section>
 
   <section class="sec" data-sec="ekip" data-title="Ekip" data-sub="Mühendis, mimar ve uzmanlardan oluşan çok disiplinli kadromuz ve organizasyon yapımız." data-img="p27"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Profesyonel kadro</p><h2 class="h2" data-r>128 kişilik kadro, tek tek.</h2></div>
-      <p class="lede" data-r>Her nokta bir kişi. Bir grubun üzerine gelerek dağılımı görün. Kaynak: şirket profili, profesyonel kadro tablosu.</p></div>
+    <figure class="team-photo" data-r><img src="img/ekip-toplu.jpg" alt="ENVESU ekibi toplu fotoğraf" loading="lazy"><figcaption>ENVESU ekibi</figcaption></figure>
+    <p class="kicker" data-r style="margin:clamp(56px,7vw,88px) 0 28px">Profesyonel kadro</p>
     <div class="units" data-units></div>
     <div class="cols" style="margin-top:clamp(64px,8vw,110px)">
       <div style="display:grid;gap:22px"><p class="kicker" data-r>Organizasyon</p><h3 class="h3" data-r>Yürütme yönetimini uzmanlaşmış teknik departmanlara bağlayan, tanımlı hesap verebilirlik hatlarına sahip bir yapı.</h3></div>
@@ -1150,6 +1278,13 @@ h1[tabindex="-1"]:focus{outline:none}
       <div class="fld"><label for="k-eposta">E-posta</label><input id="k-eposta" name="eposta" type="email" autocomplete="email" required></div>
       <div class="fld"><label for="k-alan">Uzmanlık alanı</label><select id="k-alan" name="alan"></select></div>
       <div class="fld"><label for="k-mesaj">Kısaca kendinizi tanıtın</label><textarea id="k-mesaj" name="mesaj"></textarea></div>
+      <div class="fld"><span class="flab">Özgeçmiş</span>
+        <label class="drop" for="k-cv" data-drop>
+          <input id="k-cv" name="ozgecmis" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+          <span class="drop-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></span>
+          <span class="drop-t"><b data-cvname>Özgeçmişinizi seçin ya da buraya sürükleyin</b><small>PDF veya Word · en fazla 5 MB</small></span>
+        </label>
+      </div>
       <label class="chk" for="k-kvkk"><input id="k-kvkk" type="checkbox" required><span><a href="#kvkk">Aydınlatma metnini</a> okudum.</span></label>
       <button class="btn dark" type="submit" style="justify-self:start">Başvuruyu gönder <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></button>
       <p class="fmsg" data-form-status hidden></p>
@@ -1235,7 +1370,6 @@ h1[tabindex="-1"]:focus{outline:none}
     <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
   </div>
 </footer>
-<div class="peek" data-peek aria-hidden="true"><img alt=""></div>
 </div>
 <script>
 /* =====================================================================
@@ -1271,7 +1405,7 @@ var MAKALELER=[
  {id:"osb-atiksu-geri-kazanimi", taslak:false,
   baslik:"OSB'lerde atıksu geri kazanımı: Mor boruyla ikinci bir su kaynağı",
   ozet:"Sanayi bölgelerinde arıtılmış atıksuyu proses suyuna dönüştürmek, su stresine karşı en hızlı devreye alınabilecek önlemlerden biri. Tasarımdan işletmeye kadar nelere dikkat edilmeli?",
-  kategori:"Su ve Çevre", tarih:"Kasım 2026", gorsel:"p08",
+  kategori:"Su ve Çevre", tarih:"Eylül 2026", gorsel:"p08",
   govde:[
    ["p","Organize sanayi bölgeleri, büyük miktarda temiz suyu proses, soğutma ve temizlik için kullanırken, arıttıkları atıksuyu çoğunlukla alıcı ortama deşarj eder. Oysa uygun bir ileri arıtma kademesi ve ayrı bir dağıtım şebekesiyle, aynı su fabrikalara ikinci kez kazandırılabilir. Kuraklık ve su stresinin arttığı bir dönemde bu yaklaşım, yeni bir kaynak aramaktan çoğu zaman daha hızlı ve daha ekonomiktir."],
    ["h","Mor boru nedir?"],
@@ -1290,7 +1424,7 @@ var MAKALELER=[
  {id:"sebeke-kayiplari-nrw", taslak:false,
   baslik:"Şebeke kayıpları: Görünmeyen suyu ölçmek ve yönetmek",
   ozet:"Üretilen her metreküp suyun bir kısmı ya sızıntıyla ya da ölçüm ve faturalama hatalarıyla kayboluyor. Gelir getirmeyen suyu azaltmanın yolu, önce onu doğru ölçmekten geçiyor.",
-  kategori:"Su ve Çevre", tarih:"Kasım 2026", gorsel:"p12",
+  kategori:"Su ve Çevre", tarih:"Ekim 2026", gorsel:"p12",
   govde:[
    ["p","Bir su idaresinin şebekeye verdiği suyun tamamı faturaya dönüşmez. Aradaki fark, “gelir getirmeyen su” (Non-Revenue Water, NRW) olarak adlandırılır ve hem kaynak hem enerji hem de gelir kaybı anlamına gelir. Arıtılmış, pompalanmış ve şebekeye basılmış suyun kaybı, en pahalı kayıptır."],
    ["h","Su dengesi: önce ne kaybettiğinizi bilin"],
@@ -1330,6 +1464,15 @@ var MAKALELER=[
 /* ===== FİNANS KURULUŞLARI VE İŞVERENLER (Hakkımızda › İşverenler) =====
    logo: img/logo/<ad>.png dosyası. Logo yoksa boş bırakın; kısa ad ve tür yazıyla gösterilir.
    Yeni logo eklemek için dosyayı img/logo/ klasörüne koyup "logo" alanına dosya adını (uzantısız) yazın. */
+/* ===== KALİTE BELGELERİ (Yaklaşım › Kalite) =====
+   gorsel: img/cert/<ad>.jpg · pdf: doc/<ad>.pdf  — yenilendiğinde dosyaları değiştirip tarihleri güncelleyin. */
+var SERTIFIKALAR=[
+ {std:"TS EN ISO 9001:2015", ad:"Kalite Yönetim Sistemi", no:"1414-01", gorsel:"iso9001", pdf:"envesu-iso9001"},
+ {std:"TS EN ISO 14001:2015", ad:"Çevre Yönetim Sistemi", no:"1414-02", gorsel:"iso14001", pdf:"envesu-iso14001"},
+ {std:"TS EN ISO 45001:2023", ad:"İş Sağlığı ve Güvenliği Yönetim Sistemi", no:"1414-03", gorsel:"iso45001", pdf:"envesu-iso45001"}
+];
+var SERTIFIKA_BILGI={kurulus:"BBS Belgelendirme Eğitim ve Gözetim Hizmetleri A.Ş.", akreditasyon:"TÜRKAK · IAF", ilk:"13.01.2026", gecerlilik:"12.01.2029", kapsam:"Proje yönetimi, müşavirlik ve danışmanlık hizmetlerinin sunulması"};
+
 var FINANSORLAR=[
  {ad:"Avrupa Birliği", kisa:"AB", logo:"eu"},
  {ad:"Dünya Bankası", kisa:"WB", logo:"wb"},
@@ -1348,18 +1491,18 @@ var ISVERENLER=[
  {ad:"OYAK Enerji", kisa:"OYAK Enerji", tur:"Özel sektör", logo:"oyak-enerji"},
  {ad:"Halk GYO A.Ş.", kisa:"Halk GYO", tur:"Gayrimenkul", logo:"halkgyo"},
  {ad:"Sanayi ve Teknoloji Bakanlığı — Sanayi Bölgeleri Genel Müdürlüğü", kisa:"Sanayi ve Teknoloji Bakanlığı", tur:"Bakanlık", logo:"santek"},
- {ad:"Sağlık Bakanlığı", kisa:"Sağlık Bakanlığı", tur:"Bakanlık", logo:""},
+ {ad:"Sağlık Bakanlığı", kisa:"Sağlık Bakanlığı", tur:"Bakanlık", logo:"saglik"},
  {ad:"Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", kisa:"Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", tur:"Bakanlık", logo:"csidb"},
  {ad:"İller Bankası A.Ş.", kisa:"İLBANK", tur:"Kamu bankası", logo:"ilbank"},
  {ad:"İstanbul Proje Koordinasyon Birimi", kisa:"İPKB", tur:"Kamu kurumu", logo:"ipkb"},
  {ad:"İzmir Büyükşehir Belediyesi", kisa:"İzmir Büyükşehir Belediyesi", tur:"Belediye", logo:"izmirbb"},
  {ad:"İzmir Su ve Kanalizasyon İdaresi", kisa:"İZSU", tur:"Su idaresi", logo:"izsu"},
  {ad:"Hatay Su ve Kanalizasyon İdaresi", kisa:"HATSU", tur:"Su idaresi", logo:"hatsu"},
- {ad:"Kahramanmaraş Su ve Kanalizasyon İdaresi", kisa:"KASKİ", tur:"Su idaresi", logo:""},
+ {ad:"Kahramanmaraş Su ve Kanalizasyon İdaresi", kisa:"KASKİ", tur:"Su idaresi", logo:"kaski"},
  {ad:"Mersin Su ve Kanalizasyon İdaresi", kisa:"MESKİ", tur:"Su idaresi", logo:"meski"},
  {ad:"Erbaa Belediyesi", kisa:"Erbaa Belediyesi", tur:"Belediye", logo:"erbaa"},
  {ad:"Niksar Belediyesi", kisa:"Niksar Belediyesi", tur:"Belediye", logo:"niksar"},
- {ad:"Gebze Organize Sanayi Bölgesi", kisa:"GOSB", tur:"OSB", logo:""},
+ {ad:"Gebze Organize Sanayi Bölgesi", kisa:"GOSB", tur:"OSB", logo:"gosb"},
  {ad:"İzmir Atatürk Organize Sanayi Bölgesi", kisa:"İAOSB", tur:"OSB", logo:"iaosb"}
 ];
 </script>
@@ -1770,16 +1913,8 @@ $$("[data-map]").forEach(buildMap);
 })();
 
 /* ---------- Uzmanlık alanları: liste, menü, altbilgi ---------- */
-var peek=$("[data-peek]"), pim=$("img",peek), ptx=0,pty=0,pcx=0,pcy=0,praf=0;
-function ploop(){pcx+=(ptx-pcx)*.16;pcy+=(pty-pcy)*.16;peek.style.transform="translate("+pcx+"px,"+pcy+"px) translate(-50%,-50%)";praf=requestAnimationFrame(ploop)}
-function bindPeek(rows){ if(!FINE) return; rows.forEach(function(r){
-  r.addEventListener("mouseenter",function(e){pim.src="img/"+r.getAttribute("data-img")+".jpg";ptx=pcx=e.clientX+170;pty=pcy=e.clientY;peek.classList.add("on");if(!praf&&!RM)praf=requestAnimationFrame(ploop)});
-  r.addEventListener("mousemove",function(e){ptx=e.clientX+170;pty=e.clientY;if(RM){peek.style.transform="translate("+ptx+"px,"+pty+"px) translate(-50%,-50%)"}});
-  r.addEventListener("mouseleave",function(){peek.classList.remove("on");cancelAnimationFrame(praf);praf=0});
-})}
 $$("[data-svclist]").forEach(function(el){
   el.innerHTML=SL.map(function(s){return '<a class="srow" href="#hizmet-'+s.id+'" data-img="'+s.img+'" data-r><span class="mono">'+esc(phl(s))+'</span><h3>'+esc(s.name)+'</h3><p>'+esc(s.tag)+'</p><span class="go">'+AR+'</span></a>'}).join('');
-  bindPeek($$(".srow",el));
 });
 $$("[data-svcmenu]").forEach(function(el){el.innerHTML=SL.map(function(s){return '<a href="#hizmet-'+s.id+'"><b>'+esc(s.name)+'</b><span>'+esc(s.tag)+'</span></a>'}).join('')+'<a class="all" href="#hizmetler"><b>Tüm hizmetler →</b></a>'});
 $$("[data-svcfoot]").forEach(function(el){el.innerHTML=SL.map(function(s){return '<li><a href="#hizmet-'+s.id+'">'+esc(s.name)+'</a></li>'}).join('')});
@@ -1795,14 +1930,18 @@ function renderService(s){
   $("[data-svc]").innerHTML=
   '<section class="ph"><div class="ph-bg"><img src="img/'+s.img+'.jpg" alt=""></div><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEa")+'</span><div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hizmetler">Hizmetler</a></p><h1 tabindex="-1">'+esc(s.name)+'</h1><p class="sub">'+esc(s.tag)+'</p></div></section>'+
   '<section class="sec"><div class="wrap cols"><div style="display:grid;gap:22px"><p class="kicker" data-r>Ne yapıyoruz</p><p class="quote" data-r>'+esc(s.intro)+'</p></div><div style="display:grid;gap:18px" data-r><p class="kicker">Verdiğimiz hizmetler</p><ul class="capl">'+s.del.map(function(d){return '<li><span>—</span>'+esc(d)+'</li>'}).join('')+'</ul></div></div></section>'+
-  '<section class="sec mist tight"><div class="wrap" style="display:grid;gap:26px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><ol class="phs" data-r>'+PHN.map(function(n,k){return '<li class="'+(s.ph.indexOf(k)>-1?'on':'')+'"><span class="mono">'+("0"+(k+1)).slice(-2)+'</span>'+esc(n)+'</li>'}).join('')+'</ol><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. <a class="link" href="#hizmetler">Tüm hizmetler</a></p></div></section>'+
-  '<section class="sec"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Referanslar</p><h2 class="h2" data-r>Bu hizmeti verdiğimiz projeler.</h2></div><a class="link" href="#referanslar-'+s.id+'">Referanslar sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm referansları göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
+  '<section class="sec mist"><div class="wrap"><div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><h2 class="h2" data-r>'+esc(s.name)+', döngünün neresinde?</h2></div><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. <a class="link" href="#hizmetler">Tüm hizmetler</a></p></div><div data-flow-svc></div></div></section>'+
+  '<section class="sec"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Referanslar</p><h2 class="h2" data-r>'+esc(s.name)+' referanslarımız.</h2></div><a class="link" href="#referanslar-'+s.id+'">Referanslar sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm referansları göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
   '<section class="night"><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEb")+'</span><div class="wrap"><a class="nextarea" href="#hizmet-'+nx.id+'"><span style="display:grid;gap:14px"><span class="mono">Sonraki hizmet</span><h2>'+esc(nx.name)+'</h2></span><span class="go">'+AR+'</span></a></div></section>';
+  buildFlow($("[data-flow-svc]"),PHASES.map(function(p){return {t:p.t,d:p.d,s:p.s}}),{mode:"svc",active:s.ph,svc:s.name});
   var g=$("[data-svcgrid]"), more=$("[data-more]");
   if(more){g.classList.add("clip");more.addEventListener("click",function(){g.classList.remove("clip");more.parentNode.remove()})}
 }
 
 /* ---------- Başkanın mesajı ve makaleler ---------- */
+var AYLAR=["ocak","şubat","mart","nisan","mayıs","haziran","temmuz","ağustos","eylül","ekim","kasım","aralık"];
+function aKey(a){var p=(a.tarih||"").toLocaleLowerCase("tr").split(/\s+/);return (parseInt(p[1],10)||0)*12+Math.max(0,AYLAR.indexOf(p[0]))}
+MAKALELER.forEach(function(a,i){a._i=i}); MAKALELER.sort(function(x,y){return aKey(y)-aKey(x)||x._i-y._i});
 function blocks(g){return g.map(function(b){
   if(b[0]==="h")return '<h2>'+esc(b[1])+'</h2>';
   if(b[0]==="q")return '<blockquote>'+esc(b[1])+'</blockquote>';
@@ -1852,11 +1991,87 @@ window.addEventListener("scroll",readProg,{passive:true});
 
 /* ---------- Akan yazı ---------- */
 $$("[data-marquee]").forEach(function(el){
-  var a=DONORS.map(function(d){return '<span>'+esc(d[1])+'</span>'}).join('');
-  var cl=["İLBANK","OYAK İnşaat","Sanayi ve Teknoloji Bakanlığı","Çevre, Şehircilik ve İklim Değişikliği Bakanlığı","Sağlık Bakanlığı","Milli Eğitim Bakanlığı","DSİ","İZSU","İzmir Büyükşehir Belediyesi","GOSB","İAOSB","HEKTAŞ","TAMEK","SAGRA","Halk GYO","İPKB"];
-  var b=cl.map(function(c){return '<span>'+esc(c)+'</span>'}).join('');
-  el.innerHTML='<div class="mq">'+a+a+'</div><div class="mq rev">'+b+b+'</div>';
+  function row(L){return L.map(function(o){return o.logo?'<span class="mql" title="'+esc(o.ad)+'"><img src="img/logo/'+o.logo+'.png" alt="'+esc(o.ad)+'" loading="lazy"></span>':'<span class="mql t">'+esc(o.kisa)+'</span>'}).join('')}
+  var a=row(FINANSORLAR), b=row(ISVERENLER);
+  el.innerHTML='<div class="mq lg">'+a+a+a+'</div><div class="mq lg rev">'+b+b+'</div>';
 });
+
+
+/* ---------- Akış bileşeni (teslim aşamaları, hizmet yaşam döngüsü) ---------- */
+function buildFlow(host,items,o){
+  if(!host) return;
+  var N=items.length,W=1000,H=240,X0=64,X1=936,act=o.active||[],svc=o.mode==="svc";
+  var pts=items.map(function(_,i){return [X0+i*(X1-X0)/(N-1),i%2?158:86]});
+  function seg(i){var a=pts[i],b=pts[i+1],dx=(b[0]-a[0])*.5;return "M"+a[0]+" "+a[1]+"C"+(a[0]+dx)+" "+a[1]+","+(b[0]-dx)+" "+b[1]+","+b[0]+" "+b[1]}
+  function span(a,z){var d="M"+pts[a][0]+" "+pts[a][1];for(var k=a;k<z;k++)d+=seg(k).replace(/^M[^C]+/,"");return d}
+  var base="",fill="";for(var k=0;k<N-1;k++){base+='<path class="fb" d="'+seg(k)+'"/>';fill+='<path class="ff" pathLength="1" d="'+seg(k)+'"/>'}
+  var a0=act.length?Math.min.apply(null,act):0,a1=act.length?Math.max.apply(null,act):0;
+  host.innerHTML='<div class="flw flw-'+o.mode+'"><div class="flw-scroll"><div class="flw-stage"><svg viewBox="0 0 '+W+' '+H+'" aria-hidden="true">'+base+'<path class="fs" d="'+span(0,N-1)+'"/>'+fill+'<path class="fspan" d="'+span(a0,Math.max(a1,a0))+'"/></svg>'+
+    items.map(function(it,i){var p=pts[i];return '<button type="button" class="fn'+(act.indexOf(i)>-1?' act':'')+(i%2?' lo':' hi')+'" style="left:'+(p[0]/W*100).toFixed(2)+'%;top:'+(p[1]/H*100).toFixed(2)+'%" data-i="'+i+'" aria-label="'+esc(it.t)+'"><i>'+("0"+(i+1)).slice(-2)+'</i><b>'+esc(it.t)+'</b></button>'}).join('')+
+    '<span class="fdot"></span></div></div><div class="flw-body" aria-live="polite"></div>'+
+    (svc?'':'<div class="flw-ctrl"><button type="button" data-prev aria-label="Önceki aşama"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 8H3M7 4L3 8l4 4"/></svg></button><span class="flw-prog"><i></i></span><button type="button" data-next aria-label="Sonraki aşama">'+AR+'</button><span class="mono flw-n"></span></div>')+'</div>';
+  var root=$(".flw",host),sc=$(".flw-scroll",host),ns=$$(".fn",host),fl=$$(".ff",host),dot=$(".fdot",host),body=$(".flw-body",host),sp=$(".fspan",host),cur=-1,t=null,raf=0,vis=false,hov=false;
+  fl.forEach(function(p,k){p.style.strokeDasharray="1";p.style.strokeDashoffset=svc&&act.indexOf(k)>-1&&act.indexOf(k+1)>-1?"0":"1"});
+  function place(x,y){dot.style.left=(x/W*100)+"%";dot.style.top=(y/H*100)+"%"}
+  function travel(path,ms,loop){cancelAnimationFrame(raf);var L=path.getTotalLength();if(!L||RM){var e=path.getPointAtLength(L||0);place(e.x,e.y);return}var t0=performance.now();
+    (function f(now){var q=Math.min(1,(now-t0)/ms),e2=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2,pt=path.getPointAtLength(L*e2);place(pt.x,pt.y);if(q<1)raf=requestAnimationFrame(f);else if(loop){t0=performance.now()+500;raf=requestAnimationFrame(function g(n){if(n<t0){raf=requestAnimationFrame(g);return}t0=n;raf=requestAnimationFrame(f)})}})(t0)}
+  function set(i,user){
+    if(i===cur)return; var prev=cur; cur=i;
+    ns.forEach(function(n,j){n.classList.toggle("on",j===i);if(!svc)n.classList.toggle("done",j<i);n.setAttribute("aria-pressed",j===i?"true":"false")});
+    if(!svc){fl.forEach(function(p,k){p.style.strokeDashoffset=k<i?"0":"1"});
+      if(i>0&&prev===i-1){dot.classList.add("mv");travel(fl[i-1],900);clearTimeout(dot._t);dot._t=setTimeout(function(){dot.classList.remove("mv")},950)}else{dot.classList.remove("mv");place(pts[i][0],pts[i][1])}
+      $(".flw-n",host).textContent=("0"+(i+1)).slice(-2)+" / "+("0"+N).slice(-2);
+      var pg=$(".flw-prog i",host);pg.style.animation="none";void pg.offsetWidth;pg.style.animation="";}
+    var it=items[i],on=act.indexOf(i)>-1;
+    body.innerHTML='<div class="fbh"><span class="mono">'+(svc?"Aşama ":"Adım ")+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(it.t)+'</h3>'+(svc?'<span class="ftag'+(on?' on':'')+'">'+(on?esc(o.svc)+' bu aşamada':'Diğer hizmetlerimizle')+'</span>':'')+'</div><div class="fbd"><p>'+esc(it.d)+'</p><div class="chips">'+it.s.map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';
+    body.classList.remove("swap");void body.offsetWidth;body.classList.add("swap");
+    if(sc.scrollWidth>sc.clientWidth+4){var n=ns[i];sc.scrollTo({left:n.offsetLeft-sc.clientWidth/2,behavior:RM||!user?"auto":"smooth"})}
+  }
+  function play(){clearInterval(t);if(svc||RM)return;t=setInterval(function(){if(!vis||hov||!host.offsetParent)return;set((cur+1)%N)},4500);root.classList.add("run")}
+  ns.forEach(function(n,i){n.addEventListener("click",function(){set(i,true);play()});if(FINE&&svc)n.addEventListener("mouseenter",function(){set(i,true)})});
+  if(!svc){$("[data-prev]",host).addEventListener("click",function(){set((cur-1+N)%N,true);play()});$("[data-next]",host).addEventListener("click",function(){set((cur+1)%N,true);play()});
+    root.addEventListener("mouseenter",function(){hov=true;root.classList.add("paused")});root.addEventListener("mouseleave",function(){hov=false;root.classList.remove("paused")});
+    if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;root.classList.toggle("vis",vis)},{threshold:.35}).observe(root);else vis=true;}
+  set(svc?(act.length?act[0]:0):0); play();
+  if(svc){if(a1>a0)travel(sp,1600+(a1-a0)*500,true);else{place(pts[a0][0],pts[a0][1]);dot.classList.add("pulse")}}
+}
+
+/* ---------- BIM animasyonu ---------- */
+(function(){
+  var host=$("[data-bim]"); if(!host) return;
+  var u=25,OX=290,OY=300;
+  function P(x,y,z){return [(OX+(x-y)*u*.866).toFixed(1),(OY+(x+y)*u*.5-z*u).toFixed(1)]}
+  function poly(ps,cls){return '<polygon class="'+cls+'" points="'+ps.map(function(p){return P(p[0],p[1],p[2]).join(",")}).join(" ")+'"/>'}
+  function line(a,b,cls,len){var p=P(a[0],a[1],a[2]),q=P(b[0],b[1],b[2]);return '<line class="'+cls+'" x1="'+p[0]+'" y1="'+p[1]+'" x2="'+q[0]+'" y2="'+q[1]+'"'+(len?' pathLength="1"':'')+'/>'}
+  function pl(ps,cls){return '<polyline class="'+cls+'" pathLength="1" points="'+ps.map(function(p){return P(p[0],p[1],p[2]).join(",")}).join(" ")+'"/>'}
+  var WX=6,WY=4,h=2.6,t=.22,s='';
+  // saha ve altyapı
+  s+='<g class="g-site">';for(var i=-2;i<=8;i++)s+=line([i,-2,0],[i,6,0],"grid");for(var j=-2;j<=6;j++)s+=line([-2,j,0],[8,j,0],"grid");
+  s+=pl([[-2,5.2,0],[3,5.2,0],[3,4.4,0]],"infra")+pl([[8,-1,0],[7,-1,0],[7,3,0],[6.4,3,0]],"infra")+'<circle class="mh" cx="'+P(3,5.2,0)[0]+'" cy="'+P(3,5.2,0)[1]+'" r="5"/></g>';
+  // katlar
+  for(var f=0;f<3;f++){var z=f*h;s+='<g class="g-f" style="--k:'+f+'">'+poly([[0,0,z],[WX,0,z],[WX,WY,z],[0,WY,z]],"slab-t")+poly([[0,WY,z],[WX,WY,z],[WX,WY,z-t],[0,WY,z-t]],"slab-s")+poly([[WX,0,z],[WX,WY,z],[WX,WY,z-t],[WX,0,z-t]],"slab-s2");
+    [0,2,4,6].forEach(function(x){[0,2,4].forEach(function(y){s+=line([x,y,z],[x,y,z+h],"col")})});s+='</g>'}
+  s+='<g class="g-f" style="--k:3">'+poly([[0,0,3*h],[WX,0,3*h],[WX,WY,3*h],[0,WY,3*h]],"slab-t roof")+poly([[0,WY,3*h],[WX,WY,3*h],[WX,WY,3*h-t],[0,WY,3*h-t]],"slab-s")+poly([[WX,0,3*h],[WX,WY,3*h],[WX,WY,3*h-t],[WX,0,3*h-t]],"slab-s2")+'</g>';
+  // mimari cephe
+  s+='<g class="g-arc">';for(f=0;f<3;f++){z=f*h;s+=poly([[0,WY,z+.05],[WX,WY,z+.05],[WX,WY,z+h-t],[0,WY,z+h-t]],"glass")+poly([[WX,0,z+.05],[WX,WY,z+.05],[WX,WY,z+h-t],[WX,0,z+h-t]],"glass g2");
+    for(i=1;i<WX;i++)s+=line([i,WY,z],[i,WY,z+h-t],"mul");for(j=1;j<WY;j++)s+=line([WX,j,z],[WX,j,z+h-t],"mul")}s+='</g>';
+  // mekanik: kanal + proses borusu
+  s+='<g class="g-mep">';for(f=0;f<3;f++){z=f*h;s+=pl([[.4,1,z+h-.55],[5.2,1,z+h-.55],[5.2,1,z+h-.55]],"duct")+pl([[.4,3,z+.7],[3,3,z+.7],[3,1.6,z+.7],[5.6,1.6,z+.7]],"pipe")}
+  s+=pl([[5.2,1,.2],[5.2,1,3*h-.4]],"duct")+pl([[5.6,1.6,.1],[5.6,1.6,3*h-.4]],"pipe")+'</g>';
+  // elektrik
+  s+='<g class="g-ele">';for(f=0;f<3;f++){z=f*h;s+=pl([[.6,2.2,z+h-.35],[5.6,2.2,z+h-.35]],"tray")}s+=pl([[.6,2.2,.15],[.6,2.2,3*h-.4]],"tray")+'</g>';
+  // çakışma
+  var C=P(3,1.6,h+.7);s+='<g class="g-clash"><circle class="cr" cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><circle class="cr2" cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><g class="ok"><circle cx="'+C[0]+'" cy="'+C[1]+'" r="11"/><path d="M'+(C[0]-5)+' '+C[1]+'l3.5 3.5 6.5-7"/></g></g>';
+  s+='<rect class="scan" x="40" y="0" width="520" height="2"/>';
+  var ST=[["Altyapı ve saha","Arazi, mevcut şebekeler ve altyapı bağlantıları modele işlenir."],["Statik","Taşıyıcı sistem; kolon, döşeme ve perde elemanları."],["Mimari","Kabuk, cephe ve iç düzen aynı modelde."],["Mekanik ve tesisat","HVAC kanalları ve proses borulama güzergâhları."],["Elektrik","Kablo tavaları, panolar ve aydınlatma."],["Çakışma kontrolü","Disiplinler arası çakışmalar sahaya çıkmadan çözülür."]];
+  host.innerHTML='<div class="bim-vis"><svg class="bim-svg" viewBox="30 70 540 420" role="img" aria-label="BIM modelinde disiplinlerin katman katman birleşmesi">'+s+'</svg><span class="bim-badge mono"><i></i>Tek model · 5 disiplin</span></div><div class="bim-side"><p class="kicker">Modelin kuruluşu</p><ol class="bim-steps">'+ST.map(function(x,i){return '<li data-s="'+(i+1)+'"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><div><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></div></li>'}).join('')+'</ol></div>';
+  var svg=$("svg",host),lis=$$(".bim-steps li",host),step=0,tm=null,vis=false;
+  function apply(){for(var k=1;k<=7;k++)svg.classList.toggle("s"+k,step>=k);lis.forEach(function(li,k){li.classList.toggle("on",k+1===Math.min(step,6));li.classList.toggle("done",k+1<step||step>=7)})}
+  function tick(){if(!vis)return;step++;if(step>9){step=0}apply()}
+  if(RM){step=7;apply();return}
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!tm){tm=setInterval(tick,1500)}if(!vis&&tm){clearInterval(tm);tm=null}},{threshold:.3}).observe(host);
+  lis.forEach(function(li,k){li.addEventListener("click",function(){step=k+1;apply()})});
+})();
 
 /* ---------- Kurumsal içerikler ---------- */
 $$("[data-clients]").forEach(function(el){el.innerHTML=CLIENTS.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
@@ -1867,6 +2082,18 @@ function ltile(o){
   return '<figure class="lt txt" title="'+esc(o.ad)+'"><span class="lt-im"><b class="'+(big?'big':'')+'">'+esc(o.kisa)+'</b></span><figcaption>'+(o.kisa!==o.ad?esc(o.ad):lab)+'</figcaption></figure>';
 }
 $$("[data-logos]").forEach(function(el){var L=el.getAttribute("data-logos")==="fin"?FINANSORLAR:ISVERENLER;el.innerHTML=L.map(ltile).join('')});
+$$("[data-certs]").forEach(function(el){
+  el.innerHTML=SERTIFIKALAR.map(function(x,i){var p=x.std.split(" ").pop();return '<article class="cert2" data-r style="--d:'+(i*.1)+'s"><button class="cert-im" type="button" data-zoom="img/cert/'+x.gorsel+'.jpg" aria-label="'+esc(x.std)+' belgesini büyüt"><img src="img/cert/'+x.gorsel+'.jpg" alt="'+esc(x.std)+' sertifikası" loading="lazy"><span class="zoom-ic">'+AR+'</span></button><div class="cert-tx"><span class="mono">'+esc(x.std.replace(" "+p,""))+'</span><b>'+esc(p)+'</b><h3>'+esc(x.ad)+'</h3><dl><div><dt>Belge no</dt><dd>'+esc(x.no)+'</dd></div><div><dt>Geçerlilik</dt><dd>'+esc(SERTIFIKA_BILGI.gecerlilik)+'</dd></div></dl><a class="link" href="doc/'+x.pdf+'.pdf" target="_blank" rel="noopener">PDF olarak açın</a></div></article>'}).join('');
+});
+$$("[data-certmeta]").forEach(function(el){el.innerHTML='Belgelendirme kuruluşu: <b>'+esc(SERTIFIKA_BILGI.kurulus)+'</b> ('+esc(SERTIFIKA_BILGI.akreditasyon)+') · İlk belge tarihi '+esc(SERTIFIKA_BILGI.ilk)+' · Kapsam: '+esc(SERTIFIKA_BILGI.kapsam)+'.'});
+/* Basit görsel büyütme */
+(function(){
+  var lb=document.createElement("div"); lb.className="lbx"; lb.hidden=true; lb.innerHTML='<button type="button" class="lbx-x" aria-label="Kapat">×</button><img alt="">'; document.getElementById("top").appendChild(lb);
+  var im=$("img",lb);
+  function close(){lb.hidden=true;document.documentElement.classList.remove("lbx-open")}
+  document.addEventListener("click",function(e){var t=e.target.closest?e.target.closest("[data-zoom]"):null; if(t){im.src=t.getAttribute("data-zoom");im.alt=t.getAttribute("aria-label")||"";lb.hidden=false;document.documentElement.classList.add("lbx-open");$(".lbx-x",lb).focus()} else if(!lb.hidden&&(e.target===lb||e.target.closest(".lbx-x"))) close()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!lb.hidden)close()});
+})();
 $$("[data-mgmt]").forEach(function(el){el.innerHTML=MGMT.map(function(m){return '<div data-r><dt style="font-family:var(--f-sans);font-size:1.08rem;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500;padding-top:0">'+esc(m)+'</dt><dd style="color:var(--ink-2)">'+esc(MGMT_D[m]||"")+'</dd></div>'}).join('')});
 $$("[data-experts]").forEach(function(el){el.innerHTML=EXPERTS.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
 $$("[data-qplan]").forEach(function(el){el.innerHTML=QPLAN.map(function(c){return '<li>'+esc(c)+'</li>'}).join('')});
@@ -1883,19 +2110,16 @@ $$("[data-flow]").forEach(function(el){el.innerHTML=WORKFLOW.map(function(w,i){r
 $$("[data-units]").forEach(function(el){
   var dots=''; UNITS.forEach(function(u,g){for(var i=0;i<u[3];i++)dots+='<i data-g="'+g+'" style="--g:'+u[2]+'"></i>'});
   el.innerHTML='<div class="dotgrid" data-r>'+dots+'</div><div class="ulegend" data-r>'+UNITS.map(function(u,g){return '<button type="button" data-g="'+g+'" style="--g:'+u[2]+'"><i></i><span><b>'+esc(u[0])+'</b>'+(u[1]?'<small>'+esc(u[1])+'</small>':'')+'</span><em>'+u[3]+'</em></button>'}).join('')+'</div>';
-  var grid=$(".dotgrid",el);
+  var grid=$(".dotgrid",el), leg=$(".ulegend",el);
+  function fitGrid(){var W=grid.clientWidth;if(!W)return;var one=getComputedStyle(el).gridTemplateColumns.split(" ").length<2,g=6,H=leg.offsetHeight,d=Math.floor((W-15*g)/16);if(!one&&H)d=Math.min(d,Math.floor((H-7*g)/8));grid.style.setProperty("--dot",d+"px");grid.style.height=one?"":H+"px"}
+  if(window.ResizeObserver){new ResizeObserver(fitGrid).observe(el)} window.addEventListener("resize",fitGrid); setTimeout(fitGrid,50);
   $$(".ulegend button",el).forEach(function(b){
     var on=function(){var g=b.getAttribute("data-g");grid.classList.add("hov");$$("i",grid).forEach(function(d){d.classList.toggle("sel",d.getAttribute("data-g")===g)})};
     var off=function(){grid.classList.remove("hov")};
     b.addEventListener("mouseenter",on);b.addEventListener("focus",on);b.addEventListener("mouseleave",off);b.addEventListener("blur",off);b.addEventListener("click",on);
   });
 });
-$$("[data-tl]").forEach(function(el){
-  el.innerHTML='<div class="tl" role="tablist">'+DELIVERY.map(function(d,i){return '<button type="button" role="tab" data-i="'+i+'" aria-selected="'+(i?'false':'true')+'"'+(i?'':' class="on"')+'><i>'+("0"+(i+1)).slice(-2)+'</i><b>'+esc(d[0])+'</b></button>'}).join('')+'</div><div class="tl-body" data-tlb></div>';
-  var body=$("[data-tlb]",el), bs=$$(".tl button",el);
-  function set(i){bs.forEach(function(b,j){b.classList.toggle("on",j===i);b.setAttribute("aria-selected",j===i?"true":"false")});var d=DELIVERY[i];body.innerHTML='<h3>'+esc(d[0])+'</h3><div style="display:grid;gap:16px"><p class="lede" style="font-size:1.1rem">'+esc(DEL_D[i])+'</p><div class="chips">'+d[1].map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';body.classList.remove("swap");void body.offsetWidth;body.classList.add("swap")}
-  bs.forEach(function(b,i){b.addEventListener("click",function(){set(i)})}); set(0);
-});
+$$("[data-flow-del]").forEach(function(el){buildFlow(el,DELIVERY.map(function(d,i){return {t:d[0],d:DEL_D[i],s:d[1]}}),{mode:"del"})});
 
 /* ---------- Referanslar ---------- */
 var PST=null, CURS=null, SECF=null;
@@ -2024,9 +2248,23 @@ document.addEventListener("click",function(e){
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,fb);else fb();
 });
 
+/* ---------- Özgeçmiş yükleme alanı ---------- */
+$$("[data-drop]").forEach(function(d){
+  var inp=$("input",d), nm=$("[data-cvname]",d), def=nm.textContent;
+  function show(){var f=inp.files&&inp.files[0];if(!f){nm.textContent=def;d.classList.remove("ok","bad");return}
+    var big=f.size>5*1024*1024, okx=/\.(pdf|docx?)$/i.test(f.name);
+    nm.textContent=f.name+" · "+(f.size/1048576).toFixed(1).replace(".",",")+" MB"+(big?" — dosya 5 MB'tan büyük":"")+(!okx?" — yalnız PDF veya Word":"");
+    d.classList.toggle("bad",big||!okx);d.classList.toggle("ok",!(big||!okx));
+    inp.setCustomValidity(big||!okx?"Geçersiz dosya":"")}
+  inp.addEventListener("change",show);
+  ["dragenter","dragover"].forEach(function(t){d.addEventListener(t,function(e){e.preventDefault();d.classList.add("over")})});
+  ["dragleave","drop"].forEach(function(t){d.addEventListener(t,function(e){e.preventDefault();d.classList.remove("over")})});
+  d.addEventListener("drop",function(e){if(e.dataTransfer&&e.dataTransfer.files.length){inp.files=e.dataTransfer.files;show()}});
+});
+
 /* ---------- Formlar: prototipte gönderim yok ---------- */
 $$("form").forEach(function(f){f.addEventListener("submit",function(e){
-  e.preventDefault(); var st=$("[data-form-status]",f), bad=$$("[required]",f).filter(function(i){return i.type==="checkbox"?!i.checked:!i.value.trim()});
+  e.preventDefault(); var st=$("[data-form-status]",f), bad=$$("[required]",f).filter(function(i){return i.type==="checkbox"?!i.checked:i.type==="file"?(!i.files||!i.files.length||!i.checkValidity()):!i.value.trim()});
   st.hidden=false;
   if(bad.length){st.textContent="Lütfen zorunlu alanları doldurun ve aydınlatma metni kutusunu işaretleyin.";bad[0].focus();return}
   st.textContent="Bu sayfa tasarım prototipidir; form henüz bir e-posta servisine bağlı değil ve iletiniz gönderilmedi. Bize info@envesu.com adresinden ulaşabilirsiniz.";
