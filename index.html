@@ -1356,6 +1356,23 @@ html.lbx-open{overflow:hidden}
 @media (max-width:600px){.et-it,.et-ph{grid-template-columns:40px minmax(0,1fr);gap:10px}}
 .et-cta .h3{line-height:1.3}
 .svc-bridge+.svc-what{padding-top:clamp(28px,3.5vw,48px)}
+
+.ya-intro{max-width:980px}
+.manifest-s{font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.45;font-weight:300;letter-spacing:-.005em;color:var(--ink)}
+.ya-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(32px,4vw,52px)}
+.ya-map a{display:grid;gap:8px;align-content:start;padding:20px 20px 22px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);text-decoration:none;color:var(--ink);transition:border-color .25s,transform .35s var(--ease)}
+.ya-map a:hover{border-color:var(--lime);transform:translateY(-2px)}
+.ya-map a.on{border-color:var(--lime)}
+.ya-map .mono{color:var(--brand-ink)}
+.ya-map b{font-weight:500;font-size:1.05rem;line-height:1.3}
+.ya-map small{color:var(--ink-3);font-size:.88rem;line-height:1.45}
+.ya-frame{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(36px,4.5vw,56px)}
+.ya-frame>div{display:grid;gap:10px;align-content:start;padding:22px;border-top:2px solid var(--lime);background:var(--card);border-radius:0 0 12px 12px}
+.ya-frame b{font-size:1.35rem;font-weight:400}
+.ya-frame p{color:var(--ink-2);font-size:.95rem;line-height:1.6}
+.ya-frame .mono{color:var(--ink-3)}
+@media (max-width:960px){.ya-map{grid-template-columns:repeat(2,minmax(0,1fr))}.ya-frame{grid-template-columns:1fr}}
+@media (max-width:560px){.ya-map{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1367,15 +1384,15 @@ html.lbx-open{overflow:hidden}
     <nav class="nav" id="nav" aria-label="Ana menü">
       <div class="dd" data-group="hakkimizda">
         <button type="button" aria-expanded="false">Hakkımızda <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a><a href="#hakkimizda-kalite"><b>Kalite</b></a><a href="#hakkimizda-etik"><b>Etik İlkelerimiz</b></a><a href="#hakkimizda-etik-bildirim"><b>Etik İhlal Bildirimi</b></a></div>
+        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a><a href="#hakkimizda-yonetim-sistemi"><b>Yönetim Sistemimiz</b></a><a href="#hakkimizda-etik"><b>Etik İlkelerimiz</b></a><a href="#hakkimizda-etik-bildirim"><b>Etik İhlal Bildirimi</b></a></div>
       </div>
       <div class="dd" data-group="hizmetler">
         <button type="button" aria-expanded="false">Hizmetler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
         <div class="dd-menu dd-wide" data-svcmenu></div>
       </div>
       <div class="dd" data-group="yaklasim">
-        <button type="button" aria-expanded="false">Çalışma Yöntemimiz <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#yaklasim"><b>Yaşam Döngüsü</b></a><a href="#yaklasim-yonetim"><b>Proje Yönetimi</b></a><a href="#yaklasim-ufk"><b>Finans Kuruluşları</b></a><a href="#yaklasim-dijital"><b>Dijital ve BIM</b></a><a href="#yaklasim-cevre"><b>Çevre ve Sosyal</b></a></div>
+        <button type="button" aria-expanded="false">Proje Yaklaşımımız <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="dd-menu"><a href="#yaklasim"><b>Proje Yaşam Döngüsü</b></a><a href="#yaklasim-yonetim"><b>Proje Yönetimi</b></a><a href="#yaklasim-ufk"><b>Uluslararası Proje ve Sözleşme Yönetimi</b></a><a href="#yaklasim-kalite"><b>Kalite ve Sürdürülebilirlik</b></a></div>
       </div>
       <div class="dd" data-group="projeler">
         <button type="button" aria-expanded="false">Projeler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
@@ -1432,7 +1449,7 @@ html.lbx-open{overflow:hidden}
       <p class="manifest" data-manifest style="margin-top:28px">İklim değişikliğinin yarattığı sorunlara, teknik açıdan sağlam ve çevreye duyarlı altyapılarla yanıt veriyoruz. Kamu kurumları, uluslararası finans kuruluşları ve özel sektör yatırımcıları için projeyi ilk fikirden işletmeye kadar zaman, maliyet ve kalite disipliniyle yönetiyoruz.</p>
       <div class="pillars">
         <div class="pillar" data-r><span class="mono">Sözleşme çerçevesi</span><span class="big">FIDIC · PRAG</span><p>Uluslararası finansmanlı projelerde tasarım ve denetim sorumluluklarını bu sözleşme çerçeveleri içinde yürütüyoruz.</p><a class="link" href="#yaklasim-ufk">Finans kuruluşlarıyla çalışma</a></div>
-        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#hakkimizda-kalite">Kalite ve sertifikalar</a></div>
+        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#hakkimizda-yonetim-sistemi">Kalite ve sertifikalar</a></div>
         <div class="pillar" data-r style="--d:.2s"><span class="mono">Dijital mühendislik</span><span class="big">130.000 m²+ BIM</span><p>Her disiplin tek modelde; sözleşme, ilerleme, maliyet ve doküman tek bulut platformunda.</p><a class="link" href="#yaklasim-dijital">Dijital mühendislik</a></div>
       </div>
     </div>
@@ -1527,43 +1544,46 @@ html.lbx-open{overflow:hidden}
 <!-- ================= YÖNTEM ================= -->
 <div class="view" data-view="yaklasim" hidden>
   <section class="ph"><div class="ph-bg"><img src="img/p09.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE3" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE3)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Çalışma Yöntemimiz</p>
-    <h1 tabindex="-1">Çalışma Yöntemimiz</h1>
-    <p class="sub">Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Bunları nasıl kurduğumuzu anlatıyoruz.</p>
+    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Proje Yaklaşımımız</p>
+    <h1 tabindex="-1">Proje Yaklaşımımız</h1>
+    <p class="sub">Fikirden işletmeye, bütünleşik mühendislik ve proje yönetimi.</p>
   </div></section>
 
-  <section class="sec" data-sec="dongu" data-title="Yaşam Döngüsü" data-sub="Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Fizibiliteden işletmeye her aşamada aynı sorumlulukla çalışıyoruz." data-img="p09"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Yaşam döngüsü</p><h2 class="h2" data-r>Altı aşama, kesintisiz sorumluluk.</h2></div>
-      <p class="lede" data-r>Planlamadan işletmeye her aşamada aynı ekip; bir aşamanın çıktısı, bir sonrakinin girdisi.</p></div>
+  <section class="sec" style="padding-bottom:clamp(36px,4.5vw,64px)" data-sec="dongu" data-title="Proje Yaklaşımımız" data-sub="Fikirden işletmeye, bütünleşik mühendislik ve proje yönetimi." data-img="p09"><div class="wrap">
+    <div class="ya-intro" data-r><p class="manifest-s">Projeleri yalnızca teknik çıktılar üzerinden değil; yaşam döngüsü, kaynak yönetimi, kalite, risk ve sürdürülebilirlik boyutlarıyla bir bütün olarak ele alıyoruz. Ulusal ve uluslararası standartlar doğrultusunda, yatırımın her aşamasında müşterilerimize mühendislik ve müşavirlik desteği sunuyoruz.</p></div>
+    <nav class="ya-map" aria-label="Proje yaklaşımımızın bölümleri">
+      <a class="on" href="#yaklasim" data-r><span class="mono">01</span><b>Proje yaşam döngüsü</b><small>Fikirden işletmeye bütünleşik yaklaşım</small></a>
+      <a href="#yaklasim-yonetim" data-r style="--d:.06s"><span class="mono">02</span><b>Proje yönetimi</b><small>Bütünleşik yönetim, ölçülebilir sonuçlar</small></a>
+      <a href="#yaklasim-ufk" data-r style="--d:.12s"><span class="mono">03</span><b>Uluslararası proje ve sözleşme yönetimi</b><small>Uluslararası standartlar ve finansman çerçeveleri</small></a>
+      <a href="#yaklasim-kalite" data-r style="--d:.18s"><span class="mono">04</span><b>Kalite ve sürdürülebilirlik</b><small>Her aşamada kalite, çevresel ve sosyal sorumluluk</small></a>
+    </nav>
+  </div></section>
+
+  <section class="sec mist" data-sec="dongu"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>01 · Proje yaşam döngüsü</p><h2 class="h2" data-r>Proje yaşam döngüsünün her aşamasında mühendislik desteği.</h2></div>
+      <p class="lede" data-r>İhtiyaç analizi ve fizibiliteden tasarım, ihale, yapım denetimi, kabul ve işletmeye kadar proje aşamaları arasındaki teknik ve yönetsel bütünlüğü sağlıyoruz; bir aşamanın çıktısı, bir sonrakinin girdisi olur.</p></div>
     <div class="lc" data-lc></div>
-  </div></section>
-
-  <section class="sec mist" data-sec="yonetim" data-title="Proje Yönetimi" data-sub="Kapsamdan riske dokuz yönetim alanını tek bir bütünleşik yapı içinde, tanımlı teslim aşamalarıyla yürütüyoruz." data-img="p04b"><div class="wrap">
-    <div class="cols">
-      <div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yönetimi</p><h2 class="h2" data-r>Dokuz yönetim alanı, tek bütünleşik yapı.</h2>
-        <div class="prose" data-r><p>Zaman, maliyet ve kalite etkilerini birlikte değerlendirir; kilometre taşlarını, riskleri ve önlemleri tanımlayarak uygulama öncesi ve sonrası dâhil proje süresi boyunca müşterilerimizi destekleriz.</p></div></div>
-      <div class="mw" data-r><div data-mgmtwheel></div><p class="mw-cap">Proje yaşam döngüsü boyunca bütünleşik dokuz temel yönetim alanı</p></div>
-    </div>
     <div style="margin-top:clamp(44px,5.5vw,72px)">
       <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje teslim aşamaları</p><h2 class="h2" data-r>Kamulaştırmadan kusur sorumluluk süresine.</h2></div><p class="lede" data-r>Bir köprü üzerinden: arazinin edinilmesi ve zeminin tanınmasından tasarım, ihale, yapım ve kabule kadar on aşama.</p></div>
       <div data-teslim data-r></div>
     </div>
   </div></section>
 
-  <section class="sec" data-sec="ufk" data-title="Finans Kuruluşları" data-sub="Uluslararası finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerine uygun çalışıyoruz." data-img="p12"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Uluslararası finans kuruluşları</p><h2 class="h2" data-r>UFK süreçlerine hâkimiz.</h2></div>
-      <p class="lede" data-r>Politika çerçevesinden kapanış raporuna kadar her adımda Proje Uygulama Birimlerine uygulama desteği veriyor; FIDIC ve PRAG çerçevelerinde çalışıyoruz.</p></div>
-    <div class="logos" data-logos="fin" data-r></div>
-    <div class="ucyc" data-ucyc data-r style="margin-top:44px"></div>
-    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
-      <div style="display:grid;gap:18px" data-r><p class="kicker">Nitelikli uzmanlarla hizmet</p><p class="lede">Finans kuruluşlarının satın alma kılavuzlarına uygun çalışan ekiplerimiz, projenin gerektirdiği uzmanlık profillerini bir araya getirir.</p></div>
+  <section class="sec" data-sec="yonetim" data-title="Proje Yönetimi" data-sub="Dokuz yönetim alanı, kapsama göre kurulan proje organizasyonu ve dijital koordinasyonla bütünleşik proje yönetimi." data-img="p04b"><div class="wrap">
+    <div class="cols">
+      <div style="display:grid;gap:22px"><p class="kicker" data-r>02 · Proje yönetimi</p><h2 class="h2" data-r>Bütünleşik proje yönetimi.</h2>
+        <div class="prose" data-r><p>Kapsam, zaman, maliyet, kalite, risk, kaynak ve paydaş yönetimini bir arada ele alarak projelerin planlanan hedefler doğrultusunda yürütülmesini destekliyoruz. Zaman, maliyet ve kalite etkilerini birlikte değerlendirir; kilometre taşlarını, riskleri ve önlemleri tanımlarız.</p></div></div>
+      <div class="mw" data-r><div data-mgmtwheel></div><p class="mw-cap">Proje yaşam döngüsü boyunca bütünleşik dokuz temel yönetim alanı</p></div>
+    </div>
+    <div class="cols" style="margin-top:clamp(44px,5.5vw,72px)">
+      <div style="display:grid;gap:18px" data-r><p class="kicker">Proje organizasyonu</p><h3 class="h3">Kapsama göre kurulan uzman kadro.</h3><p class="lede">Her proje için, kapsamın ve finans kuruluşlarının satın alma kılavuzlarının gerektirdiği uzmanlık profillerini bir araya getiren bir proje organizasyonu kuruyoruz.</p></div>
       <ul class="ticks two" data-experts data-r></ul>
     </div>
   </div></section>
 
-  <section class="sec" data-sec="dijital" data-title="Dijital ve BIM" data-sub="Tüm disiplinleri tek modelde buluşturan BIM ve bulut tabanlı proje yönetimi." data-img="p03"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Dijital mühendislik ve BIM</p><h2 class="h2" data-r>Tek model, her disiplin.</h2></div>
-      <p class="lede" data-r>Yapı Bilgi Modellemesi'ni tamamen bulut tabanlı bir yönetim platformuyla birleştiriyoruz; sözleşmeler, ilerleme, maliyetler ve dokümanlar FIDIC ile uyumlu tek bir sistemde.</p></div>
+  <section class="sec mist" data-sec="yonetim" id="dijital-koordinasyon"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Dijital proje koordinasyonu ve BIM</p><h2 class="h2" data-r>Tek model, her disiplin.</h2></div>
+      <p class="lede" data-r>Yapı Bilgi Modellemesi'ni bulut tabanlı bir proje yönetim platformuyla birleştiriyoruz; sözleşmeler, ilerleme, maliyetler ve dokümanlar FIDIC ile uyumlu tek bir sistemde izlenir.</p></div>
     <div class="bigfig" data-r>
       <div><b data-count="3">3</b><span>yıllık BIM deneyimi</span></div>
       <div><b><span data-count="130000">130.000</span><small>m²+</small></b><span>BIM referans alanı</span></div>
@@ -1587,9 +1607,30 @@ html.lbx-open{overflow:hidden}
     <div style="margin-top:clamp(40px,5vw,64px)"><p class="kicker" style="margin-bottom:28px">Dijital iş akışı</p><ol class="flow" data-flow></ol></div>
   </div></section>
 
-  <section class="sec mist" data-sec="cevre" data-title="Çevre ve Sosyal" data-sub="Çevresel ve sosyal etkileri tasarımdan sahaya kadar yönetiyoruz." data-img="p25"><div class="wrap cols r">
+  <section class="sec" data-sec="ufk" data-title="Uluslararası Proje ve Sözleşme Yönetimi" data-sub="Uluslararası finans kuruluşlarının gerekliliklerine uygun proje uygulama, ihale, sözleşme yönetimi ve raporlama." data-img="p12"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>03 · Uluslararası proje ve sözleşme yönetimi</p><h2 class="h2" data-r>Uluslararası finansmanlı projelerde uygulama deneyimi.</h2></div>
+      <p class="lede" data-r>Dünya Bankası, Avrupa Birliği ve diğer uluslararası finans kuruluşlarının gerekliliklerine uygun proje uygulama, ihale, sözleşme yönetimi ve raporlama süreçlerinde hizmet sunuyor; politika çerçevesinden kapanış raporuna kadar Proje Uygulama Birimlerine destek veriyoruz.</p></div>
+    <div class="logos" data-logos="fin" data-r></div>
+    <div class="ucyc" data-ucyc data-r style="margin-top:44px"></div>
+    <div class="ya-frame" data-r>
+      <div><span class="mono">Sözleşme çerçevesi</span><b>FIDIC</b><p>Uluslararası finansmanlı projelerde tasarım, müşavirlik ve denetim sorumluluklarımızı FIDIC sözleşme koşulları çerçevesinde yürütüyoruz.</p></div>
+      <div><span class="mono">AB dış yardımları</span><b>PRAG</b><p>Avrupa Birliği finansmanlı projelerde AB'nin dış eylemlere ilişkin sözleşme usulleri rehberine (PRAG) uygun çalışıyoruz.</p></div>
+      <div><span class="mono">Finans kuruluşu kılavuzları</span><b>Satın alma ve raporlama</b><p>Finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerini proje döngüsünün her adımında uyguluyoruz.</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec" data-sec="kalite" data-title="Kalite ve Sürdürülebilirlik" data-sub="Her projeye özel Kalite Planı ve projelerin çevresel ve sosyal yönetimi." data-img="p25"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>04 · Kalite ve sürdürülebilirlik</p><h2 class="h2" data-r>Her aşamada kalite, çevresel ve sosyal sorumluluk.</h2></div>
+      <p class="lede" data-r>Proje bazlı kalite planlarımız ve çevresel-sosyal yönetim yaklaşımımızla projelerin teknik ve sürdürülebilirlik hedeflerini gözetiyoruz.</p></div>
+    <div class="cols">
+      <div style="display:grid;gap:18px;align-content:start" data-r><p class="kicker">Proje Kalite Planı</p><div class="prose"><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve entegre yönetim sistemimizin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div><p><a class="link" href="#hakkimizda-yonetim-sistemi">Entegre yönetim sistemimiz ve ISO belgelerimiz</a></p></div>
+      <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
+    </div>
+  </div></section>
+
+  <section class="sec mist" data-sec="kalite" id="cevresel-sosyal"><div class="wrap cols r">
     <div style="display:grid;gap:34px">
-      <div style="display:grid;gap:22px"><p class="kicker" data-r>Çevre ve sosyal politika</p><h2 class="h2" data-r>Yapıların ötesinde, daha güçlü topluluklar.</h2></div>
+      <div style="display:grid;gap:22px"><p class="kicker" data-r>Projelerin çevresel ve sosyal yönetimi</p><h2 class="h2" data-r>Yapıların ötesinde, daha güçlü topluluklar.</h2></div>
       <p class="lede" data-r>Alınan derslere dayanarak yalnızca teknik tasarım çözümlerini değil; ekonomik, çevresel ve sosyal etkileri de birlikte ele alıyoruz.</p>
       <dl class="facts" style="margin:0" data-r>
         <div><dt>Teknik etkiler</dt><dd>Her türlü afete dayanıklı inşaat teknolojisi ve yapıların sağlamlığı</dd></div>
@@ -1605,33 +1646,7 @@ html.lbx-open{overflow:hidden}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="cevre"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Çevre yönetim planımız</p><h2 class="h2" data-r>Kendi ofislerimizde de aynı disiplin.</h2></div><p class="lede" data-r>Merkez ofisimizde ve proje ofislerimizde çevresel etkileri ISO 14001 ve ulusal mevzuata uygun bir çevre yönetim planıyla yönetiyor, hedeflerimizi her yıl gözden geçiriyoruz.</p></div>
-    <div class="eg-grid">
-      <div class="eg" data-r><span class="mono">Hedef 01</span><b class="eg-big">Enerji</b><h3>Enerji verimliliği</h3><p>Enerji tüketim yoğunluğunu azaltmak için verimlilik uygulamalarını yaygınlaştırmak ve her yıl ölçülebilir bir iyileşme sağlamak.</p></div>
-      <div class="eg" data-r style="--d:.08s"><span class="mono">Hedef 02</span><b class="eg-big">%10</b><h3>Tehlikeli atık azaltımı</h3><p>Tehlikeli atık miktarını 3 yıl içinde %10 azaltmak ve bu seviyeyi korumak.</p></div>
-      <div class="eg" data-r style="--d:.16s"><span class="mono">Hedef 03</span><b class="eg-big">Su</b><h3>Su koruma</h3><p>Ofiste su israfını önlemek, suyun verimli kullanımını sağlamak ve çalışanları bu konuda bilinçlendirmek.</p></div>
-    </div>
-    <div class="cy-wrap">
-      <div class="cyc" data-cevrecyc data-r></div>
-      <div style="display:grid;gap:26px;align-content:start" data-r>
-        <p class="kicker">Atık yönetim süreci</p>
-        <ol class="wflow">
-          <li><span class="mono">01</span><b>Kaynakta ayrıştırma</b><small>Kâğıt, plastik, cam, metal ve organik atıklar; tehlikeli atıklar (toner, elektronik) ayrı kapta.</small></li>
-          <li><span class="mono">02</span><b>Geçici depolama</b><small>Ofiste ayrılmış alanlarda; tehlikeli atıklar uygun konteynerlerde.</small></li>
-          <li><span class="mono">03</span><b>Lisanslı taşıma</b><small>Lisanslı firmalarla, yasal belgeleri doldurularak kayıt altında.</small></li>
-          <li><span class="mono">04</span><b>Bertaraf ve geri dönüşüm</b><small>Tehlikeli atıklar çevreye zarar vermeden bertaraf; tehlikesizler geri dönüşüme.</small></li>
-        </ol>
-        <div class="doclist"><a href="doc/envesu-cevre-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Yönetim Planı</b><small>ENV-MRKZ-CVR-PL-01 · PDF</small></span></a><a href="doc/envesu-cevre-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Politikası</b><small>PDF</small></span></a></div>
-      </div>
-    </div>
-  </div></section>
 
-  <section class="sec mist" data-sec="cevre"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>İş sağlığı ve güvenliği yönetim planımız</p><h2 class="h2" data-r>Önce insan: sıfır kaza, sıfır meslek hastalığı.</h2></div><p class="lede" data-r>Merkez ofislerimizde ISO 45001 ve 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na göre çalışıyor; sahada her proje için kapsamına ve tehlike sınıfına uygun ayrı bir İSG planı hazırlıyoruz.</p></div>
-    <div class="isg-grid" data-isg></div>
-    <div class="doclist" style="margin-top:28px" data-r><a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İş Sağlığı ve Güvenliği Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a><a href="doc/envesu-isg-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Politikası</b><small>PDF</small></span></a></div>
-  </div></section>
   <div data-pager></div>
 </div>
 
@@ -1681,19 +1696,42 @@ html.lbx-open{overflow:hidden}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="kalite" data-title="Kalite" data-sub="ISO 9001, 14001 ve 45001 entegre yönetim sistemi ve her proje için ayrı bir Kalite Planı." data-img="h3"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Kalite</p><h2 class="h2" data-r>Her proje için ayrı bir Kalite Planı.</h2></div>
-      <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
+  <section class="sec" data-sec="yonetim-sistemi" data-title="Yönetim Sistemimiz" data-sub="Kendi organizasyonumuzu yönettiğimiz entegre yönetim sistemi: ISO belgelerimiz, politikalarımız, çevre ve iş sağlığı-güvenliği yönetim planlarımız." data-img="h3"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Entegre yönetim sistemi</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği tek sistemde.</h2></div>
+      <p class="lede" data-r>Entegre yönetim sistemimiz ISO 9001, ISO 14001 ve ISO 45001 standartlarına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur. Projelerde uyguladığımız Kalite Planları bu sistemin prosedürlerine dayanır.</p></div>
     <div class="certs" data-certs></div>
     <p class="cert-meta" data-certmeta data-r></p>
-    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
-      <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
-      <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
-    </div>
     <div class="sec-head split" style="margin-top:clamp(44px,5.5vw,72px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
     <div class="pol" data-pol data-r></div>
   </div></section>
 
+  <section class="sec mist" data-sec="yonetim-sistemi"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Çevre yönetim planımız</p><h2 class="h2" data-r>Ofislerimizde çevresel etkilerin yönetimi.</h2></div><p class="lede" data-r>Merkez ofisimizde ve proje ofislerimizde çevresel etkileri ISO 14001 ve ulusal mevzuata uygun bir çevre yönetim planıyla yönetiyor, hedeflerimizi her yıl gözden geçiriyoruz.</p></div>
+    <div class="eg-grid">
+      <div class="eg" data-r><span class="mono">Hedef 01</span><b class="eg-big">Enerji</b><h3>Enerji verimliliği</h3><p>Enerji tüketim yoğunluğunu azaltmak için verimlilik uygulamalarını yaygınlaştırmak ve her yıl ölçülebilir bir iyileşme sağlamak.</p></div>
+      <div class="eg" data-r style="--d:.08s"><span class="mono">Hedef 02</span><b class="eg-big">%10</b><h3>Tehlikeli atık azaltımı</h3><p>Tehlikeli atık miktarını 3 yıl içinde %10 azaltmak ve bu seviyeyi korumak.</p></div>
+      <div class="eg" data-r style="--d:.16s"><span class="mono">Hedef 03</span><b class="eg-big">Su</b><h3>Su koruma</h3><p>Ofiste su israfını önlemek, suyun verimli kullanımını sağlamak ve çalışanları bu konuda bilinçlendirmek.</p></div>
+    </div>
+    <div class="cy-wrap">
+      <div class="cyc" data-cevrecyc data-r></div>
+      <div style="display:grid;gap:26px;align-content:start" data-r>
+        <p class="kicker">Atık yönetim süreci</p>
+        <ol class="wflow">
+          <li><span class="mono">01</span><b>Kaynakta ayrıştırma</b><small>Kâğıt, plastik, cam, metal ve organik atıklar; tehlikeli atıklar (toner, elektronik) ayrı kapta.</small></li>
+          <li><span class="mono">02</span><b>Geçici depolama</b><small>Ofiste ayrılmış alanlarda; tehlikeli atıklar uygun konteynerlerde.</small></li>
+          <li><span class="mono">03</span><b>Lisanslı taşıma</b><small>Lisanslı firmalarla, yasal belgeleri doldurularak kayıt altında.</small></li>
+          <li><span class="mono">04</span><b>Bertaraf ve geri dönüşüm</b><small>Tehlikeli atıklar çevreye zarar vermeden bertaraf; tehlikesizler geri dönüşüme.</small></li>
+        </ol>
+        <div class="doclist"><a href="doc/envesu-cevre-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Yönetim Planı</b><small>ENV-MRKZ-CVR-PL-01 · PDF</small></span></a><a href="doc/envesu-cevre-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Politikası</b><small>PDF</small></span></a></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec" data-sec="yonetim-sistemi"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>İş sağlığı ve güvenliği yönetim planımız</p><h2 class="h2" data-r>İş sağlığı ve güvenliğinde önleyici yaklaşım.</h2></div><p class="lede" data-r>Merkez ofislerimizde ISO 45001 ve 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na göre çalışıyor; sahada her proje için kapsamına ve tehlike sınıfına uygun ayrı bir İSG planı hazırlıyoruz.</p></div>
+    <div class="isg-grid" data-isg></div>
+    <div class="doclist" style="margin-top:28px" data-r><a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İş Sağlığı ve Güvenliği Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a><a href="doc/envesu-isg-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Politikası</b><small>PDF</small></span></a></div>
+  </div></section>
   <section class="sec" data-sec="etik" data-title="Etik İlkelerimiz" data-sub="Dürüstlük, tarafsızlık ve şeffaflık: tüm çalışanlarımızın uyduğu etik değerler, ilkeler ve uygulanabilir kurallar." data-img="h5"><div class="wrap et-doc">
     <aside class="et-toc" data-r>
       <p class="kicker">Bu sayfada</p>
@@ -1932,7 +1970,7 @@ html.lbx-open{overflow:hidden}
    LinkedIn şirket sayfası adresi girildiğinde menüde ve alt bilgide simge görünür. Boş bırakılırsa gizli kalır. */
 var LINKEDIN="https://www.linkedin.com/company/envesu/";
 
-/* ===== POLİTİKALAR (Çalışma Yöntemimiz › Kalite) =====
+/* ===== POLİTİKALAR (Hakkımızda › Yönetim Sistemimiz) =====
    ENVESU'nun onaylı Kalite, Çevre ve İSG politikalarının metni (kaynak: Numan Tüfekçi'nin 13.11.2026'da ilettiği PDF'ler).
    Metin değiştirilecekse PDF ile birlikte güncelleyin. Bloklar: ["p","paragraf"], ["ul",["madde",...]] */
 var POLITIKALAR=[
@@ -1981,7 +2019,7 @@ var ETIK_ILKELER=[
 var ETIK_TURLER=["Yolsuzluk / rüşvet","Ayrımcılık","Suistimal","Çevre, sağlık ve güvenlik","Menfaat çatışması","Şirket aleyhine işlemler","Müşteri / işveren ile ilişkiler","Taciz / mobbing","Gizlilik ihlali","Etik dışı davranış","Diğer"];
 var ETIK_EPOSTA="etik@envesu.com";
 
-/* ===== İSG YÖNETİM PLANI ÖZETİ (Çalışma Yöntemimiz › Çevre ve Sosyal) — kaynak: ENV-MRKZ-ISG-PL-01 Rev.00 ===== */
+/* ===== İSG YÖNETİM PLANI ÖZETİ (Hakkımızda › Yönetim Sistemimiz) — kaynak: ENV-MRKZ-ISG-PL-01 Rev.00 ===== */
 var ISG_OZET=[
  ["ISO 45001 ve 6331","Merkez ofislerde İSG uygulamaları ISO 45001 standardı ve yürürlükteki İSG mevzuatı esas alınarak yürütülür."],
  ["Projeye özel İSG planı","Geçici saha ofisleri için her projenin kapsamı, faaliyet konusu ve tehlike sınıfına göre ayrı İSG planı hazırlanır."],
@@ -2090,7 +2128,7 @@ var BEDELLER={
  "tfdmp":["48.000 USD","Projetaş–ENVESU ortak girişimi · 2 sözleşme"]
 };
 
-/* ===== KALİTE BELGELERİ (Çalışma Yöntemimiz › Kalite) =====
+/* ===== KALİTE BELGELERİ (Hakkımızda › Yönetim Sistemimiz) =====
    gorsel: img/cert/<ad>.jpg · pdf: doc/<ad>.pdf  — yenilendiğinde dosyaları değiştirip tarihleri güncelleyin. */
 var SERTIFIKALAR=[
  {std:"TS EN ISO 9001:2015", ad:"Kalite Yönetim Sistemi", no:"1414-01", gorsel:"iso9001", pdf:"envesu-iso9001"},
@@ -2855,7 +2893,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){$$("#nav .d
 document.addEventListener("click",function(e){if(!e.target.closest(".dd"))$$("#nav .dd").forEach(function(x){x.classList.remove("open")})});
 
 /* ---------- Alt sayfalar (menüden açılan bölümler) ---------- */
-var SUBBASE={yaklasim:"Çalışma Yöntemimiz",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
+var SUBBASE={yaklasim:"Proje Yaklaşımımız",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
 var SUBHASH={referanslar:"projeler"};
 function subKeys(v){var ks=[];$$("[data-sec]",v).forEach(function(x){var k=x.getAttribute("data-sec");if(ks.indexOf(k)<0)ks.push(k)});return ks}
 function subHref(view,k,i){var hb=SUBHASH[view]||view;return "#"+(i===0?hb:hb+"-"+k)}
@@ -2876,7 +2914,7 @@ function showSub(view,v,sec){
 
 /* ---------- Yönlendirme (yalın #ad) ---------- */
 var VIEWS=["anasayfa","hizmet","referanslar","proje","yaklasim","hakkimizda","baskan","makaleler","makale","kariyer","iletisim","kvkk"];
-var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["hakkimizda","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"hizmetler":["anasayfa","hizmetler"],"sektorler":["anasayfa","hizmetler"],"uzmanlik":["anasayfa","hizmetler"],"yaklasim-kalite":["hakkimizda","kalite"],"etik":["hakkimizda","etik"],"etik-bildirim":["hakkimizda","etik-bildirim"],"projeler":["referanslar",null]};
+var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["hakkimizda","yonetim-sistemi"],"hakkimizda-kalite":["hakkimizda","yonetim-sistemi"],"yaklasim-dijital":["yaklasim","yonetim","dijital-koordinasyon"],"yaklasim-cevre":["yaklasim","kalite","cevresel-sosyal"],"yaklasim-yasam-dongusu":["yaklasim","dongu"],"dijital":["yaklasim","yonetim","dijital-koordinasyon"],"cevre-sosyal":["yaklasim","kalite","cevresel-sosyal"],"hizmetler":["anasayfa","hizmetler"],"sektorler":["anasayfa","hizmetler"],"uzmanlik":["anasayfa","hizmetler"],"etik":["hakkimizda","etik"],"etik-bildirim":["hakkimizda","etik-bildirim"],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"projeler",proje:"projeler",yaklasim:"yaklasim",hakkimizda:"hakkimizda",kariyer:"kariyer",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null, REFSEC=null;
 (function(){var si=$("[data-psearch]"),tm=null;if(si)si.addEventListener("input",function(){clearTimeout(tm);tm=setTimeout(function(){PQ=si.value;renderRefs(CURS)},120)});
@@ -2929,6 +2967,7 @@ function route(){
     if(!first){hd.classList.remove("hide");var h1=$("h1",v);if(h1&&!sec){try{h1.focus({preventScroll:true})}catch(e){}}}
   }
   if(!back&&(h==="hakkimizda-ekip"||h==="insan-kaynagi")){var ek=$("#ekibimiz");if(ek)requestAnimationFrame(function(){ek.scrollIntoView()})}
+  if(!back&&ALIAS[h]&&ALIAS[h][2]){var ae=document.getElementById(ALIAS[h][2]);if(ae)requestAnimationFrame(function(){ae.scrollIntoView()})}
   observe(v);
   curView=view; curKey=hkey; first=false; onScroll(); readProg();
 }
