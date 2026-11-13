@@ -1124,6 +1124,19 @@ html.lbx-open{overflow:hidden}
 .map-foot.empty{display:none}
 .nav>a,.nav .dd>button{white-space:nowrap}
 @media (min-width:1021px) and (max-width:1180px){.nav>a,.nav .dd>button{padding:10px 9px;font-size:.94rem}.nav>a::after,.nav .dd>button::after{left:9px;right:9px}}
+/* v21 hizmet köprüsü bağlantıları */
+.sb-rul > a{all:unset;cursor:pointer;position:relative;display:grid;gap:4px;align-content:start;padding:14px 14px 14px;border-left:1px solid var(--line);transition:background .25s}
+.sb-rul > a:first-child{border-left:0}
+.sb-rul > a:hover{background:color-mix(in srgb,var(--ink) 5%,var(--paper))}
+.sb-rul > a:focus-visible{outline:2px solid var(--brand-ink);outline-offset:-2px}
+.sb-rul > a.on{background:color-mix(in srgb,var(--ink) 6%,var(--paper))}
+.sb-rul > a small{text-transform:none;letter-spacing:.02em}
+.sb-arr{position:absolute;right:12px;top:14px;width:14px;height:14px;color:var(--ink-3);transition:transform .3s var(--ease),color .25s}
+.sb-arr svg{width:14px;height:14px}
+.sb-rul > a:hover .sb-arr{transform:translateX(3px);color:var(--brand-ink)}
+.sb-rul > a b,.sb-rul > a small{padding-right:18px}
+.sb-sp:not(.act){cursor:pointer}
+.fbh .link{font-size:.92rem}
 </style>
 </head>
 <body>
@@ -2207,11 +2220,11 @@ function renderService(s){
   var i=SL.indexOf(s), nx=SL[(i+1)%SL.length], refs=s.ps;
   $("[data-svc]").innerHTML=
   '<section class="ph"><div class="ph-bg"><img src="img/'+s.img+'.jpg" alt=""></div><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEa")+'</span><div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hizmetler">Hizmetler</a></p><h1 tabindex="-1">'+esc(s.name)+'</h1><p class="sub">'+esc(s.tag)+'</p></div></section>'+
+  '<section class="sec mist"><div class="wrap"><div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><h2 class="h2" data-r>'+esc(s.name)+', döngünün neresinde?</h2></div><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. Köprüde başka bir aşamaya tıklayarak o hizmetin sayfasına geçebilirsiniz.</p></div><div data-flow-svc></div></div></section>'+
   '<section class="sec"><div class="wrap cols"><div style="display:grid;gap:22px"><p class="kicker" data-r>Ne yapıyoruz</p><p class="quote" data-r>'+esc(s.intro)+'</p></div><div style="display:grid;gap:18px" data-r><p class="kicker">Verdiğimiz hizmetler</p><ul class="capl">'+s.del.map(function(d){return '<li><span>—</span>'+esc(d)+'</li>'}).join('')+'</ul></div></div></section>'+
-  '<section class="sec mist"><div class="wrap"><div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><h2 class="h2" data-r>'+esc(s.name)+', döngünün neresinde?</h2></div><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. <a class="link" href="#hizmetler">Tüm hizmetler</a></p></div><div data-flow-svc></div></div></section>'+
   '<section class="sec"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Projeler</p><h2 class="h2" data-r>'+esc(s.name)+' referanslarımız.</h2></div><a class="link" href="#projeler-'+s.id+'">Projeler sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm projeleri göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
   '<section class="night"><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEb")+'</span><div class="wrap"><a class="nextarea" href="#hizmet-'+nx.id+'"><span style="display:grid;gap:14px"><span class="mono">Sonraki hizmet</span><h2>'+esc(nx.name)+'</h2></span><span class="go">'+AR+'</span></a></div></section>';
-  buildSvcBridge($("[data-flow-svc]"),PHASES.map(function(p){return {t:p.t,d:p.d,s:p.s}}),{active:s.ph,svc:s.name});
+  buildSvcBridge($("[data-flow-svc]"),PHASES.map(function(p){return {t:p.t,d:p.d,s:p.s}}),{active:s.ph,svc:s.name,go:PHASES.map(function(_,pi){return SL.filter(function(x){return x!==s&&x.ph.indexOf(pi)>-1})[0]||null})});
   var g=$("[data-svcgrid]"), more=$("[data-more]");
   if(more){g.classList.add("clip");more.addEventListener("click",function(){g.classList.remove("clip");more.parentNode.remove()})}
 }
@@ -2773,16 +2786,16 @@ function buildSvcBridge(host,items,o){
   for(var k=0;k<=N;k++){var px=X0+k*SW,on=act.indexOf(k-1)>-1||act.indexOf(k)>-1,end=k===0||k===N;
     s+=end?'<rect class="sb-abt'+(on?' act':'')+'" x="'+(k?px-6:px-30)+'" y="'+DY+'" width="36" height="'+(gnd(px)-DY+4).toFixed(1)+'"/>':'<rect class="sb-pier'+(on?' act':'')+'" x="'+(px-9)+'" y="'+DY+'" width="18" height="'+(gnd(px)-DY+6).toFixed(1)+'"/>'}
   s+='<g class="sb-car"><rect x="-14" y="-10" width="28" height="8" rx="3"/><rect x="-7" y="-15" width="14" height="6" rx="2"/></g></svg>';
-  host.innerHTML='<div class="sb"><div class="sb-scroll"><div class="sb-stage"><div class="sb-card">'+s+'</div><div class="sb-rul">'+items.map(function(it,i){var on=act.indexOf(i)>-1;return '<button type="button" data-i="'+i+'" class="'+(on?'act':'')+'"><small>'+("0"+(i+1)).slice(-2)+(on?' · '+esc(o.svc):'')+'</small><b>'+esc(it.t)+'</b></button>'}).join('')+'</div></div></div>'+
-    '<div class="sb-leg"><span><i class="lg-on"></i>'+esc(o.svc)+'</span><span><i class="lg-off"></i>Diğer hizmetlerimiz</span></div><div class="flw-body" aria-live="polite"></div></div>';
-  var sps=$$(".sb-sp",host),bs=$$(".sb-rul button",host),body=$(".flw-body",host),car=$(".sb-car",host),sc=$(".sb-scroll",host),cur=-1;
+  host.innerHTML='<div class="sb"><div class="sb-scroll"><div class="sb-stage"><div class="sb-card">'+s+'</div><div class="sb-rul">'+items.map(function(it,i){var on=act.indexOf(i)>-1,tg=(o.go||[])[i];if(!on&&tg)return '<a href="#hizmet-'+tg.id+'" data-i="'+i+'" class="go"><small>'+("0"+(i+1)).slice(-2)+' · '+esc(tg.name)+'</small><b>'+esc(it.t)+'</b><span class="sb-arr" aria-hidden="true">'+AR+'</span></a>';return '<button type="button" data-i="'+i+'" class="'+(on?'act':'')+'"><small>'+("0"+(i+1)).slice(-2)+(on?' · '+esc(o.svc):'')+'</small><b>'+esc(it.t)+'</b></button>'}).join('')+'</div></div></div>'+
+    '<div class="sb-leg"><span><i class="lg-on"></i>'+esc(o.svc)+'</span><span><i class="lg-off"></i>Diğer hizmetlerimiz · tıklayınca ilgili hizmete geçer</span></div><div class="flw-body" aria-live="polite"></div></div>';
+  var sps=$$(".sb-sp",host),bs=$$(".sb-rul > *",host),body=$(".flw-body",host),car=$(".sb-car",host),sc=$(".sb-scroll",host),cur=-1;
   function set(i,user){if(i===cur)return;cur=i;
     sps.forEach(function(g,j){g.classList.toggle("on",j===i)});bs.forEach(function(b,j){b.classList.toggle("on",j===i);b.setAttribute("aria-pressed",j===i)});
     var it=items[i],on=act.indexOf(i)>-1;
-    body.innerHTML='<div class="fbh"><span class="mono">Aşama '+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(it.t)+'</h3><span class="ftag'+(on?' on':'')+'">'+(on?esc(o.svc)+' bu aşamada':'Diğer hizmetlerimizle')+'</span></div><div class="fbd"><p>'+esc(it.d)+'</p><div class="chips">'+it.s.map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';
+    body.innerHTML='<div class="fbh"><span class="mono">Aşama '+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(it.t)+'</h3><span class="ftag'+(on?' on':'')+'">'+(on?esc(o.svc)+' bu aşamada':'Diğer hizmetlerimizle')+'</span>'+(!on&&(o.go||[])[i]?'<a class="link" href="#hizmet-'+o.go[i].id+'">'+esc(o.go[i].name)+' sayfasına git</a>':'')+'</div><div class="fbd"><p>'+esc(it.d)+'</p><div class="chips">'+it.s.map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';
     body.classList.remove("swap");void body.offsetWidth;body.classList.add("swap");
     if(user&&sc.scrollWidth>sc.clientWidth+4){var b=bs[i];sc.scrollTo({left:b.offsetLeft-sc.clientWidth/2+b.offsetWidth/2,behavior:"smooth"})}}
-  sps.concat(bs).forEach(function(el){var i=+el.getAttribute("data-i");el.addEventListener("click",function(){set(i,true)});if(FINE)el.addEventListener("mouseenter",function(){set(i)})});
+  sps.concat(bs).forEach(function(el){var i=+el.getAttribute("data-i");el.addEventListener("click",function(e){var tg=(o.go||[])[i];if(act.indexOf(i)<0&&tg){if(el.tagName!=="A")location.hash="#hizmet-"+tg.id;return}set(i,true)});if(FINE)el.addEventListener("mouseenter",function(){set(i)})});
   var a0=act.length?Math.min.apply(null,act):0,a1=act.length?Math.max.apply(null,act):0,xa=X0+a0*SW+16,xb=X0+(a1+1)*SW-16,raf=0,t0=0,vis=true;
   function frame(now){if(!t0)t0=now;var dur=2200+(a1-a0+1)*900,q=((now-t0)%(dur+700))/dur;q=Math.min(1,q);var e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;car.setAttribute("transform","translate("+(xa+(xb-xa)*e).toFixed(1)+" "+(DY-4)+")");if(vis)raf=requestAnimationFrame(frame)}
   if(RM){car.setAttribute("transform","translate("+((xa+xb)/2)+" "+(DY-4)+")")}else{
