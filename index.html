@@ -1470,6 +1470,63 @@ html.lbx-open{overflow:hidden}
 .ft-row .ft-contact ul{display:grid;gap:2px}
 @media (max-width:1060px){.ft-top.ft-row{grid-template-columns:1fr 1fr}.ft-row .ft-brand{grid-column:1/-1}.ft-row>div:nth-child(2),.ft-row .ft-contact{grid-column:1/-1}.ft-row .ft-contact ul{display:flex;flex-wrap:wrap;gap:4px 28px}}
 @media (max-width:640px){.ft-top.ft-row{grid-template-columns:1fr}.ft-offs{grid-template-columns:1fr}}
+
+.ya-frame{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ya-frame b{font-size:1.08rem;font-weight:500;line-height:1.3}
+.ya-frame .mono{color:var(--brand-ink)}
+.ya-split{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:clamp(36px,4.5vw,56px)}
+.ya-split>*{display:grid;gap:8px;align-content:start;padding:18px 20px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);text-decoration:none}
+.ya-split>div{border-top:2px solid var(--lime)}
+.ya-split a{transition:border-color .25s,transform .35s var(--ease)}
+.ya-split a:hover{border-color:var(--lime);transform:translateY(-2px)}
+.ya-split .mono{font-size:.66rem;color:var(--ink-3)}
+.ya-split b{font-weight:500}
+.ya-split p{color:var(--ink-2);font-size:.92rem;line-height:1.5}
+@media (max-width:1100px){.ya-frame,.ya-split{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.ya-frame,.ya-split{grid-template-columns:1fr}}
+.chk .req{color:var(--lime)}
+.chk .opt{font-style:normal;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-left:6px;white-space:nowrap}
+.chk-note{font-size:.86rem;color:var(--ink-3);margin-top:-4px}
+.lg-wrap{display:grid;grid-template-columns:minmax(200px,250px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.lg-nav{position:sticky;top:104px;display:grid;border-left:1px solid var(--line-2)}
+.lg-nav a,.lg-nav button{display:block;padding:9px 0 9px 16px;margin-left:-1px;border-left:2px solid transparent;color:var(--ink-3);text-decoration:none;font-size:.95rem;line-height:1.35;background:none;border-top:0;border-right:0;border-bottom:0;text-align:left;font:inherit;font-size:.95rem;cursor:pointer}
+.lg-nav a:hover,.lg-nav button:hover{color:var(--ink)}
+.lg-nav a.on{color:var(--ink);border-left-color:var(--lime)}
+.lg-nav .lg-ck{margin-top:14px;color:var(--brand-ink)}
+.legal{max-width:820px;display:grid;gap:16px;color:var(--ink-2);line-height:1.7}
+.legal h3{color:var(--ink);font-size:1.2rem;font-weight:500;margin-top:18px}
+.legal ul{display:grid;gap:6px;padding-left:20px;list-style:disc}
+.legal strong{color:var(--ink);font-weight:500}
+.lg-tw{overflow-x:auto;border:1px solid var(--line-2);border-radius:10px}
+.legal table{width:100%;border-collapse:collapse;font-size:.92rem;line-height:1.5}
+.legal th{text-align:left;font-weight:500;color:var(--ink);background:var(--mist);padding:10px 14px;border-bottom:1px solid var(--line-2)}
+.legal td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.legal tr:last-child td{border-bottom:0}
+mark.fill{background:rgba(252,220,62,.12);color:var(--sun);padding:0 4px;border-radius:3px}
+@media (max-width:900px){.lg-wrap{grid-template-columns:1fr}.lg-nav{position:static;display:flex;flex-wrap:wrap;gap:6px;border-left:0}.lg-nav a,.lg-nav button{border:1px solid var(--line-2);border-radius:999px;padding:6px 12px;font-size:.85rem;margin:0}.lg-nav a.on{border-color:var(--lime)}.lg-nav .lg-ck{margin-top:0}}
+.ft-ck{background:none;border:0;padding:0;font:inherit;color:var(--night-mute);cursor:pointer}
+.ft-ck:hover{color:#fff}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;max-width:980px;margin:0 auto;background:#10201a;color:var(--ink);border:1px solid var(--line-2);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);padding:20px 22px;display:grid;gap:16px}
+.ck[hidden]{display:none}
+.ck-main{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.ck-txt{flex:1 1 420px;display:grid;gap:6px}
+.ck-txt b{font-weight:500;font-size:1.05rem}
+.ck-txt p{font-size:.92rem;color:var(--ink-2);line-height:1.55}
+.ck-txt a{color:var(--brand-ink)}
+.ck-btns{display:flex;flex-wrap:wrap;gap:8px}
+.ck-btns button{min-width:136px;padding:10px 18px;border-radius:999px;border:1px solid var(--lime);background:transparent;color:var(--ink);font:inherit;font-size:.92rem;cursor:pointer;transition:background .2s,color .2s}
+.ck-btns button:hover{background:var(--lime);color:var(--on-lime)}
+.ck-pref{display:grid;gap:10px;border-top:1px solid var(--line-2);padding-top:14px}
+.ck-pref[hidden]{display:none}
+.ck-row{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.ck-row span{display:grid;gap:3px}
+.ck-row small{color:var(--ink-3);font-size:.85rem;line-height:1.45}
+.ck-row input{width:20px;height:20px;accent-color:var(--lime);flex:none}
+.ck-pref .ck-btns{justify-content:flex-end}
+.ck-on .totop{bottom:150px}
+@media (max-width:600px){.ck{left:8px;right:8px;bottom:8px;padding:16px}.ck-btns button{flex:1 1 30%;min-width:0;padding:10px 8px}}
+.chk input[type=checkbox]{width:18px;height:18px;min-width:18px;flex:none;margin-top:3px}
+@media (max-width:600px){.ck-btns button{font-size:.84rem;white-space:nowrap;padding:10px 6px}}
 </style>
 </head>
 <body>
@@ -1522,7 +1579,7 @@ html.lbx-open{overflow:hidden}
     <div class="wrap hero-in">
       <p class="kicker">Mühendislik · Müşavirlik · Proje Yönetimi</p>
       <h1 class="hero-title" tabindex="-1"><span class="ln"><span>Sürdürülebilir</span></span><span class="ln"><span>ve dayanıklı bir gelecek</span></span><span class="ln"><span>için <em>mühendislik.</em></span></span></h1>
-      <p class="hero-lead">Fizibiliteden tasarıma, ihaleden inşaat denetimine; uluslararası finans kuruluşlarının desteklediği su, enerji, endüstri ve ulaştırma projelerinde yaşam döngüsünün tamamını yönetiyoruz.</p>
+      <p class="hero-lead">Uluslararası finansmanlı su, enerji, endüstri ve ulaştırma projelerinde; fizibiliteden tasarıma, ihale süreçlerinden inşaat denetimine kadar proje yaşam döngüsünün her aşamasında mühendislik, müşavirlik ve proje yönetimi hizmetleri sunuyoruz.</p>
       <div class="btns">
         <a class="btn lime" href="#hizmetler">Hizmetlerimiz <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a>
         <a class="btn ghost" href="#projeler-harita">Proje Haritamız <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a>
@@ -1664,7 +1721,7 @@ html.lbx-open{overflow:hidden}
       <p class="lede" data-r>İhtiyaç analizi ve fizibiliteden tasarım, ihale, yapım denetimi, kabul ve işletmeye kadar proje aşamaları arasındaki teknik ve yönetsel bütünlüğü sağlıyoruz; bir aşamanın çıktısı, bir sonrakinin girdisi olur.</p></div>
     <div class="lc" data-lc></div>
     <div style="margin-top:clamp(44px,5.5vw,72px)">
-      <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje teslim aşamaları</p><h2 class="h2" data-r>Kamulaştırmadan kusur sorumluluk süresine.</h2></div><p class="lede" data-r>Bir köprü üzerinden: arazinin edinilmesi ve zeminin tanınmasından tasarım, ihale, yapım ve kabule kadar on aşama.</p></div>
+      <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje teslim aşamaları</p><h2 class="h2" data-r>Fikirden işletmeye: proje tesliminin tüm aşamaları.</h2></div><p class="lede" data-r>Bir köprü üzerinden: arazinin edinilmesi ve zeminin tanınmasından tasarım, ihale, yapım ve kabule kadar on aşama.</p></div>
       <div data-teslim data-r></div>
     </div>
   </div></section>
@@ -1683,7 +1740,7 @@ html.lbx-open{overflow:hidden}
 
   <section class="sec mist" data-sec="yonetim" id="dijital-koordinasyon"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Dijital proje koordinasyonu ve BIM</p><h2 class="h2" data-r>Tek model, her disiplin.</h2></div>
-      <p class="lede" data-r>Yapı Bilgi Modellemesi'ni bulut tabanlı bir proje yönetim platformuyla birleştiriyoruz; sözleşmeler, ilerleme, maliyetler ve dokümanlar FIDIC ile uyumlu tek bir sistemde izlenir.</p></div>
+      <p class="lede" data-r>Yapı Bilgi Modellemesi'ni (BIM) bulut tabanlı proje yönetim platformumuzla birlikte kullanıyoruz. Platformu FIDIC sözleşme yönetimi süreçleriyle entegre ederek sözleşme, ilerleme, maliyet ve dokümantasyon takibini tek bir dijital ortamda yürütüyoruz.</p></div>
     <div class="bigfig" data-r>
       <div><b data-count="3">3</b><span>yıllık BIM deneyimi</span></div>
       <div><b><span data-count="130000">130.000</span><small>m²+</small></b><span>BIM referans alanı</span></div>
@@ -1713,15 +1770,22 @@ html.lbx-open{overflow:hidden}
     <div class="logos" data-logos="fin" data-r></div>
     <div class="ucyc" data-ucyc data-r style="margin-top:44px"></div>
     <div class="ya-frame" data-r>
-      <div><span class="mono">Sözleşme çerçevesi</span><b>FIDIC</b><p>Uluslararası finansmanlı projelerde tasarım, müşavirlik ve denetim sorumluluklarımızı FIDIC sözleşme koşulları çerçevesinde yürütüyoruz.</p></div>
-      <div><span class="mono">AB dış yardımları</span><b>PRAG</b><p>Avrupa Birliği finansmanlı projelerde AB'nin dış eylemlere ilişkin sözleşme usulleri rehberine (PRAG) uygun çalışıyoruz.</p></div>
-      <div><span class="mono">Finans kuruluşu kılavuzları</span><b>Satın alma ve raporlama</b><p>Finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerini proje döngüsünün her adımında uyguluyoruz.</p></div>
+      <div><span class="mono">01</span><b>FIDIC sözleşme yönetimi</b><p>Uluslararası finansmanlı projelerde tasarım, müşavirlik ve kontrollük sorumluluklarımızı FIDIC sözleşme koşulları çerçevesinde yürütüyoruz.</p></div>
+      <div><span class="mono">02</span><b>AB PRAG ihale ve satın alma süreçleri</b><p>Avrupa Birliği finansmanlı projelerde AB'nin dış eylemlere ilişkin sözleşme usulleri rehberine (PRAG) uygun çalışıyoruz.</p></div>
+      <div><span class="mono">03</span><b>Dünya Bankası ve diğer finans kuruluşlarının satın alma gereklilikleri</b><p>Finans kuruluşlarının satın alma, raporlama ve çevresel-sosyal gerekliliklerini proje döngüsünün her adımında uyguluyoruz.</p></div>
+      <div><span class="mono">04</span><b>Proje Uygulama Birimlerine destek</b><p>Politika çerçevesinden kapanış raporuna kadar Proje Uygulama Birimlerine teknik ve kurumsal destek veriyoruz.</p></div>
     </div>
   </div></section>
 
   <section class="sec" data-sec="kalite" data-title="Kalite ve Sürdürülebilirlik" data-sub="Her projeye özel Kalite Planı ve projelerin çevresel ve sosyal yönetimi." data-img="p25"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>04 · Kalite ve sürdürülebilirlik</p><h2 class="h2" data-r>Her aşamada kalite, çevresel ve sosyal sorumluluk.</h2></div>
       <p class="lede" data-r>Proje bazlı kalite planlarımız ve çevresel-sosyal yönetim yaklaşımımızla projelerin teknik ve sürdürülebilirlik hedeflerini gözetiyoruz.</p></div>
+    <div class="ya-split" data-r>
+      <div><span class="mono">Bu sayfada</span><b>Proje kalite yönetimi</b><p>Her proje için ayrı hazırlanan Kalite Planı.</p></div>
+      <div><span class="mono">Bu sayfada</span><b>Çevresel ve sosyal yönetim</b><p>Projelerin çevresel ve sosyal etkilerinin yönetimi.</p></div>
+      <a href="#surdurulebilirlik-kurumsal"><span class="mono">İlgili sayfa →</span><b>İş sağlığı ve güvenliği</b><p>İSG yönetim planımız ve önleyici yaklaşımımız.</p></a>
+      <a href="#hakkimizda-etik"><span class="mono">İlgili sayfa →</span><b>İş dürüstlüğü ve etik</b><p>Etik ilkelerimiz ve ihlal bildirim kanalımız.</p></a>
+    </div>
     <div class="cols">
       <div style="display:grid;gap:18px;align-content:start" data-r><p class="kicker">Proje Kalite Planı</p><div class="prose"><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve entegre yönetim sistemimizin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div></div>
       <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
@@ -1842,7 +1906,7 @@ html.lbx-open{overflow:hidden}
       <fieldset><legend>Geri bildirim</legend><div class="ef-rad"><label><input type="radio" name="geri" value="Geri bildirim almak istiyorum" checked> Geri bildirim almak istiyorum</label><label><input type="radio" name="geri" value="Anonim kalmak istiyorum, geri bildirim istemiyorum"> Anonim kalmak istiyorum</label></div></fieldset>
       <div class="ef-id"><div class="ef-row"><label>Adı soyadı<input name="ad" type="text" autocomplete="name"></label><label>Telefon<input name="tel" type="tel" autocomplete="tel"></label></div>
         <label class="ef-gz"><input type="checkbox" name="gizli"> Kimlik bilgilerimin gizli tutulmasını istiyorum.</label></div>
-      <p class="ef-note">Gönder'e bastığınızda e-posta programınızda <b>etik@envesu.com</b> adresine hazır bir ileti açılır; göndermeden önce kontrol edebilir ve belge ekleyebilirsiniz. İleti sizin e-posta adresinizden gönderileceği için tamamen anonim bir bildirim yapmak isterseniz kişisel bilgi içermeyen bir e-posta adresi kullanabilirsiniz.</p>
+      <p class="ef-note">Gönder'e bastığınızda e-posta programınızda <b>etik@envesu.com</b> adresine hazır bir ileti açılır; göndermeden önce kontrol edebilir ve belge ekleyebilirsiniz. <b>Anonimlik:</b> "Anonim kalmak istiyorum" seçeneği yalnızca ad ve telefonunuzu paylaşmamanızı sağlar; ileti kendi e-posta adresinizden gider. Kimliğinizin bilinmemesini istiyorsanız sizi tanımlamayan bir e-posta adresi kullanın veya Etik İhbar Formu'nu imzasız olarak posta ile gönderin. Ayrıntılar: <a href="#kvkk-etik">Etik İhlal Bildirimi Aydınlatma Metni</a>.</p>
       <div class="ef-act"><button class="btn lime" type="submit">E-postayı hazırla <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></button><span class="ef-msg" role="status" aria-live="polite"></span></div>
     </form>
   </div></section>
@@ -1992,7 +2056,10 @@ html.lbx-open{overflow:hidden}
           <span class="drop-t"><b data-cvname>Özgeçmişinizi seçin ya da buraya sürükleyin</b><small>PDF veya Word · en fazla 5 MB</small></span>
         </label>
       </div>
-      <label class="chk" for="k-kvkk"><input id="k-kvkk" type="checkbox" required><span><a href="#kvkk">Aydınlatma metnini</a> okudum.</span></label>
+      <label class="chk" for="k-kvkk"><input id="k-kvkk" type="checkbox" required><span><a href="#kvkk-kariyer">Kariyer Başvurusu Aydınlatma Metni</a>'ni okudum. <span class="req">*</span></span></label>
+      <label class="chk" for="k-havuz"><input id="k-havuz" name="aday_havuzu" type="checkbox"><span>Başvurumun belirli bir süre aday havuzunda tutulmasına ve uygun pozisyonlarda değerlendirilmesine açık rıza veriyorum. <em class="opt">İsteğe bağlı</em></span></label>
+      <label class="chk" for="k-teklif"><input id="k-teklif" name="teklif_paylasimi" type="checkbox"><span>Özgeçmişimin, ENVESU'nun katılacağı ihale ve tekliflerde işveren idareler, finans kuruluşları ve ortak girişim ortaklarıyla, yurt dışındaki kuruluşlar dahil olmak üzere paylaşılmasına açık rıza veriyorum. <em class="opt">İsteğe bağlı</em></span></label>
+      <p class="chk-note">Açık rıza vermemeniz başvurunuzun değerlendirilmesini etkilemez.</p>
       <button class="btn dark" type="submit" style="justify-self:start">Başvuruyu gönder <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></button>
       <p class="fmsg" data-form-status hidden></p>
     </form>
@@ -2030,7 +2097,7 @@ html.lbx-open{overflow:hidden}
       <div class="fld"><label for="i-eposta">E-posta adresiniz</label><input id="i-eposta" name="eposta" type="email" autocomplete="email" required></div>
       <div class="fld"><label for="i-alan">İlgilendiğiniz hizmet</label><select id="i-alan" name="hizmet" data-svcselect></select></div>
       <div class="fld"><label for="i-mesaj">İletiniz</label><textarea id="i-mesaj" name="mesaj" required></textarea></div>
-      <label class="chk" for="i-kvkk"><input id="i-kvkk" type="checkbox" required><span><a href="#kvkk">Aydınlatma metnini</a> okudum.</span></label>
+      <label class="chk" for="i-kvkk"><input id="i-kvkk" type="checkbox" required><span><a href="#kvkk-iletisim">İletişim Formu Aydınlatma Metni</a>'ni okudum. <span class="req">*</span></span></label>
       <button class="btn dark" type="submit" style="justify-self:start">Gönder <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></button>
       <p class="fmsg" data-form-status hidden></p>
     </form>
@@ -2040,22 +2107,96 @@ html.lbx-open{overflow:hidden}
 <!-- ================= KVKK ================= -->
 <div class="view" data-view="kvkk" hidden>
   <section class="ph"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE13" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE13)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb"><a href="#anasayfa">Anasayfa</a></p>
+    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Kişisel Verilerin Korunması</p>
     <h1 tabindex="-1">Kişisel Verilerin Korunması</h1>
-    <p class="sub">6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni.</p>
+    <p class="sub">6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metinleri ve çerez politikası.</p>
   </div></section>
-  <section class="sec"><div class="wrap" style="display:grid;gap:32px;max-width:900px;margin-inline:auto">
-    <p class="note"><strong>Taslak yapı.</strong> Aydınlatma metninin nihai hali hukuk onayından sonra bu sayfaya eklenecektir.</p>
-    <dl class="facts" style="margin:0">
-      <div><dt>Veri sorumlusu</dt><dd>Envesu Çevre Enerji İnş. ve Müş. A.Ş. — Metropol İstanbul A/22, Ataşehir / İstanbul</dd></div>
-      <div><dt>İşlenen veriler</dt><dd>İletişim ve başvuru formlarıyla iletilen kimlik ve iletişim bilgileri ile mesaj içeriği</dd></div>
-      <div><dt>İşleme amaçları</dt><dd>Taleplerin yanıtlanması ve iş başvurularının değerlendirilmesi</dd></div>
-      <div><dt>Aktarım</dt><dd>Metin onaylandığında eklenecek</dd></div>
-      <div><dt>Saklama süresi</dt><dd>Metin onaylandığında eklenecek</dd></div>
-      <div><dt>Haklarınız</dt><dd>Kanun'un 11. maddesi kapsamındaki haklar ve başvuru yöntemi</dd></div>
-      <div><dt>Başvuru</dt><dd>info@envesu.com</dd></div>
-    </dl>
+  <section class="sec" data-sec="genel" data-title="Genel Aydınlatma Metni" data-sub="Web sitesi ziyaretçileri ve iletişim kanallarımız için aydınlatma metni."><div class="wrap lg-wrap">
+    <nav class="lg-nav" aria-label="KVKK metinleri"><a href="#kvkk" class="on" aria-current="page">Genel Aydınlatma Metni</a><a href="#kvkk-iletisim">İletişim Formu Aydınlatma Metni</a><a href="#kvkk-kariyer">Kariyer Başvurusu Aydınlatma Metni</a><a href="#kvkk-etik">Etik İhlal Bildirimi Aydınlatma Metni</a><a href="#kvkk-cerez">Çerez Politikası</a><button type="button" class="lg-ck" data-ck-open>Çerez tercihlerini yönet</button></nav>
+    <article class="legal"><p class="note">Bu metin hukuki inceleme aşamasındadır. Köşeli parantez içindeki alanlar onaydan sonra tamamlanacaktır.</p>
+<p>ENVESU Çevre Enerji İnşaat ve Müşavirlik A.Ş. ("ENVESU") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca veri sorumlusu sıfatıyla, www.envesu.com sitesini ziyaret eden ve bizimle iletişim kanallarımız üzerinden iletişime geçen kişilerin kişisel verilerini aşağıda açıklanan kapsamda işliyoruz. Formlar aracılığıyla toplanan veriler, ilgili formun aydınlatma metninde ayrıca açıklanmıştır.</p>
+<h3>Veri sorumlusu</h3>
+<ul><li>Unvan: ENVESU Çevre Enerji İnşaat ve Müşavirlik A.Ş.</li><li>Adres: Atatürk Mah. Ertuğrul Gazi Sk. Metropol İstanbul A/22, Ataşehir / İstanbul <mark class="fill">[posta kodu]</mark></li><li>MERSİS No: <mark class="fill">[ ]</mark></li><li>KEP adresi: <mark class="fill">[ ]</mark></li><li>Başvuru e-postası: <mark class="fill">[kvkk@envesu.com]</mark></li></ul>
+<h3>İşlenen kişisel veriler</h3>
+<div class="lg-tw"><table><thead><tr><th>Veri kategorisi</th><th>Örnekler</th><th>Toplanma yöntemi</th></tr></thead><tbody><tr><td>İşlem güvenliği</td><td>IP adresi, erişim tarihi ve saati, tarayıcı ve cihaz bilgisi</td><td>Siteye erişim sırasında, barındırma hizmet sağlayıcısının sunucu kayıtlarıyla otomatik olarak</td></tr><tr><td>Kimlik ve iletişim</td><td>Ad soyad, e-posta adresi, telefon numarası, kurum ve unvan</td><td>Telefon, e-posta veya sosyal medya üzerinden bize ulaşmanız halinde sizden</td></tr><tr><td>Talep ve yazışma</td><td>İletinizin içeriği ve ekleri</td><td>Aynı kanallardan, sizden</td></tr><tr><td>Çerez tercihi</td><td>Çerez panelindeki seçiminiz</td><td>Tarayıcınızda, Çerez Politikası'nda açıklandığı şekilde</td></tr></tbody></table></div>
+<h3>İşleme amaçları ve hukuki sebepler</h3>
+<div class="lg-tw"><table><thead><tr><th>Amaç</th><th>Hukuki sebep (KVKK m.5/2)</th></tr></thead><tbody><tr><td>Sitenin güvenli ve kesintisiz çalışmasının sağlanması, bilgi güvenliği süreçlerinin yürütülmesi</td><td>(ç) hukuki yükümlülük; (f) meşru menfaat</td></tr><tr><td>Talep, soru ve önerilerinizin alınması, değerlendirilmesi ve yanıtlanması</td><td>(c) bir sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması; (f) meşru menfaat</td></tr><tr><td>Hukuki uyuşmazlıklarda delil olarak kullanılması</td><td>(e) bir hakkın tesisi, kullanılması veya korunması</td></tr><tr><td>Yetkili kurum ve kuruluşlara mevzuattan doğan bilgi verilmesi</td><td>(ç) hukuki yükümlülük</td></tr></tbody></table></div>
+<h3>Aktarım</h3>
+<p>Kişisel verileriniz, yukarıdaki amaçlarla sınırlı olarak talep halinde yetkili kamu kurum ve kuruluşlarına, hukuki ve mali danışmanlarımıza ve site barındırma, e-posta ve bilgi teknolojileri hizmeti aldığımız hizmet sağlayıcılara KVKK m.8 ve m.9'a uygun olarak aktarılabilir. <mark class="fill">[Yurt dışında bulunan hizmet sağlayıcılar ve aktarım aracı]</mark></p>
+<h3>Saklama süresi</h3>
+<p>Kişisel verileriniz, işleme amacının gerektirdiği ve mevzuatta öngörülen süreler boyunca saklanır; süre sonunda Kişisel Verilerin Silinmesi, Yok Edilmesi veya Anonim Hale Getirilmesi Hakkında Yönetmelik uyarınca silinir, yok edilir veya anonim hale getirilir. <mark class="fill">[Saklama süreleri]</mark></p>
+<h3>Haklarınız</h3>
+<p>KVKK m.11 uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işleme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini ve KVKK m.7'deki şartlar çerçevesinde silinmesini veya yok edilmesini isteme, bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme ve kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+<h3>Başvuru</h3>
+<p>Taleplerinizi, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'e uygun olarak; yazılı olarak yukarıdaki adresimize, KEP adresimize, güvenli elektronik imza veya mobil imza ile ya da bize daha önce bildirdiğiniz ve sistemimizde kayıtlı e-posta adresinizden başvuru e-posta adresimize iletebilirsiniz. Başvurunuz en geç 30 gün içinde ücretsiz sonuçlandırılır; işlemin ayrıca bir maliyet gerektirmesi halinde Kurul'ca belirlenen tarifedeki ücret alınabilir. Başvurunuzun reddedilmesi, yanıtı yetersiz bulmanız veya süresinde yanıt verilmemesi halinde KVKK m.14 uyarınca Kişisel Verileri Koruma Kurulu'na şikâyette bulunabilirsiniz.</p>
+    </article>
   </div></section>
+  <section class="sec" data-sec="iletisim" data-title="İletişim Formu Aydınlatma Metni" data-sub="İletişim formuyla ilettiğiniz kişisel verilerin işlenmesi."><div class="wrap lg-wrap">
+    <nav class="lg-nav" aria-label="KVKK metinleri"><a href="#kvkk">Genel Aydınlatma Metni</a><a href="#kvkk-iletisim" class="on" aria-current="page">İletişim Formu Aydınlatma Metni</a><a href="#kvkk-kariyer">Kariyer Başvurusu Aydınlatma Metni</a><a href="#kvkk-etik">Etik İhlal Bildirimi Aydınlatma Metni</a><a href="#kvkk-cerez">Çerez Politikası</a><button type="button" class="lg-ck" data-ck-open>Çerez tercihlerini yönet</button></nav>
+    <article class="legal"><p class="note">Bu metin hukuki inceleme aşamasındadır. Köşeli parantez içindeki alanlar onaydan sonra tamamlanacaktır.</p>
+<p>ENVESU olarak, sitemizdeki iletişim formu aracılığıyla bize ilettiğiniz kişisel verileri, veri sorumlusu sıfatıyla aşağıdaki kapsamda işliyoruz. Veri sorumlusu bilgileri ve haklarınız için Genel Aydınlatma Metni geçerlidir.</p>
+<h3>İşlenen veriler</h3>
+<ul><li>Kimlik ve iletişim: adınız, e-posta adresiniz.</li><li>Talep bilgisi: ilgilendiğiniz hizmet, iletinizin içeriği.</li><li>İşlem güvenliği: formun gönderildiği tarih ve saat, IP adresi.</li></ul>
+<p>Lütfen iletinizde talebiniz için gerekli olmayan kişisel verileri, özellikle sağlık, din veya ceza mahkûmiyeti gibi özel nitelikli kişisel verileri paylaşmayınız.</p>
+<h3>Amaç ve hukuki sebep</h3>
+<div class="lg-tw"><table><thead><tr><th>Amaç</th><th>Hukuki sebep (KVKK m.5/2)</th></tr></thead><tbody><tr><td>Talebinizin değerlendirilmesi ve size dönüş yapılması</td><td>(c) sözleşmenin kurulmasıyla doğrudan ilgili olması; (f) meşru menfaat</td></tr><tr><td>Teklif ve iş birliği görüşmelerinin yürütülmesi</td><td>(c) sözleşmenin kurulmasıyla doğrudan ilgili olması</td></tr><tr><td>İletişim kayıtlarının tutulması ve olası uyuşmazlıklarda delil olarak kullanılması</td><td>(e) bir hakkın tesisi, kullanılması veya korunması; (f) meşru menfaat</td></tr><tr><td>Formun ve sitenin güvenliğinin sağlanması, istenmeyen ileti ve kötüye kullanımın önlenmesi</td><td>(f) meşru menfaat</td></tr></tbody></table></div>
+<p>Verileriniz, formu doldurmanız yoluyla elektronik ortamda ve kısmen otomatik yöntemlerle toplanır.</p>
+<h3>Aktarım</h3>
+<p>Verileriniz; form ve e-posta altyapısı hizmeti aldığımız hizmet sağlayıcılara <mark class="fill">[hizmet sağlayıcı ve sunucu ülkesi]</mark>, talebiniz bir ortak girişim kapsamındaki bir projeyle ilgiliyse ilgili iş ortağımıza ve talep halinde yetkili kamu kurumlarına, KVKK m.8 ve m.9'a uygun olarak aktarılabilir.</p>
+<h3>Saklama süresi</h3>
+<p><mark class="fill">[Saklama süresi]</mark></p>
+    </article>
+  </div></section>
+  <section class="sec" data-sec="kariyer" data-title="Kariyer Başvurusu Aydınlatma Metni" data-sub="İş başvurunuz kapsamında kişisel verilerinizin işlenmesi."><div class="wrap lg-wrap">
+    <nav class="lg-nav" aria-label="KVKK metinleri"><a href="#kvkk">Genel Aydınlatma Metni</a><a href="#kvkk-iletisim">İletişim Formu Aydınlatma Metni</a><a href="#kvkk-kariyer" class="on" aria-current="page">Kariyer Başvurusu Aydınlatma Metni</a><a href="#kvkk-etik">Etik İhlal Bildirimi Aydınlatma Metni</a><a href="#kvkk-cerez">Çerez Politikası</a><button type="button" class="lg-ck" data-ck-open>Çerez tercihlerini yönet</button></nav>
+    <article class="legal"><p class="note">Bu metin hukuki inceleme aşamasındadır. Köşeli parantez içindeki alanlar onaydan sonra tamamlanacaktır.</p>
+<p>ENVESU olarak, sitemizdeki kariyer formu veya e-posta yoluyla yaptığınız iş başvurusu kapsamında kişisel verilerinizi veri sorumlusu sıfatıyla aşağıdaki kapsamda işliyoruz. Veri sorumlusu bilgileri ve haklarınız için Genel Aydınlatma Metni geçerlidir.</p>
+<h3>İşlenen veriler</h3>
+<ul><li>Kimlik ve iletişim: ad soyad, e-posta adresi; özgeçmişinizde yer alıyorsa telefon, adres ve fotoğraf.</li><li>Mesleki bilgiler: özgeçmiş, eğitim, sertifikalar, iş deneyimi, uzmanlık alanı, kendinizi tanıttığınız metin.</li><li>Referans bilgileri: özgeçmişinizde belirttiğiniz referans kişilerin adı ve iletişim bilgisi. Referans kişilerinizi bu konuda bilgilendirmenizi rica ederiz.</li><li>Görüşme süreci kayıtları: mülakat notları ve değerlendirme sonuçları.</li></ul>
+<p>Başvurunuzda sağlık, din, dernek veya sendika üyeliği, ceza mahkûmiyeti gibi özel nitelikli kişisel verilere yer vermemenizi rica ederiz. Bu tür veriler talep edilmez ve değerlendirmede kullanılmaz.</p>
+<h3>Amaç ve hukuki sebep</h3>
+<div class="lg-tw"><table><thead><tr><th>Amaç</th><th>Hukuki sebep</th></tr></thead><tbody><tr><td>Başvurunuzun değerlendirilmesi, görüşmelerin planlanması ve işe alım kararının verilmesi</td><td>KVKK m.5/2(c) sözleşmenin kurulmasıyla doğrudan ilgili olması; (f) meşru menfaat</td></tr><tr><td>Size uygun açık pozisyonlarla eşleştirme</td><td>KVKK m.5/2(f) meşru menfaat</td></tr><tr><td>Başvurunuzun sonuçlandıktan sonra aday havuzunda tutulması</td><td>KVKK m.5/1 açık rıza (isteğe bağlı)</td></tr><tr><td>Özgeçmişinizin, ENVESU'nun katılacağı ihale ve tekliflerde uzman kadro olarak sunulması</td><td>KVKK m.5/1 açık rıza (isteğe bağlı)</td></tr><tr><td>Olası uyuşmazlıklarda haklarımızın korunması</td><td>KVKK m.5/2(e)</td></tr></tbody></table></div>
+<h3>Aktarım</h3>
+<p>Verileriniz; insan kaynakları ve e-posta altyapısı hizmeti aldığımız hizmet sağlayıcılara <mark class="fill">[hizmet sağlayıcı ve sunucu ülkesi]</mark> ve talep halinde yetkili kamu kurumlarına aktarılabilir. Açık rıza vermeniz halinde özgeçmişiniz, teklif dosyalarında işveren idarelere, finans kuruluşlarına ve ortak girişim ortaklarımıza aktarılabilir; bu kuruluşların bir kısmı yurt dışındadır.</p>
+<h3>Saklama süresi</h3>
+<ul><li>Başvurunuz olumsuz sonuçlanırsa: <mark class="fill">[süre]</mark>.</li><li>Aday havuzu için açık rıza verirseniz: <mark class="fill">[süre]</mark> veya rızanızı geri alana kadar.</li><li>İşe alınırsanız: verileriniz özlük dosyanıza aktarılır ve çalışan aydınlatma metni kapsamında işlenir.</li></ul>
+<h3>Açık rıza</h3>
+<p>Formdaki iki açık rıza kutusu isteğe bağlıdır. Açık rıza vermemeniz başvurunuzun değerlendirilmesini etkilemez; rızanızı istediğiniz zaman başvuru e-posta adresimize yazarak geri alabilirsiniz.</p>
+    </article>
+  </div></section>
+  <section class="sec" data-sec="etik" data-title="Etik İhlal Bildirimi Aydınlatma Metni" data-sub="Etik ihlal bildirimleri kapsamında kişisel verilerin işlenmesi."><div class="wrap lg-wrap">
+    <nav class="lg-nav" aria-label="KVKK metinleri"><a href="#kvkk">Genel Aydınlatma Metni</a><a href="#kvkk-iletisim">İletişim Formu Aydınlatma Metni</a><a href="#kvkk-kariyer">Kariyer Başvurusu Aydınlatma Metni</a><a href="#kvkk-etik" class="on" aria-current="page">Etik İhlal Bildirimi Aydınlatma Metni</a><a href="#kvkk-cerez">Çerez Politikası</a><button type="button" class="lg-ck" data-ck-open>Çerez tercihlerini yönet</button></nav>
+    <article class="legal"><p class="note">Bu metin hukuki inceleme aşamasındadır. Köşeli parantez içindeki alanlar onaydan sonra tamamlanacaktır.</p>
+<p>ENVESU olarak, etik ilkelerimize aykırı durumlara ilişkin bildirimler kapsamında; bildirimde bulunan kişinin, bildirime konu kişilerin ve tanıkların kişisel verilerini veri sorumlusu sıfatıyla aşağıdaki kapsamda işliyoruz. Veri sorumlusu bilgileri ve haklarınız için Genel Aydınlatma Metni geçerlidir.</p>
+<h3>Anonim bildirim ile e-posta yoluyla bildirim arasındaki fark</h3>
+<ul><li><strong>Web formu ve e-posta:</strong> Form, bildiriminizi e-posta programınızda hazır bir ileti olarak açar. İleti kullandığınız e-posta adresinden gönderilir; bu adres ve e-postanın teknik üst bilgileri bize ulaşır. Formdaki "anonim kalmak istiyorum" seçeneği yalnızca ad ve telefon bilgisi paylaşmamanızı sağlar; e-posta adresinizi gizlemez.</li><li><strong>Kimliğinizin bilinmemesini istiyorsanız:</strong> Sizi tanımlamayan bir e-posta adresi kullanabilir veya Etik İhbar Formu'nu imzasız olarak merkez ofis adresimize posta yoluyla gönderebilirsiniz. Anonim bildirimlerde size geri bildirim veremeyebiliriz.</li><li><strong>Kimliğinizi paylaşıp gizli tutulmasını isterseniz:</strong> Kimlik bilgileriniz yalnızca bildirimin incelenmesiyle görevli kişilerle paylaşılır ve mümkün olduğunca gizli tutulur. İyi niyetle bildirimde bulunanlara karşı hiçbir yaptırım uygulanmaz.</li></ul>
+<h3>İşlenen veriler</h3>
+<ul><li>Bildirimde bulunan kişi (isteğe bağlı): ad soyad, telefon, e-posta adresi, ENVESU ile ilişkisi.</li><li>Olay bilgileri: bildirim türü, yer, tarih ve saat, olayın sürüp sürmediği, açıklama ve ekler.</li><li>Bildirime konu kişiler ve tanıklar: ad, görev, olaydaki rolü ve bildirimde yer verilen diğer bilgiler.</li><li>Bildirimin içeriğine göre özel nitelikli kişisel veriler. Bu tür verilere, bildirimin anlaşılması için zorunlu olmadıkça yer vermemenizi rica ederiz.</li></ul>
+<h3>Amaç ve hukuki sebep</h3>
+<div class="lg-tw"><table><thead><tr><th>Amaç</th><th>Hukuki sebep</th></tr></thead><tbody><tr><td>Bildirimlerin alınması, kayda geçirilmesi, incelenmesi ve sonuçlandırılması</td><td>KVKK m.5/2(ç) hukuki yükümlülük; (f) meşru menfaat</td></tr><tr><td>Gerekli önlemlerin alınması ve disiplin süreçlerinin yürütülmesi</td><td>KVKK m.5/2(c), (ç), (f)</td></tr><tr><td>Hukuki ve cezai süreçlerde haklarımızın korunması, yetkili makamlara bilgi verilmesi</td><td>KVKK m.5/2(ç), (e)</td></tr><tr><td>Özel nitelikli verilerin zorunlu hallerde işlenmesi</td><td>KVKK m.6/3</td></tr></tbody></table></div>
+<h3>Erişim ve aktarım</h3>
+<p>Bildirimlere yalnızca incelemekle görevli <mark class="fill">[birim]</mark> erişebilir. Veriler, gerektiğinde hukuki danışmanlarımıza, yetkili kamu kurumlarına ve adli makamlara, e-posta altyapısı hizmet sağlayıcımıza <mark class="fill">[hizmet sağlayıcı ve sunucu ülkesi]</mark> KVKK m.8 ve m.9'a uygun olarak aktarılabilir.</p>
+<h3>Saklama süresi</h3>
+<p><mark class="fill">[Saklama süresi]</mark></p>
+    </article>
+  </div></section>
+  <section class="sec" data-sec="cerez" data-title="Çerez Politikası" data-sub="Sitemizde kullanılan çerezler ve benzeri teknolojiler."><div class="wrap lg-wrap">
+    <nav class="lg-nav" aria-label="KVKK metinleri"><a href="#kvkk">Genel Aydınlatma Metni</a><a href="#kvkk-iletisim">İletişim Formu Aydınlatma Metni</a><a href="#kvkk-kariyer">Kariyer Başvurusu Aydınlatma Metni</a><a href="#kvkk-etik">Etik İhlal Bildirimi Aydınlatma Metni</a><a href="#kvkk-cerez" class="on" aria-current="page">Çerez Politikası</a><button type="button" class="lg-ck" data-ck-open>Çerez tercihlerini yönet</button></nav>
+    <article class="legal"><p class="note">Bu metin hukuki inceleme aşamasındadır. Köşeli parantez içindeki alanlar onaydan sonra tamamlanacaktır.</p>
+<p>Sitemizde yalnızca sitenin çalışması için zorunlu bir tercih kaydı kullanılmaktadır; analitik, reklam veya sosyal medya takip çerezi kullanılmamaktadır. Bu politika, ENVESU'nun www.envesu.com sitesinde çerezleri ve benzeri teknolojileri nasıl kullandığını açıklar.</p>
+<h3>Çerez nedir?</h3>
+<p>Çerezler, ziyaret ettiğiniz siteler tarafından tarayıcınıza kaydedilen küçük metin dosyalarıdır. Benzer amaçla tarayıcının yerel depolama alanı da kullanılabilir.</p>
+<h3>Sitemizde kullanılan çerezler ve benzeri teknolojiler</h3>
+<div class="lg-tw"><table><thead><tr><th>Ad</th><th>Tür</th><th>Amacı</th><th>Süresi</th><th>Taraf</th><th>Rıza</th></tr></thead><tbody><tr><td>envesu-cerez-tercihi (tarayıcı yerel depolama)</td><td>Zorunlu</td><td>Çerez panelindeki seçiminizin hatırlanması</td><td><mark class="fill">[süre]</mark></td><td>Birinci taraf</td><td>Gerekmez</td></tr><tr><td>Analitik çerezler</td><td>Analitik</td><td>Şu anda kullanılmıyor</td><td>—</td><td>—</td><td>Kullanılırsa açık rıza</td></tr></tbody></table></div>
+<h3>Üçüncü taraf kaynaklar</h3>
+<ul><li><strong>Yazı tipleri:</strong> Sitedeki yazı tipleri Google Fonts sunucularından yüklenmektedir; bu sırada IP adresiniz ve tarayıcı bilgileriniz Google'a iletilir.</li><li><strong>Harita ve LinkedIn bağlantıları:</strong> "Haritada aç" ve LinkedIn bağlantıları yalnızca tıkladığınızda ilgili siteyi yeni sekmede açar. Bu sitelerde ilgili şirketlerin kendi çerez politikaları geçerlidir.</li></ul>
+<h3>Hukuki sebep</h3>
+<p>Zorunlu tercih kaydı, talep ettiğiniz hizmetin sunulması için kesinlikle gerekli olduğundan açık rızaya tabi değildir (KVKK m.5/2(c) ve (f)). İleride analitik veya pazarlama çerezi kullanılırsa, bu çerezler yalnızca açık rızanızla etkinleştirilir.</p>
+<h3>Tercihlerinizi yönetme</h3>
+<p>Tercihinizi istediğiniz zaman sitenin alt bilgisindeki "Çerez tercihleri" bağlantısından değiştirebilir veya geri alabilirsiniz. Tarayıcınızın ayarlarından da çerezleri ve yerel depolamayı silebilir veya engelleyebilirsiniz.</p>
+    </article>
+  </div></section>
+  <div data-pager></div>
 </div>
 
 </main>
@@ -2077,9 +2218,20 @@ html.lbx-open{overflow:hidden}
       </ul></div>
       <div class="ft-contact"><h4>İletişim</h4><ul><li><a href="tel:+902167714443">+90 216 771 44 43</a></li><li><a href="mailto:info@envesu.com">info@envesu.com</a></li><li><a href="#iletisim">Tüm ofisler →</a></li><li data-linkedin-li hidden><a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn →</a></li></ul></div>
     </div>
-    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span class="ft-links"><a href="#hakkimizda-etik-bildirim">Etik ihlal bildirimi</a><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
+    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span class="ft-links"><a href="#hakkimizda-etik-bildirim">Etik ihlal bildirimi</a><a href="#kvkk">KVKK Aydınlatma Metni</a><a href="#kvkk-cerez">Çerez Politikası</a><button type="button" class="ft-ck" data-ck-open>Çerez tercihleri</button></span></div>
   </div>
 </footer>
+<div class="ck" data-ck hidden role="dialog" aria-modal="false" aria-labelledby="ck-t">
+  <div class="ck-main">
+    <div class="ck-txt"><b id="ck-t">Çerez tercihleriniz</b><p>Sitemizde yalnızca sitenin çalışması için zorunlu bir tercih kaydı kullanıyoruz. İleride analitik çerez kullanırsak yalnızca onayınızla etkinleştiririz. Ayrıntılar için <a href="#kvkk-cerez" data-ck-pol>Çerez Politikası</a>'nı inceleyebilirsiniz.</p></div>
+    <div class="ck-btns"><button type="button" data-ck-all>Tümünü kabul et</button><button type="button" data-ck-none>Reddet</button><button type="button" data-ck-pref aria-expanded="false">Tercihler</button></div>
+  </div>
+  <div class="ck-pref" data-ck-panel hidden>
+    <label class="ck-row"><span><b>Zorunlu çerezler</b><small>Sitenin çalışması ve çerez seçiminizin hatırlanması için gereklidir. Her zaman açıktır.</small></span><input type="checkbox" checked disabled></label>
+    <label class="ck-row"><span><b>Analitik çerezler</b><small>Ziyaret istatistiklerini anonim olarak ölçmemize yardımcı olur. Şu anda kullanılmamaktadır.</small></span><input type="checkbox" data-ck-an></label>
+    <div class="ck-btns"><button type="button" data-ck-save>Seçimimi kaydet</button></div>
+  </div>
+</div>
 <div class="toast" data-toast role="status" aria-live="polite"></div>
 <button class="totop" type="button" data-totop aria-label="Başa dön"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
 </div>
@@ -3036,7 +3188,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){$$("#nav .d
 document.addEventListener("click",function(e){if(!e.target.closest(".dd"))$$("#nav .dd").forEach(function(x){x.classList.remove("open")})});
 
 /* ---------- Alt sayfalar (menüden açılan bölümler) ---------- */
-var SUBBASE={surdurulebilirlik:"Sürdürülebilirlik",yaklasim:"Proje Yaklaşımımız",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
+var SUBBASE={kvkk:"Kişisel Verilerin Korunması",surdurulebilirlik:"Sürdürülebilirlik",yaklasim:"Proje Yaklaşımımız",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
 var SUBHASH={referanslar:"projeler"};
 function subKeys(v){var ks=[];$$("[data-sec]",v).forEach(function(x){var k=x.getAttribute("data-sec");if(ks.indexOf(k)<0)ks.push(k)});return ks}
 function subHref(view,k,i){var hb=SUBHASH[view]||view;return "#"+(i===0?hb:hb+"-"+k)}
@@ -3057,7 +3209,7 @@ function showSub(view,v,sec){
 
 /* ---------- Yönlendirme (yalın #ad) ---------- */
 var VIEWS=["anasayfa","hizmet","referanslar","proje","yaklasim","surdurulebilirlik","hakkimizda","baskan","makaleler","makale","kariyer","iletisim","kvkk"];
-var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["hakkimizda","yonetim-sistemi"],"hakkimizda-kalite":["hakkimizda","yonetim-sistemi"],"yaklasim-dijital":["yaklasim","yonetim","dijital-koordinasyon"],"yaklasim-cevre":["yaklasim","kalite","cevresel-sosyal"],"yaklasim-yasam-dongusu":["yaklasim","dongu"],"dijital":["yaklasim","yonetim","dijital-koordinasyon"],"cevre-sosyal":["yaklasim","kalite","cevresel-sosyal"],"hizmetler":["anasayfa","hizmetler"],"surdurulebilir-projeler":["surdurulebilirlik","projeler"],"cevre-isg":["surdurulebilirlik","kurumsal"],"sektorler":["anasayfa","hizmetler"],"uzmanlik":["anasayfa","hizmetler"],"etik":["hakkimizda","etik"],"etik-bildirim":["hakkimizda","etik-bildirim"],"projeler":["referanslar",null]};
+var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["hakkimizda","yonetim-sistemi"],"hakkimizda-kalite":["hakkimizda","yonetim-sistemi"],"yaklasim-dijital":["yaklasim","yonetim","dijital-koordinasyon"],"yaklasim-cevre":["yaklasim","kalite","cevresel-sosyal"],"yaklasim-yasam-dongusu":["yaklasim","dongu"],"dijital":["yaklasim","yonetim","dijital-koordinasyon"],"cevre-sosyal":["yaklasim","kalite","cevresel-sosyal"],"hizmetler":["anasayfa","hizmetler"],"surdurulebilir-projeler":["surdurulebilirlik","projeler"],"cevre-isg":["surdurulebilirlik","kurumsal"],"cerez-politikasi":["kvkk","cerez"],"aydinlatma":["kvkk","genel"],"sektorler":["anasayfa","hizmetler"],"uzmanlik":["anasayfa","hizmetler"],"etik":["hakkimizda","etik"],"etik-bildirim":["hakkimizda","etik-bildirim"],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"projeler",proje:"projeler",yaklasim:"yaklasim",surdurulebilirlik:"surdurulebilirlik",hakkimizda:"hakkimizda",kariyer:"kariyer",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null, REFSEC=null;
 (function(){var si=$("[data-psearch]"),tm=null;if(si)si.addEventListener("input",function(){clearTimeout(tm);tm=setTimeout(function(){PQ=si.value;renderRefs(CURS)},120)});
@@ -3083,6 +3235,7 @@ function route(){
   else if(h==="baskanin-mesaji"){view="baskan"}
   else if(h.indexOf("yaklasim-")===0){view="yaklasim";sec=h.slice(9)}
   else if(h.indexOf("surdurulebilirlik-")===0){view="surdurulebilirlik";sec=h.slice(18)}
+  else if(h.indexOf("kvkk-")===0){view="kvkk";sec=h.slice(5)}
   else if(h.indexOf("hakkimizda-")===0){view="hakkimizda";sec=h.slice(11)}
   else if(h.indexOf("projeler-")===0){view="referanslar";var sx=h.slice(9);if(SById[sx]){arg=sx;sec="liste"}else sec=sx}
   else if(h.indexOf("uzmanlik-")===0){view="anasayfa";sec="hizmetler"}
@@ -3444,6 +3597,22 @@ function buildSvcBridge(host,items,o){
   var pj=$("[data-suprj]");
   if(pj)pj.innerHTML=SU_TEMALAR.map(function(t,i){var ps=t[2].map(function(id){return byId[id]}).filter(Boolean);return '<div class="su-theme"><div class="su-th" data-r><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><div><h3 class="h3">'+esc(t[0])+'</h3><p>'+esc(t[1])+'</p></div></div><div class="pgrid su-grid">'+ps.map(function(p,k){return pcard(p,k)}).join('')+'</div></div>'}).join('');
   observe(document);
+})();
+
+/* ---------- Çerez paneli ---------- */
+(function(){
+  var ck=$("[data-ck]"); if(!ck) return;
+  var KEY="envesu-cerez-tercihi", MAXAGE=365*864e5, panel=$("[data-ck-panel]",ck), an=$("[data-ck-an]",ck), pb=$("[data-ck-pref]",ck);
+  function get(){try{var v=JSON.parse(localStorage.getItem(KEY)||"null");if(v&&v.t&&Date.now()-v.t<MAXAGE)return v}catch(e){}return null}
+  function put(a){try{localStorage.setItem(KEY,JSON.stringify({v:1,zorunlu:true,analitik:!!a,t:Date.now()}))}catch(e){} close()}
+  function open(pref){var v=get();an.checked=!!(v&&v.analitik);ck.hidden=false;panel.hidden=!pref;pb.setAttribute("aria-expanded",pref?"true":"false");document.documentElement.classList.add("ck-on")}
+  function close(){ck.hidden=true;document.documentElement.classList.remove("ck-on")}
+  $("[data-ck-all]",ck).addEventListener("click",function(){put(true)});
+  $("[data-ck-none]",ck).addEventListener("click",function(){put(false)});
+  pb.addEventListener("click",function(){var o=panel.hidden;panel.hidden=!o;pb.setAttribute("aria-expanded",o?"true":"false")});
+  $("[data-ck-save]",ck).addEventListener("click",function(){put(an.checked)});
+  $$("[data-ck-open]").forEach(function(x){x.addEventListener("click",function(){open(true)})});
+  if(!get()) setTimeout(function(){open(false)},900);
 })();
 })();
 </script>
