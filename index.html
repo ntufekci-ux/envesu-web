@@ -1321,6 +1321,41 @@ html.lbx-open{overflow:hidden}
 .sec-list .filters a{padding:6px 12px;font-size:.86rem}
 .sec-list .filters .flab{min-width:84px;margin-right:2px;font-size:.66rem}
 @media (min-width:1200px){.sec-list [data-filters]{flex-wrap:nowrap}.sec-list [data-filters] a{white-space:nowrap}}
+
+.svc-bridge .sw-head{margin-bottom:clamp(28px,3.5vw,48px)}
+.svc-what .sw-label{margin-top:0}
+.et-doc{display:grid;grid-template-columns:minmax(220px,260px) minmax(0,1fr);gap:clamp(32px,5vw,88px);align-items:start}
+.et-toc{position:sticky;top:104px;display:grid;gap:20px}
+.et-nav{display:grid;border-left:1px solid var(--line-2)}
+.et-nav button{display:flex;gap:12px;align-items:baseline;text-align:left;background:none;border:0;border-left:2px solid transparent;margin-left:-1px;padding:9px 0 9px 16px;color:var(--ink-3);font:inherit;font-size:.95rem;cursor:pointer;transition:color .2s,border-color .2s}
+.et-nav button .mono{font-size:.68rem}
+.et-nav button:hover{color:var(--ink)}
+.et-nav button.on{color:var(--ink);border-left-color:var(--lime)}
+.et-toc .doclist a{width:100%}
+.et-body{display:grid;gap:clamp(44px,5vw,72px);max-width:880px}
+.et-intro{display:grid;gap:20px}
+.et-part{display:grid;gap:8px}
+.et-ph{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line-2)}
+.et-ph>.mono{color:var(--brand-ink);font-size:.8rem;padding-top:.45em}
+.et-ph h2{margin-bottom:8px}
+.et-ph p{color:var(--ink-2)}
+.et-items{display:grid}
+.et-it{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.et-it .et-n{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);padding-top:.35em}
+.et-it h3{font-size:1.12rem;font-weight:500;margin-bottom:8px}
+.et-it p{color:var(--ink-2);line-height:1.65}
+.et-ass{display:grid;gap:10px;margin-top:18px}
+.et-ass li{position:relative;padding-left:28px;color:var(--ink-2)}
+.et-ass li::before{content:"";position:absolute;left:0;top:.5em;width:14px;height:8px;border-left:2px solid var(--lime);border-bottom:2px solid var(--lime);transform:rotate(-45deg)}
+.et-cta{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between;margin-top:26px;padding:clamp(22px,3vw,32px);border-radius:14px;background:var(--card);border:1px solid var(--line-2)}
+.et-cta>div{display:grid;gap:10px;max-width:560px}
+.et-cta a:not(.btn){color:var(--brand-ink)}
+.et-side{display:grid;gap:22px;align-content:start}
+.et-side .et-ass{margin-top:0}
+@media (max-width:960px){.et-doc{grid-template-columns:1fr}.et-toc{position:static}.et-nav{display:none}.et-toc .kicker{display:none}}
+@media (max-width:600px){.et-it,.et-ph{grid-template-columns:40px minmax(0,1fr);gap:10px}}
+.et-cta .h3{line-height:1.3}
+.svc-bridge+.svc-what{padding-top:clamp(28px,3.5vw,48px)}
 </style>
 </head>
 <body>
@@ -1332,7 +1367,7 @@ html.lbx-open{overflow:hidden}
     <nav class="nav" id="nav" aria-label="Ana menü">
       <div class="dd" data-group="hakkimizda">
         <button type="button" aria-expanded="false">Hakkımızda <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a><a href="#hakkimizda-etik"><b>Etik ve Uyum</b></a></div>
+        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a><a href="#hakkimizda-kalite"><b>Kalite</b></a><a href="#hakkimizda-etik"><b>Etik İlkelerimiz</b></a><a href="#hakkimizda-etik-bildirim"><b>Etik İhlal Bildirimi</b></a></div>
       </div>
       <div class="dd" data-group="hizmetler">
         <button type="button" aria-expanded="false">Hizmetler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
@@ -1340,7 +1375,7 @@ html.lbx-open{overflow:hidden}
       </div>
       <div class="dd" data-group="yaklasim">
         <button type="button" aria-expanded="false">Çalışma Yöntemimiz <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#yaklasim"><b>Yaşam Döngüsü</b></a><a href="#yaklasim-yonetim"><b>Proje Yönetimi</b></a><a href="#yaklasim-ufk"><b>Finans Kuruluşları</b></a><a href="#yaklasim-kalite"><b>Kalite</b></a><a href="#yaklasim-dijital"><b>Dijital ve BIM</b></a><a href="#yaklasim-cevre"><b>Çevre ve Sosyal</b></a></div>
+        <div class="dd-menu"><a href="#yaklasim"><b>Yaşam Döngüsü</b></a><a href="#yaklasim-yonetim"><b>Proje Yönetimi</b></a><a href="#yaklasim-ufk"><b>Finans Kuruluşları</b></a><a href="#yaklasim-dijital"><b>Dijital ve BIM</b></a><a href="#yaklasim-cevre"><b>Çevre ve Sosyal</b></a></div>
       </div>
       <div class="dd" data-group="projeler">
         <button type="button" aria-expanded="false">Projeler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
@@ -1397,13 +1432,13 @@ html.lbx-open{overflow:hidden}
       <p class="manifest" data-manifest style="margin-top:28px">İklim değişikliğinin yarattığı sorunlara, teknik açıdan sağlam ve çevreye duyarlı altyapılarla yanıt veriyoruz. Kamu kurumları, uluslararası finans kuruluşları ve özel sektör yatırımcıları için projeyi ilk fikirden işletmeye kadar zaman, maliyet ve kalite disipliniyle yönetiyoruz.</p>
       <div class="pillars">
         <div class="pillar" data-r><span class="mono">Sözleşme çerçevesi</span><span class="big">FIDIC · PRAG</span><p>Uluslararası finansmanlı projelerde tasarım ve denetim sorumluluklarını bu sözleşme çerçeveleri içinde yürütüyoruz.</p><a class="link" href="#yaklasim-ufk">Finans kuruluşlarıyla çalışma</a></div>
-        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#yaklasim-kalite">Kalite ve sertifikalar</a></div>
+        <div class="pillar" data-r style="--d:.1s"><span class="mono">Entegre yönetim sistemi</span><span class="big">ISO 9001 · 14001 · 45001</span><p>Kalite, çevre ve iş sağlığı-güvenliği aynı sistemde; her proje için ayrı Kalite Planı.</p><a class="link" href="#hakkimizda-kalite">Kalite ve sertifikalar</a></div>
         <div class="pillar" data-r style="--d:.2s"><span class="mono">Dijital mühendislik</span><span class="big">130.000 m²+ BIM</span><p>Her disiplin tek modelde; sözleşme, ilerleme, maliyet ve doküman tek bulut platformunda.</p><a class="link" href="#yaklasim-dijital">Dijital mühendislik</a></div>
       </div>
     </div>
   </section>
 
-  <section class="sec mist">
+  <section class="sec mist" data-sec="hizmetler" style="scroll-margin-top:40px">
     <div class="wrap">
       <div class="sec-head split">
         <div style="display:grid;gap:22px"><p class="kicker" data-r>Hizmetler</p><h2 class="h2" data-r>Fikirden işletmeye, altı hizmet hattı.</h2></div>
@@ -1457,26 +1492,12 @@ html.lbx-open{overflow:hidden}
   </section>
 </div>
 
-<!-- ================= HİZMETLER (genel) ================= -->
-<div class="view" data-view="hizmetler" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/h4.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE2" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE2)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb"><a href="#anasayfa">Anasayfa</a> / Hizmetler</p>
-    <h1 tabindex="-1">Hizmetler</h1>
-    <p class="sub">Bir yatırımın ilk fikrinden işletmeye ve kurumsal kapasiteye kadar altı hizmet hattı; her biri farklı sektörlerden referanslarla.</p>
-  </div></section>
-  <div data-svcstack></div>
-  <section class="sec mist"><div class="wrap cols">
-    <div style="display:grid;gap:22px"><p class="kicker" data-r>Her hizmette</p><h2 class="h2" data-r>Aynı yönetim disiplini.</h2><p class="lede" data-r>Kapsam, zaman, maliyet, kalite ve risk; FIDIC ve PRAG çerçevelerinde, ISO sertifikalı entegre yönetim sistemiyle.</p><p data-r><a class="link" href="#yaklasim">Çalışma yöntemimiz</a></p></div>
-    <ul class="ticks two" data-r><li>Her proje için ayrı Kalite Planı</li><li>Tek bulut platformunda proje takibi</li><li>BIM ile mühendislik alanları arasında koordinasyon</li><li>Finans kuruluşu raporlamasına hazır kayıtlar</li><li>Çevresel ve sosyal etkilerin gözetimi</li><li>Uluslararası uzman havuzu</li></ul>
-  </div></section>
-</div>
-
 <!-- ================= HİZMET (detay) ================= -->
 <div class="view" data-view="hizmet" hidden><div data-svc></div></div>
 
 <!-- ================= REFERANSLAR ================= -->
 <div class="view" data-view="referanslar" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p01.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE3" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE3)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p01.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE2" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE2)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Projeler</p>
     <h1 tabindex="-1">Projeler</h1>
     <p class="sub"></p>
@@ -1505,7 +1526,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= YÖNTEM ================= -->
 <div class="view" data-view="yaklasim" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p09.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE4" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE4)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p09.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE3" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE3)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Çalışma Yöntemimiz</p>
     <h1 tabindex="-1">Çalışma Yöntemimiz</h1>
     <p class="sub">Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Bunları nasıl kurduğumuzu anlatıyoruz.</p>
@@ -1538,25 +1559,6 @@ html.lbx-open{overflow:hidden}
       <div style="display:grid;gap:18px" data-r><p class="kicker">Nitelikli uzmanlarla hizmet</p><p class="lede">Finans kuruluşlarının satın alma kılavuzlarına uygun çalışan ekiplerimiz, projenin gerektirdiği uzmanlık profillerini bir araya getirir.</p></div>
       <ul class="ticks two" data-experts data-r></ul>
     </div>
-  </div></section>
-
-  <section class="sec mist" data-sec="kalite" data-title="Kalite" data-sub="ISO 9001, 14001 ve 45001 entegre yönetim sistemi ve her proje için ayrı bir Kalite Planı." data-img="h3"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Kalite</p><h2 class="h2" data-r>Her proje için ayrı bir Kalite Planı.</h2></div>
-      <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
-    <div class="certs" data-certs></div>
-    <p class="cert-meta" data-certmeta data-r></p>
-    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
-      <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
-      <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
-    </div>
-    <div class="sec-head split" style="margin-top:clamp(44px,5.5vw,72px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
-    <div class="pol" data-pol data-r></div>
-    <div style="margin-top:36px;display:grid;gap:16px" data-r><p class="kicker">Yönetim sistemi dokümanları</p><div class="doclist">
-      <a href="doc/envesu-cevre-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Yönetim Planı</b><small>ENV-MRKZ-CVR-PL-01 · PDF</small></span></a>
-      <a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a>
-      <a href="doc/envesu-etik-ilkeler-proseduru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik İlkeler Prosedürü</b><small>ENV-MRKZ-YNT-PR-04 · PDF</small></span></a>
-      <a href="#hakkimizda-etik"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik ihlal bildirimi</b><small>Bildirim kanalları ve form</small></span></a>
-    </div></div>
   </div></section>
 
   <section class="sec" data-sec="dijital" data-title="Dijital ve BIM" data-sub="Tüm disiplinleri tek modelde buluşturan BIM ve bulut tabanlı proje yönetimi." data-img="p03"><div class="wrap">
@@ -1635,7 +1637,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= KURUMSAL ================= -->
 <div class="view" data-view="hakkimizda" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p08.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE5" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE5)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p08.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE4" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE4)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Hakkımızda</p>
     <h1 tabindex="-1">Hakkımızda</h1>
     <p class="sub">2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü.</p>
@@ -1655,7 +1657,7 @@ html.lbx-open{overflow:hidden}
 
     <section class="sec tight dl-sec" data-sec="biz-kimiz"><div class="wrap"><a class="dlcard" data-r href="doc/envesu-kurumsal-profil-2026-tr.pdf" download target="_blank" rel="noopener"><span class="dl-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2.5 14h11"/></svg></span><span class="dl-tx"><span class="mono">Kurumsal profil · PDF · 53 sayfa · 11,7 MB</span><b>ENVESU Kurumsal Profil 2026</b><small>Hizmetlerimiz, yönetim yaklaşımımız ve proje referanslarımız tek dokümanda.</small></span><span class="btn lime">İndir <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span></a></div></section>
 
-<section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
+<section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE5" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE5)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
     <figure class="portrait" data-portrait data-r></figure>
     <div style="display:grid;gap:26px;align-content:center">
       <p class="kicker" data-r>Yönetim Kurulu Başkanımızdan</p>
@@ -1679,25 +1681,47 @@ html.lbx-open{overflow:hidden}
     </div>
   </div></section>
 
-  <section class="sec" data-sec="etik" data-title="Etik ve Uyum" data-sub="Dürüstlük, tarafsızlık ve şeffaflık ilkelerine dayanan etik kurallarımız ve ihlal bildirim kanalımız." data-img="h3"><div class="wrap">
-    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Etik ilkelerimiz</p><h2 class="h2" data-r>Kurumsal itibarımız, etik davranışlarımızla şekillenir.</h2></div><p class="lede" data-r>Şirketin tüm faaliyetleri, yasal gerekliliklerin ötesine geçen, güvenilirlik ve sorumluluk bilinciyle uyumlu etik standartlar çerçevesinde yürütülür.</p></div>
-    <div class="ev-grid" data-etikdeger></div>
-    <div class="et-rules">
-      <div style="display:grid;gap:18px;align-content:start" data-r><p class="kicker">Uygulanabilir kurallar</p><p class="lede" style="font-size:1.05rem">Etik standartlarımız, günlük iş hayatında somut davranışlara dönüşür. Bir başlığa tıklayarak kuralın özünü okuyabilirsiniz.</p>
-        <div class="doclist"><a href="doc/envesu-etik-ilkeler-proseduru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik İlkeler Prosedürü</b><small>ENV-MRKZ-YNT-PR-04 · PDF</small></span></a></div></div>
-      <div class="acc" data-etikkural data-r></div>
+  <section class="sec" data-sec="kalite" data-title="Kalite" data-sub="ISO 9001, 14001 ve 45001 entegre yönetim sistemi ve her proje için ayrı bir Kalite Planı." data-img="h3"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Kalite</p><h2 class="h2" data-r>Her proje için ayrı bir Kalite Planı.</h2></div>
+      <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
+    <div class="certs" data-certs></div>
+    <p class="cert-meta" data-certmeta data-r></p>
+    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
+      <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
+      <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
+    </div>
+    <div class="sec-head split" style="margin-top:clamp(44px,5.5vw,72px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
+    <div class="pol" data-pol data-r></div>
+  </div></section>
+
+  <section class="sec" data-sec="etik" data-title="Etik İlkelerimiz" data-sub="Dürüstlük, tarafsızlık ve şeffaflık: tüm çalışanlarımızın uyduğu etik değerler, ilkeler ve uygulanabilir kurallar." data-img="h5"><div class="wrap et-doc">
+    <aside class="et-toc" data-r>
+      <p class="kicker">Bu sayfada</p>
+      <nav class="et-nav" data-etnav aria-label="Etik ilkeler bölümleri"><button type="button" data-go="et-p1"><span class="mono">01</span>Temel değerlerimiz</button><button type="button" data-go="et-p2"><span class="mono">02</span>Temel ilkelerimiz</button><button type="button" data-go="et-p3"><span class="mono">03</span>Uygulanabilir kurallar</button><button type="button" data-go="et-p4"><span class="mono">04</span>Uyum ve ihlal bildirimi</button></nav>
+      <div class="doclist"><a href="doc/envesu-etik-ilkeler-proseduru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik İlkeler Prosedürü</b><small>ENV-MRKZ-YNT-PR-04 · PDF</small></span></a></div>
+    </aside>
+    <div class="et-body">
+      <div class="et-intro" data-r><h2 class="h2">Kurumsal itibarımız, etik davranışlarımızla şekillenir.</h2><p class="lede">Tüm faaliyetlerimiz, yasal gerekliliklerin ötesine geçen, güvenilirlik ve sorumluluk bilinciyle uyumlu etik standartlar çerçevesinde yürütülür. Bu ilkeler ENVESU ve iştiraklerinin merkez ofis ve şantiyelerindeki tüm çalışanlarımızı kapsar.</p></div>
+      <div class="et-part" id="et-p1"><div class="et-ph" data-r><span class="mono">01</span><div><h2 class="h3">Temel değerlerimiz</h2><p>Etik davranışın temelini oluşturan, hem kurum içi ilişkilerde hem de paydaşlarımızla etkileşimlerimizde esas aldığımız değerler.</p></div></div><div class="et-items" data-etlist="ETIK_DEGERLER"></div></div>
+      <div class="et-part" id="et-p2"><div class="et-ph" data-r><span class="mono">02</span><div><h2 class="h3">Temel ilkelerimiz</h2><p>Değerlerimizi günlük iş yapış biçimimize taşıyan, tüm çalışanlarımızın uyduğu davranış standartları.</p></div></div><div class="et-items" data-etlist="ETIK_ILKELER"></div></div>
+      <div class="et-part" id="et-p3"><div class="et-ph" data-r><span class="mono">03</span><div><h2 class="h3">Uygulanabilir kurallar</h2><p>Çalışanlarımızın karşılaşabileceği durumlarda nasıl hareket etmeleri gerektiğini ortaya koyan kurallar.</p></div></div><div class="et-items" data-etlist="ETIK_KURALLAR"></div></div>
+      <div class="et-part" id="et-p4"><div class="et-ph" data-r><span class="mono">04</span><div><h2 class="h3">Uyum ve ihlal bildirimi</h2><p>Etik kuralların ilke ve hükümlerine uyum, çalışanlarımızın bireysel performans değerlendirmesinde dikkate alınır.</p></div></div>
+        <ul class="et-ass" data-r><li>Etik ilkelere aykırı durumları iyi niyetle bildirenlere karşı hiçbir yaptırım uygulanmaz.</li><li>Talep edilmesi hâlinde bildirimde bulunan kişinin kimliği mümkün olduğunca gizli tutulur.</li><li>Bildirimler gizli tutulur ve hiçbir şekilde ayrımcılığa sebep olmaz.</li></ul>
+        <div class="et-cta" data-r><div><p class="kicker">Etik ihlal bildirimi</p><p class="h3">Etik ilkelerimize aykırı bir durumla mı karşılaştınız?</p><p>Bildiriminizi web formu ile ya da <a href="mailto:etik@envesu.com">etik@envesu.com</a> adresine e-posta göndererek iletebilirsiniz.</p></div><a class="btn lime" href="#hakkimizda-etik-bildirim">Bildirim formu <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div>
+      </div>
     </div>
   </div></section>
 
-  <section class="sec mist" data-sec="etik" id="etik-bildirim"><div class="wrap et-report">
-    <div style="display:grid;gap:22px;align-content:start">
-      <p class="kicker" data-r>Etik ihlal bildirimi</p>
-      <h2 class="h2" data-r>Etik ilkelere aykırı bir durumla mı karşılaştınız?</h2>
-      <p class="lede" data-r>Çalışanlarımız, müşterilerimiz, iş ortaklarımız ve tedarikçilerimiz etik ilkelere aykırı durumları bize gizlilik içinde bildirebilir. İyi niyetle bildirimde bulunanlara karşı hiçbir yaptırım uygulanmaz; istenirse kimlik bilgileri gizli tutulur.</p>
+  <section class="sec" data-sec="etik-bildirim" data-title="Etik İhlal Bildirimi" data-sub="Etik ilkelerimize aykırı durumları gizlilik içinde bize iletebileceğiniz bildirim formu." data-img="h3"><div class="wrap et-report">
+    <div class="et-side">
+      <p class="kicker" data-r>Bildirim kanalı</p>
+      <h2 class="h2" data-r>Gördüğünüzü bize bildirin.</h2>
+      <p class="lede" data-r>Çalışanlarımız, müşterilerimiz, iş ortaklarımız ve tedarikçilerimiz etik ilkelerimize aykırı durumları bu form veya e-posta ile bildirebilir.</p>
+      <ul class="et-ass" data-r><li>İyi niyetle bildirimde bulunanlara karşı hiçbir yaptırım uygulanmaz.</li><li>İstenirse kimlik bilgileri mümkün olduğunca gizli tutulur.</li><li>Bildirimler gizli tutulur ve ayrımcılığa sebep olmaz.</li></ul>
       <ul class="et-ch" data-r>
         <li><span class="mono">E-posta</span><a href="mailto:etik@envesu.com">etik@envesu.com</a></li>
-        <li><span class="mono">Web</span><span>Bu sayfadaki bildirim formu</span></li>
         <li><span class="mono">Form</span><a href="doc/envesu-etik-ihbar-formu.docx" download>Etik İhbar Formu (Word) indir</a></li>
+        <li><span class="mono">İlkeler</span><a href="#hakkimizda-etik">Etik İlkelerimiz</a></li>
       </ul>
     </div>
     <form class="et-form" data-etikform data-r novalidate>
@@ -1741,7 +1765,7 @@ html.lbx-open{overflow:hidden}
 
   <div data-pager></div>
 
-  <section class="night sec"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE7" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE7)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap cta-big">
+  <section class="night sec"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap cta-big">
     <h2 data-r>Ekibimize <em>katılın.</em></h2>
     <div class="cta-side" data-r><p>Uluslararası finansmanlı altyapı, enerji ve endüstri projelerinde çalışmak isteyen mühendis, mimar ve uzmanları bekliyoruz.</p><div class="btns"><a class="btn lime" href="#kariyer">Kariyer ve başvuru <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div></div>
   </div></section>
@@ -1749,7 +1773,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= BAŞKANIN MESAJI ================= -->
 <div class="view" data-view="baskan" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/h1.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE8" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE8)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/h1.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE7" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE7)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hakkimizda">Hakkımızda</a></p>
     <h1 tabindex="-1" data-ceo-h1></h1>
     <p class="sub">Yönetim Kurulu Başkanımızdan</p>
@@ -1767,7 +1791,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= MAKALELER ================= -->
 <div class="view" data-view="makaleler" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p13.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE9" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE9)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p13.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE8" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE8)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a></p>
     <h1 tabindex="-1">Makaleler</h1>
     <p class="sub">Su, enerji, altyapı ve kalkınma finansmanı üzerine; sahadaki deneyimimizden süzülen yazılar.</p>
@@ -1784,7 +1808,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= KARİYER ================= -->
 <div class="view" data-view="kariyer" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p28.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE10" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE10)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p28.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE9" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE9)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a></p>
     <h1 tabindex="-1">Kariyer</h1>
     <p class="sub">Uluslararası finansmanlı altyapı, enerji ve endüstri projelerinde çalışmak isteyen mühendis, mimar ve uzmanları bekliyoruz.</p>
@@ -1819,7 +1843,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= İLETİŞİM ================= -->
 <div class="view" data-view="iletisim" hidden>
-  <section class="ph"><div class="ph-bg"><img src="img/p19.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE11" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE11)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><div class="ph-bg"><img src="img/p19.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE10" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE10)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a></p>
     <h1 tabindex="-1">İletişim</h1>
     <p class="sub">İstanbul merkez ofisimiz, Ankara ortak girişim ofisimiz ve Özbekistan şube ofisimizle hizmet veriyoruz.</p>
@@ -1857,7 +1881,7 @@ html.lbx-open{overflow:hidden}
 
 <!-- ================= KVKK ================= -->
 <div class="view" data-view="kvkk" hidden>
-  <section class="ph"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE12" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE12)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
+  <section class="ph"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE11" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE11)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a></p>
     <h1 tabindex="-1">Kişisel Verilerin Korunması</h1>
     <p class="sub">6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni.</p>
@@ -1880,7 +1904,7 @@ html.lbx-open{overflow:hidden}
 
 <footer class="ft">
   <div class="tricolor"></div>
-  <span class="wm" style="opacity:.035"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE13" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE13)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span>
+  <span class="wm" style="opacity:.035"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE12" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE12)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span>
   <div class="wrap">
     <div class="ft-top ft-simple">
       <div>
@@ -1890,7 +1914,7 @@ html.lbx-open{overflow:hidden}
       </div>
       <div class="ft-contact"><h4>İletişim</h4><ul><li>Metropol İstanbul A/22<br>Ataşehir / İstanbul</li><li><a href="tel:+902167714443">+90 216 771 44 43</a></li><li><a href="mailto:info@envesu.com">info@envesu.com</a></li><li><a href="#iletisim">Tüm ofisler →</a></li><li data-linkedin-li hidden><a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn →</a></li></ul></div>
     </div>
-    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span class="ft-links"><a href="#hakkimizda-etik">Etik ihlal bildirimi</a><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
+    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span class="ft-links"><a href="#hakkimizda-etik-bildirim">Etik ihlal bildirimi</a><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
   </div>
 </footer>
 <div class="toast" data-toast role="status" aria-live="polite"></div>
@@ -1951,6 +1975,10 @@ var ETIK_KURALLAR=[
  ["Rüşvetle mücadele","Rüşvetin ve yolsuzluğun her türü kesin şekilde yasaklanmıştır. Doğrudan veya dolaylı olarak rüşvet verilmesi veya kabul edilmesi, uygunsuz hediye teklifinde bulunulması, komisyon (kickback) alınması ya da şirket kaynaklarının etik dışı amaçlarla kullanılması kabul edilemez."],
  ["İş ortaklarıyla ilişkilerin yönetimi","İhale süreçleri adil, tarafsız ve şeffaf ilkeler doğrultusunda yürütülmelidir. Ortak girişim ortakları, taşeronlar, acenteler, ana tedarikçiler ve yükleniciler gibi iş ortaklarının seçimleri belirlenmiş prosedürlere uygun şekilde gerçekleştirilmelidir."],
  ["Adil rekabetin gözetilmesi","Tüm faaliyetler rekabet hukukuna uygun şekilde ve adil rekabet ilkeleri çerçevesinde yürütülmelidir. Gerçekleştirilemeyecek hizmetlerin taahhüt edilmemesi ve bilgilerin doğruluğu teyit edilmeden beyan edilmemesi gerekmektedir."]];
+var ETIK_ILKELER=[
+ ["Etik kurallara uyum","ENVESU'nun gelişimi ve büyümesi; çalışanlar, müşteriler, rakipler ve iş ortakları dâhil olmak üzere tüm paydaşlara eşit şekilde uygulanan etik ilkelere dayanmaktadır. Tüm çalışanlar, görev yeri fark etmeksizin bu etik kuralları bilmek ve uygulamakla yükümlüdür."],
+ ["Şeffaflık, dürüstlük ve adalet","Tüm davranış ve kararların, yalnızca yasal düzenlemelere değil, aynı zamanda şeffaflık, dürüstlük ve adalet ilkelerine uygun şekilde şekillendirilmesi esastır. ENVESU'nun çıkarları gerekçe gösterilerek etik ilkelere aykırı hareket edilmesine izin verilmez."],
+ ["Kanun ve yönetmeliklere uyum","Kurumsal itibarımız, yürürlükteki yasa, yönetmelik ve benzeri düzenlemelere gösterilen saygı ve tam uyum ile korunmaktadır. Etik kurallar ile yerel yasa ve düzenlemeler arasında bir çelişki söz konusu olduğunda, öncelik her zaman yerel yasa ve düzenlemelere verilir."]];
 var ETIK_TURLER=["Yolsuzluk / rüşvet","Ayrımcılık","Suistimal","Çevre, sağlık ve güvenlik","Menfaat çatışması","Şirket aleyhine işlemler","Müşteri / işveren ile ilişkiler","Taciz / mobbing","Gizlilik ihlali","Etik dışı davranış","Diğer"];
 var ETIK_EPOSTA="etik@envesu.com";
 
@@ -2523,7 +2551,7 @@ $$("[data-map]").forEach(buildMap);
 $$("[data-svclist]").forEach(function(el){
   el.innerHTML=SL.map(function(s){return '<a class="srow" href="#hizmet-'+s.id+'" data-img="'+s.img+'" data-r><span class="mono">'+esc(phl(s))+'</span><h3>'+esc(s.name)+'</h3><p>'+esc(s.tag)+'</p><span class="go">'+AR+'</span></a>'}).join('');
 });
-$$("[data-svcmenu]").forEach(function(el){el.innerHTML=SL.map(function(s){return '<a href="#hizmet-'+s.id+'"><b>'+esc(s.name)+'</b></a>'}).join('')+'<a class="all" href="#hizmetler"><b>Tüm Hizmetler →</b></a>'});
+$$("[data-svcmenu]").forEach(function(el){el.innerHTML=SL.map(function(s){return '<a href="#hizmet-'+s.id+'"><b>'+esc(s.name)+'</b></a>'}).join('')});
 $$("[data-svcfoot]").forEach(function(el){el.innerHTML=SL.map(function(s){return '<li><a href="#hizmet-'+s.id+'">'+esc(s.name)+'</a></li>'}).join('')});
 $$("[data-svcselect]").forEach(function(el){el.innerHTML='<option value="">Seçin</option>'+SL.map(function(s){return '<option>'+esc(s.name)+'</option>'}).join('')+'<option>Diğer / genel</option>'});
 $$("[data-donorchips]").forEach(function(el){el.innerHTML=DONORS.map(function(d){return '<span class="chip"><b>'+esc(d[0])+'</b>'+esc(d[1])+'</span>'}).join('')});
@@ -2536,8 +2564,8 @@ function renderService(s){
   var i=SL.indexOf(s), nx=SL[(i+1)%SL.length], refs=s.ps;
   $("[data-svc]").innerHTML=
   '<section class="ph"><div class="ph-bg"><img src="img/'+s.img+'.jpg" alt=""></div><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEa")+'</span><div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hizmetler">Hizmetler</a></p><h1 tabindex="-1">'+esc(s.name)+'</h1><p class="sub">'+esc(s.tag)+'</p></div></section>'+
-  '<section class="sec mist svc-bridge"><div class="wrap"><div data-flow-svc></div></div></section>'+
-  '<section class="sec svc-what"><div class="wrap"><div class="sw-head"><p class="kicker" data-r>Ne yapıyoruz</p><p class="sw-intro" data-r>'+esc(s.intro)+'</p></div>'+
+  '<section class="sec mist svc-bridge"><div class="wrap"><div class="sw-head"><p class="kicker" data-r>Ne yapıyoruz</p><p class="sw-intro" data-r>'+esc(s.intro)+'</p></div><div data-flow-svc></div></div></section>'+
+  '<section class="sec svc-what"><div class="wrap">'+
     '<div class="sw-label" data-r><span class="mono">Verdiğimiz hizmetler</span><span class="mono sw-n">'+("0"+s.del.length).slice(-2)+'</span></div>'+
     '<div class="sw-grid">'+s.del.map(function(d,k){return '<article class="sw-card" data-r style="--d:'+(k*.06).toFixed(2)+'s" tabindex="0"><span class="sw-no">'+("0"+(k+1)).slice(-2)+'</span><h3>'+esc(d)+'</h3><i class="sw-bar" aria-hidden="true"></i></article>'}).join('')+'</div></div></section>'+
   '<section class="sec svc-refs"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Projeler</p><h2 class="h2" data-r>'+esc(s.name)+' referanslarımız.</h2></div><a class="link" href="#projeler-'+s.id+'">Projeler sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm projeleri göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
@@ -2848,8 +2876,8 @@ function showSub(view,v,sec){
 }
 
 /* ---------- Yönlendirme (yalın #ad) ---------- */
-var VIEWS=["anasayfa","hizmetler","hizmet","referanslar","proje","yaklasim","hakkimizda","baskan","makaleler","makale","kariyer","iletisim","kvkk"];
-var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["yaklasim","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"sektorler":["hizmetler",null],"uzmanlik":["hizmetler",null],"projeler":["referanslar",null]};
+var VIEWS=["anasayfa","hizmet","referanslar","proje","yaklasim","hakkimizda","baskan","makaleler","makale","kariyer","iletisim","kvkk"];
+var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["hakkimizda","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"hizmetler":["anasayfa","hizmetler"],"sektorler":["anasayfa","hizmetler"],"uzmanlik":["anasayfa","hizmetler"],"yaklasim-kalite":["hakkimizda","kalite"],"etik":["hakkimizda","etik"],"etik-bildirim":["hakkimizda","etik-bildirim"],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"projeler",proje:"projeler",yaklasim:"yaklasim",hakkimizda:"hakkimizda",kariyer:"kariyer",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null, REFSEC=null;
 (function(){var si=$("[data-psearch]"),tm=null;if(si)si.addEventListener("input",function(){clearTimeout(tm);tm=setTimeout(function(){PQ=si.value;renderRefs(CURS)},120)});
@@ -2876,15 +2904,15 @@ function route(){
   else if(h.indexOf("yaklasim-")===0){view="yaklasim";sec=h.slice(9)}
   else if(h.indexOf("hakkimizda-")===0){view="hakkimizda";sec=h.slice(11)}
   else if(h.indexOf("projeler-")===0){view="referanslar";var sx=h.slice(9);if(SById[sx]){arg=sx;sec="liste"}else sec=sx}
-  else if(h.indexOf("uzmanlik-")===0){view="hizmetler"}
+  else if(h.indexOf("uzmanlik-")===0){view="anasayfa";sec="hizmetler"}
   if(VIEWS.indexOf(view)<0) view="anasayfa";
   if(view==="proje"){if(byId[arg])renderDetail(byId[arg]);else{view="referanslar";arg=null}}
-  if(view==="hizmet"){if(SById[arg])renderService(SById[arg]);else{view="hizmetler";arg=null}}
+  if(view==="hizmet"){if(SById[arg])renderService(SById[arg]);else{view="anasayfa";sec="hizmetler";arg=null}}
   if(view==="makale"){var A=MAKALELER.filter(function(x){return x.id===arg})[0];if(A)renderArticle(A);else{view="makaleler";arg=null}}
   if(view==="makaleler"&&curView!=="makaleler"){ACAT=null;renderArticles()}
   if(view==="referanslar"){if(arg&&!SById[arg])arg=null;if(curView!=="referanslar"){PST=null;SECF=null;FINF=null;PQ="";var si=$("[data-psearch]");if(si)si.value=""}renderRefs(arg)}
   var curHref=location.hash||"#anasayfa", prevRef=REFSEC;
-  if(SUBBASE[view]){var vv=$('[data-view="'+view+'"]'),ss=showSub(view,vv,sec),kk=subKeys(vv);curHref=subHref(view,ss,kk.indexOf(ss));if(view==="referanslar")REFSEC=ss} sec=null;
+  if(SUBBASE[view]){var vv=$('[data-view="'+view+'"]'),ss=showSub(view,vv,sec),kk=subKeys(vv);curHref=subHref(view,ss,kk.indexOf(ss));if(view==="referanslar")REFSEC=ss;sec=null}
   var keepScroll=(view==="referanslar"&&curView==="referanslar"&&prevRef==="liste"&&REFSEC==="liste");
   $$("[data-view]").forEach(function(s){var on=s.getAttribute("data-view")===view;s.hidden=!on;if(on&&!first&&!keepScroll){s.classList.remove("enter");void s.offsetWidth;s.classList.add("enter")}});
   var nk=NAVK[view];
@@ -3119,14 +3147,11 @@ function buildSvcBridge(host,items,o){
   for(var k=0;k<=N;k++){var px=X0+k*SW,on=act.indexOf(k-1)>-1||act.indexOf(k)>-1,end=k===0||k===N;
     s+=end?'<rect class="sb-abt'+(on?' act':'')+'" x="'+(k?px-6:px-30)+'" y="'+DY+'" width="36" height="'+(gnd(px)-DY+4).toFixed(1)+'"/>':'<rect class="sb-pier'+(on?' act':'')+'" x="'+(px-9)+'" y="'+DY+'" width="18" height="'+(gnd(px)-DY+6).toFixed(1)+'"/>'}
   s+='<g class="sb-car"><rect x="-14" y="-10" width="28" height="8" rx="3"/><rect x="-7" y="-15" width="14" height="6" rx="2"/></g></svg>';
-  host.innerHTML='<div class="sb"><div class="sb-scroll"><div class="sb-stage"><div class="sb-card">'+s+'</div><div class="sb-rul">'+items.map(function(it,i){var on=act.indexOf(i)>-1,tg=(o.go||[])[i];if(!on&&tg)return '<a href="#hizmet-'+tg.id+'" data-i="'+i+'" class="go"><small>'+("0"+(i+1)).slice(-2)+' · '+esc(tg.name)+'</small><b>'+esc(it.t)+'</b><span class="sb-arr" aria-hidden="true">'+AR+'</span></a>';return '<button type="button" data-i="'+i+'" class="'+(on?'act':'')+'"><small>'+("0"+(i+1)).slice(-2)+(on?' · '+esc(o.svc):'')+'</small><b>'+esc(it.t)+'</b></button>'}).join('')+'</div></div></div>'+
-    '<div class="sb-leg"><span><i class="lg-on"></i>'+esc(o.svc)+'</span><span><i class="lg-off"></i>Diğer hizmetlerimiz · tıklayınca ilgili hizmete geçer</span></div><div class="flw-body" aria-live="polite"></div></div>';
+  host.innerHTML='<div class="sb"><div class="sb-scroll"><div class="sb-stage"><div class="sb-card">'+s+'</div><div class="sb-rul">'+items.map(function(it,i){var on=act.indexOf(i)>-1,tg=(o.go||[])[i];if(!on&&tg)return '<a href="#hizmet-'+tg.id+'" data-i="'+i+'" class="go"><small>'+("0"+(i+1)).slice(-2)+' · '+esc(tg.name)+'</small><b>'+esc(it.t)+'</b><span class="sb-arr" aria-hidden="true">'+AR+'</span></a>';return '<button type="button" data-i="'+i+'" class="'+(on?'act':'')+'"><small>'+("0"+(i+1)).slice(-2)+(on?' · '+esc(o.svc):'')+'</small><b>'+esc(it.t)+'</b></button>'}).join('')+'</div></div></div>'+'</div>';
   var sps=$$(".sb-sp",host),bs=$$(".sb-rul > *",host),body=$(".flw-body",host),car=$(".sb-car",host),sc=$(".sb-scroll",host),cur=-1;
   function set(i,user){if(i===cur)return;cur=i;
     sps.forEach(function(g,j){g.classList.toggle("on",j===i)});bs.forEach(function(b,j){b.classList.toggle("on",j===i);b.setAttribute("aria-pressed",j===i)});
-    var it=items[i],on=act.indexOf(i)>-1;
-    body.innerHTML='<div class="fbh"><span class="mono">Aşama '+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(it.t)+'</h3><span class="ftag'+(on?' on':'')+'">'+(on?esc(o.svc)+' bu aşamada':'Diğer hizmetlerimizle')+'</span>'+(!on&&(o.go||[])[i]?'<a class="link" href="#hizmet-'+o.go[i].id+'">'+esc(o.go[i].name)+' sayfasına git</a>':'')+'</div><div class="fbd"><p>'+esc(it.d)+'</p><div class="chips">'+it.s.map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';
-    body.classList.remove("swap");void body.offsetWidth;body.classList.add("swap");
+
     if(user&&sc.scrollWidth>sc.clientWidth+4){var b=bs[i];sc.scrollTo({left:b.offsetLeft-sc.clientWidth/2+b.offsetWidth/2,behavior:"smooth"})}}
   sps.concat(bs).forEach(function(el){var i=+el.getAttribute("data-i");el.addEventListener("click",function(e){var tg=(o.go||[])[i];if(act.indexOf(i)<0&&tg){if(el.tagName!=="A")location.hash="#hizmet-"+tg.id;return}set(i,true)});if(FINE)el.addEventListener("mouseenter",function(){set(i)})});
   var a0=act.length?Math.min.apply(null,act):0,a1=act.length?Math.max.apply(null,act):0,xa=X0+a0*SW+16,xb=X0+(a1+1)*SW-16,raf=0,t0=0,vis=true;
@@ -3170,11 +3195,13 @@ function buildSvcBridge(host,items,o){
 
 /* ---------- Etik ve uyum, çevre döngüsü, İSG ---------- */
 (function(){
-  var dg=$("[data-etikdeger]");
-  if(dg&&typeof ETIK_DEGERLER!=="undefined")dg.innerHTML=ETIK_DEGERLER.map(function(v,i){return '<article class="ev" data-r style="--d:'+(i*.07).toFixed(2)+'s"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(v[0])+'</h3><p>'+esc(v[1])+'</p></article>'}).join('');
-  var ac=$("[data-etikkural]");
-  if(ac&&typeof ETIK_KURALLAR!=="undefined"){ac.innerHTML=ETIK_KURALLAR.map(function(k,i){return '<div class="acc-i'+(i?'':' open')+'"><button type="button" aria-expanded="'+(i?'false':'true')+'" aria-controls="ek-'+i+'" id="ekb-'+i+'"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><b>'+esc(k[0])+'</b><i aria-hidden="true"></i></button><div class="acc-p" id="ek-'+i+'" role="region" aria-labelledby="ekb-'+i+'"><div><p>'+esc(k[1])+'</p></div></div></div>'}).join('');
-    $$(".acc-i>button",ac).forEach(function(bt){bt.addEventListener("click",function(){var it=bt.parentNode,o=!it.classList.contains("open");$$(".acc-i",ac).forEach(function(x){x.classList.remove("open");$("button",x).setAttribute("aria-expanded","false")});if(o){it.classList.add("open");bt.setAttribute("aria-expanded","true")}})})}
+  var ETL={ETIK_DEGERLER:typeof ETIK_DEGERLER!=="undefined"?ETIK_DEGERLER:[],ETIK_ILKELER:typeof ETIK_ILKELER!=="undefined"?ETIK_ILKELER:[],ETIK_KURALLAR:typeof ETIK_KURALLAR!=="undefined"?ETIK_KURALLAR:[]};
+  $$("[data-etlist]").forEach(function(el){var L=ETL[el.getAttribute("data-etlist")]||[];el.innerHTML=L.map(function(v,i){return '<article class="et-it" data-r style="--d:'+(i*.05).toFixed(2)+'s"><span class="et-n">'+("0"+(i+1)).slice(-2)+'</span><div><h3>'+esc(v[0])+'</h3><p>'+esc(v[1])+'</p></div></article>'}).join('')});
+  var nav=$("[data-etnav]");
+  if(nav){var bts=$$("button",nav),parts=bts.map(function(x){return document.getElementById(x.getAttribute("data-go"))});
+    bts.forEach(function(x,i){x.addEventListener("click",function(){var p=parts[i];if(p)window.scrollTo({top:p.getBoundingClientRect().top+window.scrollY-100,behavior:RM?"auto":"smooth"})})});
+    function spy(){if(nav.offsetParent===null)return;var k=0;parts.forEach(function(p,i){if(p&&p.getBoundingClientRect().top<window.innerHeight*.4)k=i});bts.forEach(function(x,i){x.classList.toggle("on",i===k)})}
+    window.addEventListener("scroll",spy,{passive:true});window.addEventListener("hashchange",function(){setTimeout(spy,60)});spy()}
   var tw=$("[data-eftur]");if(tw&&typeof ETIK_TURLER!=="undefined")tw.innerHTML=ETIK_TURLER.map(function(t){return '<label><input type="checkbox" name="tur" value="'+esc(t)+'"> '+esc(t)+'</label>'}).join('');
   var f=$("[data-etikform]");
   if(f){f.addEventListener("submit",function(ev){ev.preventDefault();var msg=$(".ef-msg",f),ta=f.elements.aciklama;
