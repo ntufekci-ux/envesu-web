@@ -1122,6 +1122,8 @@ html.lbx-open{overflow:hidden}
 .menu-open .totop{display:none}
 .js .map-on.settled .pin{animation:none;opacity:1;transition:opacity .35s}.js .map-on.settled .pin.dim{opacity:.12}
 .map-foot.empty{display:none}
+.nav>a,.nav .dd>button{white-space:nowrap}
+@media (min-width:1021px) and (max-width:1180px){.nav>a,.nav .dd>button{padding:10px 9px;font-size:.94rem}.nav>a::after,.nav .dd>button::after{left:9px;right:9px}}
 </style>
 </head>
 <body>
@@ -1133,14 +1135,14 @@ html.lbx-open{overflow:hidden}
     <nav class="nav" id="nav" aria-label="Ana menü">
       <div class="dd" data-group="hakkimizda">
         <button type="button" aria-expanded="false">Hakkımızda <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a></div>
+        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a></div>
       </div>
       <div class="dd" data-group="hizmetler">
         <button type="button" aria-expanded="false">Hizmetler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
         <div class="dd-menu dd-wide" data-svcmenu></div>
       </div>
       <div class="dd" data-group="yaklasim">
-        <button type="button" aria-expanded="false">Nasıl Çalışıyoruz <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
+        <button type="button" aria-expanded="false">Çalışma Yöntemimiz <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
         <div class="dd-menu"><a href="#yaklasim"><b>Yaşam Döngüsü</b></a><a href="#yaklasim-yonetim"><b>Proje Yönetimi</b></a><a href="#yaklasim-ufk"><b>Finans Kuruluşları</b></a><a href="#yaklasim-kalite"><b>Kalite</b></a><a href="#yaklasim-dijital"><b>Dijital ve BIM</b></a><a href="#yaklasim-cevre"><b>Çevre ve Sosyal</b></a></div>
       </div>
       <div class="dd" data-group="projeler">
@@ -1262,7 +1264,7 @@ html.lbx-open{overflow:hidden}
   </div></section>
   <div data-svcstack></div>
   <section class="sec mist"><div class="wrap cols">
-    <div style="display:grid;gap:22px"><p class="kicker" data-r>Her hizmette</p><h2 class="h2" data-r>Aynı yönetim disiplini.</h2><p class="lede" data-r>Kapsam, zaman, maliyet, kalite ve risk; FIDIC ve PRAG çerçevelerinde, ISO sertifikalı entegre yönetim sistemiyle.</p><p data-r><a class="link" href="#yaklasim">Nasıl çalışıyoruz</a></p></div>
+    <div style="display:grid;gap:22px"><p class="kicker" data-r>Her hizmette</p><h2 class="h2" data-r>Aynı yönetim disiplini.</h2><p class="lede" data-r>Kapsam, zaman, maliyet, kalite ve risk; FIDIC ve PRAG çerçevelerinde, ISO sertifikalı entegre yönetim sistemiyle.</p><p data-r><a class="link" href="#yaklasim">Çalışma yöntemimiz</a></p></div>
     <ul class="ticks two" data-r><li>Her proje için ayrı Kalite Planı</li><li>Tek bulut platformunda proje takibi</li><li>BIM ile mühendislik alanları arasında koordinasyon</li><li>Finans kuruluşu raporlamasına hazır kayıtlar</li><li>Çevresel ve sosyal etkilerin gözetimi</li><li>Uluslararası uzman havuzu</li></ul>
   </div></section>
 </div>
@@ -1300,8 +1302,8 @@ html.lbx-open{overflow:hidden}
 <!-- ================= YÖNTEM ================= -->
 <div class="view" data-view="yaklasim" hidden>
   <section class="ph"><div class="ph-bg"><img src="img/p09.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE4" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE4)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
-    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Nasıl Çalışıyoruz</p>
-    <h1 tabindex="-1">Nasıl Çalışıyoruz</h1>
+    <p class="crumb" data-phcrumb><a href="#anasayfa">Anasayfa</a> / Çalışma Yöntemimiz</p>
+    <h1 tabindex="-1">Çalışma Yöntemimiz</h1>
     <p class="sub">Bir projenin başarısı; verimli bir yönetim yapısına, kalite kontrol sistemine ve sağlam raporlamaya dayanır. Bunları nasıl kurduğumuzu anlatıyoruz.</p>
   </div></section>
 
@@ -1422,7 +1424,7 @@ html.lbx-open{overflow:hidden}
   <section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
     <figure class="portrait" data-portrait data-r></figure>
     <div style="display:grid;gap:26px;align-content:center">
-      <p class="kicker" data-r>Başkanımızdan</p>
+      <p class="kicker" data-r>Yönetim Kurulu Başkanımızdan</p>
       <p class="ceo-quote" data-r data-ceo-spot></p>
       <p class="ceo-sign" data-r><b data-ceo-name></b><span data-ceo-title></span></p>
       <p data-r><a class="btn lime" href="#baskanin-mesaji">Mesajın tamamı <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></p>
@@ -1480,7 +1482,7 @@ html.lbx-open{overflow:hidden}
   <section class="ph"><div class="ph-bg"><img src="img/h1.jpg" alt=""></div><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE8" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE8)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap">
     <p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hakkimizda">Hakkımızda</a></p>
     <h1 tabindex="-1" data-ceo-h1></h1>
-    <p class="sub">Başkanımızdan</p>
+    <p class="sub">Yönetim Kurulu Başkanımızdan</p>
   </div></section>
   <section class="sec"><div class="wrap ceo-page">
     <aside class="ceo-side">
@@ -1732,7 +1734,7 @@ var BEDELLER={
  "tfdmp":["48.000 USD","Projetaş–ENVESU ortak girişimi · 2 sözleşme"]
 };
 
-/* ===== KALİTE BELGELERİ (Nasıl Çalışıyoruz › Kalite) =====
+/* ===== KALİTE BELGELERİ (Çalışma Yöntemimiz › Kalite) =====
    gorsel: img/cert/<ad>.jpg · pdf: doc/<ad>.pdf  — yenilendiğinde dosyaları değiştirip tarihleri güncelleyin. */
 var SERTIFIKALAR=[
  {std:"TS EN ISO 9001:2015", ad:"Kalite Yönetim Sistemi", no:"1414-01", gorsel:"iso9001", pdf:"envesu-iso9001"},
@@ -2485,7 +2487,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){$$("#nav .d
 document.addEventListener("click",function(e){if(!e.target.closest(".dd"))$$("#nav .dd").forEach(function(x){x.classList.remove("open")})});
 
 /* ---------- Alt sayfalar (menüden açılan bölümler) ---------- */
-var SUBBASE={yaklasim:"Nasıl Çalışıyoruz",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
+var SUBBASE={yaklasim:"Çalışma Yöntemimiz",hakkimizda:"Hakkımızda",referanslar:"Projeler"};
 var SUBHASH={referanslar:"projeler"};
 function subKeys(v){var ks=[];$$("[data-sec]",v).forEach(function(x){var k=x.getAttribute("data-sec");if(ks.indexOf(k)<0)ks.push(k)});return ks}
 function subHref(view,k,i){var hb=SUBHASH[view]||view;return "#"+(i===0?hb:hb+"-"+k)}
