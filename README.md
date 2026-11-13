@@ -4,7 +4,7 @@ Envesu Çevre Enerji İnş. ve Müş. A.Ş. kurumsal web sitesinin, 2026 Şirket
 
 - Canlı önizleme: https://ntufekci-ux.github.io/envesu-web/
 - Tek sayfa uygulama: `index.html` + `img/` (harici bağımlılık yalnızca Google Fonts).
-- Sayfalar `#ad` bağlantılarıyla açılır: `#hizmetler`, `#hizmet-fizibilite`, `#referanslar`, `#proje-iaosb`, `#yaklasim`, `#makaleler`, `#makale-<id>`, `#hakkimizda`, `#baskanin-mesaji`, `#iletisim`.
+- Sayfalar `#ad` bağlantılarıyla açılır: `#hizmetler`, `#hizmet-fizibilite`, `#projeler`, `#projeler-harita`, `#projeler-kurumlar`, `#proje-iaosb`, `#yaklasim` (Nasıl Çalışıyoruz), `#makaleler`, `#makale-<id>`, `#hakkimizda`, `#baskanin-mesaji`, `#iletisim`.
 - Prototip aşamasında arama motoru indekslemesi kapalıdır (`noindex`). Formlar bir gönderim servisine bağlı değildir.
 
 ## Yönetim Kurulu Başkanı fotoğrafı
@@ -13,12 +13,12 @@ Başkanın Mesajı bölümlerindeki portre `img/fikret-azili.jpg` dosyasıdır (
 ## Yeni makale ekleme
 `index.html` içinde `var MAKALELER=[` dizisine yeni bir öğe ekleyin (dosyanın başındaki açıklamada alanlar anlatılıyor). Kapak görselini `img/` klasörüne koyup `gorsel` alanına dosya adını (uzantısız, .jpg) yazın. Henüz onaylanmamış bir makaleye `taslak:true` yazarsanız kartta ve metin sonunda "Taslak" ibaresi görünür; onaylananlarda `taslak:false` kalmalı.
 
-## Kurum logoları (Hakkımızda › İşverenler)
+## Kurum logoları (Projeler › Birlikte Çalıştığımız Kurumlar)
 
 `index.html` içindeki `FINANSORLAR` ve `ISVERENLER` listeleri bu sayfayı oluşturur. Logo dosyaları `img/logo/` klasöründedir (PNG). Yeni logo eklemek için dosyayı bu klasöre koyup ilgili satırın `logo` alanına dosya adını (uzantısız) yazın; alan boşsa kurum adı yazıyla gösterilir.
 Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kaynak listesi: `Web sitesi\Logo arşivi\_kaynaklar.tsv`. HEKTAŞ logosu şirket profilinden alındı (düşük çözünürlük).
 
-## Kalite belgeleri (Yaklaşım › Kalite)
+## Kalite belgeleri (Nasıl Çalışıyoruz › Kalite)
 
 `SERTIFIKALAR` ve `SERTIFIKA_BILGI` listeleri sayfayı oluşturur. Belge görselleri `img/cert/`, PDF'ler `doc/` klasöründedir (BBS Belgelendirme, ilk belge 13.01.2026, geçerlilik 12.01.2029). Belgeler yenilendiğinde aynı adla dosyaları değiştirip tarihleri güncelleyin. Kaynak: SharePoint › 02 TEKLİF ve GELİŞTİRME › 03_Envesu › 01.envesu profil › envesu ISO › ISO 2026-2029.
 
@@ -33,8 +33,8 @@ Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kayna
 ## Etkileşimli grafikler ve video (profil s.7, 8, 9, 17)
 
 - Hakkımızda › Misyon ve değerler: "Her işin üç bileşeni" diyagramı (profil s.7).
-- Yaklaşım › Proje yönetimi: dokuz yönetim alanı çarkı (s.8) ve teslim aşamalarını bir köprünün aşama aşama gelişimiyle anlatan akış (s.9). Aşama içerikleri `TESLIM` listesindedir.
-- Yaklaşım › Dijital ve BIM: BIM yaşam döngüsü çarkı (s.17); kısa açıklamalar `index.html` içinde, Claude tarafından yazıldı, kontrol edilmeli.
+- Nasıl Çalışıyoruz › Proje yönetimi: dokuz yönetim alanı çarkı (s.8) ve teslim aşamalarını bir köprünün aşama aşama gelişimiyle anlatan akış (s.9). Aşama içerikleri `TESLIM` listesindedir.
+- Nasıl Çalışıyoruz › Dijital ve BIM: BIM yaşam döngüsü çarkı (s.17); kısa açıklamalar `index.html` içinde, Claude tarafından yazıldı, kontrol edilmeli.
 - NRW animasyonu: hareketli görsel `media/nrw-animasyon.webp` (960 px, 10 sn döngü); yüklenirken `media/nrw-poster.jpg` görünür. Kaynak video `media/nrw-animasyon.mp4` arşiv için duruyor. Görseldeki yazılar İngilizcedir.
 - Hizmet sayfalarındaki "Proje yaşam döngüsünde" akışı 6 açıklıklı bir kemer köprü: hizmetin kapsadığı aşamalar inşa edilmiş, diğerleri kesikli çizgiyle gösterilir.
 - Kalite belgeleri sayfada küçük önizlemelerle (`img/cert/*-k.jpg`) açılır; tıklayınca tam boy görsel gelir.
