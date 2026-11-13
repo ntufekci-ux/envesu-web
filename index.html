@@ -1203,6 +1203,27 @@ html.lbx-open{overflow:hidden}
 .uc-loop .mono{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);background:var(--paper);padding:2px 12px;color:var(--ink-3);white-space:nowrap;font-size:.66rem}
 @media (max-width:980px){.uc-track{display:none}.uc-list{grid-template-columns:1fr}.uc-st{grid-template-columns:64px minmax(0,1fr);column-gap:16px;row-gap:8px}.uc-node{grid-row:span 2}.uc-st h3{text-align:left;min-height:0;align-self:center}.uc-loop{display:none}}
 @media (min-width:981px){.uc-st{display:flex;flex-direction:column}.uc-st ul{flex:1}}
+/* v25 proje arama, finansman, profil indirme, linkedin */
+.psearch-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin-bottom:22px}
+.psearch{flex:1 1 360px;max-width:560px;display:flex;align-items:center;gap:10px;border:1px solid var(--line-2);border-radius:999px;padding:0 18px;background:var(--card);transition:border-color .25s,box-shadow .25s}
+.psearch:focus-within{border-color:var(--lime);box-shadow:0 0 0 3px color-mix(in srgb,var(--lime) 22%,transparent)}
+.psearch svg{width:16px;height:16px;color:var(--ink-3);flex:none}
+.psearch input{all:unset;flex:1;min-width:0;padding:13px 0;font-size:1rem;color:var(--ink)}
+.psearch input::placeholder{color:var(--ink-3)}
+.pcount{color:var(--brand-ink)}
+.dlcard{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:24px;padding:24px 28px;border-radius:12px;border:1px solid var(--line-2);background:var(--card);text-decoration:none;color:inherit;transition:border-color .3s,transform .45s var(--ease),box-shadow .45s}
+.dlcard:hover{border-color:var(--lime);transform:translateY(-3px);box-shadow:var(--shadow)}
+.dl-ic{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--lime) 16%,transparent);color:var(--lime)}
+.dl-ic svg{width:24px;height:24px}
+.dl-tx{display:grid;gap:4px}.dl-tx .mono{color:var(--ink-3)}.dl-tx b{font-size:1.25rem;font-weight:500}.dl-tx small{color:var(--ink-2);font-size:.95rem}
+@media (max-width:700px){.dlcard{grid-template-columns:auto minmax(0,1fr);padding:20px}.dlcard .btn{grid-column:1/-1;justify-self:start}}
+.nav .soc{display:grid;place-items:center;width:38px;height:38px;margin-left:6px;border-radius:50%;opacity:.9;padding:0}
+.nav .soc::after{display:none}
+.nav .soc svg{width:16px;height:16px}
+.nav .soc:hover{background:color-mix(in srgb,currentColor 12%,transparent)}
+.nav .soc[hidden]{display:none}
+@media (max-width:1020px){.nav .soc{margin:12px 0 0}}
+.sec.sec-list{padding-top:clamp(40px,5vw,64px)}.sec.pb-s{padding-bottom:clamp(32px,4vw,56px)}.sec.dl-sec{padding-top:0}
 </style>
 </head>
 <body>
@@ -1231,6 +1252,7 @@ html.lbx-open{overflow:hidden}
       <a href="#makaleler">Makaleler</a>
       <a href="#kariyer">Kariyer</a>
       <a class="cta" href="#iletisim">İletişim</a>
+      <a class="soc" data-linkedin href="#" target="_blank" rel="noopener" aria-label="ENVESU LinkedIn sayfası" hidden><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 5.6H1.2V14h2.4zM2.4 1.8a1.4 1.4 0 100 2.8 1.4 1.4 0 000-2.8zM14.8 9.3c0-2.3-1.2-3.9-3.4-3.9-1.2 0-2 .6-2.4 1.3V5.6H6.7V14h2.4V9.7c0-1.1.3-2.1 1.5-2.1s1.4 1.1 1.4 2.2V14h2.4z"/></svg></a>
       <div class="dd lang" data-group="dil">
         <button type="button" aria-expanded="false" aria-label="Dil seçimi, şu an Türkçe"><svg class="gl" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2.8 4.2 2.8 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.2 5.7 5.2 8S6 12.5 8 14.5"/></svg>TR <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
         <div class="dd-menu dd-r dd-lang"><button type="button" class="lng on" data-lang="tr" lang="tr" aria-current="true"><b>Türkçe</b><span class="mono">TR</span></button><button type="button" class="lng" data-lang="en" lang="en"><b>English</b><span class="mono">EN</span></button><button type="button" class="lng" data-lang="fr" lang="fr"><b>Français</b><span class="mono">FR</span></button><button type="button" class="lng" data-lang="de" lang="de"><b>Deutsch</b><span class="mono">DE</span></button><button type="button" class="lng" data-lang="es" lang="es"><b>Español</b><span class="mono">ES</span></button><button type="button" class="lng" data-lang="ar" lang="ar"><b dir="rtl">العربية</b><span class="mono">AR</span></button><button type="button" class="lng" data-lang="ru" lang="ru"><b>Русский</b><span class="mono">RU</span></button><button type="button" class="lng" data-lang="uz" lang="uz"><b>Oʻzbekcha</b><span class="mono">UZ</span></button></div>
@@ -1362,8 +1384,10 @@ html.lbx-open{overflow:hidden}
     <h1 tabindex="-1">Projeler</h1>
     <p class="sub"></p>
   </div></section>
-  <section class="sec" data-sec="liste" data-title="Tüm Projeler" data-sub="2021'den bu yana 46 proje: 29'u tamamlandı, 17'si sürüyor. Projelerimizi hizmete, sektöre ve duruma göre inceleyin." data-img="p01"><div class="wrap">
+  <section class="sec sec-list" data-sec="liste" data-title="Tüm Projeler" data-sub="2021'den bu yana 46 proje: 29'u tamamlandı, 17'si sürüyor. Projelerimizi hizmete, sektöre ve duruma göre inceleyin." data-img="p01"><div class="wrap">
+    <div class="psearch-row"><label class="psearch"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input type="search" data-psearch placeholder="Proje, il veya kurum adıyla arayın" aria-label="Projelerde ara" autocomplete="off"></label><span class="mono pcount" data-pcount aria-live="polite"></span></div>
     <div class="fbar"><div class="filters" data-filters aria-label="Hizmete göre süz"></div></div>
+    <div class="fbar"><div class="filters" data-fin aria-label="Finansman kaynağına göre süz"></div></div>
     <div class="fbar" style="margin-bottom:40px"><div class="filters" data-sector aria-label="Sektöre göre süz"></div><div class="filters" data-status aria-label="Duruma göre süz"></div></div>
     <div class="pgrid" data-projects></div>
   </div></section>
@@ -1484,7 +1508,7 @@ html.lbx-open{overflow:hidden}
     <p class="sub">2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü.</p>
   </div></section>
 
-  <section class="sec" data-sec="biz-kimiz" data-title="Biz Kimiz" data-sub="2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü." data-img="p08"><div class="wrap cols r">
+  <section class="sec pb-s" data-sec="biz-kimiz" data-title="Biz Kimiz" data-sub="2021'de kurulan ENVESU, kısa sürede uluslararası finansmanlı karmaşık projeleri teslim eden bir mühendislik ve danışmanlık ortağına dönüştü." data-img="p08"><div class="wrap cols r">
     <div style="display:grid;gap:34px">
       <p class="quote" data-r>“Sürdürülebilir ve dayanıklı bir gelecek için mühendislik” ilkesiyle; hem teknik açıdan sağlam hem de çevreye duyarlı altyapılar sunuyoruz.</p>
       <div class="prose" data-r>
@@ -1496,7 +1520,9 @@ html.lbx-open{overflow:hidden}
     <figure class="figimg" data-r><img src="img/p02a.jpg" alt="TAMEK Karacabey Tesisleri yönetim binası görselleştirmesi" loading="lazy"><figcaption>TAMEK Karacabey Tesisleri · Kapasite artırımı ve modernizasyon</figcaption></figure>
   </div></section>
 
-  <section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
+    <section class="sec tight dl-sec" data-sec="biz-kimiz"><div class="wrap"><a class="dlcard" data-r href="doc/envesu-kurumsal-profil-2026-tr.pdf" download target="_blank" rel="noopener"><span class="dl-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2.5 14h11"/></svg></span><span class="dl-tx"><span class="mono">Kurumsal profil · PDF · 53 sayfa · 11,7 MB</span><b>ENVESU Kurumsal Profil 2026</b><small>Hizmetlerimiz, yönetim yaklaşımımız ve proje referanslarımız tek dokümanda.</small></span><span class="btn lime">İndir <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></span></a></div></section>
+
+<section class="night sec" data-sec="biz-kimiz"><span class="wm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="8 6 86 76" aria-hidden="true"><defs><mask id="mkE6" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><rect width="110" height="110" fill="#fff"/><polygon points="44.48 37.86 51.21 23.04 54.47 22.54 48.5 34.86 56.92 33.37 48.34 48.63 52.86 36.59 44.48 37.86" fill="#000"/></mask></defs><g mask="url(#mkE6)" fill="currentColor"><path d="m12.74,46.48c31.5-17.26,38.45,5.46,38.45,5.46,0,0-13,19.89-38.45-5.46Z" opacity=".5"/><path d="m27.85,20.93c34.48,10.07,23.33,31.05,23.33,31.05,0,0-23.25,4.87-23.33-31.05Z" opacity=".65"/><path d="m86.97,75.43c-8.99-24.54-21.82-26.41-29.23-25.02-3.89.73-6.36,4.53-5.46,8.38,1.72,7.35,8.61,18.33,34.7,16.63Z" opacity="1"/><path d="m15.4,75.43c8.99-24.54,21.82-26.41,29.23-25.02,3.89.73,6.36,4.53,5.46,8.38-1.72,7.35-8.61,18.33-34.7,16.63Z" opacity="1"/><path d="m50.7,10.21c-15.66,20.93-10.22,32.7-5,38.15,2.73,2.86,7.27,2.86,10.01,0,5.22-5.45,10.65-17.22-5-38.15Z" opacity="1"/></g></svg></span><div class="wrap ceo-teaser">
     <figure class="portrait" data-portrait data-r></figure>
     <div style="display:grid;gap:26px;align-content:center">
       <p class="kicker" data-r>Yönetim Kurulu Başkanımızdan</p>
@@ -1567,7 +1593,7 @@ html.lbx-open{overflow:hidden}
     </aside>
     <article class="prose-a" data-ceo-body></article>
   </div></section>
-  <section class="sec mist tight"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center"><p class="h3">ENVESU'yu daha yakından tanıyın.</p><div class="btns"><a class="btn dark" href="#hakkimizda">Hakkımızda <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a><a class="btn dark" href="#makaleler">Makaleler <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div></div></section>
+  <section class="sec mist tight"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center"><p class="h3">ENVESU'yu daha yakından tanıyın.</p><div class="btns"><a class="btn dark" href="doc/envesu-kurumsal-profil-2026-tr.pdf" download target="_blank" rel="noopener">Kurumsal profil (PDF) <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a><a class="btn dark" href="#hakkimizda">Hakkımızda <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a><a class="btn dark" href="#makaleler">Makaleler <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div></div></section>
 </div>
 
 <!-- ================= MAKALELER ================= -->
@@ -1693,7 +1719,7 @@ html.lbx-open{overflow:hidden}
         <p class="unvan">ENVESU ÇEVRE ENERJİ İNŞ. VE MÜŞ. A.Ş.</p>
         <p class="slogan">Sürdürülebilir ve dayanıklı bir gelecek için mühendislik.</p>
       </div>
-      <div class="ft-contact"><h4>İletişim</h4><ul><li>Metropol İstanbul A/22<br>Ataşehir / İstanbul</li><li><a href="tel:+902167714443">+90 216 771 44 43</a></li><li><a href="mailto:info@envesu.com">info@envesu.com</a></li><li><a href="#iletisim">Tüm ofisler →</a></li></ul></div>
+      <div class="ft-contact"><h4>İletişim</h4><ul><li>Metropol İstanbul A/22<br>Ataşehir / İstanbul</li><li><a href="tel:+902167714443">+90 216 771 44 43</a></li><li><a href="mailto:info@envesu.com">info@envesu.com</a></li><li><a href="#iletisim">Tüm ofisler →</a></li><li data-linkedin-li hidden><a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn →</a></li></ul></div>
     </div>
     <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
   </div>
@@ -1710,6 +1736,10 @@ html.lbx-open{overflow:hidden}
      govde : bloklar dizisi. ["p","paragraf"], ["h","ara başlık"], ["q","alıntı"], ["ul",["madde","madde"]]
      taslak: true ise kartlarda "Taslak" etiketi görünür; yayımlarken false yapın veya silin.
    ===================================================================== */
+/* ===== SOSYAL MEDYA =====
+   LinkedIn şirket sayfası adresi girildiğinde menüde ve alt bilgide simge görünür. Boş bırakılırsa gizli kalır. */
+var LINKEDIN="";
+
 var BASKAN={
   ad:"Fikret Azılı", unvan:"Yönetim Kurulu Başkanı", foto:"fikret-azili", taslak:false,
   baslik:"Mühendisliğin yeni sorumluluğu",
@@ -2509,15 +2539,24 @@ $$("[data-units]").forEach(function(el){
 $$("[data-flow-del]").forEach(function(el){buildFlow(el,DELIVERY.map(function(d,i){return {t:d[0],d:DEL_D[i],s:d[1]}}),{mode:"del"})});
 
 /* ---------- Referanslar ---------- */
-var PST=null, CURS=null, SECF=null;
+var PST=null, CURS=null, SECF=null, FINF=null, PQ="";
+var FINS=[["WB","Dünya Bankası",/Dünya Bankası/],["AB","Avrupa Birliği",/(^|[^A-Za-zÇĞİÖŞÜçğıöşü])AB([^A-Za-zÇĞİÖŞÜçğıöşü]|$)|Avrupa Birliği|IPA|MADAD|FRIT/],["EIB","Avrupa Yatırım Bankası",/Avrupa Yatırım Bankası|EIB/],["KfW","KfW",/KfW/],["CEB","CEB",/CEB/],["UL","Ulusal ve özel kaynak",null]];
+function finOf(p){var t=(p.meta||[]).filter(function(m){return /^Finansman/.test(m[0])}).map(function(m){return m[1]}).join(" | ");var r=FINS.filter(function(f){return f[2]&&f[2].test(t)}).map(function(f){return f[0]});return r.length?r:["UL"]}
+function trl(x){return String(x||"").toLocaleLowerCase("tr")}
+function pText(p){return trl([p.t,p.s,p.loc,p.kind,(secById[p.cat]||{}).name].concat((p.meta||[]).map(function(m){return m[1]})).join(" "))}
 function chip(href,label,on,attr){return '<a href="'+href+'"'+(on?' aria-current="true"':'')+(attr||'')+'>'+esc(label)+'</a>'}
 function renderRefs(svc){
   CURS=svc||null;
-  var list=P.filter(function(p){return (!CURS||p.svc.indexOf(SById[CURS])>-1)&&(!SECF||MG[p.cat]===SECF)&&(!PST||p.st===PST)});
+  var q=trl(PQ).trim();
+  var list=P.filter(function(p){return (!CURS||p.svc.indexOf(SById[CURS])>-1)&&(!SECF||MG[p.cat]===SECF)&&(!PST||p.st===PST)&&(!FINF||finOf(p).indexOf(FINF)>-1)&&(!q||q.split(/\s+/).every(function(w){return pText(p).indexOf(w)>-1}))});
   var base="#projeler"+(CURS?"-"+CURS:"");
   $("[data-filters]").innerHTML='<span class="mono flab">Hizmet</span>'+chip("#projeler","Tümü",!CURS)+SL.map(function(s){return chip("#projeler-"+s.id,s.name,CURS===s.id)}).join('');
   $("[data-sector]").innerHTML='<span class="mono flab">Sektör</span>'+chip(base,"Tümü",!SECF,' data-sf=""')+AREAS.map(function(a){return chip(base,a.short,SECF===a.id,' data-sf="'+a.id+'"')}).join('');
   $("[data-status]").innerHTML='<span class="mono flab">Durum</span>'+[[null,"Tümü"],["live","Süren"],["done","Tamamlanan"]].map(function(x){return chip(base,x[1],PST===x[0],' data-st="'+(x[0]||"")+'"')}).join('');
+  var fc={};P.forEach(function(p){finOf(p).forEach(function(k){fc[k]=(fc[k]||0)+1})});
+  $("[data-fin]").innerHTML='<span class="mono flab">Finansman</span>'+chip(base,"Tümü",!FINF,' data-ff=""')+FINS.filter(function(f){return fc[f[0]]}).map(function(f){return chip(base,f[1],FINF===f[0],' data-ff="'+f[0]+'"').replace('</a>',' <em>'+fc[f[0]]+'</em></a>')}).join('');
+  $$("[data-fin] a").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();FINF=b.getAttribute("data-ff")||null;renderRefs(CURS)})});
+  var pc=$("[data-pcount]");if(pc)pc.textContent=list.length+" proje";
   $$("[data-sector] a").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();SECF=b.getAttribute("data-sf")||null;renderRefs(CURS)})});
   $$("[data-status] a").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();PST=b.getAttribute("data-st")||null;renderRefs(CURS)})});
   $("[data-projects]").innerHTML=list.length?list.map(function(p,i){return pcard(p,i%9)}).join(''):'<p class="note" style="grid-column:1/-1">Bu seçime uyan proje yok. Filtrelerden birini kaldırın.</p>';
@@ -2590,6 +2629,8 @@ var VIEWS=["anasayfa","hizmetler","hizmet","referanslar","proje","yaklasim","hak
 var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["yaklasim","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"sektorler":["hizmetler",null],"uzmanlik":["hizmetler",null],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"projeler",proje:"projeler",yaklasim:"yaklasim",hakkimizda:"hakkimizda",kariyer:"kariyer",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null, REFSEC=null;
+(function(){var si=$("[data-psearch]"),tm=null;if(si)si.addEventListener("input",function(){clearTimeout(tm);tm=setTimeout(function(){PQ=si.value;renderRefs(CURS)},120)});
+  if(typeof LINKEDIN==="string"&&/^https:\/\/([a-z]+\.)?linkedin\.com\//.test(LINKEDIN)){$$("[data-linkedin]").forEach(function(x){x.href=LINKEDIN;x.hidden=false});$$("[data-linkedin-li]").forEach(function(x){x.hidden=false})}})();
 (function(){var tt=$("[data-toast]"),tm=null;$$(".lng").forEach(function(x){x.addEventListener("click",function(e){e.stopPropagation();var k=x.getAttribute("data-lang");
   $$("#nav .dd").forEach(function(d){d.classList.remove("open")});if(k==="tr")return;
   if(tt){tt.textContent=x.querySelector("b").textContent+" · Bu dil sürümü hazırlanıyor. Şimdilik Türkçe sürümü görüntülüyorsunuz.";tt.classList.add("on");clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove("on")},3600)}})})})();
@@ -2618,7 +2659,7 @@ function route(){
   if(view==="hizmet"){if(SById[arg])renderService(SById[arg]);else{view="hizmetler";arg=null}}
   if(view==="makale"){var A=MAKALELER.filter(function(x){return x.id===arg})[0];if(A)renderArticle(A);else{view="makaleler";arg=null}}
   if(view==="makaleler"&&curView!=="makaleler"){ACAT=null;renderArticles()}
-  if(view==="referanslar"){if(arg&&!SById[arg])arg=null;if(curView!=="referanslar"){PST=null;SECF=null}renderRefs(arg)}
+  if(view==="referanslar"){if(arg&&!SById[arg])arg=null;if(curView!=="referanslar"){PST=null;SECF=null;FINF=null;PQ="";var si=$("[data-psearch]");if(si)si.value=""}renderRefs(arg)}
   var curHref=location.hash||"#anasayfa", prevRef=REFSEC;
   if(SUBBASE[view]){var vv=$('[data-view="'+view+'"]'),ss=showSub(view,vv,sec),kk=subKeys(vv);curHref=subHref(view,ss,kk.indexOf(ss));if(view==="referanslar")REFSEC=ss} sec=null;
   var keepScroll=(view==="referanslar"&&curView==="referanslar"&&prevRef==="liste"&&REFSEC==="liste");

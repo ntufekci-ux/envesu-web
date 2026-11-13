@@ -46,3 +46,15 @@ Projenin `img` alanı boşsa kartta kategori simgeli koyu bir kapak çıkar. "Ul
 ## Dil seçici (yer tutucu)
 
 Üst menünün sağındaki küre simgesi Türkçe, English, Français, Deutsch, Español, العربية, Русский ve Oʻzbekcha seçeneklerini gösterir. Şimdilik yalnızca Türkçe sürüm var; diğerleri seçilince "Bu dil sürümü hazırlanıyor" bildirimi çıkar. Çeviriler hazırlandığında her dil ayrı bir sayfa (ör. /en/) olarak bağlanacak; Arapça sağdan sola düzen gerektirir.
+
+## Kurumsal profil PDF
+
+`doc/envesu-kurumsal-profil-2026-tr.pdf` — "Envesu_Kurumsal Profil_2026_TR.pdf" dosyasının web için küçültülmüş hali (53,9 MB → 11,7 MB, görseller 140 dpi). Biz Kimiz sayfasında ve Başkan mesajı sayfasının altında indirme bağlantısı var. Profil güncellenince aynı adla değiştirin.
+
+## LinkedIn
+
+`index.html` içinde `var LINKEDIN="";` satırına şirket sayfası adresi (https://www.linkedin.com/company/...) yazılınca menüde ve alt bilgide LinkedIn simgesi görünür.
+
+## Proje arama ve finansman filtresi
+
+Tüm Projeler sayfasında arama kutusu (proje, il, kurum) ve finansman filtresi var. Finansman, her projenin "Finansman" künye satırından otomatik okunur; satırı olmayan projeler "Ulusal ve özel kaynak" altında görünür.
