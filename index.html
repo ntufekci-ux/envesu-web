@@ -1224,6 +1224,29 @@ html.lbx-open{overflow:hidden}
 .nav .soc[hidden]{display:none}
 @media (max-width:1020px){.nav .soc{margin:12px 0 0}}
 .sec.sec-list{padding-top:clamp(40px,5vw,64px)}.sec.pb-s{padding-bottom:clamp(32px,4vw,56px)}.sec.dl-sec{padding-top:0}
+/* v26 politikalar */
+.pol{display:grid;grid-template-columns:minmax(240px,.34fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.pol-tabs{display:grid;gap:10px;position:sticky;top:96px}
+.pol-tabs button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:center;padding:16px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);transition:border-color .3s,background .3s,transform .4s var(--ease)}
+.pol-tabs button:hover{border-color:var(--line-2);transform:translateX(3px)}
+.pol-tabs button[aria-selected="true"]{border-color:var(--lime);background:color-mix(in srgb,var(--lime) 9%,var(--card))}
+.pol-tabs button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.pol-ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line-2);color:var(--ink-3);transition:all .3s}
+.pol-ic svg{width:20px;height:20px}
+.pol-tabs button[aria-selected="true"] .pol-ic{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
+.pol-tabs b{display:block;font-weight:500;font-size:1.02rem;line-height:1.3}
+.pol-tabs small{display:block;color:var(--ink-3);margin-top:3px}
+.pol-panel{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:clamp(22px,3vw,40px)}
+.pol-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.pol-head h3{font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:400}
+.pol-head .btn .ar svg{width:13px;height:13px}
+.pol-body{display:grid;gap:16px;max-width:78ch}
+.pol-body p{color:var(--ink-2);line-height:1.7}
+.pol-ul{display:grid;gap:10px;padding:4px 0 4px 2px}
+.pol-ul li{position:relative;padding-left:24px;color:var(--ink);line-height:1.6}
+.pol-ul li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;border:2px solid var(--lime)}
+@media (max-width:860px){.pol{grid-template-columns:1fr}.pol-tabs{position:static;grid-template-columns:repeat(3,minmax(0,1fr))}.pol-tabs button{grid-template-columns:1fr;justify-items:center;text-align:center;padding:12px 8px}.pol-tabs small{display:none}.pol-tabs b{font-size:.86rem}}
+@media (min-width:1021px) and (max-width:1240px){.nav .soc{display:none}}
 </style>
 </head>
 <body>
@@ -1452,6 +1475,8 @@ html.lbx-open{overflow:hidden}
       <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
       <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
     </div>
+    <div class="sec-head split" style="margin-top:clamp(64px,8vw,110px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
+    <div class="pol" data-pol data-r></div>
   </div></section>
 
   <section class="sec" data-sec="dijital" data-title="Dijital ve BIM" data-sub="Tüm disiplinleri tek modelde buluşturan BIM ve bulut tabanlı proje yönetimi." data-img="p03"><div class="wrap">
@@ -1738,7 +1763,34 @@ html.lbx-open{overflow:hidden}
    ===================================================================== */
 /* ===== SOSYAL MEDYA =====
    LinkedIn şirket sayfası adresi girildiğinde menüde ve alt bilgide simge görünür. Boş bırakılırsa gizli kalır. */
-var LINKEDIN="";
+var LINKEDIN="https://www.linkedin.com/company/envesu/";
+
+/* ===== POLİTİKALAR (Çalışma Yöntemimiz › Kalite) =====
+   ENVESU'nun onaylı Kalite, Çevre ve İSG politikalarının metni (kaynak: Numan Tüfekçi'nin 13.11.2026'da ilettiği PDF'ler).
+   Metin değiştirilecekse PDF ile birlikte güncelleyin. Bloklar: ["p","paragraf"], ["ul",["madde",...]] */
+var POLITIKALAR=[
+ {id:"kalite",ad:"Kalite Politikası",kisa:"Kalite",pdf:"doc/envesu-kalite-politikasi.pdf",govde:[
+  ["p","ENVESU yönetimi olarak, hizmet verdiğimiz tüm alanlarda sürdürülebilirlik ilkeleri doğrultusunda kaynakların etkili ve verimli kullanımını öncelikli misyonumuz olarak belirliyoruz. Yurtiçi ve yurtdışı projelerimizde liderlik ettiğimiz veya ortağı olduğumuz çalışmaların; iklim, çevre ve sosyal politikalara duyarlı olmasını amaçlıyoruz. Bu amacı gerçekleştirmek üzere oluşturduğumuz kalite kültürüne uygun adımlar atıyoruz."],
+  ["p","ENVESU olarak, kalitenin tüm çalışanların sorumluluğu olduğunu biliyor ve kalite hedeflerimize ulaşmak için takım olarak çalışıyoruz."],
+  ["p","ENVESU imzası taşıyan tüm çalışmalarda Müşterilerimizin ihtiyaç ve beklentilerini sürekli olarak göz önünde bulundurur, çözümler sunar ve güvenilir bir iş ortağı olmayı hedefleriz. Müşteri memnuniyetini artırmak için:"],
+  ["ul",["Özel çözümler sunar, yaratıcı ve yenilikçi yaklaşımlar geliştiririz,","Potansiyel riskleri önceden tespit eder ve müşterilerimize yatırım optimizasyonunda yardımcı oluruz,","Tamamladığımız projeler sayesinde müşterilerimizle uzun vadeli ilişkiler kurar ve karşılıklı güven inşa ederiz,","Etkili iletişim kurar, müşterilerimizle açık ve şeffaf bir iletişim sağlayarak onların iş ortamı konforunu artırırız."]],
+  ["p","Sektördeki yenilikleri takip eder, mükemmeliyetçi bir yaklaşım sergileriz. Rekabet gücümüzü ve saygınlığımızı artırmak için:"],
+  ["ul",["Dürüst ve adil hizmet sunar, taahhütlerimizi eksiksiz yerine getiririz,","Mühendislik etiği değerlerine bağlı kalırız,","Sektördeki teknolojik ve pazar gelişmelerini takip eder ve beklentilere uygun çözümler üretiriz."]],
+  ["p","Çevreye duyarlı, verimliliği yüksek ve gelişmeye açık çözümler üretiriz. Sürdürülebilirlik ilkelerini benimsemek için:"],
+  ["ul",["En yeni bilgi ve sistemleri kullanırız,","Ulusal ve uluslararası platformlarda yürütülen projelerin yürürlükteki yasal mevzuatlara ve standartlara uygun olmasını sağlarız,","Ölçülebilir performans kriterlerine dayalı çağdaş yöntemler uygular, riskleri azaltır ve \"İşi ilk seferde doğru yap\" ilkesini benimseriz,","Doğal kaynakları korur, çevresel etkileri azaltır ve sosyal sorumluluk projelerine destek veririz,","İnovasyonu teşvik eder, sürekli olarak kendimizi yenileriz."]],
+  ["p","Çalışanlarımızın sürekli gelişimini destekler, dinamik ve yenilikçi bir çalışma ortamı yaratırız. Çalışanlarımızın:"],
+  ["ul",["Kaliteyi ön planda tutarak, kalite bilincini artırmasını sağlarız,","Yaratıcılıklarını serbestçe kullanmalarını sağlayarak, bağımsız düşünmelerini teşvik ederiz,","Takım çalışmasına uyum sağlamalarını ister ve yetkinleşmelerine katkıda bulunuruz,","Geçmişten kazandığımız tecrübe ile kurumsal hafıza oluşturur, deneyimlerimizi paylaşarak gelecek nesillere aktarırız."]]]},
+ {id:"cevre",ad:"Çevre Politikası",kisa:"Çevre",pdf:"doc/envesu-cevre-politikasi.pdf",govde:[
+  ["p","ENVESU olarak su yönetimi, enerji verimliliği, çevresel sürdürülebilirlik için ve altyapı projeleri gibi çeşitli alanlarda hizmet sunmakta, ulusal ve uluslararası standartlar doğrultusunda faaliyet göstermekteyiz. Tüm süreçlerimizi 2872 sayılı Çevre Kanunu, 5627 sayılı Enerji Verimliliği Kanunu, Sıfır Atık Yönetmeliği gibi ulusal düzenlemelerle ve ISO 14001:2015 Çevre Yönetim Sistemi, ISO 50001:2018 Enerji Yönetim Sistemi gibi uluslararası standartlarla tam uyum içinde yürütmek için çalışmaktayız. Aynı zamanda proje yönetim süreçlerinde Dünya Bankası, Avrupa Yatırım Bankası gibi uluslararası finans kuruluşlarının, Çevresel ve Sosyal Standartları, Çevresel ve Sosyal Sürdürülebilirlik Çerçevesi ve Ekvator Prensipleri gibi gereklilikleri esas almaktayız. Bu yaklaşım ile doğal kaynakların korunmasını, çevresel etkilerin en aza indirilmesini ve toplum üzerindeki olumlu etkilerin artırılmasını hedeflemekteyiz. Çevre yönetim hedeflerimiz doğrultusunda, tüm faaliyetlerimizi çevresel, ekonomik ve toplumsal fayda odağında yürütmekte kararlıyız."],
+  ["p","Bu kapsamda:"],
+  ["ul",["Faaliyette bulunduğumuz ülkelerin çevresel mevzuatı ve bu mevzuattan doğan yükümlülükler ile uluslararası standartlara tam uyum sağlamayı,","Finansman sağlayıcısı, uygulatıcı, danışman, uygulayıcı ve diğer üçüncü tarafların ulusal ve uluslararası çevresel ve sosyal standartlara uygunluğunu güvence altına almayı,","Doğal kaynakları korumayı ve verimli kullanmayı,","Sıfır atık yaklaşımı kapsamında geri dönüşüm ve geri kazanımı artırmayı,","Atık yönetim süreçlerimizi Sıfır Atık Yönetmeliği, Atık Yönetimi Yönetmeliği ve AB Atık Çerçeve Direktifi (2008/98/EC) doğrultusunda yürütmeyi, atıkların kaynağında ayrıştırılmasını ve geri dönüşüm oranlarının artırılmasını,","Dahil olduğumuz projelerde çevre kirliliğini önlemek için gerekli tüm önlemleri almayı,","Faaliyetlerimizin çevresel etkilerini en aza indirmek veya ortadan kaldırmak için yatırımlarımızı çevreye duyarlı şekilde yönetmeyi,","Enerji verimliliğini artıran ve iklim değişikliğinin etkilerini azaltan çevre dostu teknolojilerden faydalanmayı, faaliyetlerimizi 5627 sayılı Enerji Verimliliği Kanunu ve AB Enerji Verimliliği Direktifi (2012/27/EU) çerçevesinde şekillendirmeyi,","Su kullanımımızı Su Kirliliği Kontrol Yönetmeliği ve AB Su Çerçeve Direktifi (2000/60/EC) kapsamında etkin şekilde yöneterek suyun verimli kullanımını teşvik etmeyi,","Yaşam döngüsü yaklaşımıyla çevresel risk ve fırsatları değerlendirmeyi, çevresel iyileştirme hedefleri belirlemeyi ve bu hedefleri düzenli olarak gözden geçirmeyi,","Çevresel performansımızı sürekli izlemeyi, iyileştirmeyi ve gelişimi periyodik olarak raporlamayı,","Çalışanlarımızın çevre bilincini artırmak ve çevresel sorumluluklarını güçlendirmek amacıyla düzenli eğitim programları gerçekleştirmeyi,","Politikamızın tüm paydaşlar tarafından anlaşılmasını ve benimsenmesini sağlayarak çevre bilincini yaygınlaştırmayı,"]],
+  ["p","taahhüt ederiz."]]},
+ {id:"isg",ad:"İş Sağlığı ve Güvenliği Politikası",kisa:"İş sağlığı ve güvenliği",pdf:"doc/envesu-isg-politikasi.pdf",govde:[
+  ["p","ENVESU yönetimi olarak, “En Değerli Varlığımız İnsan Kaynağımızdır.” bilinciyle yola çıkarak çalışanlarımız için güvenli ve sağlıklı bir çalışma ortamı oluşturmayı ve bunu sürekli iyileştirmeyi hedeflemekteyiz. Bu doğrultuda en uygun çalışma yöntemlerini belirlemekte, uygulamakta ve sürdürülebilir hale getirmekteyiz. ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi, Uluslararası Çalışma Örgütü’nün (ILO) Güvenli ve Sağlıklı Çalışma Ortamına Dair 155 sayılı Sözleşmesi, Uluslararası Finans Kurumu’nun (IFC) Performans Standartları, 6331 sayılı Türkiye İş Sağlığı ve Güvenliği Kanunu ve ilgili ulusal ve uluslararası mevzuatlar doğrultusunda oluşturulan İş Sağlığı ve Güvenliği Yönetim Sistemimiz kapsamında, riskleri kontrol altına almakta ve iş kazalarını önlemek için gerekli önlemleri almaktayız."],
+  ["p","İSG performansımızı artırmak amacıyla, ilgili ulusal ve uluslararası mevzuat ve yönetmeliklere uyum kapsamında:"],
+  ["ul",["Sıfır iş kazası ve sıfır meslek hastalığı yaklaşımıyla sağlıklı ve güvenli çalışma koşullarını oluşturmayı,","Çalışma ortamındaki tehlike ve riskleri belirleyerek iş kazalarını ve meslek hastalıklarını önlemek için gerekli tüm önlemleri almayı,","Risk yönetimi süreçlerini gözden geçirerek ramak kala olaylarını etkin bir şekilde analiz etmeyi ve düzeltici/önleyici aksiyonları hayata geçirmeyi,","Gerekli olabilecek tüm İSG eğitimleri için olanak sağlamayı ve eğitimlerin etkinliğini takip etmeyi,","Çalışanlarımız ve ilgili tarafların İSG konusundaki ihtiyaç ve beklentilerinin anlaşılması için gerekli iletişim faaliyetlerini sağlamayı,","Acil durumlara karşı hazırlıklı olmak için düzenli tatbikatlar gerçekleştirmeyi ve kriz yönetim planlarını sürekli güncellemeyi,","İş sağlığı ve güvenliği ile ilgili kapsamındaki yasal yükümlülüklere, ilgili ulusal ve uluslararası standartlara uymayı,","Teknolojik gelişmeleri takip ederek iş sağlığı ve güvenliğini destekleyen yenilikçi çözümleri süreçlerimize entegre etmeyi,","Tedarikçi ve yüklenicilerin de İSG gerekliliklerine uyum sağlamalarını garanti altına almayı,","İş Sağlığı ve Güvenliği Yönetim Sistemimizi düzenli olarak gözden geçirerek sürekli olarak iyileştirmeyi ve performansımızı ölçerek şeffaf bir şekilde raporlamayı"]],
+  ["p","taahhüt ederiz."]]}
+];
 
 var BASKAN={
   ad:"Fikret Azılı", unvan:"Yönetim Kurulu Başkanı", foto:"fikret-azili", taslak:false,
@@ -2931,6 +2983,18 @@ function buildSvcBridge(host,items,o){
   var go=cycler(n,set,3200,host);
   sts.forEach(function(x,i){x.addEventListener("click",function(){go(i)});x.addEventListener("focus",function(){go(i)});if(FINE)x.addEventListener("mouseenter",function(){set(i)})});
   set(0);
+})();
+
+/* ---------- Politikalar ---------- */
+(function(){
+  var host=$("[data-pol]"); if(!host||typeof POLITIKALAR==="undefined") return;
+  var IC={"kalite": "<path d=\"M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z\"/>", "cevre": "<path d=\"M5 19c0-8 6-13 14-14-1 8-6 14-14 14z\"/><path d=\"M5 19c3-4 6-7 10-9\"/>", "isg": "<path d=\"M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z\"/><path d=\"M9 12l2 2 4-4\"/>"};
+  function body(g){return g.map(function(b){return b[0]==="ul"?'<ul class="pol-ul">'+b[1].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'<p>'+esc(b[1])+'</p>'}).join('')}
+  host.innerHTML='<div class="pol-tabs" role="tablist" aria-label="Politikalar">'+POLITIKALAR.map(function(p,i){return '<button type="button" role="tab" id="pt-'+p.id+'" aria-controls="pp-'+p.id+'" aria-selected="'+(i?'false':'true')+'" tabindex="'+(i?'-1':'0')+'" data-i="'+i+'"><span class="pol-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+(IC[p.id]||'')+'</svg></span><span><b>'+esc(p.ad)+'</b><small class="mono">'+(p.govde.filter(function(b){return b[0]==="ul"}).reduce(function(n,b){return n+b[1].length},0))+' madde</small></span></button>'}).join('')+'</div>'+
+    POLITIKALAR.map(function(p,i){return '<article class="pol-panel" role="tabpanel" id="pp-'+p.id+'" aria-labelledby="pt-'+p.id+'"'+(i?' hidden':'')+'><div class="pol-head"><h3>'+esc(p.ad)+'</h3><a class="btn dark" href="'+p.pdf+'" target="_blank" rel="noopener">PDF olarak aç <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2.5 14h11"/></svg></span></a></div><div class="pol-body">'+body(p.govde)+'</div></article>'}).join('');
+  var tabs=$$(".pol-tabs button",host),panels=$$(".pol-panel",host);
+  function sel(i,focus){tabs.forEach(function(t,j){t.setAttribute("aria-selected",j===i?"true":"false");t.tabIndex=j===i?0:-1});panels.forEach(function(p,j){p.hidden=j!==i;if(j===i){p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap")}});if(focus)tabs[i].focus()}
+  tabs.forEach(function(t,i){t.addEventListener("click",function(){sel(i)});t.addEventListener("keydown",function(e){var n=tabs.length;if(e.key==="ArrowRight"||e.key==="ArrowDown"){e.preventDefault();sel((i+1)%n,true)}else if(e.key==="ArrowLeft"||e.key==="ArrowUp"){e.preventDefault();sel((i-1+n)%n,true)}})});
 })();
 })();
 </script>

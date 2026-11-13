@@ -53,8 +53,12 @@ Projenin `img` alanı boşsa kartta kategori simgeli koyu bir kapak çıkar. "Ul
 
 ## LinkedIn
 
-`index.html` içinde `var LINKEDIN="";` satırına şirket sayfası adresi (https://www.linkedin.com/company/...) yazılınca menüde ve alt bilgide LinkedIn simgesi görünür.
+`index.html` içindeki `var LINKEDIN="https://www.linkedin.com/company/envesu/";` satırı menüdeki ve alt bilgideki LinkedIn bağlantısını belirler; boş bırakılırsa simge gizlenir.
 
 ## Proje arama ve finansman filtresi
 
 Tüm Projeler sayfasında arama kutusu (proje, il, kurum) ve finansman filtresi var. Finansman, her projenin "Finansman" künye satırından otomatik okunur; satırı olmayan projeler "Ulusal ve özel kaynak" altında görünür.
+
+## Politikalar (Çalışma Yöntemimiz › Kalite)
+
+Kalite, Çevre ve İSG politikalarının metni `index.html` içindeki `POLITIKALAR` listesindedir; PDF'leri `doc/envesu-kalite-politikasi.pdf`, `doc/envesu-cevre-politikasi.pdf`, `doc/envesu-isg-politikasi.pdf`. Politika güncellenince hem metni hem PDF'i değiştirin.
