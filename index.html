@@ -1775,7 +1775,6 @@ html.lbx-open{overflow:hidden}
     <div class="doclist" style="margin-top:28px" data-r><a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İş Sağlığı ve Güvenliği Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a><a href="doc/envesu-isg-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Politikası</b><small>PDF</small></span></a></div>
   </div></section>
   <section class="sec" data-sec="etik" data-title="Etik İlkelerimiz" data-sub="Dürüstlük, tarafsızlık ve şeffaflık: tüm çalışanlarımıza yol gösteren etik değerlerimiz ve ilkelerimiz." data-img="h5"><div class="wrap">
-    <div class="em-head"><p class="kicker" data-r>Etik değerlerimiz ve ilkelerimiz</p><h2 class="h2" data-r>7 başlıkta ENVESU'da etik.</h2><p class="lede" data-r>Kurumsal itibarımız, etik davranışlarımızla şekillenir. Dört temel değer ve üç temel ilke, merkez ofisimizden şantiyelerimize tüm çalışanlarımıza yol gösterir.</p></div>
     <div class="emo" data-etmosaic></div>
   </div></section>
 
@@ -3317,6 +3316,7 @@ function buildSvcBridge(host,items,o){
     var ns=$$(".cy-n",cy),arc=$(".cy-arc",cy),cb=$(".cy-c b",cy),cs=$(".cy-c small",cy);
     function set(i){ns.forEach(function(g,j){g.classList.toggle("on",j===i);g.classList.toggle("done",j<i)});arc.style.strokeDasharray=((i+1)/n*100).toFixed(1)+" 100";cb.textContent=S[i][0];cs.textContent=S[i][1];var c=$(".cy-c",cy);c.classList.remove("swap");void c.offsetWidth;c.classList.add("swap")}
     var go=cycler(n,set,3200,cy);ns.forEach(function(g,i){g.addEventListener("click",function(){go(i)});if(FINE)g.addEventListener("mouseenter",function(){set(i)})});set(0)}
+  observe(document);
 })();
 })();
 </script>
