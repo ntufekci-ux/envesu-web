@@ -35,4 +35,10 @@ Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kayna
 - Hakkımızda › Misyon ve değerler: "Her işin üç bileşeni" diyagramı (profil s.7).
 - Yaklaşım › Proje yönetimi: dokuz yönetim alanı çarkı (s.8) ve teslim aşamalarını bir köprünün aşama aşama gelişimiyle anlatan akış (s.9). Aşama içerikleri `TESLIM` listesindedir.
 - Yaklaşım › Dijital ve BIM: BIM yaşam döngüsü çarkı (s.17); kısa açıklamalar `index.html` içinde, Claude tarafından yazıldı, kontrol edilmeli.
-- NRW animasyonu: `media/nrw-animasyon.mp4` (sessiz, 10 sn). NRW Kılavuzu proje sayfasında ve "Şebeke kayıpları" makalesinde oynar. Video İngilizcedir.
+- NRW animasyonu: hareketli görsel `media/nrw-animasyon.webp` (960 px, 10 sn döngü); yüklenirken `media/nrw-poster.jpg` görünür. Kaynak video `media/nrw-animasyon.mp4` arşiv için duruyor. Görseldeki yazılar İngilizcedir.
+- Hizmet sayfalarındaki "Proje yaşam döngüsünde" akışı 6 açıklıklı bir kemer köprü: hizmetin kapsadığı aşamalar inşa edilmiş, diğerleri kesikli çizgiyle gösterilir.
+- Kalite belgeleri sayfada küçük önizlemelerle (`img/cert/*-k.jpg`) açılır; tıklayınca tam boy görsel gelir.
+
+## Görseli olmayan projeler
+
+Projenin `img` alanı boşsa kartta kategori simgeli koyu bir kapak çıkar. "Ulusal İklim Finansmanı" için temsili bir illüstrasyon üretildi (`img/p29.jpg`); projede `ill:1` işareti olduğu için sayfada "Temsili görsel" etiketi görünür ve galeri bölümü gösterilmez. Gerçek fotoğraf gelince dosyayı değiştirip `ill:1` ifadesini silin.

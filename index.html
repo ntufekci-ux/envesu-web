@@ -1021,7 +1021,7 @@ html.lbx-open{overflow:hidden}
 .bw-svg{display:block;width:100%;height:100%;overflow:visible}
 .bw-seg{cursor:pointer}.bw-seg path{fill:var(--c);transition:transform .5s var(--ease),opacity .4s;transform-box:view-box;transform-origin:280px 280px;opacity:.9}
 .bw-seg.on path{transform:scale(1.05);opacity:1}
-.bw-ic{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.bw-ic{fill:none;stroke:#fff;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .bw-seg[data-g="op"] .bw-ic,.bw-seg[data-g="pr"] .bw-ic,.bw-seg[data-g="cn"] .bw-ic,.bw-seg[data-g="pl"] .bw-ic{stroke:#0e1a14}
 .bw-lb{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.05em;fill:var(--ink-2);text-anchor:middle;dominant-baseline:middle;transition:fill .3s}
 .bw-seg.on .bw-lb{fill:var(--ink);font-weight:600}
@@ -1040,6 +1040,50 @@ html.lbx-open{overflow:hidden}
 .bw-legend button.on{background:var(--paper);border-color:var(--line)}
 @media (max-width:860px){.bw{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.triad .rg,.triad .bob,.mw-arc,.br-wv path,.bs.so.on .gr,.bs.so.on .gx,.bs.so.on .gf,.bs.so.on .badge{animation:none}.bs.so.on .car{animation:none;opacity:1;transform:translate(560px,196px)}}
+
+/* v15: hizmet köprüsü */
+.sb-scroll{overflow-x:auto;scrollbar-width:thin;margin-inline:-8px;padding:8px}
+.sb-stage{min-width:760px}
+.sb-card{background:var(--paper);border:1px solid var(--line);border-radius:6px 6px 0 0;overflow:hidden}
+.sb-svg{display:block;width:100%;height:auto}
+.sb-gnd{fill:color-mix(in srgb,var(--ink) 6%,var(--paper));stroke:var(--line-2);stroke-width:1.2}
+.sb-riv{fill:none;stroke:color-mix(in srgb,var(--sky) 60%,var(--paper));stroke-width:6;stroke-linecap:round}
+.sb-hl{fill:var(--lime);opacity:0;transition:opacity .35s}
+.sb-sp{cursor:pointer}.sb-sp.on .sb-hl{opacity:.1}
+.sb-arch,.sb-post{fill:none;stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:6 5}
+.sb-deck{fill:none;stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:6 5}
+.sb-top{fill:transparent}
+.sb-pier,.sb-abt{fill:none;stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:6 5}
+.sb-pier.act,.sb-abt.act{fill:color-mix(in srgb,var(--ink) 55%,var(--paper));stroke:var(--ink);stroke-dasharray:none}
+.sb-sp.act .sb-arch{stroke:color-mix(in srgb,var(--ink) 60%,var(--paper));stroke-width:9;stroke-dasharray:none;stroke-linecap:butt}
+.sb-sp.act .sb-post{stroke:color-mix(in srgb,var(--ink) 60%,var(--paper));stroke-width:3;stroke-dasharray:none}
+.sb-sp.act .sb-deck{fill:var(--ink);stroke:var(--ink);stroke-dasharray:none}
+.sb-sp.act .sb-top{fill:var(--lime)}
+.sb-no circle{fill:var(--paper);stroke:var(--line-2);stroke-width:1.5;transition:fill .3s,stroke .3s}
+.sb-no text{font-family:var(--f-mono);font-size:12px;text-anchor:middle;fill:var(--ink-3)}
+.sb-sp.act .sb-no circle{stroke:var(--brand-ink);stroke-width:2}.sb-sp.act .sb-no text{fill:var(--brand-ink);font-weight:600}
+.sb-sp.on .sb-no circle{fill:var(--ink);stroke:var(--ink)}.sb-sp.on .sb-no text{fill:var(--paper)}
+.sb-sp.act.on .sb-no circle{fill:var(--lime);stroke:var(--lime)}.sb-sp.act.on .sb-no text{fill:var(--on-lime)}
+.sb-car{fill:var(--brand-ink)}
+.sb-rul{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid var(--line);border-top:0;background:var(--paper);border-radius:0 0 6px 6px}
+.sb-rul button{all:unset;cursor:pointer;position:relative;display:grid;gap:4px;align-content:start;padding:14px 14px 14px;border-left:1px solid var(--line);transition:background .25s}
+.sb-rul button:first-child{border-left:0}
+.sb-rul button::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.sb-rul button.act::before{transform:scaleX(1)}
+.sb-rul button.on{background:color-mix(in srgb,var(--lime) 10%,var(--paper))}
+.sb-rul small{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.sb-rul button.act small{color:var(--brand-ink)}
+.sb-rul b{font-size:1rem;font-weight:500;color:var(--ink-2)}.sb-rul button.on b,.sb-rul button.act b{color:var(--ink)}
+.sb-rul button:focus-visible{outline:2px solid var(--brand-ink);outline-offset:-2px}
+.sb-leg{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-size:.88rem;color:var(--ink-3)}
+.sb-leg span{display:inline-flex;align-items:center;gap:8px}.sb-leg i{width:26px;height:6px;border-radius:2px}
+.lg-on{background:var(--ink);box-shadow:inset 0 2px 0 var(--lime)}.lg-off{border:1.5px dashed var(--ink-3);height:4px!important}
+.cert-im img{aspect-ratio:560/792;width:100%;height:auto}
+.vid img{width:100%;height:auto;display:block;border-radius:4px;aspect-ratio:16/9;background:#e9f3f7 center/cover no-repeat}
+.ill-tag{position:absolute;right:16px;bottom:14px;z-index:2;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(0,0,0,.3);padding:4px 8px;border-radius:3px}
+.noimg{background:radial-gradient(120% 90% at 70% 30%,#14472d,var(--night) 70%)}
+.noimg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
+.noimg svg{position:relative}
 
 </style>
 </head>
@@ -1592,7 +1636,7 @@ var MAKALELER=[
    ["p","Bir su idaresinin şebekeye verdiği suyun tamamı faturaya dönüşmez. Aradaki fark, “gelir getirmeyen su” (Non-Revenue Water, NRW) olarak adlandırılır ve hem kaynak hem enerji hem de gelir kaybı anlamına gelir. Arıtılmış, pompalanmış ve şebekeye basılmış suyun kaybı, en pahalı kayıptır."],
    ["h","Su dengesi: önce ne kaybettiğinizi bilin"],
    ["p","Uluslararası Su Birliği'nin (IWA) su dengesi yaklaşımı, sisteme giren su hacmini yetkili tüketim ve su kayıpları olarak ikiye ayırır. Su kayıpları da kendi içinde fiziki (gerçek) kayıplar ve idari (görünür) kayıplar olarak incelenir. Gelir getirmeyen su ise faturalandırılmayan yetkili tüketim ile tüm su kayıplarının toplamıdır. Bu ayrım önemlidir; çünkü her bileşenin çözümü farklıdır."],
-   ["video","media/nrw-animasyon.mp4","media/nrw-animasyon.jpg","Şebeke kayıplarının oluşumu ve yönetimi (animasyon)"],
+   ["video","media/nrw-animasyon.webp","media/nrw-poster.jpg","Şebeke kayıplarının oluşumu ve yönetimi (animasyon)"],
    ["h","Fiziki kayıplar: dört müdahale alanı"],
    ["ul",["Aktif kaçak kontrolü: düzenli tarama ve dinleme ile görünmeyen kaçakların bulunması","Basınç yönetimi: gereğinden yüksek basıncın düşürülmesi, kaçak debisini ve yeni arızaları azaltır","Onarım hızı ve kalitesi: arızaya müdahale süresinin kısaltılması","Altyapı yönetimi: yaşlı ve sorunlu hatların öncelik sırasıyla yenilenmesi"]],
    ["h","İdari kayıplar: sayaçtan faturaya"],
@@ -1843,7 +1887,7 @@ var P=[
  meta:[["İşveren","UTP / PMU (ÇŞİDB)"],["Finansman","Dünya Bankası"],["Program","CDRCP"],["Başlangıç / süre","Mart 2026 / 24 ay"]],
  scopeT:"Proje kapsamı",scope:[["Toplam adam-ay","672 adam-ay"],["Sözleşme süresi","24 ay / 730 gün"],["İller","Kocaeli · Manisa · Tekirdağ"]],
  sv:["Uygulama Destek Danışmanlığı","Mülk Sahiplerine Teknik ve Hukuki Destek","Güçlendirme / Yeniden İnşa Kalite Güvencesi","Hukuki Destek (6306 Sayılı Kanun)","Mülk Sahibi-Yüklenici Sözleşme İncelemesi","Yüklenici Seçimi ve Tasarım Rehberliği","Tasarım / Ruhsat Doküman İncelemesi","İnşaat Kalite Kontrolü ve Sismik Uygunluk","İnşaat Sonrası Kalite Kontrolü ve Tapu","Ç&S / İSG İzleme ve Şikâyet"]},
-{id:"iklim-finansmani",t:"Ulusal İklim Finansmanı Kapasitesinin Güçlendirilmesi",s:"Ulusal İklim Finansmanı Kapasite Geliştirme",loc:"Ankara",kind:"İklim ve sürdürülebilirlik",cat:"kent",st:"live",img:[],
+{id:"iklim-finansmani",t:"Ulusal İklim Finansmanı Kapasitesinin Güçlendirilmesi",s:"Ulusal İklim Finansmanı Kapasite Geliştirme",loc:"Ankara",kind:"İklim ve sürdürülebilirlik",cat:"kent",st:"live",img:["p29"],ill:1,
  meta:[["İdare","T.C. ÇŞİDB / AB-IPA III"],["Finansman kaynağı","Avrupa Birliği (IPA III)"],["Süre","24 ay (2025–2027)"],["Yer","Ankara, Türkiye"]],
  scopeT:"Temel çıktılar ve teslimatlar",scope:[["Ulusal İklim Finansmanı Stratejisi",""],["Ulusal Yeşil Taksonomi Taslağı",""],["Sermaye Piyasaları Yeşil Finans Raporu",""],["ETS Gelir Fonu Fizibilite Çalışması",""],["Eğitim Programı","400+ katılımcı"],["AB Taksonomisi Çevirisi",""]],
  sv:["İklim Finansmanı Strateji Geliştirme","Politika Çerçevesi ve Mevzuat Analizi","Paydaş Haritalama ve Analizi","Temel Durum Analizi ve Değerlendirmesi","İzleme Metodolojisi Geliştirme","Eğitim ve Kapasite Geliştirme","Yeşil Taksonomi Taslağı Hazırlanması","AB Mevzuatı Taraması ve Karşılaştırması","Sermaye Piyasaları Analizi","ETS Gelir Fonu Fizibilite Çalışması","Sigorta Sektörü İklim Riski Analizi","E-Öğrenme Modülü ve Web Sitesi"]},
@@ -2113,7 +2157,7 @@ function renderService(s){
   '<section class="sec mist"><div class="wrap"><div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><h2 class="h2" data-r>'+esc(s.name)+', döngünün neresinde?</h2></div><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. <a class="link" href="#hizmetler">Tüm hizmetler</a></p></div><div data-flow-svc></div></div></section>'+
   '<section class="sec"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Referanslar</p><h2 class="h2" data-r>'+esc(s.name)+' referanslarımız.</h2></div><a class="link" href="#referanslar-'+s.id+'">Referanslar sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm referansları göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
   '<section class="night"><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEb")+'</span><div class="wrap"><a class="nextarea" href="#hizmet-'+nx.id+'"><span style="display:grid;gap:14px"><span class="mono">Sonraki hizmet</span><h2>'+esc(nx.name)+'</h2></span><span class="go">'+AR+'</span></a></div></section>';
-  buildFlow($("[data-flow-svc]"),PHASES.map(function(p){return {t:p.t,d:p.d,s:p.s}}),{mode:"svc",active:s.ph,svc:s.name});
+  buildSvcBridge($("[data-flow-svc]"),PHASES.map(function(p){return {t:p.t,d:p.d,s:p.s}}),{active:s.ph,svc:s.name});
   var g=$("[data-svcgrid]"), more=$("[data-more]");
   if(more){g.classList.add("clip");more.addEventListener("click",function(){g.classList.remove("clip");more.parentNode.remove()})}
 }
@@ -2129,8 +2173,8 @@ function blocks(g){return g.map(function(b){
   if(b[0]==="ul")return '<ul>'+b[1].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';
   return '<p>'+esc(b[1])+'</p>'}).join('')}
 function words(g){return g.reduce(function(n,b){return b[0]==="video"?n:n+(b[0]==="ul"?b[1].join(" "):b[1]).split(/\s+/).length},0)}
-function vidFig(src,poster,cap){return '<figure class="vid"><video src="'+src+'" poster="'+poster+'" autoplay muted loop playsinline controls preload="metadata"></video>'+(cap?'<figcaption>'+esc(cap)+'</figcaption>':'')+'</figure>'}
-var VIDEOS={"nrw-kilavuzu":["media/nrw-animasyon.mp4","media/nrw-animasyon.jpg","Şebeke kayıpları (NRW) animasyonu"]};
+function vidFig(src,poster,cap){return '<figure class="vid"><img src="'+src+'" alt="'+esc(cap||"")+'" width="960" height="540" decoding="async" style="background-image:url('+poster+')">'+(cap?'<figcaption>'+esc(cap)+'</figcaption>':'')+'</figure>'}
+var VIDEOS={"nrw-kilavuzu":["media/nrw-animasyon.webp","media/nrw-poster.jpg","Şebeke kayıpları (NRW) animasyonu"]};
 function rtime(a){return Math.max(2,Math.round(words(a.govde)/200))+" dk okuma"}
 function portrait(el){
   var ini=BASKAN.ad.split(" ").map(function(w){return w[0]}).join("");
@@ -2293,7 +2337,7 @@ function ltile(o){
 }
 $$("[data-logos]").forEach(function(el){var L=el.getAttribute("data-logos")==="fin"?FINANSORLAR:ISVERENLER;el.innerHTML=L.map(ltile).join('')});
 $$("[data-certs]").forEach(function(el){
-  el.innerHTML=SERTIFIKALAR.map(function(x,i){var p=x.std.split(" ").pop();return '<article class="cert2" data-r style="--d:'+(i*.1)+'s"><button class="cert-im" type="button" data-zoom="img/cert/'+x.gorsel+'.jpg" aria-label="'+esc(x.std)+' belgesini büyüt"><img src="img/cert/'+x.gorsel+'.jpg" alt="'+esc(x.std)+' sertifikası" loading="lazy"><span class="zoom-ic">'+AR+'</span></button><div class="cert-tx"><span class="mono">'+esc(x.std.replace(" "+p,""))+'</span><b>'+esc(p)+'</b><h3>'+esc(x.ad)+'</h3><dl><div><dt>Belge no</dt><dd>'+esc(x.no)+'</dd></div><div><dt>Geçerlilik</dt><dd>'+esc(SERTIFIKA_BILGI.gecerlilik)+'</dd></div></dl><a class="link" href="doc/'+x.pdf+'.pdf" target="_blank" rel="noopener">PDF olarak açın</a></div></article>'}).join('');
+  el.innerHTML=SERTIFIKALAR.map(function(x,i){var p=x.std.split(" ").pop();return '<article class="cert2" data-r style="--d:'+(i*.1)+'s"><button class="cert-im" type="button" data-zoom="img/cert/'+x.gorsel+'.jpg" aria-label="'+esc(x.std)+' belgesini büyüt"><img src="img/cert/'+x.gorsel+'-k.jpg" alt="'+esc(x.std)+' sertifikası" width="560" height="792" decoding="async"><span class="zoom-ic">'+AR+'</span></button><div class="cert-tx"><span class="mono">'+esc(x.std.replace(" "+p,""))+'</span><b>'+esc(p)+'</b><h3>'+esc(x.ad)+'</h3><dl><div><dt>Belge no</dt><dd>'+esc(x.no)+'</dd></div><div><dt>Geçerlilik</dt><dd>'+esc(SERTIFIKA_BILGI.gecerlilik)+'</dd></div></dl><a class="link" href="doc/'+x.pdf+'.pdf" target="_blank" rel="noopener">PDF olarak açın</a></div></article>'}).join('');
 });
 $$("[data-certmeta]").forEach(function(el){el.innerHTML='Belgelendirme kuruluşu: <b>'+esc(SERTIFIKA_BILGI.kurulus)+'</b> ('+esc(SERTIFIKA_BILGI.akreditasyon)+') · İlk belge tarihi '+esc(SERTIFIKA_BILGI.ilk)+' · Kapsam: '+esc(SERTIFIKA_BILGI.kapsam)+'.'});
 /* Basit görsel büyütme */
@@ -2351,7 +2395,7 @@ function renderDetail(p){
   var th=function(q){return q.img.length?'<img src="img/'+q.img[0]+'.jpg" alt="">':''};
   var hero=p.img.length?'<img src="img/'+p.img[0]+'.jpg" alt="'+esc(p.t)+'"'+(p.fit?' class="contain"':'')+'>':'';
   $("[data-pd]").innerHTML=
-  '<section class="pd-hero">'+hero+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#referanslar">Referanslar</a></p>'+
+  '<section class="pd-hero">'+hero+(p.ill?'<span class="ill-tag">Temsili görsel</span>':'')+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#referanslar">Referanslar</a></p>'+
   '<h1 tabindex="-1">'+esc(p.t)+'</h1><p class="sub">'+esc(p.s)+'</p><div class="pd-tags"><span class="mono" style="color:rgba(255,255,255,.75)">'+esc(p.loc)+' · '+esc(p.kind)+'</span>'+stat(p)+'</div></div></section>'+
   '<div class="wrap"><div class="pd-facts">'+p.meta.map(function(m){return '<div><span class="mono">'+esc(m[0])+'</span><b>'+esc(m[1])+'</b></div>'}).join('')+(bedelOf(p)?'<div class="pd-bed"><span class="mono">Sözleşme bedeli</span><b>'+esc(bedelOf(p)[0])+'</b>'+(bedelOf(p)[1]?'<small>'+esc(bedelOf(p)[1])+'</small>':'')+'</div>':'')+'</div>'+(p.svc.length?'<div class="pd-svc"><span class="mono">Bu projedeki hizmet hatlarımız</span><div class="chips">'+p.svc.map(function(s){return '<a class="chip" href="#hizmet-'+s.id+'">'+esc(s.name)+'</a>'}).join('')+'</div></div>':'')+'</div>'+
   '<section class="sec"><div class="wrap cols">'+
@@ -2359,7 +2403,7 @@ function renderDetail(p){
     '<div style="display:grid;gap:24px"><p class="kicker">Verilen hizmetler</p><ul class="ticks'+(p.sv.length>6?' two':'')+'">'+p.sv.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ul></div>'+
   '</div></section>'+
   (VIDEOS[p.id]?'<section class="sec tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Animasyon</p>'+vidFig(VIDEOS[p.id][0],VIDEOS[p.id][1],VIDEOS[p.id][2])+'</div></section>':'')+
-  (p.img.length?'<section class="sec mist tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Proje görselleri</p><div class="gal">'+p.img.map(function(f){return '<figure'+(p.fit?' class="contain"':'')+'><img src="img/'+f+'.jpg" alt="'+esc(p.t)+'" loading="lazy"></figure>'}).join('')+'</div></div></section>':'')+
+  (p.img.length&&!p.ill?'<section class="sec mist tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Proje görselleri</p><div class="gal">'+p.img.map(function(f){return '<figure'+(p.fit?' class="contain"':'')+'><img src="img/'+f+'.jpg" alt="'+esc(p.t)+'" loading="lazy"></figure>'}).join('')+'</div></div></section>':'')+
   '<div class="wrap"><nav class="pnav" aria-label="Diğer projeler"><a href="#proje-'+prev.id+'"><span class="th">'+th(prev)+'</span><span><span class="mono">Önceki proje</span><b>'+esc(prev.t)+'</b></span></a><a href="#proje-'+next.id+'"><span><span class="mono">Sonraki proje</span><b>'+esc(next.t)+'</b></span><span class="th">'+th(next)+'</span></a></nav></div>'+
   '<section class="sec tight"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center"><p class="h3">Benzer bir proje mi planlıyorsunuz?</p><a class="btn dark" href="#iletisim">Bizimle konuşun <span class="ar">'+AR+'</span></a></div></section>';
 }
@@ -2625,7 +2669,7 @@ function bridgeGeo(m){ /* m: "bp" taslak, "sc" şematik, "so" yapım */
   var cx=280,cy=280,n=S.length,st=360/n,s='<svg class="bw-svg" viewBox="0 0 560 560" role="img" aria-label="BIM yaşam döngüsü: planlama, tasarım, üretim, inşaat ve işletme">';
   s+='<defs>';S.forEach(function(x,i){var a0=i*st-st/2,a1=a0+st;});s+='</defs>';
   S.forEach(function(x,i){var a0=i*st-st/2+1.5,a1=a0+st-3,m=a0+(st-3)/2,ip=polar(cx,cy,188,m),lp=polar(cx,cy,264,m),rot=m>90&&m<270?m+180:m;
-    s+='<g class="bw-seg" data-i="'+i+'" data-g="'+x[1]+'" style="--c:'+G[x[1]][1]+';--k:'+i+';--m:'+m+'deg"><path d="'+sector(cx,cy,130,236,a0,a1)+'"/><g class="bw-ic" transform="translate('+(ip[0]-14).toFixed(1)+' '+(ip[1]-14).toFixed(1)+') scale(1.15)">'+x[3]+'</g><text class="bw-lb" transform="translate('+lp[0].toFixed(1)+' '+lp[1].toFixed(1)+') rotate('+rot.toFixed(1)+')">'+esc(x[0])+'</text></g>'});
+    s+='<g class="bw-seg" data-i="'+i+'" data-g="'+x[1]+'" style="--c:'+G[x[1]][1]+';--k:'+i+';--m:'+m+'deg"><path d="'+sector(cx,cy,130,236,a0,a1)+'"/><g class="bw-ic" transform="translate('+(ip[0]-22.8).toFixed(1)+' '+(ip[1]-22.8).toFixed(1)+') scale(1.9)">'+x[3]+'</g><text class="bw-lb" transform="translate('+lp[0].toFixed(1)+' '+lp[1].toFixed(1)+') rotate('+rot.toFixed(1)+')">'+esc(x[0])+'</text></g>'});
   s+='<circle class="bw-core" cx="'+cx+'" cy="'+cy+'" r="122"/><circle class="bw-orbit" cx="'+cx+'" cy="'+cy+'" r="126"/><circle class="bw-dot" r="6" cx="'+cx+'" cy="'+(cy-126)+'"/></svg>';
   var gl=Object.keys(G).map(function(k){return '<button type="button" data-g="'+k+'" style="--c:'+G[k][1]+'"><i></i><b>'+esc(G[k][0])+'</b><small>'+S.filter(function(x){return x[1]===k}).map(function(x){return esc(x[0])}).join(' · ')+'</small></button>'}).join('');
   host.innerHTML='<div class="bw-vis">'+s+'<div class="bw-center"><span class="bw-big">BIM</span><b></b><small></small></div></div><div class="bw-side"><p class="kicker">Yaşam döngüsü boyunca tek model</p><div class="bw-legend">'+gl+'</div></div>';
@@ -2637,6 +2681,48 @@ function bridgeGeo(m){ /* m: "bp" taslak, "sc" şematik, "so" yapım */
   lg.forEach(function(l){l.addEventListener("click",function(){var k=l.getAttribute("data-g");for(var i=0;i<n;i++)if(S[i][1]===k){go(i);break}})});
   set(0);
 })();
+
+/* ---------- Hizmet sayfası: proje yaşam döngüsü köprüsü ---------- */
+function buildSvcBridge(host,items,o){
+  if(!host) return;
+  var N=items.length,X0=40,X1=1160,SW=(X1-X0)/N,act=o.active||[],DY=118,DB=132;
+  function gnd(x){return x<=X0||x>=X1?172:172+96*Math.sin(Math.PI*(x-X0)/(X1-X0))}
+  function bz(p0,p1,p2,p3,t){var u=1-t;return u*u*u*p0+3*u*u*t*p1+3*u*t*t*p2+t*t*t*p3}
+  var s='<svg class="sb-svg" viewBox="0 0 1200 290" role="img" aria-label="Proje yaşam döngüsü: '+items.map(function(it){return esc(it.t)}).join(", ")+'">';
+  var gd="M0 172H"+X0;for(var x=X0;x<=X1;x+=20)gd+="L"+x+" "+gnd(x).toFixed(1);gd+="H1200V290H0Z";
+  s+='<path class="sb-gnd" d="'+gd+'"/>';
+  s+='<path class="sb-riv" d="M'+(600-70)+' '+(gnd(530)+2).toFixed(0)+'Q600 '+(gnd(600)+16).toFixed(0)+' 670 '+(gnd(670)+2).toFixed(0)+'"/>';
+  items.forEach(function(it,i){
+    var x0=X0+i*SW,x1=x0+SW,on=act.indexOf(i)>-1,a=x0+(i?9:4),b=x1-(i<N-1?9:4),ya=i?Math.min(gnd(x0)-4,200):gnd(x0)-2,yb=i<N-1?Math.min(gnd(x1)-4,200):gnd(x1)-2,cy=DB+12;
+    var g='<g class="sb-sp'+(on?' act':'')+'" data-i="'+i+'"><rect class="sb-hl" x="'+x0+'" y="0" width="'+SW+'" height="290"/>';
+    g+='<path class="sb-arch" d="M'+a+' '+ya.toFixed(1)+'C'+a+' '+cy+' '+b+' '+cy+' '+b+' '+yb.toFixed(1)+'"/>';
+    var posts='';for(var k=1;k<6;k++){var t=k/6,px=bz(a,a,b,b,t),py=bz(ya,cy,cy,yb,t);if(py-DB>6)posts+='M'+px.toFixed(1)+' '+DB+'V'+py.toFixed(1)}
+    g+='<path class="sb-post" d="'+posts+'"/>';
+    g+='<rect class="sb-deck" x="'+x0+'" y="'+DY+'" width="'+SW+'" height="'+(DB-DY)+'"/>';
+    g+='<rect class="sb-top" x="'+(x0+2)+'" y="'+(DY-4)+'" width="'+(SW-4)+'" height="4"/>';
+    g+='<g class="sb-no"><circle cx="'+(x0+SW/2)+'" cy="'+(DY-34)+'" r="17"/><text x="'+(x0+SW/2)+'" y="'+(DY-29)+'">'+("0"+(i+1)).slice(-2)+'</text></g></g>';
+    s+=g;
+  });
+  for(var k=0;k<=N;k++){var px=X0+k*SW,on=act.indexOf(k-1)>-1||act.indexOf(k)>-1,end=k===0||k===N;
+    s+=end?'<rect class="sb-abt'+(on?' act':'')+'" x="'+(k?px-6:px-30)+'" y="'+DY+'" width="36" height="'+(gnd(px)-DY+4).toFixed(1)+'"/>':'<rect class="sb-pier'+(on?' act':'')+'" x="'+(px-9)+'" y="'+DY+'" width="18" height="'+(gnd(px)-DY+6).toFixed(1)+'"/>'}
+  s+='<g class="sb-car"><rect x="-14" y="-10" width="28" height="8" rx="3"/><rect x="-7" y="-15" width="14" height="6" rx="2"/></g></svg>';
+  host.innerHTML='<div class="sb"><div class="sb-scroll"><div class="sb-stage"><div class="sb-card">'+s+'</div><div class="sb-rul">'+items.map(function(it,i){var on=act.indexOf(i)>-1;return '<button type="button" data-i="'+i+'" class="'+(on?'act':'')+'"><small>'+("0"+(i+1)).slice(-2)+(on?' · '+esc(o.svc):'')+'</small><b>'+esc(it.t)+'</b></button>'}).join('')+'</div></div></div>'+
+    '<div class="sb-leg"><span><i class="lg-on"></i>'+esc(o.svc)+'</span><span><i class="lg-off"></i>Diğer hizmetlerimiz</span></div><div class="flw-body" aria-live="polite"></div></div>';
+  var sps=$$(".sb-sp",host),bs=$$(".sb-rul button",host),body=$(".flw-body",host),car=$(".sb-car",host),sc=$(".sb-scroll",host),cur=-1;
+  function set(i,user){if(i===cur)return;cur=i;
+    sps.forEach(function(g,j){g.classList.toggle("on",j===i)});bs.forEach(function(b,j){b.classList.toggle("on",j===i);b.setAttribute("aria-pressed",j===i)});
+    var it=items[i],on=act.indexOf(i)>-1;
+    body.innerHTML='<div class="fbh"><span class="mono">Aşama '+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(it.t)+'</h3><span class="ftag'+(on?' on':'')+'">'+(on?esc(o.svc)+' bu aşamada':'Diğer hizmetlerimizle')+'</span></div><div class="fbd"><p>'+esc(it.d)+'</p><div class="chips">'+it.s.map(function(x){return '<span class="chip">'+esc(x)+'</span>'}).join('')+'</div></div>';
+    body.classList.remove("swap");void body.offsetWidth;body.classList.add("swap");
+    if(user&&sc.scrollWidth>sc.clientWidth+4){var b=bs[i];sc.scrollTo({left:b.offsetLeft-sc.clientWidth/2+b.offsetWidth/2,behavior:"smooth"})}}
+  sps.concat(bs).forEach(function(el){var i=+el.getAttribute("data-i");el.addEventListener("click",function(){set(i,true)});if(FINE)el.addEventListener("mouseenter",function(){set(i)})});
+  var a0=act.length?Math.min.apply(null,act):0,a1=act.length?Math.max.apply(null,act):0,xa=X0+a0*SW+16,xb=X0+(a1+1)*SW-16,raf=0,t0=0,vis=true;
+  function frame(now){if(!t0)t0=now;var dur=2200+(a1-a0+1)*900,q=((now-t0)%(dur+700))/dur;q=Math.min(1,q);var e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;car.setAttribute("transform","translate("+(xa+(xb-xa)*e).toFixed(1)+" "+(DY-4)+")");if(vis)raf=requestAnimationFrame(frame)}
+  if(RM){car.setAttribute("transform","translate("+((xa+xb)/2)+" "+(DY-4)+")")}else{
+    if("IntersectionObserver" in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!vis){vis=true;raf=requestAnimationFrame(frame)}else if(!v){vis=false;cancelAnimationFrame(raf)}},{threshold:.2}).observe(host);
+    raf=requestAnimationFrame(frame)}
+  set(act.length?act[0]:0);
+}
 
 })();
 </script>
