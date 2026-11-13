@@ -42,3 +42,7 @@ Logolar Wikimedia Commons'tan ve kurumların resmi sitelerinden indirildi; kayna
 ## Görseli olmayan projeler
 
 Projenin `img` alanı boşsa kartta kategori simgeli koyu bir kapak çıkar. "Ulusal İklim Finansmanı" için temsili bir illüstrasyon üretildi (`img/p29.jpg`); projede `ill:1` işareti olduğu için sayfada "Temsili görsel" etiketi görünür ve galeri bölümü gösterilmez. Gerçek fotoğraf gelince dosyayı değiştirip `ill:1` ifadesini silin.
+
+## Dil seçici (yer tutucu)
+
+Üst menünün sağındaki küre simgesi Türkçe, English, Français, Deutsch, Español, العربية, Русский ve Oʻzbekcha seçeneklerini gösterir. Şimdilik yalnızca Türkçe sürüm var; diğerleri seçilince "Bu dil sürümü hazırlanıyor" bildirimi çıkar. Çeviriler hazırlandığında her dil ayrı bir sayfa (ör. /en/) olarak bağlanacak; Arapça sağdan sola düzen gerektirir.

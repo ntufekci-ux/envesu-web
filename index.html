@@ -1137,6 +1137,23 @@ html.lbx-open{overflow:hidden}
 .sb-rul > a b,.sb-rul > a small{padding-right:18px}
 .sb-sp:not(.act){cursor:pointer}
 .fbh .link{font-size:.92rem}
+/* v22 dil seçici (yer tutucu) */
+.nav .dd.lang{margin-left:6px}
+.nav .dd.lang>button{gap:7px;padding-left:10px;padding-right:10px}
+.nav .dd>button svg.gl{width:15px;height:15px;transform:none!important}
+.dd-lang{min-width:210px!important}
+.dd-lang .lng{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;border-radius:9px}
+.dd-lang .lng b{font-weight:500}
+.dd-lang .lng .mono{color:var(--ink-3)}
+.dd-lang .lng:hover{background:var(--mist)}
+.dd-lang .lng.on b{color:var(--brand-ink)}
+.dd-lang .lng.on .mono::before{content:"● ";color:var(--lime)}
+.dd-lang .lng:focus-visible{outline:2px solid var(--brand-ink);outline-offset:-2px}
+@media (max-width:1020px){.nav .dd.lang{margin-left:0;margin-top:10px}.nav .dd.lang>button{justify-content:flex-start;gap:12px;font-size:1.2rem;border-bottom:0}.nav .dd.lang>button svg:not(.gl){margin-left:auto}.nav .dd.lang>button svg.gl{width:20px;height:20px}.dd-lang .lng{padding:8px 0 8px 16px;color:var(--night-mute)}.dd-lang .lng:hover{background:transparent;color:#fff}.dd-lang .lng .mono{color:var(--night-mute)}}
+@media (min-width:1021px) and (max-width:1180px){.nav .cta{margin-left:8px;padding:9px 16px}}
+.toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:80;transform:translate(-50%,16px);max-width:min(560px,calc(100vw - 32px));background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:10px;font-size:.92rem;box-shadow:var(--shadow);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+.toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.sec.svc-bridge{padding-top:clamp(36px,4.5vw,64px);padding-bottom:clamp(48px,6vw,88px)}
 </style>
 </head>
 <body>
@@ -1165,6 +1182,10 @@ html.lbx-open{overflow:hidden}
       <a href="#makaleler">Makaleler</a>
       <a href="#kariyer">Kariyer</a>
       <a class="cta" href="#iletisim">İletişim</a>
+      <div class="dd lang" data-group="dil">
+        <button type="button" aria-expanded="false" aria-label="Dil seçimi, şu an Türkçe"><svg class="gl" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2.8 4.2 2.8 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.2 5.7 5.2 8S6 12.5 8 14.5"/></svg>TR <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
+        <div class="dd-menu dd-r dd-lang"><button type="button" class="lng on" data-lang="tr" lang="tr" aria-current="true"><b>Türkçe</b><span class="mono">TR</span></button><button type="button" class="lng" data-lang="en" lang="en"><b>English</b><span class="mono">EN</span></button><button type="button" class="lng" data-lang="fr" lang="fr"><b>Français</b><span class="mono">FR</span></button><button type="button" class="lng" data-lang="de" lang="de"><b>Deutsch</b><span class="mono">DE</span></button><button type="button" class="lng" data-lang="es" lang="es"><b>Español</b><span class="mono">ES</span></button><button type="button" class="lng" data-lang="ar" lang="ar"><b dir="rtl">العربية</b><span class="mono">AR</span></button><button type="button" class="lng" data-lang="ru" lang="ru"><b>Русский</b><span class="mono">RU</span></button><button type="button" class="lng" data-lang="uz" lang="uz"><b>Oʻzbekcha</b><span class="mono">UZ</span></button></div>
+      </div>
     </nav>
     <button class="burger" id="burger" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="nav"><i></i></button>
   </div>
@@ -1636,6 +1657,7 @@ html.lbx-open{overflow:hidden}
     <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
   </div>
 </footer>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
 <button class="totop" type="button" data-totop aria-label="Başa dön"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
 </div>
 <script>
@@ -2220,7 +2242,7 @@ function renderService(s){
   var i=SL.indexOf(s), nx=SL[(i+1)%SL.length], refs=s.ps;
   $("[data-svc]").innerHTML=
   '<section class="ph"><div class="ph-bg"><img src="img/'+s.img+'.jpg" alt=""></div><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEa")+'</span><div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#hizmetler">Hizmetler</a></p><h1 tabindex="-1">'+esc(s.name)+'</h1><p class="sub">'+esc(s.tag)+'</p></div></section>'+
-  '<section class="sec mist"><div class="wrap"><div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje yaşam döngüsünde</p><h2 class="h2" data-r>'+esc(s.name)+', döngünün neresinde?</h2></div><p class="lede" data-r>Diğer aşamalardaki hizmetlerimizle birlikte, projenin tamamında aynı ekip ve aynı yönetim sistemiyle çalışıyoruz. Köprüde başka bir aşamaya tıklayarak o hizmetin sayfasına geçebilirsiniz.</p></div><div data-flow-svc></div></div></section>'+
+  '<section class="sec mist svc-bridge"><div class="wrap"><div data-flow-svc></div></div></section>'+
   '<section class="sec"><div class="wrap cols"><div style="display:grid;gap:22px"><p class="kicker" data-r>Ne yapıyoruz</p><p class="quote" data-r>'+esc(s.intro)+'</p></div><div style="display:grid;gap:18px" data-r><p class="kicker">Verdiğimiz hizmetler</p><ul class="capl">'+s.del.map(function(d){return '<li><span>—</span>'+esc(d)+'</li>'}).join('')+'</ul></div></div></section>'+
   '<section class="sec"><div class="wrap"><div class="rail-head" style="margin-bottom:40px"><div style="display:grid;gap:22px"><p class="kicker" data-r>Projeler</p><h2 class="h2" data-r>'+esc(s.name)+' referanslarımız.</h2></div><a class="link" href="#projeler-'+s.id+'">Projeler sayfasında gör</a></div><div class="pgrid" data-svcgrid>'+refs.map(function(p,k){return pcard(p,k%9)}).join('')+'</div>'+(refs.length>6?'<div style="margin-top:44px;text-align:center"><button class="btn dark" type="button" data-more>Tüm projeleri göster <span class="ar">'+AR+'</span></button></div>':'')+'</div></section>'+
   '<section class="night"><span class="wm">'+EMB.replace(/mkE\d+/g,"mkEb")+'</span><div class="wrap"><a class="nextarea" href="#hizmet-'+nx.id+'"><span style="display:grid;gap:14px"><span class="mono">Sonraki hizmet</span><h2>'+esc(nx.name)+'</h2></span><span class="go">'+AR+'</span></a></div></section>';
@@ -2524,6 +2546,9 @@ var VIEWS=["anasayfa","hizmetler","hizmet","referanslar","proje","yaklasim","hak
 var ALIAS={"kurumsal":["hakkimizda",null],"biz-kimiz":["hakkimizda",null],"insan-kaynagi":["hakkimizda","biz-kimiz"],"hakkimizda-ekip":["hakkimizda","biz-kimiz"],"hakkimizda-isverenler":["referanslar","kurumlar"],"isverenler":["referanslar","kurumlar"],"proje-haritasi":["referanslar","harita"],"kunye":["hakkimizda",null],"yontem":["yaklasim",null],"ufk":["yaklasim","ufk"],"kalite":["yaklasim","kalite"],"dijital":["yaklasim","dijital"],"cevre-sosyal":["yaklasim","cevre"],"sektorler":["hizmetler",null],"uzmanlik":["hizmetler",null],"projeler":["referanslar",null]};
 var NAVK={anasayfa:null,hizmetler:"hizmetler",hizmet:"hizmetler",referanslar:"projeler",proje:"projeler",yaklasim:"yaklasim",hakkimizda:"hakkimizda",kariyer:"kariyer",baskan:"hakkimizda",makaleler:"makaleler",makale:"makaleler",iletisim:"iletisim",kvkk:null};
 var first=true, curView=null, REFSEC=null;
+(function(){var tt=$("[data-toast]"),tm=null;$$(".lng").forEach(function(x){x.addEventListener("click",function(e){e.stopPropagation();var k=x.getAttribute("data-lang");
+  $$("#nav .dd").forEach(function(d){d.classList.remove("open")});if(k==="tr")return;
+  if(tt){tt.textContent=x.querySelector("b").textContent+" · Bu dil sürümü hazırlanıyor. Şimdilik Türkçe sürümü görüntülüyorsunuz.";tt.classList.add("on");clearTimeout(tm);tm=setTimeout(function(){tt.classList.remove("on")},3600)}})})})();
 (function(){var tb=$("[data-totop]");if(!tb)return;function upd(){tb.classList.toggle("on",window.scrollY>700)}window.addEventListener("scroll",upd,{passive:true});upd();
   tb.addEventListener("click",function(){window.scrollTo({top:0,behavior:RM?"auto":"smooth"});var h1=$(".view:not([hidden]) h1");if(h1){try{h1.focus({preventScroll:true})}catch(e){}}})})();
 /* geri/ileri dönüşte kaydırma konumunu koru */
