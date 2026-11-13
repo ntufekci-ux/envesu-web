@@ -52,10 +52,10 @@ button{font:inherit;color:inherit}
 .h2{font-size:clamp(2rem,4.3vw,3.5rem)}
 .h3{font-size:clamp(1.35rem,2vw,1.7rem);font-weight:400;letter-spacing:-.01em}
 .lede{font-size:clamp(1.15rem,1.6vw,1.32rem);color:var(--ink-2);max-width:60ch;line-height:1.55}
-.sec{padding-block:clamp(80px,11vw,150px)}
-.sec.tight{padding-block:clamp(56px,7vw,96px)}
+.sec{padding-block:clamp(56px,7vw,100px)}
+.sec.tight{padding-block:clamp(40px,5vw,64px)}
 .sec.mist{background:var(--mist)}
-.sec-head{display:grid;gap:22px;margin-bottom:clamp(40px,6vw,72px);max-width:880px}
+.sec-head{display:grid;gap:22px;margin-bottom:clamp(32px,4vw,52px);max-width:880px}
 .sec-head.split{max-width:none;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:end;gap:40px}
 @media (max-width:860px){.sec-head.split{grid-template-columns:1fr;gap:20px}}
 .link{display:inline-flex;align-items:center;gap:10px;font-weight:500;text-decoration:none;color:var(--brand-ink);border-bottom:1px solid currentColor;padding-bottom:2px}
@@ -348,7 +348,7 @@ button{font:inherit;color:inherit}
 .ph-bg{position:absolute;inset:0}
 .ph-bg img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(.6)}
 .ph-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--night) 20%,rgba(10,33,23,.55) 70%,rgba(10,33,23,.3)),linear-gradient(0deg,var(--night),rgba(10,33,23,0) 60%)}
-.ph .wrap{position:relative;padding-top:clamp(150px,18vw,220px);padding-bottom:clamp(56px,7vw,96px);display:grid;gap:22px}
+.ph .wrap{position:relative;padding-top:clamp(108px,11vw,140px);padding-bottom:clamp(36px,4vw,56px);display:grid;gap:18px}
 .crumb{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--night-mute)}
 .crumb a{text-decoration:none;color:var(--night-mute)}
 .crumb a:hover{color:#fff}
@@ -509,11 +509,11 @@ button{font:inherit;color:inherit}
 @media (prefers-reduced-motion:no-preference){.pgrid .pc{animation:fade .7s var(--ease) both;animation-delay:calc(var(--n) * 50ms)}}
 
 /* Proje detay */
-.pd-hero{position:relative;min-height:min(86svh,820px);display:grid;align-items:end;color:#fff;background:var(--night);overflow:hidden}
+.pd-hero{position:relative;min-height:min(72svh,680px);display:grid;align-items:end;color:#fff;background:var(--night);overflow:hidden}
 .pd-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pd-hero>img.contain{object-fit:contain;padding:120px 6% 220px;background:#fff}
 .pd-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,26,17,.96) 0%,rgba(7,26,17,.55) 38%,rgba(7,26,17,.15) 70%,rgba(7,26,17,.45) 100%)}
-.pd-hero .wrap{position:relative;z-index:1;padding-top:160px;padding-bottom:56px;display:grid;gap:18px;width:100%}
+.pd-hero .wrap{position:relative;z-index:1;padding-top:130px;padding-bottom:44px;display:grid;gap:18px;width:100%}
 .pd-hero h1{font-size:clamp(2.3rem,5.4vw,4.6rem);letter-spacing:-.03em;max-width:18ch}
 .pd-hero .sub{font-size:clamp(1.05rem,1.5vw,1.25rem);color:rgba(255,255,255,.8);max-width:60ch}
 .pd-hero .st{color:rgba(255,255,255,.8)}
@@ -1247,6 +1247,80 @@ html.lbx-open{overflow:hidden}
 .pol-ul li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;border:2px solid var(--lime)}
 @media (max-width:860px){.pol{grid-template-columns:1fr}.pol-tabs{position:static;grid-template-columns:repeat(3,minmax(0,1fr))}.pol-tabs button{grid-template-columns:1fr;justify-items:center;text-align:center;padding:12px 8px}.pol-tabs small{display:none}.pol-tabs b{font-size:.86rem}}
 @media (min-width:1021px) and (max-width:1240px){.nav .soc{display:none}}
+/* v27 etik, çevre/İSG planları, doküman listesi */
+.ft-links{display:flex;flex-wrap:wrap;gap:8px 22px}
+.doclist{display:flex;flex-wrap:wrap;gap:10px}
+.doclist a{display:inline-flex;align-items:center;gap:12px;padding:12px 18px 12px 14px;border-radius:10px;border:1px solid var(--line-2);background:var(--card);text-decoration:none;color:var(--ink);transition:border-color .25s,transform .35s var(--ease)}
+.doclist a:hover{border-color:var(--lime);transform:translateY(-2px)}
+.doclist svg{width:22px;height:22px;color:var(--brand-ink);flex:none}
+.doclist b{display:block;font-weight:500;font-size:.96rem}.doclist small{display:block;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;color:var(--ink-3);margin-top:2px}
+.ev-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ev{display:grid;gap:12px;align-content:start;padding:24px;border-radius:12px;border:1px solid var(--line);background:var(--card);border-top:3px solid var(--lime)}
+.ev .mono{color:var(--brand-ink)}.ev h3{font-size:1.15rem;font-weight:500}.ev p{color:var(--ink-2);font-size:.95rem;line-height:1.6}
+.et-rules{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,64px);margin-top:clamp(48px,6vw,80px)}
+.acc{display:grid;border-top:1px solid var(--line-2)}
+.acc-i{border-bottom:1px solid var(--line)}
+.acc-i>button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr) 20px;align-items:center;gap:12px;padding:18px 4px}
+.acc-i>button .mono{color:var(--ink-3)}.acc-i>button b{font-weight:500;font-size:1.06rem}
+.acc-i>button i{position:relative;width:14px;height:14px}.acc-i>button i::before,.acc-i>button i::after{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:var(--ink-3);transition:transform .35s var(--ease)}
+.acc-i>button i::after{transform:rotate(90deg)}.acc-i.open>button i::after{transform:rotate(0)}
+.acc-i.open>button b,.acc-i.open>button .mono{color:var(--brand-ink)}
+.acc-i>button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.acc-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.acc-i.open .acc-p{grid-template-rows:1fr}
+.acc-p>div{overflow:hidden}.acc-p p{padding:0 4px 20px 56px;color:var(--ink-2);line-height:1.7}
+.et-report{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,4vw,64px);align-items:start}
+.et-ch{display:grid;gap:0;border-top:1px solid var(--line-2)}
+.et-ch li{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.et-ch .mono{color:var(--ink-3);align-self:center}.et-ch a{color:var(--brand-ink)}
+.et-form{display:grid;gap:16px;padding:clamp(20px,3vw,32px);border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.et-form label{display:grid;gap:6px;font-size:.9rem;color:var(--ink-2)}
+.et-form input[type=text],.et-form input[type=tel],.et-form select,.et-form textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line-2);border-radius:8px;padding:11px 12px;width:100%;box-sizing:border-box}
+.et-form textarea{resize:vertical;min-height:130px}
+.et-form input:focus,.et-form select:focus,.et-form textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 3px color-mix(in srgb,var(--lime) 22%,transparent)}
+.ef-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.et-form fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}.et-form legend{font-size:.9rem;color:var(--ink-2);margin-bottom:8px}
+.ef-chk{display:flex;flex-wrap:wrap;gap:8px}
+.ef-chk label{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line-2);border-radius:999px;font-size:.88rem;color:var(--ink);cursor:pointer}
+.ef-chk label:has(input:checked){border-color:var(--lime);background:color-mix(in srgb,var(--lime) 12%,transparent)}
+.ef-rad{display:flex;flex-wrap:wrap;gap:18px}.ef-rad label{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-size:.95rem;cursor:pointer}
+.ef-gz{display:flex!important;align-items:center;gap:8px;color:var(--ink)!important;margin-top:10px}
+.et-form input[type=checkbox],.et-form input[type=radio]{accent-color:var(--lime)}
+.req{color:var(--lime)}
+.ef-note{font-size:.86rem;color:var(--ink-3);line-height:1.6;border-left:2px solid var(--line-2);padding-left:12px}
+.ef-act{display:flex;flex-wrap:wrap;align-items:center;gap:14px}.ef-msg{font-size:.9rem;color:var(--brand-ink)}
+.eg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.eg{display:grid;gap:10px;align-content:start;padding:26px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.eg .mono{color:var(--ink-3)}.eg-big{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1;color:var(--lime)}
+.eg h3{font-size:1.1rem;font-weight:500}.eg p{color:var(--ink-2);font-size:.95rem;line-height:1.6}
+.cy-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-top:clamp(48px,6vw,80px);align-items:center}
+.cy-vis{position:relative;width:min(100%,440px);aspect-ratio:1;margin:0 auto}
+.cy-svg{width:100%;height:100%;overflow:visible}
+.cy-ring{fill:none;stroke:var(--line-2);stroke-width:2;stroke-dasharray:3 6}
+.cy-arc{fill:none;stroke:var(--lime);stroke-width:3;stroke-linecap:round;transform:rotate(-90deg);transform-origin:200px 200px;transform-box:view-box;stroke-dasharray:0 100;transition:stroke-dasharray .8s var(--ease)}
+.cy-n{cursor:pointer}.cy-n circle{fill:var(--paper);stroke:var(--line-2);stroke-width:2;transition:all .35s}
+.cy-n text{font-family:var(--f-mono);font-size:13px;fill:var(--ink-3);text-anchor:middle;pointer-events:none}
+.cy-n.done circle{stroke:var(--lime)}.cy-n.on circle{fill:var(--lime);stroke:var(--lime)}.cy-n.on text{fill:var(--on-lime);font-weight:600}
+.cy-c{position:absolute;inset:26%;display:grid;align-content:center;justify-items:center;text-align:center;gap:8px}
+.cy-c .mono{color:var(--ink-3);font-size:.62rem}.cy-c b{font-size:clamp(1rem,1.8vw,1.25rem);font-weight:500;line-height:1.25}.cy-c small{color:var(--ink-2);font-size:.88rem;line-height:1.45}
+.wflow{display:grid;gap:0;counter-reset:w}
+.wflow li{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:2px;padding:0 0 22px}
+.wflow li::before{content:"";position:absolute;left:21px;top:34px;bottom:0;width:2px;background:var(--line-2)}
+.wflow li:last-child::before{display:none}
+.wflow .mono{grid-row:span 2;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--lime);color:var(--brand-ink);font-size:.72rem}
+.wflow b{font-weight:500}.wflow small{color:var(--ink-2);font-size:.9rem;line-height:1.5}
+.isg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.isg{display:grid;gap:12px;align-content:start;padding:24px;border-radius:12px;border:1px solid var(--line);background:var(--card);transition:border-color .3s,transform .4s var(--ease)}
+.isg:hover{border-color:var(--lime);transform:translateY(-3px)}
+.isg-ic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--lime) 14%,transparent);color:var(--lime)}
+.isg-ic svg{width:22px;height:22px}.isg h3{font-size:1.08rem;font-weight:500}.isg p{color:var(--ink-2);font-size:.94rem;line-height:1.6}
+@media (max-width:980px){.ev-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.et-rules,.et-report,.cy-wrap{grid-template-columns:1fr}.isg-grid,.eg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.ev-grid,.isg-grid,.eg-grid,.ef-row{grid-template-columns:1fr}.acc-p p{padding-left:4px}}
+/* v28 proje filtreleri tek satır */
+.sec-list .filters{gap:6px;flex-wrap:wrap}
+.sec-list .filters a{padding:6px 12px;font-size:.86rem}
+.sec-list .filters .flab{min-width:84px;margin-right:2px;font-size:.66rem}
+@media (min-width:1200px){.sec-list [data-filters]{flex-wrap:nowrap}.sec-list [data-filters] a{white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -1258,7 +1332,7 @@ html.lbx-open{overflow:hidden}
     <nav class="nav" id="nav" aria-label="Ana menü">
       <div class="dd" data-group="hakkimizda">
         <button type="button" aria-expanded="false">Hakkımızda <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
-        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a></div>
+        <div class="dd-menu"><a href="#hakkimizda"><b>Biz Kimiz</b></a><a href="#baskanin-mesaji"><b>Yönetim Kurulu Başkanımızdan</b></a><a href="#hakkimizda-degerler"><b>Misyon ve Değerler</b></a><a href="#hakkimizda-etik"><b>Etik ve Uyum</b></a></div>
       </div>
       <div class="dd" data-group="hizmetler">
         <button type="button" aria-expanded="false">Hizmetler <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></button>
@@ -1418,7 +1492,7 @@ html.lbx-open{overflow:hidden}
   <section class="sec mist" data-sec="kurumlar" data-title="Birlikte Çalıştığımız Kurumlar" data-sub="Projelerimizi finanse eden uluslararası kuruluşlar ile birlikte çalıştığımız kamu kurumları ve özel sektör işverenleri." data-img="p22"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Finans kuruluşları ve donörler</p><h2 class="h2" data-r>Projelerimizi finanse eden kuruluşlar.</h2></div><p class="lede" data-r>Uluslararası finans kuruluşlarının finanse ettiği projelerde, onların satın alma ve raporlama kurallarına göre çalışıyoruz.</p></div>
     <div class="logos" data-logos="fin" data-r></div>
-    <div class="sec-head split" style="margin-top:clamp(72px,9vw,120px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>İşverenler</p><h2 class="h2" data-r>Birlikte çalıştığımız kurumlar.</h2></div><p class="lede" data-r>Bakanlıklar, su idareleri, belediyeler, organize sanayi bölgeleri ve sanayi grupları.</p></div>
+    <div class="sec-head split" style="margin-top:clamp(48px,6vw,80px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>İşverenler</p><h2 class="h2" data-r>Birlikte çalıştığımız kurumlar.</h2></div><p class="lede" data-r>Bakanlıklar, su idareleri, belediyeler, organize sanayi bölgeleri ve sanayi grupları.</p></div>
     <div class="logos" data-logos="isv" data-r></div>
     <p class="logo-note">Logolar ve markalar ilgili kuruluşlara aittir.</p>
   </div></section>
@@ -1449,7 +1523,7 @@ html.lbx-open{overflow:hidden}
         <div class="prose" data-r><p>Zaman, maliyet ve kalite etkilerini birlikte değerlendirir; kilometre taşlarını, riskleri ve önlemleri tanımlayarak uygulama öncesi ve sonrası dâhil proje süresi boyunca müşterilerimizi destekleriz.</p></div></div>
       <div class="mw" data-r><div data-mgmtwheel></div><p class="mw-cap">Proje yaşam döngüsü boyunca bütünleşik dokuz temel yönetim alanı</p></div>
     </div>
-    <div style="margin-top:clamp(64px,8vw,110px)">
+    <div style="margin-top:clamp(44px,5.5vw,72px)">
       <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Proje teslim aşamaları</p><h2 class="h2" data-r>Kamulaştırmadan kusur sorumluluk süresine.</h2></div><p class="lede" data-r>Bir köprü üzerinden: arazinin edinilmesi ve zeminin tanınmasından tasarım, ihale, yapım ve kabule kadar on aşama.</p></div>
       <div data-teslim data-r></div>
     </div>
@@ -1460,7 +1534,7 @@ html.lbx-open{overflow:hidden}
       <p class="lede" data-r>Politika çerçevesinden kapanış raporuna kadar her adımda Proje Uygulama Birimlerine uygulama desteği veriyor; FIDIC ve PRAG çerçevelerinde çalışıyoruz.</p></div>
     <div class="logos" data-logos="fin" data-r></div>
     <div class="ucyc" data-ucyc data-r style="margin-top:44px"></div>
-    <div class="cols" style="margin-top:clamp(56px,7vw,96px)">
+    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
       <div style="display:grid;gap:18px" data-r><p class="kicker">Nitelikli uzmanlarla hizmet</p><p class="lede">Finans kuruluşlarının satın alma kılavuzlarına uygun çalışan ekiplerimiz, projenin gerektirdiği uzmanlık profillerini bir araya getirir.</p></div>
       <ul class="ticks two" data-experts data-r></ul>
     </div>
@@ -1471,12 +1545,18 @@ html.lbx-open{overflow:hidden}
       <p class="lede" data-r>Entegre yönetim sistemimiz üç ISO standardına göre belgelendirilmiştir ve FIDIC'in iş dürüstlüğü ilkelerine uygundur.</p></div>
     <div class="certs" data-certs></div>
     <p class="cert-meta" data-certmeta data-r></p>
-    <div class="cols" style="margin-top:clamp(56px,7vw,96px)">
+    <div class="cols" style="margin-top:clamp(40px,5vw,64px)">
       <div class="prose" data-r><p>Kalite Planı; kalite, çevre, iş sağlığı ve güvenliği ile iş dürüstlüğünün yönetimine ilişkin ayrıntılı plandır ve sistemin prosedürlerine dayanılarak her proje için ayrı hazırlanır.</p></div>
       <div data-r><p class="kicker" style="margin-bottom:22px">Kalite Planının kapsamı</p><ul class="ticks two" data-qplan></ul></div>
     </div>
-    <div class="sec-head split" style="margin-top:clamp(64px,8vw,110px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
+    <div class="sec-head split" style="margin-top:clamp(44px,5.5vw,72px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Politikalarımız</p><h2 class="h2" data-r>Kalite, çevre ve iş sağlığı-güvenliği politikalarımız.</h2></div><p class="lede" data-r>Entegre yönetim sistemimizin temelini oluşturan, yönetimimizce onaylı politikalar.</p></div>
     <div class="pol" data-pol data-r></div>
+    <div style="margin-top:36px;display:grid;gap:16px" data-r><p class="kicker">Yönetim sistemi dokümanları</p><div class="doclist">
+      <a href="doc/envesu-cevre-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Yönetim Planı</b><small>ENV-MRKZ-CVR-PL-01 · PDF</small></span></a>
+      <a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a>
+      <a href="doc/envesu-etik-ilkeler-proseduru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik İlkeler Prosedürü</b><small>ENV-MRKZ-YNT-PR-04 · PDF</small></span></a>
+      <a href="#hakkimizda-etik"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik ihlal bildirimi</b><small>Bildirim kanalları ve form</small></span></a>
+    </div></div>
   </div></section>
 
   <section class="sec" data-sec="dijital" data-title="Dijital ve BIM" data-sub="Tüm disiplinleri tek modelde buluşturan BIM ve bulut tabanlı proje yönetimi." data-img="p03"><div class="wrap">
@@ -1490,7 +1570,7 @@ html.lbx-open{overflow:hidden}
     </div>
     <div class="bim" data-bim data-r></div>
     <div class="bw" data-r><div class="bw-l" data-bimwheel style="display:contents"></div></div>
-    <div class="cols" style="margin:clamp(56px,7vw,96px) 0">
+    <div class="cols" style="margin:clamp(40px,5vw,64px) 0">
       <div class="prose" data-r><p>ENVESU veri odaklı tasarım yöntemlerini erken benimsedi; her disiplinin tek ve koordineli bir model üzerinde çalıştığı yenilikçi, sürdürülebilir ve maliyet etkin planlama sunuyor.</p>
         <div class="chips"><span class="chip">Mimari</span><span class="chip">Statik</span><span class="chip">Mekanik</span><span class="chip">Elektrik</span><span class="chip">Altyapı</span></div></div>
       <div style="display:grid;gap:18px" data-r><p class="kicker">Uygulamada BIM · SAGRA Fatsa (Ordu)</p>
@@ -1502,7 +1582,7 @@ html.lbx-open{overflow:hidden}
         </dl><a class="link" href="#proje-sagra-ordu">Projeyi görün</a></div>
     </div>
     <div class="mods" data-modules data-r></div>
-    <div style="margin-top:clamp(56px,7vw,96px)"><p class="kicker" style="margin-bottom:28px">Dijital iş akışı</p><ol class="flow" data-flow></ol></div>
+    <div style="margin-top:clamp(40px,5vw,64px)"><p class="kicker" style="margin-bottom:28px">Dijital iş akışı</p><ol class="flow" data-flow></ol></div>
   </div></section>
 
   <section class="sec mist" data-sec="cevre" data-title="Çevre ve Sosyal" data-sub="Çevresel ve sosyal etkileri tasarımdan sahaya kadar yönetiyoruz." data-img="p25"><div class="wrap cols r">
@@ -1521,6 +1601,34 @@ html.lbx-open{overflow:hidden}
       <a class="pc" href="#proje-tfdmp"><div class="im"><img src="img/p30.jpg" alt="TFDMP dere ıslahı" loading="lazy"></div><h3>Dünya Bankası ESF uyumlu Çevresel ve Sosyal Yönetim Planları</h3><p class="loc">Türkiye Taşkın ve Kuraklık Yönetimi Projesi</p></a>
       <ul class="ticks"><li><a class="link" href="#proje-izsu-pid">İZSU PID, ÇED ve ÇSYP</a></li><li><a class="link" href="#proje-mrf">Belediye Dayanıklılık Projeleri: Ç&amp;S izleme sistemi</a></li></ul>
     </div>
+  </div></section>
+
+  <section class="sec" data-sec="cevre"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Çevre yönetim planımız</p><h2 class="h2" data-r>Kendi ofislerimizde de aynı disiplin.</h2></div><p class="lede" data-r>Merkez ofisimizde ve proje ofislerimizde çevresel etkileri ISO 14001 ve ulusal mevzuata uygun bir çevre yönetim planıyla yönetiyor, hedeflerimizi her yıl gözden geçiriyoruz.</p></div>
+    <div class="eg-grid">
+      <div class="eg" data-r><span class="mono">Hedef 01</span><b class="eg-big">Enerji</b><h3>Enerji verimliliği</h3><p>Enerji tüketim yoğunluğunu azaltmak için verimlilik uygulamalarını yaygınlaştırmak ve her yıl ölçülebilir bir iyileşme sağlamak.</p></div>
+      <div class="eg" data-r style="--d:.08s"><span class="mono">Hedef 02</span><b class="eg-big">%10</b><h3>Tehlikeli atık azaltımı</h3><p>Tehlikeli atık miktarını 3 yıl içinde %10 azaltmak ve bu seviyeyi korumak.</p></div>
+      <div class="eg" data-r style="--d:.16s"><span class="mono">Hedef 03</span><b class="eg-big">Su</b><h3>Su koruma</h3><p>Ofiste su israfını önlemek, suyun verimli kullanımını sağlamak ve çalışanları bu konuda bilinçlendirmek.</p></div>
+    </div>
+    <div class="cy-wrap">
+      <div class="cyc" data-cevrecyc data-r></div>
+      <div style="display:grid;gap:26px;align-content:start" data-r>
+        <p class="kicker">Atık yönetim süreci</p>
+        <ol class="wflow">
+          <li><span class="mono">01</span><b>Kaynakta ayrıştırma</b><small>Kâğıt, plastik, cam, metal ve organik atıklar; tehlikeli atıklar (toner, elektronik) ayrı kapta.</small></li>
+          <li><span class="mono">02</span><b>Geçici depolama</b><small>Ofiste ayrılmış alanlarda; tehlikeli atıklar uygun konteynerlerde.</small></li>
+          <li><span class="mono">03</span><b>Lisanslı taşıma</b><small>Lisanslı firmalarla, yasal belgeleri doldurularak kayıt altında.</small></li>
+          <li><span class="mono">04</span><b>Bertaraf ve geri dönüşüm</b><small>Tehlikeli atıklar çevreye zarar vermeden bertaraf; tehlikesizler geri dönüşüme.</small></li>
+        </ol>
+        <div class="doclist"><a href="doc/envesu-cevre-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Yönetim Planı</b><small>ENV-MRKZ-CVR-PL-01 · PDF</small></span></a><a href="doc/envesu-cevre-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Çevre Politikası</b><small>PDF</small></span></a></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec mist" data-sec="cevre"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>İş sağlığı ve güvenliği yönetim planımız</p><h2 class="h2" data-r>Önce insan: sıfır kaza, sıfır meslek hastalığı.</h2></div><p class="lede" data-r>Merkez ofislerimizde ISO 45001 ve 6331 sayılı İş Sağlığı ve Güvenliği Kanunu'na göre çalışıyor; sahada her proje için kapsamına ve tehlike sınıfına uygun ayrı bir İSG planı hazırlıyoruz.</p></div>
+    <div class="isg-grid" data-isg></div>
+    <div class="doclist" style="margin-top:28px" data-r><a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İş Sağlığı ve Güvenliği Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a><a href="doc/envesu-isg-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Politikası</b><small>PDF</small></span></a></div>
   </div></section>
   <div data-pager></div>
 </div>
@@ -1563,7 +1671,7 @@ html.lbx-open{overflow:hidden}
       <div style="display:grid;gap:18px;--d:.1s" data-r><p class="kicker">Vizyonumuz</p><p class="quote">Sürdürülebilir ve yenilikçilik odaklı danışmanlığın önde gelen sağlayıcısı olmak; teknik mükemmellik, uluslararası finans ve uzun vadeli değer arasında köprü kurmak.</p></div>
     </div>
     <div class="triad" data-r><div data-triad style="display:contents"></div><p class="triad-cap">Her işin fiziksel / teknik, finansal ve çevresel-sosyal bileşenleri birlikte ele alınır.</p></div>
-    <div class="vals" style="margin-top:clamp(56px,7vw,96px)">
+    <div class="vals" style="margin-top:clamp(40px,5vw,64px)">
       <div class="val" data-r><h3>Sürdürülebilirlik ve dayanıklılık</h3><p>Çevreyi koruyan ve zamana karşı dayanıklı altyapılar tasarlar ve hayata geçiririz.</p></div>
       <div class="val" data-r style="--d:.08s"><h3>Kalite ve dürüstlük</h3><p>ISO sertifikalı entegre yönetim sistemimizle uluslararası standartları ve FIDIC ilkelerini gözetiriz.</p></div>
       <div class="val" data-r style="--d:.16s"><h3>Çevresel ve sosyal sorumluluk</h3><p>Her projenin çevresel ve sosyal etkisini gözetir; insanları ve ekosistemleri korumak için hareket ederiz.</p></div>
@@ -1571,12 +1679,48 @@ html.lbx-open{overflow:hidden}
     </div>
   </div></section>
 
+  <section class="sec" data-sec="etik" data-title="Etik ve Uyum" data-sub="Dürüstlük, tarafsızlık ve şeffaflık ilkelerine dayanan etik kurallarımız ve ihlal bildirim kanalımız." data-img="h3"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Etik ilkelerimiz</p><h2 class="h2" data-r>Kurumsal itibarımız, etik davranışlarımızla şekillenir.</h2></div><p class="lede" data-r>Şirketin tüm faaliyetleri, yasal gerekliliklerin ötesine geçen, güvenilirlik ve sorumluluk bilinciyle uyumlu etik standartlar çerçevesinde yürütülür.</p></div>
+    <div class="ev-grid" data-etikdeger></div>
+    <div class="et-rules">
+      <div style="display:grid;gap:18px;align-content:start" data-r><p class="kicker">Uygulanabilir kurallar</p><p class="lede" style="font-size:1.05rem">Etik standartlarımız, günlük iş hayatında somut davranışlara dönüşür. Bir başlığa tıklayarak kuralın özünü okuyabilirsiniz.</p>
+        <div class="doclist"><a href="doc/envesu-etik-ilkeler-proseduru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>Etik İlkeler Prosedürü</b><small>ENV-MRKZ-YNT-PR-04 · PDF</small></span></a></div></div>
+      <div class="acc" data-etikkural data-r></div>
+    </div>
+  </div></section>
+
+  <section class="sec mist" data-sec="etik" id="etik-bildirim"><div class="wrap et-report">
+    <div style="display:grid;gap:22px;align-content:start">
+      <p class="kicker" data-r>Etik ihlal bildirimi</p>
+      <h2 class="h2" data-r>Etik ilkelere aykırı bir durumla mı karşılaştınız?</h2>
+      <p class="lede" data-r>Çalışanlarımız, müşterilerimiz, iş ortaklarımız ve tedarikçilerimiz etik ilkelere aykırı durumları bize gizlilik içinde bildirebilir. İyi niyetle bildirimde bulunanlara karşı hiçbir yaptırım uygulanmaz; istenirse kimlik bilgileri gizli tutulur.</p>
+      <ul class="et-ch" data-r>
+        <li><span class="mono">E-posta</span><a href="mailto:etik@envesu.com">etik@envesu.com</a></li>
+        <li><span class="mono">Web</span><span>Bu sayfadaki bildirim formu</span></li>
+        <li><span class="mono">Form</span><a href="doc/envesu-etik-ihbar-formu.docx" download>Etik İhbar Formu (Word) indir</a></li>
+      </ul>
+    </div>
+    <form class="et-form" data-etikform data-r novalidate>
+      <div class="ef-row"><label>ENVESU ile ilişkiniz<select name="iliski"><option value="">Seçiniz</option><option>Çalışan</option><option>Taşeron / Alt yüklenici</option><option>Müşteri / İşveren</option><option>Tedarikçi</option><option>Diğer</option></select></label>
+        <label>Olayı nasıl öğrendiniz?<select name="ogrenme"><option value="">Seçiniz</option><option>Mağdurum</option><option>Tanığım</option><option>Duyum aldım</option><option>Diğer</option></select></label></div>
+      <fieldset><legend>Bildirimin türü</legend><div class="ef-chk" data-eftur></div></fieldset>
+      <div class="ef-row"><label>Olayın gerçekleştiği yer<input name="yer" type="text"></label><label>Tarih / saat<input name="zaman" type="text" placeholder="Örn. 12.11.2026, 14:30"></label></div>
+      <div class="ef-row"><label>Olay halen sürüyor mu?<select name="suruyor"><option value="">Seçiniz</option><option>Evet</option><option>Hayır</option><option>Bilmiyorum</option></select></label><label>Olaya tanık olan başka kişiler var mı?<input name="tanik" type="text"></label></div>
+      <label><span>Bildiriminiz <span class="req">*</span></span><textarea name="aciklama" rows="6" required placeholder="Olayı anlaşılır ve ayrıntılı biçimde yazınız. Belge veya fotoğrafları açılacak e-postaya ekleyebilirsiniz."></textarea></label>
+      <fieldset><legend>Geri bildirim</legend><div class="ef-rad"><label><input type="radio" name="geri" value="Geri bildirim almak istiyorum" checked> Geri bildirim almak istiyorum</label><label><input type="radio" name="geri" value="Anonim kalmak istiyorum, geri bildirim istemiyorum"> Anonim kalmak istiyorum</label></div></fieldset>
+      <div class="ef-id"><div class="ef-row"><label>Adı soyadı<input name="ad" type="text" autocomplete="name"></label><label>Telefon<input name="tel" type="tel" autocomplete="tel"></label></div>
+        <label class="ef-gz"><input type="checkbox" name="gizli"> Kimlik bilgilerimin gizli tutulmasını istiyorum.</label></div>
+      <p class="ef-note">Gönder'e bastığınızda e-posta programınızda <b>etik@envesu.com</b> adresine hazır bir ileti açılır; göndermeden önce kontrol edebilir ve belge ekleyebilirsiniz. İleti sizin e-posta adresinizden gönderileceği için tamamen anonim bir bildirim yapmak isterseniz kişisel bilgi içermeyen bir e-posta adresi kullanabilirsiniz.</p>
+      <div class="ef-act"><button class="btn lime" type="submit">E-postayı hazırla <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></button><span class="ef-msg" role="status" aria-live="polite"></span></div>
+    </form>
+  </div></section>
+
   <section class="sec" data-sec="biz-kimiz" id="ekibimiz"><div class="wrap">
     <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Ekibimiz</p><h2 class="h2" data-r>Birden çok alanda yetkin bir kadro.</h2></div><p class="lede" data-r>Mühendis, mimar ve uzmanlardan oluşan kadromuz ve organizasyon yapımız.</p></div>
     <figure class="team-photo" data-r><img src="img/ekip-toplu.jpg" alt="ENVESU ekibi toplu fotoğraf" loading="lazy"><figcaption>ENVESU ekibi</figcaption></figure>
-    <p class="kicker" data-r style="margin:clamp(56px,7vw,88px) 0 28px">Profesyonel kadro</p>
+    <p class="kicker" data-r style="margin:clamp(40px,5vw,60px) 0 28px">Profesyonel kadro</p>
     <div class="units" data-units></div>
-    <div class="sec-head split" style="margin-top:clamp(72px,9vw,120px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Organizasyon</p><h2 class="h2" data-r>Organizasyon yapımız.</h2></div><p class="lede" data-r>Yürütme yönetimini uzmanlaşmış teknik departmanlara bağlayan, tanımlı hesap verebilirlik hatlarına sahip bir yapı.</p></div>
+    <div class="sec-head split" style="margin-top:clamp(48px,6vw,80px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Organizasyon</p><h2 class="h2" data-r>Organizasyon yapımız.</h2></div><p class="lede" data-r>Yürütme yönetimini uzmanlaşmış teknik departmanlara bağlayan, tanımlı hesap verebilirlik hatlarına sahip bir yapı.</p></div>
     <div class="org2" data-r role="img" aria-label="Organizasyon şeması: Yönetim Kurulu, Genel Müdür, destek birimleri (Mali İşler, İş Geliştirme, İnsan Kaynakları, Kalite) ve Altyapı, Üstyapı, Ulaştırma, Enerji departmanları">
       <div class="o-node top"><small>Yönetim</small><b>Yönetim Kurulu</b></div>
       <i class="o-v"></i>
@@ -1746,7 +1890,7 @@ html.lbx-open{overflow:hidden}
       </div>
       <div class="ft-contact"><h4>İletişim</h4><ul><li>Metropol İstanbul A/22<br>Ataşehir / İstanbul</li><li><a href="tel:+902167714443">+90 216 771 44 43</a></li><li><a href="mailto:info@envesu.com">info@envesu.com</a></li><li><a href="#iletisim">Tüm ofisler →</a></li><li data-linkedin-li hidden><a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn →</a></li></ul></div>
     </div>
-    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
+    <div class="ft-bot"><span>© 2026 Envesu Çevre Enerji İnş. ve Müş. A.Ş.</span><span class="ft-links"><a href="#hakkimizda-etik">Etik ihlal bildirimi</a><a href="#kvkk">KVKK Aydınlatma Metni</a></span></div>
   </div>
 </footer>
 <div class="toast" data-toast role="status" aria-live="polite"></div>
@@ -1791,6 +1935,33 @@ var POLITIKALAR=[
   ["ul",["Sıfır iş kazası ve sıfır meslek hastalığı yaklaşımıyla sağlıklı ve güvenli çalışma koşullarını oluşturmayı,","Çalışma ortamındaki tehlike ve riskleri belirleyerek iş kazalarını ve meslek hastalıklarını önlemek için gerekli tüm önlemleri almayı,","Risk yönetimi süreçlerini gözden geçirerek ramak kala olaylarını etkin bir şekilde analiz etmeyi ve düzeltici/önleyici aksiyonları hayata geçirmeyi,","Gerekli olabilecek tüm İSG eğitimleri için olanak sağlamayı ve eğitimlerin etkinliğini takip etmeyi,","Çalışanlarımız ve ilgili tarafların İSG konusundaki ihtiyaç ve beklentilerinin anlaşılması için gerekli iletişim faaliyetlerini sağlamayı,","Acil durumlara karşı hazırlıklı olmak için düzenli tatbikatlar gerçekleştirmeyi ve kriz yönetim planlarını sürekli güncellemeyi,","İş sağlığı ve güvenliği ile ilgili kapsamındaki yasal yükümlülüklere, ilgili ulusal ve uluslararası standartlara uymayı,","Teknolojik gelişmeleri takip ederek iş sağlığı ve güvenliğini destekleyen yenilikçi çözümleri süreçlerimize entegre etmeyi,","Tedarikçi ve yüklenicilerin de İSG gerekliliklerine uyum sağlamalarını garanti altına almayı,","İş Sağlığı ve Güvenliği Yönetim Sistemimizi düzenli olarak gözden geçirerek sürekli olarak iyileştirmeyi ve performansımızı ölçerek şeffaf bir şekilde raporlamayı"]],
   ["p","taahhüt ederiz."]]}
 ];
+
+/* ===== ETİK VE UYUM (Hakkımızda › Etik ve Uyum) =====
+   Kaynak: ENV-MRKZ-YNT-PR-04 Etik İlkeler Prosedürü (Rev.00, 08.04.2025); metinler prosedürden alıntıdır. */
+var ETIK_DEGERLER=[
+ ["Dürüstlük ve etik davranış","Tüm faaliyetlerde iyi niyet, dürüstlük ve adalet ilkelerine bağlı kalınır. Verilen sözlerin tutulmasına özen gösterilir; taahhüt altına girilen konuların gereği eksiksiz olarak yerine getirilir."],
+ ["Tarafsızlık ve bağımsızlık","Tüm danışmanlık hizmetleri, profesyonellik ve tarafsızlık ilkeleri çerçevesinde sunulur. Bu kapsamda çıkar çatışmalarından kaçınılır ve objektif değerlendirmelerle hareket edilir."],
+ ["Her bireye saygı","Çeşitliliğe ve farklılıklara saygı gösterilmesi, adil ve kapsayıcı bir çalışma ortamının temelini oluşturur. Milliyet, etnik köken, yaş, cinsiyet, dini ya da siyasi inançlara dayalı herhangi bir ayrımcılığa izin verilmez."],
+ ["Sosyal ve çevresel sorumluluk","ENVESU ve tüm çalışanlar tarafından gerçekleştirilen her türlü faaliyetin toplum, bireyler ve çevre üzerindeki etkileri dikkate alınmakta; bu doğrultuda sorumlu, duyarlı ve sürdürülebilir bir yaklaşım benimsenmektedir."]];
+var ETIK_KURALLAR=[
+ ["Hizmetlerin dürüstlükle yürütülmesi","Tüm hizmetlerin, onaylı yöntem ve prosedürlere uygun biçimde, profesyonel, bağımsız ve tarafsız şekilde yürütülmesi sağlanmalıdır. Doğru sonuçların elde edilmesine veya raporlanmasına engel olabilecek hiçbir dış etkiye izin verilmemelidir."],
+ ["Belgelerin ve bilgilerin dürüstlüğü","Tüm finansal ve muhasebe kayıtlarının eksiksiz, doğru ve gerçeği yansıtacak şekilde tutulması zorunludur. Her çalışan, sağladığı bilgi ve belgelerin doğruluğundan şahsen sorumludur."],
+ ["Çıkar çatışmalarının önlenmesi","Çıkar çatışması; Şirket ile kişisel çıkarlar veya çalışanların aile bireyleri ya da yakın ilişkide bulunulan kişilerin çıkarlarının kesiştiği durumlar olarak tanımlanmaktadır. Bu tür durumların ortaya çıkmasının engellenmesi ve oluşması hâlinde şeffaf bir şekilde bildirilmesi esastır."],
+ ["Gizlilik kurallarına uyulması","Şirket faaliyetleri sırasında elde edilen tüm bilgiler gizli kabul edilmekte ve sadece yetkili kişilerle paylaşılmaktadır. Bu gizlilik yükümlülüğü, işten ayrılma sonrasında da geçerliliğini korur."],
+ ["Rüşvetle mücadele","Rüşvetin ve yolsuzluğun her türü kesin şekilde yasaklanmıştır. Doğrudan veya dolaylı olarak rüşvet verilmesi veya kabul edilmesi, uygunsuz hediye teklifinde bulunulması, komisyon (kickback) alınması ya da şirket kaynaklarının etik dışı amaçlarla kullanılması kabul edilemez."],
+ ["İş ortaklarıyla ilişkilerin yönetimi","İhale süreçleri adil, tarafsız ve şeffaf ilkeler doğrultusunda yürütülmelidir. Ortak girişim ortakları, taşeronlar, acenteler, ana tedarikçiler ve yükleniciler gibi iş ortaklarının seçimleri belirlenmiş prosedürlere uygun şekilde gerçekleştirilmelidir."],
+ ["Adil rekabetin gözetilmesi","Tüm faaliyetler rekabet hukukuna uygun şekilde ve adil rekabet ilkeleri çerçevesinde yürütülmelidir. Gerçekleştirilemeyecek hizmetlerin taahhüt edilmemesi ve bilgilerin doğruluğu teyit edilmeden beyan edilmemesi gerekmektedir."]];
+var ETIK_TURLER=["Yolsuzluk / rüşvet","Ayrımcılık","Suistimal","Çevre, sağlık ve güvenlik","Menfaat çatışması","Şirket aleyhine işlemler","Müşteri / işveren ile ilişkiler","Taciz / mobbing","Gizlilik ihlali","Etik dışı davranış","Diğer"];
+var ETIK_EPOSTA="etik@envesu.com";
+
+/* ===== İSG YÖNETİM PLANI ÖZETİ (Çalışma Yöntemimiz › Çevre ve Sosyal) — kaynak: ENV-MRKZ-ISG-PL-01 Rev.00 ===== */
+var ISG_OZET=[
+ ["ISO 45001 ve 6331","Merkez ofislerde İSG uygulamaları ISO 45001 standardı ve yürürlükteki İSG mevzuatı esas alınarak yürütülür."],
+ ["Projeye özel İSG planı","Geçici saha ofisleri için her projenin kapsamı, faaliyet konusu ve tehlike sınıfına göre ayrı İSG planı hazırlanır."],
+ ["Fine-Kinney risk değerlendirmesi","Riskler olasılık, frekans ve şiddete göre derecelendirilir; çalışanlara ve alt işverenlere işe girişte ve periyodik olarak aktarılır."],
+ ["Yılda en az bir tatbikat","Yangın, tahliye vb. tatbikatlar yapılır; acil durum ekipleri mevzuat gereği özel eğitim alır."],
+ ["6 ayda bir eğitim","İşe giriş eğitimine ek olarak İSG, sağlık ve teknik eğitimler 6 ayda bir tekrarlanır ve kayıt altına alınır."],
+ ["Ramak kala ve kök neden","Ramak kala olayları kaydedilir, kazalar araştırılır ve kök nedenleri analiz edilir; iş yerinde aylık izleme ve denetim yapılır."]];
 
 var BASKAN={
   ad:"Fikret Azılı", unvan:"Yönetim Kurulu Başkanı", foto:"fikret-azili", taslak:false,
@@ -2995,6 +3166,38 @@ function buildSvcBridge(host,items,o){
   var tabs=$$(".pol-tabs button",host),panels=$$(".pol-panel",host);
   function sel(i,focus){tabs.forEach(function(t,j){t.setAttribute("aria-selected",j===i?"true":"false");t.tabIndex=j===i?0:-1});panels.forEach(function(p,j){p.hidden=j!==i;if(j===i){p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap")}});if(focus)tabs[i].focus()}
   tabs.forEach(function(t,i){t.addEventListener("click",function(){sel(i)});t.addEventListener("keydown",function(e){var n=tabs.length;if(e.key==="ArrowRight"||e.key==="ArrowDown"){e.preventDefault();sel((i+1)%n,true)}else if(e.key==="ArrowLeft"||e.key==="ArrowUp"){e.preventDefault();sel((i-1+n)%n,true)}})});
+})();
+
+/* ---------- Etik ve uyum, çevre döngüsü, İSG ---------- */
+(function(){
+  var dg=$("[data-etikdeger]");
+  if(dg&&typeof ETIK_DEGERLER!=="undefined")dg.innerHTML=ETIK_DEGERLER.map(function(v,i){return '<article class="ev" data-r style="--d:'+(i*.07).toFixed(2)+'s"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><h3>'+esc(v[0])+'</h3><p>'+esc(v[1])+'</p></article>'}).join('');
+  var ac=$("[data-etikkural]");
+  if(ac&&typeof ETIK_KURALLAR!=="undefined"){ac.innerHTML=ETIK_KURALLAR.map(function(k,i){return '<div class="acc-i'+(i?'':' open')+'"><button type="button" aria-expanded="'+(i?'false':'true')+'" aria-controls="ek-'+i+'" id="ekb-'+i+'"><span class="mono">'+("0"+(i+1)).slice(-2)+'</span><b>'+esc(k[0])+'</b><i aria-hidden="true"></i></button><div class="acc-p" id="ek-'+i+'" role="region" aria-labelledby="ekb-'+i+'"><div><p>'+esc(k[1])+'</p></div></div></div>'}).join('');
+    $$(".acc-i>button",ac).forEach(function(bt){bt.addEventListener("click",function(){var it=bt.parentNode,o=!it.classList.contains("open");$$(".acc-i",ac).forEach(function(x){x.classList.remove("open");$("button",x).setAttribute("aria-expanded","false")});if(o){it.classList.add("open");bt.setAttribute("aria-expanded","true")}})})}
+  var tw=$("[data-eftur]");if(tw&&typeof ETIK_TURLER!=="undefined")tw.innerHTML=ETIK_TURLER.map(function(t){return '<label><input type="checkbox" name="tur" value="'+esc(t)+'"> '+esc(t)+'</label>'}).join('');
+  var f=$("[data-etikform]");
+  if(f){f.addEventListener("submit",function(ev){ev.preventDefault();var msg=$(".ef-msg",f),ta=f.elements.aciklama;
+    if(!ta.value.trim()){msg.textContent="Lütfen bildiriminizi yazın.";ta.focus();return}
+    var tur=$$('input[name="tur"]:checked',f).map(function(x){return x.value}).join(", ");
+    var L=[["ENVESU ile ilişki",f.elements.iliski.value],["Bildirimin türü",tur],["Olayı nasıl öğrendi",f.elements.ogrenme.value],["Olayın yeri",f.elements.yer.value],["Tarih / saat",f.elements.zaman.value],["Olay halen sürüyor mu",f.elements.suruyor.value],["Tanıklar",f.elements.tanik.value]].filter(function(x){return x[1]}).map(function(x){return x[0]+": "+x[1]});
+    var geri=($('input[name="geri"]:checked',f)||{}).value||"";
+    var kim=[["Adı soyadı",f.elements.ad.value],["Telefon",f.elements.tel.value]].filter(function(x){return x[1]}).map(function(x){return x[0]+": "+x[1]});
+    var body="ETİK İHLAL BİLDİRİMİ\n\n"+L.join("\n")+"\n\nBİLDİRİM\n"+ta.value.trim()+"\n\nGeri bildirim: "+geri+(f.elements.gizli.checked?"\nKimlik bilgilerimin gizli tutulmasını istiyorum.":"")+(kim.length?"\n\nİLETİŞİM\n"+kim.join("\n"):"")+"\n\n(Bu ileti envesu.com etik bildirim formu ile hazırlanmıştır.)";
+    location.href="mailto:"+(typeof ETIK_EPOSTA==="string"?ETIK_EPOSTA:"etik@envesu.com")+"?subject="+encodeURIComponent("Etik ihlal bildirimi")+"&body="+encodeURIComponent(body);
+    msg.textContent="E-posta programınızda ileti hazırlandı. Açılmadıysa bildirimi doğrudan etik@envesu.com adresine gönderebilirsiniz."})}
+  var ig=$("[data-isg]");
+  if(ig&&typeof ISG_OZET!=="undefined"){var IC=['<path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/>','<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>','<path d="M4 20h16M7 16v-4M12 16V8M17 16v-7"/>','<path d="M12 3c2 3 5 5 5 9a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-8z"/>','<path d="M4 6l8-3 8 3-8 3z"/><path d="M8 7.5v5c2 1.5 6 1.5 8 0v-5M20 6v6"/>','<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v3l2 1"/>'];
+    ig.innerHTML=ISG_OZET.map(function(x,i){return '<article class="isg" data-r style="--d:'+(i*.06).toFixed(2)+'s"><span class="isg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+(IC[i]||IC[0])+'</svg></span><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p></article>'}).join('')}
+  var cy=$("[data-cevrecyc]");
+  if(cy){var S=[["Çevresel ve sosyal etki analizi","Çevresel risk ve fırsatlar analiz edilir."],["Planlama ve hedefler","Çevre politikası ve hedefler oluşturulur, uygulama planları hazırlanır."],["Uygulama ve eğitim","Planlar devreye alınır; personel ve paydaşlara eğitim verilir."],["Performans izleme","Çevresel performans ölçülür ve değerlendirilir."],["Raporlama ve iyileştirme","Sonuçlar raporlanır, iyileştirme faaliyetleri başlatılır."]],n=S.length,cx=200,cyy=200,r=150;
+    var s='<svg viewBox="0 0 400 400" class="cy-svg" aria-hidden="true"><circle cx="200" cy="200" r="'+r+'" class="cy-ring"/><circle cx="200" cy="200" r="'+r+'" class="cy-arc" pathLength="100"/>';
+    S.forEach(function(x,i){var a=(i/n)*2*Math.PI-Math.PI/2,px=cx+r*Math.cos(a),py=cyy+r*Math.sin(a);s+='<g class="cy-n" data-i="'+i+'"><circle cx="'+px.toFixed(1)+'" cy="'+py.toFixed(1)+'" r="26"/><text x="'+px.toFixed(1)+'" y="'+(py+5).toFixed(1)+'">'+("0"+(i+1)).slice(-2)+'</text></g>'});
+    s+='</svg>';
+    cy.innerHTML='<div class="cy-vis">'+s+'<div class="cy-c"><span class="mono">Sürekli iyileştirme döngüsü</span><b></b><small></small></div></div>';
+    var ns=$$(".cy-n",cy),arc=$(".cy-arc",cy),cb=$(".cy-c b",cy),cs=$(".cy-c small",cy);
+    function set(i){ns.forEach(function(g,j){g.classList.toggle("on",j===i);g.classList.toggle("done",j<i)});arc.style.strokeDasharray=((i+1)/n*100).toFixed(1)+" 100";cb.textContent=S[i][0];cs.textContent=S[i][1];var c=$(".cy-c",cy);c.classList.remove("swap");void c.offsetWidth;c.classList.add("swap")}
+    var go=cycler(n,set,3200,cy);ns.forEach(function(g,i){g.addEventListener("click",function(){go(i)});if(FINE)g.addEventListener("mouseenter",function(){set(i)})});set(0)}
 })();
 })();
 </script>
