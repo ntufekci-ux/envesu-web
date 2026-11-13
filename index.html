@@ -1085,6 +1085,24 @@ html.lbx-open{overflow:hidden}
 .noimg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px}
 .noimg svg{position:relative}
 
+/* org şeması v2 */
+.org2{display:grid;justify-items:center;margin-top:clamp(36px,5vw,64px)}
+.o-node{display:grid;gap:3px;justify-items:center;text-align:center;min-width:240px;padding:16px 30px;border-radius:10px;background:var(--card);border:1px solid var(--line-2)}
+.o-node small,.o-sup small,.o-dep small{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.o-node b{font-size:1.15rem;font-weight:500}
+.o-node.top{background:var(--ink);border-color:var(--ink);color:var(--paper)}.o-node.top small{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.o-node.gm{border-color:var(--lime);box-shadow:inset 0 0 0 1px var(--lime)}
+.o-v{display:block;width:2px;height:34px;background:var(--line-2)}
+.o-sup{display:grid;gap:12px;justify-items:center;width:min(100%,780px);padding:16px 18px 18px;border:1px dashed var(--line-2);border-radius:12px}
+.o-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.o-row span{border:1px solid var(--line-2);border-radius:999px;padding:8px 18px;font-size:.95rem;background:var(--paper)}
+.o-deps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;width:100%;padding-top:34px}
+.o-deps::before{content:"";position:absolute;top:0;height:2px;left:calc((100% - 60px)/8);right:calc((100% - 60px)/8);background:var(--line-2)}
+.o-dep{position:relative;display:grid;gap:6px;align-content:start;padding:20px 22px 22px;border-radius:10px;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--c)}
+.o-dep::before{content:"";position:absolute;left:50%;top:-37px;width:2px;height:34px;background:var(--line-2);transform:translateX(-1px)}
+.o-dep b{font-size:1.25rem;font-weight:500}
+.o-dep span{font-size:.92rem;color:var(--ink-2)}
+@media (max-width:760px){.o-deps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:0}.o-deps::before,.o-dep::before{display:none}.o-node{min-width:0;width:100%}.o-dep{padding:16px}}
 </style>
 </head>
 <body>
@@ -1397,17 +1415,19 @@ html.lbx-open{overflow:hidden}
     <figure class="team-photo" data-r><img src="img/ekip-toplu.jpg" alt="ENVESU ekibi toplu fotoğraf" loading="lazy"><figcaption>ENVESU ekibi</figcaption></figure>
     <p class="kicker" data-r style="margin:clamp(56px,7vw,88px) 0 28px">Profesyonel kadro</p>
     <div class="units" data-units></div>
-    <div class="cols" style="margin-top:clamp(64px,8vw,110px)">
-      <div style="display:grid;gap:22px"><p class="kicker" data-r>Organizasyon</p><h3 class="h3" data-r>Yürütme yönetimini uzmanlaşmış teknik departmanlara bağlayan, tanımlı hesap verebilirlik hatlarına sahip bir yapı.</h3></div>
-      <div class="org" data-r aria-label="Organizasyon şeması">
-        <div class="row"><span class="n m">Yönetim Kurulu</span></div>
-        <div class="row"><span class="n">Muhasebe ve Finans</span><span class="n m">Genel Müdür</span><span class="n">İş Geliştirme</span><span class="n">İnsan Kaynakları</span></div>
-        <div class="deps">
-          <div class="dep" style="--c:var(--sky)"><b>Altyapı</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
-          <div class="dep" style="--c:var(--brand)"><b>Üstyapı</b><span>Binalar ve endüstriyel tesisler bölümleri</span></div>
-          <div class="dep" style="--c:var(--teal)"><b>Ulaştırma</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
-          <div class="dep" style="--c:var(--lime)"><b>Enerji</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
-        </div>
+    <div class="sec-head split" style="margin-top:clamp(72px,9vw,120px)"><div style="display:grid;gap:22px"><p class="kicker" data-r>Organizasyon</p><h2 class="h2" data-r>Organizasyon yapımız.</h2></div><p class="lede" data-r>Yürütme yönetimini uzmanlaşmış teknik departmanlara bağlayan, tanımlı hesap verebilirlik hatlarına sahip bir yapı.</p></div>
+    <div class="org2" data-r role="img" aria-label="Organizasyon şeması: Yönetim Kurulu, Genel Müdür, destek birimleri (Muhasebe ve Finans, İş Geliştirme, İnsan Kaynakları) ve Altyapı, Üstyapı, Ulaştırma, Enerji departmanları">
+      <div class="o-node top"><small>Yönetim</small><b>Yönetim Kurulu</b></div>
+      <i class="o-v"></i>
+      <div class="o-node gm"><small>Yürütme</small><b>Genel Müdür</b></div>
+      <i class="o-v"></i>
+      <div class="o-sup"><small>Destek birimleri</small><div class="o-row"><span>Muhasebe ve Finans</span><span>İş Geliştirme</span><span>İnsan Kaynakları</span></div></div>
+      <i class="o-v"></i>
+      <div class="o-deps">
+        <div class="o-dep" style="--c:var(--sky)"><small>Departman</small><b>Altyapı</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
+        <div class="o-dep" style="--c:var(--brand)"><small>Departman</small><b>Üstyapı</b><span>Binalar ve endüstriyel tesisler bölümleri</span></div>
+        <div class="o-dep" style="--c:var(--teal)"><small>Departman</small><b>Ulaştırma</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
+        <div class="o-dep" style="--c:var(--lime)"><small>Departman</small><b>Enerji</b><span>Departman başkanı, uzmanlar, teknik personel</span></div>
       </div>
     </div>
   </div></section>
