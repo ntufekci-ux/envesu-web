@@ -8,7 +8,7 @@ Envesu Çevre Enerji İnş. ve Müş. A.Ş. kurumsal web sitesinin, 2026 Şirket
 - Prototip aşamasında arama motoru indekslemesi kapalıdır (`noindex`). Formlar bir gönderim servisine bağlı değildir.
 
 ## Yönetim Kurulu Başkanı fotoğrafı
-Başkanın Mesajı bölümlerindeki portre `img/fikret-azili.jpg` dosyasıdır ("NKN Çekimi_Fotoğraf_02" fotoğrafından 4:5 kırpıldı, 1200×1500). Değiştirmek için aynı adla yeni bir dikey fotoğraf koymanız yeterli; dosya yoksa "FA" monogramı gösterilir.
+Başkanın Mesajı bölümlerindeki portre `img/fikret-azili.jpg` dosyasıdır (13.11.2026 tarihli yeni fotoğraftan 4:5 kırpıldı, 1200×1500). Değiştirmek için aynı adla yeni bir dikey fotoğraf koymanız yeterli; dosya yoksa "FA" monogramı gösterilir.
 
 ## Yeni makale ekleme
 `index.html` içinde `var MAKALELER=[` dizisine yeni bir öğe ekleyin (dosyanın başındaki açıklamada alanlar anlatılıyor). Kapak görselini `img/` klasörüne koyup `gorsel` alanına dosya adını (uzantısız, .jpg) yazın. Henüz onaylanmamış bir makaleye `taslak:true` yazarsanız kartta ve metin sonunda "Taslak" ibaresi görünür; onaylananlarda `taslak:false` kalmalı.
