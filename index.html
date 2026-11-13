@@ -244,7 +244,8 @@ button{font:inherit;color:inherit}
 .map-svg .grat{stroke:rgba(255,255,255,.05);stroke-width:.6}
 .pin{cursor:pointer}
 .pin .c{stroke:var(--night);stroke-width:1.6;transition:r .3s}
-.pin .halo{fill:none;stroke-width:1.2;opacity:0}
+.pin .halo{fill:none;stroke-width:2;opacity:0}
+.pin.hit .c{r:7.5;stroke:#fff;stroke-width:1.8}.pin.hit.act .c,.pin.hit:hover .c{r:9}
 .pin.hit .halo{animation:halo 2.4s ease-out infinite;animation-delay:calc(var(--i) * -.37s)}.pin.act .halo{animation:halo 2.4s ease-out infinite;animation-delay:0s}
 @media (prefers-reduced-motion:reduce){.pin.hit .halo,.pin.act .halo{animation:none}}
 .pin:hover .c,.pin.act .c{r:8}
@@ -1946,7 +1947,7 @@ var AREAS=[
   intro:"Belediyeler ve kamu kurumları için çatı ve arazi tipi güneş enerjisi santrallerinin fizibilitesini ve tasarımını, kamu binalarında enerji etütlerini, verimlilik tasarımlarını ve ölçüm-doğrulama çalışmalarını yürütüyoruz; Türkiye'nin ilk enerji performans sözleşmesi projesinde yer aldık.",
   caps:["Çatı ve arazi tipi GES fizibilitesi ve PID","Enerji etüt raporları","Enerji verimliliği tasarımı","Ölçüm ve doğrulama","Enerji performans sertifikası (EPC)","Çevresel ve sosyal yönetim"],
   figs:[[27,0,"MW","GES fizibilite ve tasarımı"],[640000,0,"m²+","kamu binası alanı"],[120,0,"okul","çatı tipi GES"]]},
- {id:"ulastirma",name:"Ulaştırma",short:"Ulaştırma",color:"#9FCFCA",img:"h5",peek:"p25",
+ {id:"ulastirma",name:"Ulaştırma",short:"Ulaştırma",color:"#FF8A3D",img:"h5",peek:"p25",
   tag:"Son kilometre demiryolu bağlantıları, köprüler ve alt geçitler.",
   intro:"Sanayi bölgelerini limanlara ve ana hatlara bağlayan son kilometre demiryolu projelerinde ve afet sonrası yeniden yapılan köprülerde tasarım, fizibilite, çevresel ve sosyal yönetim ile ihale dokümanlarını hazırlıyoruz.",
   caps:["Demiryolu bağlantı hatları ve intermodal istasyonlar","Köprü, alt geçit ve menfezler","Fizibilite ve fayda-maliyet analizi","Çevresel ve sosyal yönetim planları","İhale dokümanları ve ihale aşaması desteği"],
