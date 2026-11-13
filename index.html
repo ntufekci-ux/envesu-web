@@ -245,7 +245,8 @@ button{font:inherit;color:inherit}
 .pin{cursor:pointer}
 .pin .c{stroke:var(--night);stroke-width:1.6;transition:r .3s}
 .pin .halo{fill:none;stroke-width:1.2;opacity:0}
-.pin.live .halo{animation:halo 2.4s ease-out infinite}
+.pin.hit .halo{animation:halo 2.4s ease-out infinite;animation-delay:calc(var(--i) * -.37s)}.pin.act .halo{animation:halo 2.4s ease-out infinite;animation-delay:0s}
+@media (prefers-reduced-motion:reduce){.pin.hit .halo,.pin.act .halo{animation:none}}
 .pin:hover .c,.pin.act .c{r:8}
 .pin.dim{opacity:.12}
 .pin text{font-family:var(--f-mono);font-size:10px;fill:var(--night-mute);letter-spacing:.06em;pointer-events:none}
@@ -2131,7 +2132,7 @@ function buildMap(host,idx){
     $$(".pin",host).forEach(function(p){var ps=pins[p.getAttribute("data-k")],has=!!filt&&ps.some(function(q){return MG[q.cat]===filt}),c=$(".c",p),hl=$(".halo",p);
       if(!c.getAttribute("data-f"))c.setAttribute("data-f",c.getAttribute("fill"));
       var col=has?GC[filt]:c.getAttribute("data-f"); c.setAttribute("fill",col); if(hl)hl.setAttribute("stroke",col);
-      p.classList.toggle("dim",!!filt&&!has)});
+      p.classList.toggle("dim",!!filt&&!has);p.classList.toggle("hit",has)});
     closeTip();
   }
   $$(".lg",host).forEach(function(b){b.addEventListener("click",function(){var g=b.getAttribute("data-g"); filt=filt===g?null:g; applyF()})});
