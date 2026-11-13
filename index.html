@@ -1373,6 +1373,48 @@ html.lbx-open{overflow:hidden}
 .ya-frame .mono{color:var(--ink-3)}
 @media (max-width:960px){.ya-map{grid-template-columns:repeat(2,minmax(0,1fr))}.ya-frame{grid-template-columns:1fr}}
 @media (max-width:560px){.ya-map{grid-template-columns:1fr}}
+
+.em-head{display:grid;gap:18px;justify-items:center;text-align:center;max-width:760px;margin:0 auto clamp(36px,4.5vw,56px)}
+.em-head .kicker{justify-content:center}
+.emo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(300px,auto);gap:10px}
+.emt{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(24px,3vw,40px);border-radius:4px}
+.emt .mono{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.emt h3{font-size:clamp(1.5rem,2.3vw,2rem);font-weight:400;letter-spacing:-.015em;line-height:1.15}
+.emt p{font-size:.98rem;line-height:1.6;opacity:.9;max-width:36ch}
+.t-green{background:#006937;color:#fff}
+.t-lime{background:var(--lime);color:var(--on-lime)}
+.t-light{background:#e8efea;color:#0e1a14}
+.t-teal{background:#9FCFCA;color:#0e1a14}
+.t-card{background:#13241c;color:var(--ink);border:1px solid var(--line-2)}
+.emi{position:relative;overflow:hidden;border-radius:4px;min-height:300px;background:#0f1b16}
+.emi.w2{grid-column:span 2}
+.emi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);transition:transform 1.2s var(--ease),filter .6s}
+.emi:hover img{transform:scale(1.04);filter:none}
+.emp{color:#2f7d4f;background:#0b1a13}
+.emp svg{position:absolute;inset:0;width:100%;height:100%}
+.erl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.erc{display:grid;gap:12px;align-content:start;padding:24px 22px 26px;border-radius:12px;background:var(--card);border:1px solid var(--line-2);text-decoration:none;color:var(--ink);transition:border-color .25s,transform .35s var(--ease)}
+.erc:hover{border-color:var(--lime);transform:translateY(-2px)}
+.erc svg{width:34px;height:34px;color:var(--lime)}
+.erc h3{font-size:1.08rem;font-weight:500;line-height:1.3}
+.erc p{color:var(--ink-2);font-size:.93rem;line-height:1.55}
+.erc-cta{background:var(--lime);border-color:var(--lime);color:var(--on-lime);position:relative}
+.erc-cta p{color:var(--on-lime);opacity:.8}
+.erc-cta .mono{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.erc-cta .ar{position:absolute;right:22px;bottom:22px;width:22px;height:22px}
+.et-band{position:relative;overflow:hidden;background:var(--night)}
+.et-band-bg{position:absolute;inset:0}
+.et-band-bg img{width:100%;height:100%;object-fit:cover;opacity:.28;filter:grayscale(.4)}
+.et-band-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,17,.95),rgba(7,26,17,.55))}
+.et-band-in{position:relative;display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-end;justify-content:space-between;padding-block:clamp(56px,7vw,96px)}
+.et-band-in>div:first-child{max-width:720px}
+.et-band .h2{color:#fff}
+.et-pills{display:flex;flex-wrap:wrap;gap:8px}
+.et-pills li{padding:7px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.85);font-size:.9rem}
+.et-band-act{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center}
+.et-band-act .link{color:#fff}
+@media (max-width:960px){.emo{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(240px,auto)}.emi.w2{grid-column:span 2}.erl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.emo{grid-template-columns:1fr;grid-auto-rows:auto}.emi,.emi.w2{grid-column:auto;min-height:200px}.emp{display:none}.erl{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1732,21 +1774,20 @@ html.lbx-open{overflow:hidden}
     <div class="isg-grid" data-isg></div>
     <div class="doclist" style="margin-top:28px" data-r><a href="doc/envesu-isg-yonetim-plani.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İş Sağlığı ve Güvenliği Yönetim Planı</b><small>ENV-MRKZ-ISG-PL-01 · PDF</small></span></a><a href="doc/envesu-isg-politikasi.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 1.5h5.5L12 4v10.5H4z"/><path d="M9.5 1.5V4H12M6 8h4M6 10.5h4"/></svg><span><b>İSG Politikası</b><small>PDF</small></span></a></div>
   </div></section>
-  <section class="sec" data-sec="etik" data-title="Etik İlkelerimiz" data-sub="Dürüstlük, tarafsızlık ve şeffaflık: tüm çalışanlarımızın uyduğu etik değerler, ilkeler ve uygulanabilir kurallar." data-img="h5"><div class="wrap et-doc">
-    <aside class="et-toc" data-r>
-      <p class="kicker">Bu sayfada</p>
-      <nav class="et-nav" data-etnav aria-label="Etik ilkeler bölümleri"><button type="button" data-go="et-p1"><span class="mono">01</span>Temel değerlerimiz</button><button type="button" data-go="et-p2"><span class="mono">02</span>Temel ilkelerimiz</button><button type="button" data-go="et-p3"><span class="mono">03</span>Uygulanabilir kurallar</button><button type="button" data-go="et-p4"><span class="mono">04</span>Uyum ve ihlal bildirimi</button></nav>
-    </aside>
-    <div class="et-body">
-      <div class="et-intro" data-r><h2 class="h2">Kurumsal itibarımız, etik davranışlarımızla şekillenir.</h2><p class="lede">Tüm faaliyetlerimiz, yasal gerekliliklerin ötesine geçen, güvenilirlik ve sorumluluk bilinciyle uyumlu etik standartlar çerçevesinde yürütülür. Bu ilkeler ENVESU ve iştiraklerinin merkez ofis ve şantiyelerindeki tüm çalışanlarımızı kapsar.</p></div>
-      <div class="et-part" id="et-p1"><div class="et-ph" data-r><span class="mono">01</span><div><h2 class="h3">Temel değerlerimiz</h2><p>Etik davranışın temelini oluşturan, hem kurum içi ilişkilerde hem de paydaşlarımızla etkileşimlerimizde esas aldığımız değerler.</p></div></div><div class="et-items" data-etlist="ETIK_DEGERLER"></div></div>
-      <div class="et-part" id="et-p2"><div class="et-ph" data-r><span class="mono">02</span><div><h2 class="h3">Temel ilkelerimiz</h2><p>Değerlerimizi günlük iş yapış biçimimize taşıyan, tüm çalışanlarımızın uyduğu davranış standartları.</p></div></div><div class="et-items" data-etlist="ETIK_ILKELER"></div></div>
-      <div class="et-part" id="et-p3"><div class="et-ph" data-r><span class="mono">03</span><div><h2 class="h3">Uygulanabilir kurallar</h2><p>Çalışanlarımızın karşılaşabileceği durumlarda nasıl hareket etmeleri gerektiğini ortaya koyan kurallar.</p></div></div><div class="et-items" data-etlist="ETIK_KURALLAR"></div></div>
-      <div class="et-part" id="et-p4"><div class="et-ph" data-r><span class="mono">04</span><div><h2 class="h3">Uyum ve ihlal bildirimi</h2><p>Etik kuralların ilke ve hükümlerine uyum, çalışanlarımızın bireysel performans değerlendirmesinde dikkate alınır.</p></div></div>
-        <ul class="et-ass" data-r><li>Etik ilkelere aykırı durumları iyi niyetle bildirenlere karşı hiçbir yaptırım uygulanmaz.</li><li>Talep edilmesi hâlinde bildirimde bulunan kişinin kimliği mümkün olduğunca gizli tutulur.</li><li>Bildirimler gizli tutulur ve hiçbir şekilde ayrımcılığa sebep olmaz.</li></ul>
-        <div class="et-cta" data-r><div><p class="kicker">Etik ihlal bildirimi</p><p class="h3">Etik ilkelerimize aykırı bir durumla mı karşılaştınız?</p><p>Bildiriminizi web formu ile ya da <a href="mailto:etik@envesu.com">etik@envesu.com</a> adresine e-posta göndererek iletebilirsiniz.</p></div><a class="btn lime" href="#hakkimizda-etik-bildirim">Bildirim formu <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a></div>
-      </div>
-    </div>
+  <section class="sec" data-sec="etik" data-title="Etik İlkelerimiz" data-sub="Dürüstlük, tarafsızlık ve şeffaflık: tüm çalışanlarımıza yol gösteren etik değerlerimiz ve ilkelerimiz." data-img="h5"><div class="wrap">
+    <div class="em-head"><p class="kicker" data-r>Etik değerlerimiz ve ilkelerimiz</p><h2 class="h2" data-r>7 başlıkta ENVESU'da etik.</h2><p class="lede" data-r>Kurumsal itibarımız, etik davranışlarımızla şekillenir. Dört temel değer ve üç temel ilke, merkez ofisimizden şantiyelerimize tüm çalışanlarımıza yol gösterir.</p></div>
+    <div class="emo" data-etmosaic></div>
+  </div></section>
+
+  <section class="sec mist" data-sec="etik"><div class="wrap">
+    <div class="sec-head split"><div style="display:grid;gap:22px"><p class="kicker" data-r>Uygulanabilir kurallar</p><h2 class="h2" data-r>Günlük işte etik.</h2></div><p class="lede" data-r>Değerlerimiz, çalışanlarımızın her gün karşılaşabileceği durumlarda somut davranışlara dönüşür.</p></div>
+    <div class="erl" data-etrules></div>
+  </div></section>
+
+  <section class="et-band" data-sec="etik"><div class="et-band-bg"><img src="img/p12.jpg" alt="" loading="lazy"></div><div class="wrap et-band-in">
+    <div style="display:grid;gap:18px"><p class="kicker" data-r>Etik ihlal bildirimi</p><h2 class="h2" data-r>Etik ilkelerimize aykırı bir durumla mı karşılaştınız?</h2>
+      <ul class="et-pills" data-r><li>İyi niyetli bildirime yaptırım yok</li><li>İstenirse kimlik gizli</li><li>Ayrımcılığa sebep olmaz</li></ul></div>
+    <div class="et-band-act" data-r><a class="btn lime" href="#hakkimizda-etik-bildirim">Bildirim formu <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></a><a class="link" href="mailto:etik@envesu.com">etik@envesu.com</a></div>
   </div></section>
 
   <section class="sec" data-sec="etik-bildirim" data-title="Etik İhlal Bildirimi" data-sub="Etik ilkelerimize aykırı durumları gizlilik içinde bize iletebileceğiniz bildirim formu." data-img="h3"><div class="wrap et-report">
@@ -2000,22 +2041,24 @@ var POLITIKALAR=[
 /* ===== ETİK VE UYUM (Hakkımızda › Etik ve Uyum) =====
    Kaynak: ENV-MRKZ-YNT-PR-04 Etik İlkeler Prosedürü (Rev.00, 08.04.2025); metinler prosedürden alıntıdır. */
 var ETIK_DEGERLER=[
- ["Dürüstlük ve etik davranış","Tüm faaliyetlerde iyi niyet, dürüstlük ve adalet ilkelerine bağlı kalınır. Verilen sözlerin tutulmasına özen gösterilir; taahhüt altına girilen konuların gereği eksiksiz olarak yerine getirilir."],
- ["Tarafsızlık ve bağımsızlık","Tüm danışmanlık hizmetleri, profesyonellik ve tarafsızlık ilkeleri çerçevesinde sunulur. Bu kapsamda çıkar çatışmalarından kaçınılır ve objektif değerlendirmelerle hareket edilir."],
- ["Her bireye saygı","Çeşitliliğe ve farklılıklara saygı gösterilmesi, adil ve kapsayıcı bir çalışma ortamının temelini oluşturur. Milliyet, etnik köken, yaş, cinsiyet, dini ya da siyasi inançlara dayalı herhangi bir ayrımcılığa izin verilmez."],
- ["Sosyal ve çevresel sorumluluk","ENVESU ve tüm çalışanlar tarafından gerçekleştirilen her türlü faaliyetin toplum, bireyler ve çevre üzerindeki etkileri dikkate alınmakta; bu doğrultuda sorumlu, duyarlı ve sürdürülebilir bir yaklaşım benimsenmektedir."]];
-var ETIK_KURALLAR=[
- ["Hizmetlerin dürüstlükle yürütülmesi","Tüm hizmetlerin, onaylı yöntem ve prosedürlere uygun biçimde, profesyonel, bağımsız ve tarafsız şekilde yürütülmesi sağlanmalıdır. Doğru sonuçların elde edilmesine veya raporlanmasına engel olabilecek hiçbir dış etkiye izin verilmemelidir."],
- ["Belgelerin ve bilgilerin dürüstlüğü","Tüm finansal ve muhasebe kayıtlarının eksiksiz, doğru ve gerçeği yansıtacak şekilde tutulması zorunludur. Her çalışan, sağladığı bilgi ve belgelerin doğruluğundan şahsen sorumludur."],
- ["Çıkar çatışmalarının önlenmesi","Çıkar çatışması; Şirket ile kişisel çıkarlar veya çalışanların aile bireyleri ya da yakın ilişkide bulunulan kişilerin çıkarlarının kesiştiği durumlar olarak tanımlanmaktadır. Bu tür durumların ortaya çıkmasının engellenmesi ve oluşması hâlinde şeffaf bir şekilde bildirilmesi esastır."],
- ["Gizlilik kurallarına uyulması","Şirket faaliyetleri sırasında elde edilen tüm bilgiler gizli kabul edilmekte ve sadece yetkili kişilerle paylaşılmaktadır. Bu gizlilik yükümlülüğü, işten ayrılma sonrasında da geçerliliğini korur."],
- ["Rüşvetle mücadele","Rüşvetin ve yolsuzluğun her türü kesin şekilde yasaklanmıştır. Doğrudan veya dolaylı olarak rüşvet verilmesi veya kabul edilmesi, uygunsuz hediye teklifinde bulunulması, komisyon (kickback) alınması ya da şirket kaynaklarının etik dışı amaçlarla kullanılması kabul edilemez."],
- ["İş ortaklarıyla ilişkilerin yönetimi","İhale süreçleri adil, tarafsız ve şeffaf ilkeler doğrultusunda yürütülmelidir. Ortak girişim ortakları, taşeronlar, acenteler, ana tedarikçiler ve yükleniciler gibi iş ortaklarının seçimleri belirlenmiş prosedürlere uygun şekilde gerçekleştirilmelidir."],
- ["Adil rekabetin gözetilmesi","Tüm faaliyetler rekabet hukukuna uygun şekilde ve adil rekabet ilkeleri çerçevesinde yürütülmelidir. Gerçekleştirilemeyecek hizmetlerin taahhüt edilmemesi ve bilgilerin doğruluğu teyit edilmeden beyan edilmemesi gerekmektedir."]];
+ ["Dürüstlük","Tüm faaliyetlerimizde iyi niyet, dürüstlük ve adalet ilkelerine bağlı kalır; verdiğimiz sözleri eksiksiz yerine getiririz."],
+ ["Tarafsızlık ve bağımsızlık","Danışmanlık hizmetlerimizi profesyonellik ve tarafsızlıkla sunar, çıkar çatışmalarından kaçınır, gerçeği yansıtan raporlar hazırlarız."],
+ ["Her bireye saygı","Çeşitliliğe ve farklılıklara saygı gösterir; milliyet, köken, yaş, cinsiyet, inanç ya da görüşe dayalı hiçbir ayrımcılığa izin vermeyiz."],
+ ["Sosyal ve çevresel sorumluluk","Faaliyetlerimizin topluma, bireylere ve çevreye etkilerini gözetir; sorumlu ve sürdürülebilir bir yaklaşımla çalışırız."]];
+/* Temel ilkeler — kaynak: ENV-MRKZ-YNT-PR-04 md. 5.2 (kısaltılmış) */
 var ETIK_ILKELER=[
- ["Etik kurallara uyum","ENVESU'nun gelişimi ve büyümesi; çalışanlar, müşteriler, rakipler ve iş ortakları dâhil olmak üzere tüm paydaşlara eşit şekilde uygulanan etik ilkelere dayanmaktadır. Tüm çalışanlar, görev yeri fark etmeksizin bu etik kuralları bilmek ve uygulamakla yükümlüdür."],
- ["Şeffaflık, dürüstlük ve adalet","Tüm davranış ve kararların, yalnızca yasal düzenlemelere değil, aynı zamanda şeffaflık, dürüstlük ve adalet ilkelerine uygun şekilde şekillendirilmesi esastır. ENVESU'nun çıkarları gerekçe gösterilerek etik ilkelere aykırı hareket edilmesine izin verilmez."],
- ["Kanun ve yönetmeliklere uyum","Kurumsal itibarımız, yürürlükteki yasa, yönetmelik ve benzeri düzenlemelere gösterilen saygı ve tam uyum ile korunmaktadır. Etik kurallar ile yerel yasa ve düzenlemeler arasında bir çelişki söz konusu olduğunda, öncelik her zaman yerel yasa ve düzenlemelere verilir."]];
+ ["Etik kurallara uyum","Etik kurallarımızı çalışanlarımıza, müşterilerimize, rakiplerimize ve iş ortaklarımıza eşit biçimde uygularız."],
+ ["Şeffaflık ve adalet","Kararlarımızı yalnızca yasalara değil; şeffaflık, dürüstlük ve adalet ilkelerine göre de şekillendiririz."],
+ ["Yasalara uyum","Faaliyet gösterdiğimiz ülkelerin yasa ve düzenlemelerine tam uyum gösteririz; çelişki olduğunda yerel mevzuat önceliklidir."]];
+/* Uygulanabilir kurallar — md. 5.3 (kısaltılmış); 3. alan simge adı */
+var ETIK_KURALLAR=[
+ ["Hizmetlerin dürüstlükle yürütülmesi","Bağımsız ve tarafsız çalışır; sonuçları değiştirecek hiçbir baskıya izin vermeyiz.","kalkan"],
+ ["Belgelerin ve bilgilerin doğruluğu","Kayıtlarımızı eksiksiz, doğru ve gerçeği yansıtacak biçimde tutarız.","belge"],
+ ["Çıkar çatışmalarının önlenmesi","Çıkar çatışmalarını önler, oluştuğunda şeffaf biçimde bildiririz.","yol"],
+ ["Gizlilik","İş sırasında edindiğimiz bilgileri yalnızca yetkili kişilerle paylaşırız.","kilit"],
+ ["Rüşvetle mücadele","Rüşvetin ve yolsuzluğun her türü kesin olarak yasaktır.","yasak"],
+ ["İş ortaklarıyla ilişkiler","İhale ve iş ortağı seçimlerini adil, tarafsız ve şeffaf yürütürüz.","bag"],
+ ["Adil rekabet","Rekabet hukukuna uyar, yerine getiremeyeceğimiz taahhütte bulunmayız.","terazi"]];
 var ETIK_TURLER=["Yolsuzluk / rüşvet","Ayrımcılık","Suistimal","Çevre, sağlık ve güvenlik","Menfaat çatışması","Şirket aleyhine işlemler","Müşteri / işveren ile ilişkiler","Taciz / mobbing","Gizlilik ihlali","Etik dışı davranış","Diğer"];
 var ETIK_EPOSTA="etik@envesu.com";
 
@@ -3233,13 +3276,24 @@ function buildSvcBridge(host,items,o){
 
 /* ---------- Etik ve uyum, çevre döngüsü, İSG ---------- */
 (function(){
-  var ETL={ETIK_DEGERLER:typeof ETIK_DEGERLER!=="undefined"?ETIK_DEGERLER:[],ETIK_ILKELER:typeof ETIK_ILKELER!=="undefined"?ETIK_ILKELER:[],ETIK_KURALLAR:typeof ETIK_KURALLAR!=="undefined"?ETIK_KURALLAR:[]};
-  $$("[data-etlist]").forEach(function(el){var L=ETL[el.getAttribute("data-etlist")]||[];el.innerHTML=L.map(function(v,i){return '<article class="et-it" data-r style="--d:'+(i*.05).toFixed(2)+'s"><span class="et-n">'+("0"+(i+1)).slice(-2)+'</span><div><h3>'+esc(v[0])+'</h3><p>'+esc(v[1])+'</p></div></article>'}).join('')});
-  var nav=$("[data-etnav]");
-  if(nav){var bts=$$("button",nav),parts=bts.map(function(x){return document.getElementById(x.getAttribute("data-go"))});
-    bts.forEach(function(x,i){x.addEventListener("click",function(){var p=parts[i];if(p)window.scrollTo({top:p.getBoundingClientRect().top+window.scrollY-100,behavior:RM?"auto":"smooth"})})});
-    function spy(){if(nav.offsetParent===null)return;var k=0;parts.forEach(function(p,i){if(p&&p.getBoundingClientRect().top<window.innerHeight*.4)k=i});bts.forEach(function(x,i){x.classList.toggle("on",i===k)})}
-    window.addEventListener("scroll",spy,{passive:true});window.addEventListener("hashchange",function(){setTimeout(spy,60)});spy()}
+  var emo=$("[data-etmosaic]");
+  if(emo&&typeof ETIK_DEGERLER!=="undefined"){
+    var DG=ETIK_DEGERLER,IL=(typeof ETIK_ILKELER!=="undefined"?ETIK_ILKELER:[]);
+    function T(v,lab,tone){return '<article class="emt '+tone+'" data-r><span class="mono">'+lab+'</span><h3>'+esc(v[0])+'</h3><p>'+esc(v[1])+'</p></article>'}
+    function I(src,w,pos){return '<div class="emi'+(w?' w2':'')+'" data-r aria-hidden="true"><img src="img/'+src+'.jpg" alt="" loading="lazy"'+(pos?' style="object-position:'+pos+'"':'')+'></div>'}
+    var PAT='<div class="emi emp" data-r aria-hidden="true"><svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="currentColor" stroke-width="1.2">'+(function(){var s="";for(var k=0;k<18;k++){s+='<path d="M200 60 L'+(-40+k*27)+' 400"/>'}for(var r=1;r<9;r++){s+='<path d="M'+(200-r*30)+' 400 Q200 '+(400-r*36)+' '+(200+r*30)+' 400" opacity=".55"/>'}return s})()+'</g><rect x="186" y="30" width="28" height="370" fill="currentColor" opacity=".9"/></svg></div>';
+    function L(k,i){return (k==="d"?"Değer ":"İlke ")+("0"+(i+1)).slice(-2)}
+    var h=[];
+    if(DG[0])h.push(T(DG[0],L("d",0),"t-green"));h.push(I("p09"));if(DG[1])h.push(T(DG[1],L("d",1),"t-lime"));
+    if(DG[2])h.push(T(DG[2],L("d",2),"t-light"));h.push(I("ekip-toplu",1,"center 30%"));
+    h.push(I("p25",1));if(DG[3])h.push(T(DG[3],L("d",3),"t-card"));
+    if(IL[0])h.push(T(IL[0],L("i",0),"t-teal"));h.push(PAT);if(IL[1])h.push(T(IL[1],L("i",1),"t-green"));
+    if(IL[2])h.push(T(IL[2],L("i",2),"t-card"));h.push(I("h1",1));
+    emo.innerHTML=h.join('');
+  }
+  var ICO={kalkan:'<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',belge:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h4"/>',yol:'<path d="M12 21v-7M12 14L6 6M12 14l6-8"/><path d="M3 6h6M15 6h6"/>',kilit:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3M12 14v3"/>',yasak:'<circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/><path d="M10 9.5c.4-.9 1.2-1.5 2.3-1.5 1.4 0 2.2.8 2.2 1.8M14.5 14.4c-.4.9-1.3 1.6-2.5 1.6-1.4 0-2.3-.8-2.3-1.8M12 6.5V8M12 16v1.5"/>',bag:'<circle cx="8.5" cy="12" r="5"/><circle cx="15.5" cy="12" r="5"/>',terazi:'<path d="M12 3v18M7 21h10M4 7h16"/><path d="M4 7l-2.5 6a2.5 2.5 0 005 0zM20 7l-2.5 6a2.5 2.5 0 005 0z"/>'};
+  var er=$("[data-etrules]");
+  if(er&&typeof ETIK_KURALLAR!=="undefined")er.innerHTML=ETIK_KURALLAR.map(function(k,i){return '<article class="erc" data-r style="--d:'+(i*.05).toFixed(2)+'s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICO[k[2]]||ICO.kalkan)+'</svg><h3>'+esc(k[0])+'</h3><p>'+esc(k[1])+'</p></article>'}).join('')+'<a class="erc erc-cta" href="#hakkimizda-etik-bildirim" data-r><span class="mono">Bildirim</span><h3>Bir ihlal mi gördünüz?</h3><p>Gizlilik içinde bildirin.</p><span class="ar">'+AR+'</span></a>';
   var tw=$("[data-eftur]");if(tw&&typeof ETIK_TURLER!=="undefined")tw.innerHTML=ETIK_TURLER.map(function(t){return '<label><input type="checkbox" name="tur" value="'+esc(t)+'"> '+esc(t)+'</label>'}).join('');
   var f=$("[data-etikform]");
   if(f){f.addEventListener("submit",function(ev){ev.preventDefault();var msg=$(".ef-msg",f),ta=f.elements.aciklama;
