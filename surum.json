@@ -1,34 +1,34 @@
 {
- "surum": "2026.11.14-3",
- "olusturma": "2026-11-14T12:03:25",
+ "surum": "2026.11.14-4",
+ "olusturma": "2026-11-14T12:23:43",
  "paketler": [
   {
    "ad": "envesu-cekirdek.zip",
-   "sha256": "c782b85e4a18a831e8447cff2eb2e7995180ef7c211e2eb25d3ac82d6d4d2ed7",
-   "boyut": 152667,
-   "dosya": 10
+   "sha256": "df3d19519275c64ff2a5beb9beeba06c7a8309616db07c1dd4f1e7bf8c910d2a",
+   "boyut": 157920,
+   "dosya": 11
   },
   {
    "ad": "envesu-doc.zip",
-   "sha256": "cb71e74510d7396010bfb4dab785e217c86eac3854199dadbc17a3cf2a52e2f4",
+   "sha256": "f88e7028d5b86cf92d3f934d56272c80aa9ed545463822098ce454ceb270ac9d",
    "boyut": 12853422,
    "dosya": 12
   },
   {
    "ad": "envesu-fonts.zip",
-   "sha256": "b667570649d2af6a6862246d01ca8b61659a9a689bb8160b30313dcd19d8924f",
+   "sha256": "756b23ae7b067f26ef26b1fdded49a5c763bddb0c94073f973513b335937c422",
    "boyut": 245165,
    "dosya": 14
   },
   {
    "ad": "envesu-img.zip",
-   "sha256": "0369104ff0b3f9a4aa1375dcc2cffae195c5f095b76ed64adcdaa675d7e7c1a3",
-   "boyut": 9869792,
-   "dosya": 75
+   "sha256": "02e17851d4dbcc8104b73063fad8ce81879525fcdb733ec60e7379550fe036c9",
+   "boyut": 13213015,
+   "dosya": 99
   },
   {
    "ad": "envesu-media.zip",
-   "sha256": "49c1acf109d07e60f14a4d23f4fb7693d5f472a5fca2bb4b7c5082fa704a5b43",
+   "sha256": "f601279f0352ded4798534f5b838c80368d8c7a7a718f12cbeb84b2fc40053e5",
    "boyut": 2981392,
    "dosya": 4
   }
