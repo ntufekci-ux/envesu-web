@@ -1,11 +1,11 @@
 {
- "surum": "2026.11.24-5",
- "olusturma": "2026-11-24T16:45:33",
+ "surum": "2026.11.24-6",
+ "olusturma": "2026-11-24T17:11:57",
  "paketler": [
   {
    "ad": "envesu-cekirdek.zip",
-   "sha256": "811ac0bb59300427f8bbeb83131a305ffeee7ed75a587a87ebafc74639c2ebc0",
-   "boyut": 2001867,
+   "sha256": "4813eedcebbca0cf2603f826936ad508f8b62dc322b600a71bc6a09e1e13d0b7",
+   "boyut": 2003431,
    "dosya": 25
   },
   {
