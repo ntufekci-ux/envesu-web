@@ -1144,19 +1144,17 @@ html.lbx-open{overflow:hidden}
 .cert-im img{aspect-ratio:560/792;width:100%;height:auto}
 .vid img{width:100%;height:auto;display:block;border-radius:4px;aspect-ratio:16/9;background:#e9f3f7 center/cover no-repeat}
 .sud-w{margin:0;display:grid;gap:16px}
-.sud{display:grid;grid-template-columns:1fr 1.05fr 1.2fr 1.5fr 1.05fr;grid-template-rows:repeat(9,minmax(46px,auto));gap:4px;font-size:.92rem;line-height:1.3}
-.sud-c{display:flex;align-items:center;padding:10px 14px;border-radius:3px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);transition:opacity .25s,background .25s,border-color .25s}
-.sud-c.l1{background:#0f3a29;border-color:#1d5a40;font-weight:500}.sud-c.l2,.sud-c.l5{font-weight:500}
-.sud-c.g-r{background:rgba(147,213,0,.08);border-color:rgba(147,213,0,.35)}.sud-c.g-n{background:rgba(252,220,62,.07);border-color:rgba(252,220,62,.32)}.sud-c.g-k{background:rgba(74,193,224,.07);border-color:rgba(74,193,224,.32)}
-.sud-c.l5.g-r{background:rgba(147,213,0,.2)}.sud-c.l5.g-n{background:rgba(252,220,62,.2)}
-.sud.hl .sud-c{opacity:.35}.sud.hl .sud-c.on{opacity:1}
-.sud-m,.prose-a .sud-m{display:none}.prose-a .sud-m li,.sud-m li{padding-left:0;color:var(--ink)}.prose-a .sud-m li::before{content:none}.prose-a .sud-w{margin:8px 0 12px}.prose-a .sud-f p{margin:0}
-.sud-f{display:grid;gap:4px;font-size:.95rem;color:var(--ink-2)}.sud-f b{font-weight:500;color:var(--ink)}.sud-f b.g-n{color:#fcdc3e}.sud-f b.g-k{color:#4ac1e0}
+.sdv-x{overflow-x:auto;-webkit-overflow-scrolling:touch}.sdv{display:block;width:100%;min-width:760px;height:auto}
+.sdv .sd-b{fill-opacity:.55;stroke:none;transition:fill-opacity .25s}.sdv .sd-in{fill:#4ac1e0}.sdv .sd-iz{fill:#7fcf9a}.sdv .sd-ky{fill:#4ac1e0;fill-opacity:.4}.sdv .sd-fa{fill:#93d500}.sdv .sd-fz{fill:#fcdc3e}.sdv .sd-id{fill:#f29f4c}.sdv .sd-fi{fill:#4ac1e0;fill-opacity:.75}
+.sdv:hover .sd-b{fill-opacity:.2}.sdv .sd-b:hover{fill-opacity:.85}
+.sdv .sd-ch{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.8;pointer-events:none}
+.sdv .sd-ic path,.sdv .sd-ic circle{fill:none;stroke:var(--ink-2);stroke-width:1.6}.sdv .sd-ic circle{fill:var(--paper)}.sdv .sd-wl{fill:#4ac1e0!important;fill-opacity:.35;stroke:none!important}.sdv .sd-x{stroke:#f29f4c!important;stroke-width:2!important}.sdv .sd-dr{fill:#4ac1e0!important;stroke:none!important}
+.sdv .sd-z{fill:rgba(255,255,255,.025);stroke-width:1}.sdv .sd-zr{stroke:rgba(147,213,0,.45)}.sdv .sd-zn{stroke:rgba(252,220,62,.4);stroke-dasharray:5 4}
+.sdv text{font-family:var(--f-sans);fill:var(--ink)}.sdv .sd-l{font-size:15px}.sdv .sd-lb{font-size:16px;font-weight:500}.sdv .sd-s{font-size:12.5px;fill:var(--ink-3)}.sdv .sd-zl{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;fill:var(--ink-2)}
+[dir="rtl"] .sdv text{direction:rtl}
+.sud-f{display:grid;gap:4px;font-size:.95rem;color:var(--ink-2)}.sud-f b{font-weight:500;color:var(--ink)}.sud-f b.g-n{color:#fcdc3e}.sud-f b.g-k{color:#4ac1e0}.prose-a .sud-f p{margin:0}.prose-a .sud-w{margin:8px 0 12px}
 .sud-s{font-size:.8rem;color:var(--ink-3)}
-@media (max-width:860px){.sud{display:none}.sud-m,.prose-a .sud-m{display:block;font-size:.95rem}
- .sud-m ul{padding-left:14px;border-left:1px solid var(--line-2);margin:6px 0 6px 8px;display:grid;gap:6px}
- .sud-m span{display:inline-block;padding:6px 10px;border-radius:3px;border:1px solid var(--line-2);background:var(--card)}
- .sud-m>li>span{background:#0f3a29;border-color:#1d5a40}.sud-m .g-r>span{border-color:rgba(147,213,0,.45)}.sud-m .g-n>span{border-color:rgba(252,220,62,.45)}.sud-m .g-k>span{border-color:rgba(74,193,224,.45)}}
+.sdv-h{display:none;color:var(--ink-3)}@media (max-width:800px){.sdv-h{display:block}}
 .pd-ciz .ciz{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:40px;align-items:start}
 @media (max-width:980px){.pd-ciz .ciz{grid-template-columns:1fr;gap:24px}}
 .ciz-f{margin:0;background:#f3f6f2;border:1px solid var(--line-2);border-radius:4px;overflow:hidden;position:relative}
@@ -3273,18 +3271,41 @@ var SUD=[
  [4,5,1,"İzinsiz (kaçak) kullanım","k",4],[4,6,1,"Sayaç ölçüm hataları ve veri işleme hataları","k",4],[4,7,1,"İsale ve dağıtım hatlarındaki kayıp ve kaçaklar","k",4],[4,8,1,"Depolardaki kaçak ve taşmalar","k",4],[4,9,1,"Servis bağlantılarındaki kayıp ve kaçaklar","k",4],
  [5,1,2,"Gelir getiren su","r",5],[5,3,7,"Gelir getirmeyen su","n",5]];
 function suDengesi(){
-  var g='<div class="sud" data-sud>'+SUD.map(function(c){return '<div class="sud-c l'+c[5]+(c[4]?' g-'+c[4]:'')+'" data-g="'+c[4]+'" style="grid-column:'+c[0]+';grid-row:'+c[1]+' / span '+c[2]+'">'+esc(c[3])+'</div>'}).join('')+'</div>';
-  var li=function(t,g,inner){return '<li class="g-'+g+'"><span>'+esc(t)+'</span>'+(inner?'<ul>'+inner+'</ul>':'')+'</li>'};
-  var m='<ul class="sud-m"><li><span>'+esc("Sisteme giren su miktarı")+'</span><ul>'+
-    li("İzinli tüketim","r",li("Faturalandırılmış izinli tüketim","r",li("Faturalandırılmış ölçülmüş kullanım","r")+li("Faturalandırılmış ölçülmemiş kullanım","r"))+li("Faturalandırılmamış izinli tüketim","n",li("Faturalandırılmamış ölçülmüş kullanım","n")+li("Faturalandırılmamış ölçülmemiş kullanım","n")))+
-    li("Su kayıpları","k",li("İdari kayıplar","k",li("İzinsiz (kaçak) kullanım","k")+li("Sayaç ölçüm hataları ve veri işleme hataları","k"))+li("Fiziki kayıplar","k",li("İsale ve dağıtım hatlarındaki kayıp ve kaçaklar","k")+li("Depolardaki kaçak ve taşmalar","k")+li("Servis bağlantılarındaki kayıp ve kaçaklar","k")))+
-    '</ul></li></ul>';
+  /* Akış şeması: bant kalınlıkları temsilidir (oran göstermez). Koordinatlar viewBox 1000x540. */
+  function band(x0,y0a,y0b,x1,y1a,y1b){var m=(x0+x1)/2;return 'M'+x0+','+y0a+' C'+m+','+y0a+' '+m+','+y1a+' '+x1+','+y1a+' L'+x1+','+y1b+' C'+m+','+y1b+' '+m+','+y0b+' '+x0+','+y0b+' Z'}
+  function rect(x0,ya,x1,yb){return 'M'+x0+','+ya+' L'+x1+','+ya+' L'+x1+','+yb+' L'+x0+','+yb+' Z'}
+  function chev(x,y,c){return '<path class="sd-ch" d="M'+(x-5)+','+(y-7)+' l8,7 l-8,7"'+(c?' stroke="'+c+'"':'')+'/>'}
+  var B=[ /* grup, renk sınıfı, yol */
+   ["","in",rect(70,195,210,345)],
+   ["r","iz",band(210,195,290,330,112,207)+rect(330,112,470,207).replace('M','M')],
+   ["k","ky",band(210,290,345,330,372,427)+rect(330,372,470,427)],
+   ["r","fa",band(470,112,187,590,62,137)+rect(590,62,720,137)],
+   ["n","fz",band(470,187,207,590,205,225)+rect(590,205,720,225)],
+   ["k","id",band(470,372,392,590,350,370)+rect(590,350,720,370)],
+   ["k","fi",band(470,392,427,590,452,487)+rect(590,452,720,487)]];
+  var g=B.map(function(b){return '<path class="sd-b sd-'+b[1]+'" data-g="'+b[0]+'" d="'+b[2]+'"/>'}).join('');
+  var ch=chev(140,270)+chev(400,160)+chev(400,400)+chev(655,100)+chev(655,215)+chev(655,360)+chev(655,470);
+  /* depo, sayaçlar ve sızıntı damlaları */
+  var ic='<g class="sd-ic"><path d="M18,200 h44 v140 h-44 z"/><path d="M18,230 h44" /><path class="sd-wl" d="M22,236 h36 v100 h-36 z"/>'+
+   [100,215,360].map(function(y,i){return '<circle cx="738" cy="'+y+'" r="13"/><path d="M738,'+y+' l6,-6"/>'+(i===2?'<path class="sd-x" d="M730,'+(y-8)+' l16,16 M746,'+(y-8)+' l-16,16"/>':'')}).join('')+
+   [[600,500],[640,512],[690,498],[730,508]].map(function(p){return '<path class="sd-dr" d="M'+p[0]+','+(p[1]-9)+' q6,8 0,12 q-6,-4 0,-12 z"/>'}).join('')+'</g>';
+  var zn='<rect class="sd-z sd-zr" x="770" y="52" width="222" height="100" rx="6"/><rect class="sd-z sd-zn" x="770" y="180" width="222" height="340" rx="6"/>'+
+   svgLines(772,40,[TT("Gelir getiren su")],16,"sd-zl",220)+svgLines(772,168,[TT("Gelir getirmeyen su")],16,"sd-zl",220);
+  var L=function(x,yc,t,sub){var T=wrapL(TT(t),26),S=sub?wrapL(TT(sub),32):[],h=T.length*18+(S.length?6+S.length*15:0),top=yc-h/2;
+    var o=svgLines(x,top+T.length*18/2+5,T,18,"sd-l",205);if(S.length)o+=svgLines(x,top+T.length*18+6+S.length*15/2+4,S,15,"sd-s",205);return o};
+  var tx=svgLines(70,178,[TT("Sisteme giren su miktarı")],18,"sd-l sd-lb",260)+
+   svgLines(340,96,[TT("İzinli tüketim")],18,"sd-l sd-lb",200)+svgLines(340,452,[TT("Su kayıpları")],18,"sd-l sd-lb",200)+
+   L(782,102,"Faturalandırılmış izinli tüketim","Ölçülmüş ve ölçülmemiş kullanım")+
+   L(782,228,"Faturalandırılmamış izinli tüketim","Ölçülmüş ve ölçülmemiş kullanım")+
+   L(782,360,"İdari kayıplar","İzinsiz kullanım, sayaç ve veri hataları")+
+   L(782,470,"Fiziki kayıplar","Hatlarda, depolarda ve servis bağlantılarında kayıp ve kaçaklar");
+  var svg='<div class="sdv-x"><svg class="sdv" viewBox="0 0 1000 540" role="img" aria-label="'+esc(TT("Standart su dengesi akış şeması"))+'">'+zn+g+ch+ic+tx+'</svg></div><p class="sdv-h mono">'+esc("Şemayı yana kaydırın")+' →</p>';
   var f='<div class="sud-f"><p><b class="g-n">'+esc("Gelir getirmeyen su")+'</b> = <span>'+esc("Su kayıpları + Faturalandırılmamış izinli tüketim")+'</span></p><p><b class="g-k">'+esc("Su kayıpları")+'</b> = <span>'+esc("İdari kayıplar + Fiziki kayıplar")+'</span></p></div>';
-  var s='<p class="sud-s">'+esc("Kaynak: İçme Suyu Temin ve Dağıtım Sistemlerindeki Su Kayıplarının Kontrolü El Kitabı (2017) ve IWA standart su dengesi.")+'</p>';
-  return '<figure class="sud-w">'+g+m+'<figcaption>'+f+s+'</figcaption></figure>';
+  var s='<p class="sud-s">'+esc("Bant kalınlıkları temsilidir; gerçek oranları göstermez.")+' '+esc("Kaynak: İçme Suyu Temin ve Dağıtım Sistemlerindeki Su Kayıplarının Kontrolü El Kitabı (2017) ve IWA standart su dengesi.")+'</p>';
+  setTimeout(function(){$$(".sdv").forEach(function(x){fitLater(x)})},0);
+  return '<figure class="sud-w">'+svg+'<figcaption>'+f+s+'</figcaption></figure>';
 }
 function sudSec(){return '<section class="sec tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Su dengesi</p><h2 class="h3">'+esc("Su nerede kayboluyor?")+'</h2>'+suDengesi()+'</div></section>'}
-document.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest(".sud-c");var w=e.target.closest&&e.target.closest("[data-sud]");if(!w)return;var g=c?c.getAttribute("data-g"):"";w.classList.toggle("hl",!!g);$$(".sud-c",w).forEach(function(x){x.classList.toggle("on",!!g&&(x.getAttribute("data-g")===g||(g==="n"&&x.getAttribute("data-g")==="k")))})});
 function rtime(a){return Math.max(2,Math.round(words(a.govde)/200))+" dk okuma"}
 function portrait(el){
   var ini=BASKAN.ad.split(" ").map(function(w){return w[0]}).join("");
