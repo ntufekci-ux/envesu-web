@@ -532,6 +532,8 @@ picture.rp{display:contents}
 .pd-hero>img,.pd-hero>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pd-hero>img.contain,.pd-hero>picture>img.contain{object-fit:contain;padding:120px 6% 220px;background:#fff}
 .pd-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,26,17,.96) 0%,rgba(7,26,17,.55) 38%,rgba(7,26,17,.15) 70%,rgba(7,26,17,.45) 100%)}
+.pd-hero.ill-h::after{background:linear-gradient(0deg,rgba(7,26,17,.97) 0%,rgba(7,26,17,.7) 40%,rgba(7,26,17,.4) 100%),linear-gradient(90deg,rgba(7,26,17,.8) 0%,rgba(7,26,17,.35) 55%,rgba(7,26,17,0) 100%)}
+.pd-hero.ill-h>img.contain,.pd-hero.ill-h>picture>img.contain{background:#eef2ef}
 .pd-hero .wrap{position:relative;z-index:1;padding-top:130px;padding-bottom:44px;display:grid;gap:18px;width:100%}
 .pd-hero h1{font-size:clamp(2.3rem,5.4vw,4.6rem);letter-spacing:-.03em;max-width:18ch}
 .pd-hero .sub{font-size:clamp(1.05rem,1.5vw,1.25rem);color:rgba(255,255,255,.8);max-width:60ch}
@@ -1153,7 +1155,7 @@ html.lbx-open{overflow:hidden}
 .ciz-leg b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#006937;color:#fff;font-family:var(--f-mono);font-size:.72rem;font-weight:500}
 .ciz-h{display:grid;gap:6px;border-top:1px solid var(--line);padding-top:12px}.ciz-h li{display:flex;gap:10px;align-items:center;font-size:.88rem;color:var(--ink-2)}
 .ciz-h i{display:inline-block;width:28px;height:0;border-top:3px solid}.ciz-h .ln-su{border-color:#1c8fb3}.ciz-h .ln-camur{border-color:#9a7b4f;border-top-style:dashed}.ciz-h .ln-hava{border-color:#7f8f87;border-top-style:dotted}.ciz-h .ln-mor{border-color:#7b5aa6}
-.gal figure{position:relative}.gal .gt{position:absolute;left:10px;bottom:10px;color:#fff;background:rgba(0,0,0,.45)}
+.gal figure{position:relative}.gal .gt{position:absolute;left:10px;top:10px;color:#fff;background:rgba(0,0,0,.45)}
 .pc .im{position:relative}.gt-c{position:absolute;left:10px;top:10px;color:#fff;background:rgba(0,0,0,.45);z-index:2}
 .hero-gt{right:16px;left:auto;top:118px;bottom:auto}@media (max-width:760px){.hero-gt{top:96px}}
 .ill-tag{position:absolute;right:16px;bottom:14px;z-index:2;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(0,0,0,.3);padding:4px 8px;border-radius:3px}
@@ -2518,7 +2520,8 @@ var CIZIMLER={
 var GTUR={p02a:"Mimari görselleştirme",p02b:"Mimari görselleştirme",p03:"Mimari görselleştirme",p05:"Mimari görselleştirme",h4:"Mimari görselleştirme",
  p07:"Şematik anlatım",p10:"Şematik anlatım",p11:"Şematik anlatım",p15:"Şematik anlatım",p16:"Şematik anlatım",p18:"Şematik anlatım",p20:"Şematik anlatım",p21:"Şematik anlatım",p26:"Şematik anlatım",
  p19:"Uydu görüntüsü üzerinde şematik güzergâh",p24:"Uydu görüntüsü üzerinde şematik güzergâh",h5:"Uydu görüntüsü üzerinde şematik güzergâh",
- p17:"Temsili görsel",p29:"Temsili görsel"};
+ p17:"Temsili görsel",p29:"Temsili görsel",
+ "gorsel-atiksu-geri-kazanim":"Temsili illüstrasyon","gorsel-ges":"Temsili illüstrasyon","gorsel-iltisak":"Temsili illüstrasyon","gorsel-nrw":"Temsili illüstrasyon","gorsel-kopru":"Temsili illüstrasyon","gorsel-petrokimya":"Temsili illüstrasyon"};
 var MAKALELER=[
  {id:"ced-raporu-ve-csed", taslak:false,
   baslik:"ÇED raporu nedir? Ulusal ÇED ile ÇSED (ESIA) arasındaki farklar",
@@ -2582,7 +2585,7 @@ var MAKALELER=[
  {id:"iltisak-hatti", taslak:false,
   baslik:"İltisak hattı nedir? Demiryolu yük taşımacılığında son kilometre",
   ozet:"Bir fabrikanın, limanın ya da organize sanayi bölgesinin ana demiryolu ağına bağlanması iltisak hattı ile sağlanır. Bu kısa hatlar, Türkiye'de demiryolu yük taşımacılığının neredeyse yarısını taşıyor.",
-  kategori:"Ulaştırma", tarih:"Kasım 2026", gorsel:"p24",
+  kategori:"Ulaştırma", tarih:"Kasım 2026", gorsel:"gorsel-iltisak",
   govde:[
    ["h", "Tanım"],
    ["p", "İltisak hattı, yükün üretildiği ya da elleçlendiği tesisi ulusal demiryolu ağına bağlayan branşman hattıdır. Demiryolu İşletmeciliği Yetkilendirme Yönetmeliği, iltisak hatlarını lojistik ve yük merkezleriyle birlikte demiryolu altyapısının bir parçası olarak sayar. Ana hat ne kadar güçlü olursa olsun, yük kapıdan kapıya karayoluyla taşınıyorsa demiryolunun maliyet ve emisyon avantajı kaybolur; iltisak hattı bu son kilometreyi tamamlar."],
@@ -2601,7 +2604,7 @@ var MAKALELER=[
  {id:"belediye-arazi-tipi-ges", taslak:false,
   baslik:"Belediyeler için arazi tipi GES: Fizibiliteden ihaleye",
   ozet:"Su pompaları, arıtma tesisleri ve sokak aydınlatması belediyelerin en büyük elektrik kalemleri arasında. Kendi tüketimi için kurulan bir arazi tipi güneş enerjisi santrali (GES), doğru boyutlandırıldığında bu gideri kalıcı olarak düşürebilir.",
-  kategori:"Enerji", tarih:"Kasım 2026", gorsel:"p20",
+  kategori:"Enerji", tarih:"Kasım 2026", gorsel:"gorsel-ges",
   govde:[
    ["h", "Mevzuat çerçevesi"],
    ["p", "Belediye GES'leri genellikle Elektrik Piyasasında Lisanssız Elektrik Üretim Yönetmeliği (RG 12.05.2019/30772) kapsamında, bir tüketim tesisiyle ilişkilendirilerek kurulur. Yönetmeliğin amacı, tüketicilerin elektrik ihtiyacını lisans almadan kendi üretim tesisinden karşılamasıdır. Belediyeler açısından öne çıkan hükümler:"],
@@ -2618,7 +2621,7 @@ var MAKALELER=[
  {id:"osb-atiksu-geri-kazanimi", taslak:false,
   baslik:"OSB'lerde atıksu geri kazanımı: Mor boruyla ikinci bir su kaynağı",
   ozet:"Sanayi bölgelerinde arıtılmış atıksuyu proses suyuna dönüştürmek, su stresine karşı en hızlı devreye alınabilecek önlemlerden biri. Tasarımdan işletmeye kadar nelere dikkat edilmeli?",
-  kategori:"Su ve Çevre", tarih:"Eylül 2026", gorsel:"p08",
+  kategori:"Su ve Çevre", tarih:"Eylül 2026", gorsel:"gorsel-atiksu-geri-kazanim",
   govde:[
    ["p","Organize sanayi bölgeleri, büyük miktarda temiz suyu proses, soğutma ve temizlik için kullanırken, arıttıkları atıksuyu çoğunlukla alıcı ortama deşarj eder. Oysa uygun bir ileri arıtma kademesi ve ayrı bir dağıtım şebekesiyle, aynı su fabrikalara ikinci kez kazandırılabilir. Kuraklık ve su stresinin arttığı bir dönemde bu yaklaşım, yeni bir kaynak aramaktan çoğu zaman daha hızlı ve daha ekonomiktir."],
    ["h","Mor boru nedir?"],
@@ -2637,7 +2640,7 @@ var MAKALELER=[
  {id:"sebeke-kayiplari-nrw", taslak:false,
   baslik:"Şebeke kayıpları: Görünmeyen suyu ölçmek ve yönetmek",
   ozet:"Üretilen her metreküp suyun bir kısmı ya sızıntıyla ya da ölçüm ve faturalama hatalarıyla kayboluyor. Gelir getirmeyen suyu azaltmanın yolu, önce onu doğru ölçmekten geçiyor.",
-  kategori:"Su ve Çevre", tarih:"Ekim 2026", gorsel:"p12",
+  kategori:"Su ve Çevre", tarih:"Ekim 2026", gorsel:"gorsel-nrw",
   govde:[
    ["p","Bir su idaresinin şebekeye verdiği suyun tamamı faturaya dönüşmez. Aradaki fark, “gelir getirmeyen su” (Non-Revenue Water, NRW) olarak adlandırılır ve hem kaynak hem enerji hem de gelir kaybı anlamına gelir. Arıtılmış, pompalanmış ve şebekeye basılmış suyun kaybı, en pahalı kayıptır."],
    ["h","Su dengesi: önce ne kaybettiğinizi bilin"],
@@ -2836,7 +2839,7 @@ var P=[
 {id:"sagra-ordu",ciz:"endustri",t:"SAGRA Ordu Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (çikolata ve fındık ürünleri)",cat:"endustri",st:"done",img:["p03"],
  meta:[["İşveren","OYAK İnşaat"],["Program","Gıda Tesisi"],["İnşaat alanı","69.316 m²"],["Tamamlanma","2026"]],
  scopeT:"Alan dağılımı",scope:[["Üretim Tesisi","44.728 m²"],["AS/RS Deposu","13.266 m²"],["Ofis ve Satış Binası","11.322 m²"]],sv:S9},
-{id:"karbon-siyahi",t:"Sentetik Karbon Siyahı Üretim Tesisleri",s:"OYAK ve CSRC Ortak Yatırımı",loc:"Türkiye",kind:"Endüstriyel üretim tesisi",cat:"endustri",st:"done",img:["p04a","p04b"],
+{id:"karbon-siyahi",t:"Sentetik Karbon Siyahı Üretim Tesisleri",s:"OYAK ve CSRC Ortak Yatırımı",loc:"Türkiye",kind:"Endüstriyel üretim tesisi",cat:"endustri",st:"done",img:["p04a","p04b","gorsel-petrokimya"],
  meta:[["İşveren","OYAK İnşaat"],["Program","Petrokimya"],["İnşaat alanı","200.000 m²"],["Tamamlanma","2026"]],
  scopeT:"Tesis bileşenleri",scope:[["Toplam inşaat alanı","200.000 m²"],["Malzeme binası ve ürün deposu",""],["Tank alanları",""],["MMC ve kontrol binası",""],["Boru köprüleri, bakım ve atölye",""]],
  sv:["Çok Disiplinli Tasarım Yönetimi","Kapsam Yönetimi","Proje ve İnşaat Yönetimi","Sözleşme Yönetimi","Zaman Yönetimi","Bütçe ve Maliyet Yönetimi","Risk ve Kalite Yönetimi"],oz:[["Teknik büyüklük", "132.513 m² kapalı inşaat alanı, 4 iş paketi"]]},
@@ -2844,7 +2847,7 @@ var P=[
  meta:[["İşveren","HEKTAŞ ASIA LLC"],["Program","Tarım Kimyasalları"],["İnşaat alanı","25.956 m²"],["Tamamlanma","2026"]],
  scopeT:"Alan bilgisi",scope:[["Üretim Tesisi","11.424 m²"],["Üretim Deposu ve Laboratuvar","7.350 m²"],["İdari Bina","3.753 m²"],["Servis Alanları","3.429 m²"],["Toplam","25.956 m²"]],
  sv:["İnşaat Denetimi","Kapsam Kontrolü","Kalite Kontrolü","Test ve Devreye Alma","Sözleşme Kontrolü","Zaman Kontrolü","Bütçe ve Maliyet Kontrolü","İletişim Yönetimi"],oz:[["Teknik büyüklük", "100.000 m² arsa üzerinde 26.000 m² kapalı inşaat alanı"]]},
-{id:"burgaz-rafineri",t:"Burgaz Rafinerisi Değerlendirme Projesi",s:"Lukoil Neftohim Burgaz Rafinerisi",loc:"Bulgaristan",kind:"Petrokimya",cat:"endustri",st:"done",img:["p06"],
+{id:"burgaz-rafineri",t:"Burgaz Rafinerisi Değerlendirme Projesi",s:"Lukoil Neftohim Burgaz Rafinerisi",loc:"Bulgaristan",kind:"Petrokimya",cat:"endustri",st:"done",img:["p06","gorsel-petrokimya"],
  meta:[["İşveren","OYAK Otomotiv Enerji ve Lojistik Holding A.Ş."],["Program","Petrokimya"],["Ülke","Bulgaristan"]],
  scopeT:"Proje kapsamı",scope:[["Tesis","Lukoil Neftohim Burgas"],["Hizmet türü","Teknik ve finansal değerlendirme"],["Kapsam","Durum tespiti / fizibilite"]],
  sv:["Fizibilite Raporları","Teknik Doküman İncelemesi","Çevresel Etki Taraması","Ekonomik ve Finansal Analiz","İhale Dokümanı Hazırlanması","Başlangıç Raporları"]},
@@ -2882,7 +2885,7 @@ var P=[
  meta:[["Ana işveren","İLBANK + EIB"],["İşveren","Safege + Eptisa + Optimal"],["Finansman","AB MADAD Fonu"],["Kapsam","5 il / 22 proje"]],
  scopeT:"Proje kapsamı ve faaliyet",scope:[["Su şebekesi","1.185 km"],["Kanalizasyon şebekesi","320 km"],["Yağmursuyu şebekesi","10 km"],["Atıksu arıtma tesisi","6 adet"]],
  sv:["PID İncelemesi","PSD Portföy Geliştirme (EIB)","EIB Değerlendirme Desteği (Ç&S)","Yatırım Hibe Çerçevesi İzleme","Çevresel ve Sosyal Etki İzleme Sistemi ve Kapasitesi","Ön / Detay Tasarım İncelemesi ve Optimizasyonu","İhale Dokümanı Kalite Güvencesi ve Satın Alma İzleme"]},
-{id:"nrw-kilavuzu",t:"Şebeke Kayıpları Yönetim Kılavuzu",s:"NRW (Şebeke Kayıpları) Yönetim El Kitabı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["p17"],fit:1,
+{id:"nrw-kilavuzu",t:"Şebeke Kayıpları Yönetim Kılavuzu",s:"NRW (Şebeke Kayıpları) Yönetim El Kitabı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["gorsel-nrw","p17"],fit:1,
  meta:[["Ana işveren","İLBANK"],["İşveren","SAFEGE – İO Çevre Ortak Girişimi"],["Finansman","Dünya Bankası, AB ve kamu kaynakları"]],
  scopeT:"Proje kapsamı",scope:[["İş türü","Kılavuz / el kitabı hazırlanması"],["Konu","Şebeke kayıpları (NRW) yönetimi"],["Kapsam","Metodoloji ve uygulama kılavuzu"],["Çıktı","Teknik kılavuz dokümanı"]],
  sv:["Mevcut Durum Analizi","NRW Strateji Geliştirme","Metodoloji ve Yaklaşım","Pilot Uygulama Desteği","Eğitim ve Kapasite Geliştirme","Kılavuz Dokümantasyonu"]},
@@ -2894,11 +2897,11 @@ var P=[
  meta:[["Ana işveren","İLBANK"],["İşveren","İZSU"],["Finansman","Dünya Bankası (TEFWER)"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Kanalizasyon şebekesi","31,7 km"],["Yağmursuyu şebekesi","52,4 km"],["Kapsam","Şebeke ayrıştırması (Konak-Bayraklı)"],["İş","Fizibilite, ÇED, ÇSYP"]],
  sv:["Fizibilite Raporları","Ekonomik ve Finansal Analiz","Çevresel Etki Taraması","Kredibilite Raporları","Çevresel ve Sosyal Yönetim Planı","Başlangıç Raporları"],oz:[["Teknik büyüklük", "Konak ve Bayraklı'da 3 atıksu ve yağmursuyu şebeke projesi"]],cs:{"rol": "Dokümanların hazırlanması", "dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)", "Çevresel Etki Tarama Raporu"], "acik": "Konak ve Bayraklı'daki atıksu ve yağmursuyu şebeke projeleri için Dünya Bankası direktifleri ve ulusal mevzuat doğrultusunda Çevresel Etki Tarama Raporlarını ve Çevresel ve Sosyal Yönetim Planlarını (ÇSYP) hazırladık."}},
-{id:"yenilenebilir-pid",t:"Yenilenebilir Enerji PID ve Fizibilite",s:"PUMREP — Kamu ve Belediye Binaları",loc:"Türkiye",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["p20"],fit:1,
+{id:"yenilenebilir-pid",t:"Yenilenebilir Enerji PID ve Fizibilite",s:"PUMREP — Kamu ve Belediye Binaları",loc:"Türkiye",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["gorsel-ges","p20"],fit:1,
  meta:[["İşveren","İller Bankası A.Ş. (İLBANK)"],["Finansman","Dünya Bankası"],["Kurulu güç","3,68 MW"]],
  scopeT:"Proje kapsamı",scope:[["GES lokasyonları (5 ilçe)","Arnavutköy, Çekerek, Cihanbeyli, Göreme, Yıldızeli"],["İş türü","Fizibilite ve PID"],["Tesis türü","Arazi tipi GES (5 adet)"],["Amaç","Öz tüketim amaçlı yenilenebilir enerji"]],
  sv:["Fizibilite Raporları","Teknik Çalışmalar","Ekonomik Analiz (Fayda-Maliyet)","Kredibilite Raporları","Çevresel ve Sosyal Yönetim","PID Hazırlanması"],oz:[["Teknik büyüklük", "5 arazi tipi GES: 0,50 + 1,20 + 0,64 + 0,50 + 0,84 MW (toplam 3,68 MW)"]]},
-{id:"giresun-ges",t:"Giresun GES PID ve Fizibilite",s:"GES — 3 Proje (Arazi Tipi)",loc:"Giresun",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["p21"],fit:1,
+{id:"giresun-ges",t:"Giresun GES PID ve Fizibilite",s:"GES — 3 Proje (Arazi Tipi)",loc:"Giresun",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["p21","gorsel-ges"],fit:1,
  meta:[["Ana işveren","İLBANK"],["İşveren","Giresun Belediyesi"],["Finansman","Dünya Bankası"],["Kurulu kapasite","2,81 MW"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Toplam kapasite","2.811 kW"],["GES-1","832 kW"],["GES-2","989 kW"],["GES-3","990 kW"]],
  sv:["Fizibilite Raporları","Teknik Çalışmalar","Ekonomik Analiz","Çevresel ve Sosyal Tarama","Tasarım Desteği","Raporlama"],oz:[["Teknik büyüklük", "3 arazi tipi GES: 832 + 989 + 990 kWe"]]},
@@ -2910,7 +2913,7 @@ var P=[
  meta:[["Ana işveren","Milli Eğitim Bakanlığı"],["İşveren","Obermeyer – Optimal – Altensis"],["Finansman","KfW / AB MADAD"],["İnşaat alanı","500.000 m²"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Arazi tipi GES","14 MW"],["Çatı tipi GES (120 okul)","6 MW"],["Enerji verimliliği","40 bina"],["Toplam inşaat alanı","500.000 m²"]],
  sv:["Enerji Etüt Raporları","Tasarım Hizmetleri","Ölçüm ve Doğrulama","Çevresel ve Sosyal Yönetim","İhale Dokümanları","Enerji Performans Sertifikası (EPC)"],oz:[["Teknik büyüklük", "14 MW arazi tipi GES, 120 eğitim tesisinde 6 MW çatı tipi GES, 40 eğitim tesisinde enerji verimliliği tadilatı"]]},
-{id:"cukurova-iskenderun",ciz:"iltisak",t:"Çukurova-İskenderun Demiryolu Bağlantı Projesi",s:"AYGM — Son Kilometre Demiryolu Altyapısı",loc:"Çukurova · İskenderun",kind:"Ulaştırma",cat:"ulastirma",st:"done",img:["p24"],
+{id:"cukurova-iskenderun",ciz:"iltisak",t:"Çukurova-İskenderun Demiryolu Bağlantı Projesi",s:"AYGM — Son Kilometre Demiryolu Altyapısı",loc:"Çukurova · İskenderun",kind:"Ulaştırma",cat:"ulastirma",st:"done",img:["p24","gorsel-iltisak"],
  meta:[["Ana işveren","AYGM (Ulaştırma Bakanlığı)"],["İşveren","Optimal + Eptisa + Obermeyer + EFH"],["Finansman","Dünya Bankası"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Çift hatlı elektrikli demiryolu","36,1 km"],["Bağlantı hatları","5,5 km"],["İntermodal istasyon","5 adet"],["Demiryolu köprüsü","14 adet"],["Kutu menfez","36 adet"]],
  sv:["Tasarım","İhale Dokümanı Hazırlanması","İhale Aşaması Teknik Desteği"],oz:[["Teknik büyüklük", "36,1 km çift hatlı elektrikli demiryolu branşman hattı, 5,5 km bağlantı hattı, 5 intermodal istasyon, 14 köprü"]],cs:{"dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)"]}},
@@ -3276,7 +3279,7 @@ document.addEventListener("click",function(e){var a=e.target.closest&&e.target.c
 function renderArticle(a){
   var others=MAKALELER.filter(function(x){return x!==a}).slice(0,3);
   $("[data-article]").innerHTML=
-  '<section class="pd-hero art-hero">'+pic(a.gorsel,' alt=""')+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#makaleler">Makaleler</a></p><p class="mono" style="color:rgba(255,255,255,.8)">'+esc(a.kategori)+'</p><h1 tabindex="-1">'+esc(a.baslik)+'</h1><div class="pd-tags"><span class="mono" style="color:rgba(255,255,255,.75)">ENVESU · '+esc(a.tarih)+' · '+rtime(a)+'</span>'+tag(a)+'</div></div></section>'+
+  '<section class="pd-hero art-hero'+(/^gorsel-/.test(a.gorsel)?' ill-h':'')+'">'+pic(a.gorsel,' alt=""')+(GTUR[a.gorsel]?'<span class="ill-tag">'+esc(GTUR[a.gorsel])+'</span>':'')+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#makaleler">Makaleler</a></p><p class="mono" style="color:rgba(255,255,255,.8)">'+esc(a.kategori)+'</p><h1 tabindex="-1">'+esc(a.baslik)+'</h1><div class="pd-tags"><span class="mono" style="color:rgba(255,255,255,.75)">ENVESU · '+esc(a.tarih)+' · '+rtime(a)+'</span>'+tag(a)+'</div></div></section>'+
   '<section class="sec"><div class="wrap art-wrap"><aside class="art-aside"><p class="mono">Paylaş</p><button class="copy-link" type="button" data-copylink>Bağlantıyı kopyala</button>'+liShare('copy-link','makale',a.id)+'<a class="link" href="#makaleler">Tüm makaleler</a></aside><article class="prose-a" data-art-body><p class="lead-p">'+esc(a.ozet)+'</p>'+blocks(a.govde)+(a.taslak?'<p class="draft">Taslak metin · yayımlanmadan önce gözden geçirilecektir.</p>':'')+'</article></div></section>'+
   (others.length?'<section class="sec mist"><div class="wrap"><div class="rail-head" style="margin-bottom:44px"><div style="display:grid;gap:22px"><p class="kicker">Okumaya devam edin</p><h2 class="h2">Diğer makaleler.</h2></div><a class="link" href="#makaleler">Tüm makaleler</a></div><div class="agrid">'+others.map(acard).join('')+'</div></div></section>':'');
   var cl=$("[data-copylink]"); cl.addEventListener("click",function(){var u=location.href,d=function(){cl.textContent="Bağlantı kopyalandı";setTimeout(function(){cl.textContent="Bağlantıyı kopyala"},1800)};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(d,function(){cl.textContent=u});else cl.textContent=u});
@@ -3496,7 +3499,7 @@ function renderDetail(p){
   var th=function(q){return q.img.length?'<img src="img/'+q.img[0]+'.jpg" alt="">':''};
   var hero=p.img.length?pic(p.img[0],' alt="'+esc(p.t)+'"'+(p.fit?' class="contain"':'')):'';
   $("[data-pd]").innerHTML=
-  '<section class="pd-hero">'+hero+((GTUR[p.img[0]]||p.ill)?'<span class="ill-tag">'+esc(GTUR[p.img[0]]||"Temsili görsel")+'</span>':'')+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#projeler">Projeler</a></p>'+
+  '<section class="pd-hero'+(/^gorsel-/.test(p.img[0]||"")?' ill-h':'')+'">'+hero+((GTUR[p.img[0]]||p.ill)?'<span class="ill-tag">'+esc(GTUR[p.img[0]]||"Temsili görsel")+'</span>':'')+'<div class="wrap"><p class="crumb"><a href="#anasayfa">Anasayfa</a> / <a href="#projeler">Projeler</a></p>'+
   '<h1 tabindex="-1">'+esc(p.t)+'</h1><p class="sub">'+esc(p.s)+'</p><div class="pd-tags"><span class="mono" style="color:rgba(255,255,255,.75)">'+esc(p.loc)+' · '+esc(p.kind)+'</span>'+stat(p)+'</div></div></section>'+
   '<div class="wrap"><div class="pd-facts">'+p.meta.map(function(m){return '<div><span class="mono">'+esc(m[0])+'</span><b>'+esc(m[1])+'</b></div>'}).join('')+(bedelOf(p)?'<div class="pd-bed"><span class="mono">Sözleşme bedeli</span><b>'+esc(bedelOf(p)[0])+'</b>'+(bedelOf(p)[1]?'<small>'+esc(bedelOf(p)[1])+'</small>':'')+'</div>':'')+'</div>'+(p.svc.length?'<div class="pd-svc"><span class="mono">Bu projedeki hizmet hatlarımız</span><div class="chips">'+p.svc.map(function(s){return '<a class="chip" href="#hizmet-'+s.id+'">'+esc(s.name)+'</a>'}).join('')+'</div></div>':'')+'</div>'+
   '<section class="sec"><div class="wrap cols">'+
