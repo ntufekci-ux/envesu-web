@@ -1143,6 +1143,20 @@ html.lbx-open{overflow:hidden}
 .lg-on{background:var(--ink);box-shadow:inset 0 2px 0 var(--lime)}.lg-off{border:1.5px dashed var(--ink-3);height:4px!important}
 .cert-im img{aspect-ratio:560/792;width:100%;height:auto}
 .vid img{width:100%;height:auto;display:block;border-radius:4px;aspect-ratio:16/9;background:#e9f3f7 center/cover no-repeat}
+.sud-w{margin:0;display:grid;gap:16px}
+.sud{display:grid;grid-template-columns:1fr 1.05fr 1.2fr 1.5fr 1.05fr;grid-template-rows:repeat(9,minmax(46px,auto));gap:4px;font-size:.92rem;line-height:1.3}
+.sud-c{display:flex;align-items:center;padding:10px 14px;border-radius:3px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);transition:opacity .25s,background .25s,border-color .25s}
+.sud-c.l1{background:#0f3a29;border-color:#1d5a40;font-weight:500}.sud-c.l2,.sud-c.l5{font-weight:500}
+.sud-c.g-r{background:rgba(147,213,0,.08);border-color:rgba(147,213,0,.35)}.sud-c.g-n{background:rgba(252,220,62,.07);border-color:rgba(252,220,62,.32)}.sud-c.g-k{background:rgba(74,193,224,.07);border-color:rgba(74,193,224,.32)}
+.sud-c.l5.g-r{background:rgba(147,213,0,.2)}.sud-c.l5.g-n{background:rgba(252,220,62,.2)}
+.sud.hl .sud-c{opacity:.35}.sud.hl .sud-c.on{opacity:1}
+.sud-m,.prose-a .sud-m{display:none}.prose-a .sud-m li,.sud-m li{padding-left:0;color:var(--ink)}.prose-a .sud-m li::before{content:none}.prose-a .sud-w{margin:8px 0 12px}.prose-a .sud-f p{margin:0}
+.sud-f{display:grid;gap:4px;font-size:.95rem;color:var(--ink-2)}.sud-f b{font-weight:500;color:var(--ink)}.sud-f b.g-n{color:#fcdc3e}.sud-f b.g-k{color:#4ac1e0}
+.sud-s{font-size:.8rem;color:var(--ink-3)}
+@media (max-width:860px){.sud{display:none}.sud-m,.prose-a .sud-m{display:block;font-size:.95rem}
+ .sud-m ul{padding-left:14px;border-left:1px solid var(--line-2);margin:6px 0 6px 8px;display:grid;gap:6px}
+ .sud-m span{display:inline-block;padding:6px 10px;border-radius:3px;border:1px solid var(--line-2);background:var(--card)}
+ .sud-m>li>span{background:#0f3a29;border-color:#1d5a40}.sud-m .g-r>span{border-color:rgba(147,213,0,.45)}.sud-m .g-n>span{border-color:rgba(252,220,62,.45)}.sud-m .g-k>span{border-color:rgba(74,193,224,.45)}}
 .pd-ciz .ciz{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:40px;align-items:start}
 @media (max-width:980px){.pd-ciz .ciz{grid-template-columns:1fr;gap:24px}}
 .ciz-f{margin:0;background:#f3f6f2;border:1px solid var(--line-2);border-radius:4px;overflow:hidden;position:relative}
@@ -2521,7 +2535,7 @@ var GTUR={p02a:"Mimari görselleştirme",p02b:"Mimari görselleştirme",p03:"Mim
  p07:"Şematik anlatım",p10:"Şematik anlatım",p11:"Şematik anlatım",p15:"Şematik anlatım",p16:"Şematik anlatım",p18:"Şematik anlatım",p20:"Şematik anlatım",p21:"Şematik anlatım",p26:"Şematik anlatım",
  p19:"Uydu görüntüsü üzerinde şematik güzergâh",p24:"Uydu görüntüsü üzerinde şematik güzergâh",h5:"Uydu görüntüsü üzerinde şematik güzergâh",
  p17:"Temsili görsel",p29:"Temsili görsel",
- "gorsel-atiksu-geri-kazanim":"Temsili illüstrasyon","gorsel-ges":"Temsili illüstrasyon","gorsel-iltisak":"Temsili illüstrasyon","gorsel-nrw":"Temsili illüstrasyon","gorsel-kopru":"Temsili illüstrasyon","gorsel-petrokimya":"Temsili illüstrasyon"};
+ "gorsel-atiksu-geri-kazanim":"Temsili illüstrasyon","gorsel-ges":"Temsili illüstrasyon","gorsel-iltisak":"Temsili illüstrasyon","gorsel-nrw":"Temsili illüstrasyon","gorsel-kopru":"Temsili illüstrasyon","gorsel-petrokimya":"Temsili illüstrasyon","gorsel-gida":"Temsili illüstrasyon","gorsel-taskin":"Temsili illüstrasyon"};
 var MAKALELER=[
  {id:"ced-raporu-ve-csed", taslak:false,
   baslik:"ÇED raporu nedir? Ulusal ÇED ile ÇSED (ESIA) arasındaki farklar",
@@ -2645,7 +2659,7 @@ var MAKALELER=[
    ["p","Bir su idaresinin şebekeye verdiği suyun tamamı faturaya dönüşmez. Aradaki fark, “gelir getirmeyen su” (Non-Revenue Water, NRW) olarak adlandırılır ve hem kaynak hem enerji hem de gelir kaybı anlamına gelir. Arıtılmış, pompalanmış ve şebekeye basılmış suyun kaybı, en pahalı kayıptır."],
    ["h","Su dengesi: önce ne kaybettiğinizi bilin"],
    ["p","Uluslararası Su Birliği'nin (IWA) su dengesi yaklaşımı, sisteme giren su hacmini yetkili tüketim ve su kayıpları olarak ikiye ayırır. Su kayıpları da kendi içinde fiziki (gerçek) kayıplar ve idari (görünür) kayıplar olarak incelenir. Gelir getirmeyen su ise faturalandırılmayan yetkili tüketim ile tüm su kayıplarının toplamıdır. Bu ayrım önemlidir; çünkü her bileşenin çözümü farklıdır."],
-   ["video","media/nrw-animasyon.webp","media/nrw-poster.jpg","Şebeke kayıplarının oluşumu ve yönetimi (animasyon)"],
+   ["sudengesi"],
    ["h","Fiziki kayıplar: dört müdahale alanı"],
    ["ul",["Aktif kaçak kontrolü: düzenli tarama ve dinleme ile görünmeyen kaçakların bulunması","Basınç yönetimi: gereğinden yüksek basıncın düşürülmesi, kaçak debisini ve yeni arızaları azaltır","Onarım hızı ve kalitesi: arızaya müdahale süresinin kısaltılması","Altyapı yönetimi: yaşlı ve sorunlu hatların öncelik sırasıyla yenilenmesi"]],
    ["h","İdari kayıplar: sayaçtan faturaya"],
@@ -2829,14 +2843,14 @@ var SECTORS=[
 var S8=["Tasarım İncelemesi","İhale Dokümanı Hazırlanması","İhale Aşaması Teknik Desteği","Saha Denetim Hizmetleri","Sözleşme Yönetimi","Kalite ve Maliyet Kontrolü","Devreye Alma","Kusur Sorumluluğu Denetimi"];
 var S9=["Yatırım Fizibilitesi","Çok Disiplinli Tasarım","Kapsam Yönetimi","Zaman Yönetimi","Bütçe ve Maliyet Yönetimi","Risk ve Kalite Yönetimi","Satın Alma ve İhale Yönetimi","Sözleşme Yönetimi","Geoteknik Etüt ve Haritalama"];
 var P=[
-{id:"tamek-salihli",t:"TAMEK Salihli Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (domates ürünleri)",cat:"endustri",st:"done",img:["p01"],
+{id:"tamek-salihli",t:"TAMEK Salihli Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (domates ürünleri)",cat:"endustri",st:"done",img:["p01","gorsel-gida"],
  meta:[["İşveren","OYAK İnşaat"],["Program","Gıda Tesisi"],["İnşaat alanı","13.284 m²"],["Tamamlanma","2025"]],
  scopeT:"Alan dağılımı",scope:[["Üretim Tesisi","4.820 m²"],["Depo","5.225 m²"],["Teknik Binalar","2.113 m²"],["Ofis ve Yemekhane","1.126 m²"],["TIR Parkı ve Açık Alan","15.030 m²"],["Atıksu Arıtma Tesisi","14.000 m³/gün"]],
  sv:S9.slice(0,3).concat(["Proje ve İnşaat Yönetimi"],S9.slice(3),["Test ve Devreye Alma"]),cs:{"acik": "Proje kapsamında LEED sertifikasyonu ve enerji verimliliği danışmanlığı hizmeti verdik."}},
 {id:"tamek-karacabey",t:"TAMEK Karacabey Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (meyve suyu, hazır gıda, domates ürünleri)",cat:"endustri",st:"done",img:["p02a","p02b"],
  meta:[["İşveren","OYAK İnşaat"],["Program","Gıda Tesisi"],["İnşaat alanı","70.323 m²"],["Tamamlanma","2026"]],
  scopeT:"Alan dağılımı",scope:[["Üretim Tesisi","38.454 m²"],["Gıda Deposu","7.614 m²"],["IQF Deposu","9.564 m²"],["AS/RS Deposu","7.230 m²"],["Ofis ve Yemekhane","7.461 m²"],["Atıksu Arıtma Tesisi","16.000 m³/gün"]],sv:S9},
-{id:"sagra-ordu",ciz:"endustri",t:"SAGRA Ordu Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (çikolata ve fındık ürünleri)",cat:"endustri",st:"done",img:["p03"],
+{id:"sagra-ordu",ciz:"endustri",t:"SAGRA Ordu Tesisleri",s:"Kapasite Artırımı ve Modernizasyon Projesi",loc:"Türkiye",kind:"Gıda üretim tesisleri (çikolata ve fındık ürünleri)",cat:"endustri",st:"done",img:["p03","gorsel-gida"],
  meta:[["İşveren","OYAK İnşaat"],["Program","Gıda Tesisi"],["İnşaat alanı","69.316 m²"],["Tamamlanma","2026"]],
  scopeT:"Alan dağılımı",scope:[["Üretim Tesisi","44.728 m²"],["AS/RS Deposu","13.266 m²"],["Ofis ve Satış Binası","11.322 m²"]],sv:S9},
 {id:"karbon-siyahi",t:"Sentetik Karbon Siyahı Üretim Tesisleri",s:"OYAK ve CSRC Ortak Yatırımı",loc:"Türkiye",kind:"Endüstriyel üretim tesisi",cat:"endustri",st:"done",img:["p04a","p04b","gorsel-petrokimya"],
@@ -2878,14 +2892,14 @@ var P=[
  meta:[["İşveren","İller Bankası A.Ş. (İLBANK)"],["Finansman","Avrupa Yatırım Bankası"]],
  scopeT:"Proje kapsamı",scope:[["İsale hattı (PE boru)","24.052 m"],["İsale hattı (çelik boru)","43.409 m"],["Kapsam","İçme suyu isale hattı"],["İş türü","Proje Bilgi Dokümanı (PID)"],["Şehir","Yalova"]],
  sv:["Fizibilite Raporu / PID","Çevresel Etki Tarama Raporu","Sosyal Tarama Raporu","Finansal Durum Tespiti","İhale Dokümanlarının Hazırlanması"],oz:[["Teknik büyüklük", "24.052 m PE ve 43.409 m çelik boru içme suyu isale hattı"]],cs:{"rol": "Dokümanların hazırlanması", "dok": ["Çevresel Etki Tarama Raporu"], "acik": "Fizibilite Raporu'nun eki olarak Çevresel Etki Tarama Raporu'nu hazırladık."}},
-{id:"belediye-su-altyapi",t:"Belediye Su Altyapı Tesisleri",s:"Türkiye'de Yerel Yönetimler Su Temini ve Altyapı Uygulamaları Teknik Destek",loc:"Burdur · Bursa · Yalova · Yozgat",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["p15"],fit:1,
+{id:"belediye-su-altyapi",t:"Belediye Su Altyapı Tesisleri",s:"Türkiye'de Yerel Yönetimler Su Temini ve Altyapı Uygulamaları Teknik Destek",loc:"Burdur · Bursa · Yalova · Yozgat",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["p16"],fit:1,
  meta:[["Ana işveren","Avrupa Yatırım Bankası"],["İşveren","Safege + Optimal"],["Finansman","Avrupa Yatırım Bankası (EIB)"],["Kapsam","14 proje"]],
  scopeT:"Proje kapsamı ve faaliyet",scope:[["Su şebekesi / iletim","1.640 km"],["Kanalizasyon şebekesi","105 km"],["Yağmursuyu şebekesi","10 km"],["Atıksu arıtma tesisi","6 adet"]],sv:S8,oz:[["Teknik büyüklük", "Burdur, Bursa, Yalova ve Yozgat'ta yaklaşık 14 belediye altyapı alt projesi (içme suyu ve atıksu)"]],cs:{"dok": ["Çevresel ve Sosyal Etki Değerlendirmesi (ÇSED)", "Çevresel ve Sosyal Yönetim Planı (ÇSYP)", "Çevresel ve sosyal tarama"]}},
-{id:"mrf",t:"Belediye Dayanıklılık Projeleri (MRF)",s:"MADAD Fonu — Belediye Dayanıklılık Programı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:null,img:["p16"],fit:1,
+{id:"mrf",t:"Belediye Dayanıklılık Projeleri (MRF)",s:"MADAD Fonu — Belediye Dayanıklılık Programı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:null,img:["p15"],fit:1,
  meta:[["Ana işveren","İLBANK + EIB"],["İşveren","Safege + Eptisa + Optimal"],["Finansman","AB MADAD Fonu"],["Kapsam","5 il / 22 proje"]],
  scopeT:"Proje kapsamı ve faaliyet",scope:[["Su şebekesi","1.185 km"],["Kanalizasyon şebekesi","320 km"],["Yağmursuyu şebekesi","10 km"],["Atıksu arıtma tesisi","6 adet"]],
  sv:["PID İncelemesi","PSD Portföy Geliştirme (EIB)","EIB Değerlendirme Desteği (Ç&S)","Yatırım Hibe Çerçevesi İzleme","Çevresel ve Sosyal Etki İzleme Sistemi ve Kapasitesi","Ön / Detay Tasarım İncelemesi ve Optimizasyonu","İhale Dokümanı Kalite Güvencesi ve Satın Alma İzleme"]},
-{id:"nrw-kilavuzu",t:"Şebeke Kayıpları Yönetim Kılavuzu",s:"NRW (Şebeke Kayıpları) Yönetim El Kitabı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["gorsel-nrw","p17"],fit:1,
+{id:"nrw-kilavuzu",t:"Şebeke Kayıpları Yönetim Kılavuzu",s:"NRW (Şebeke Kayıpları) Yönetim El Kitabı",loc:"Türkiye",kind:"Su ve çevre projesi",cat:"su",st:"done",img:["gorsel-nrw"],fit:1,
  meta:[["Ana işveren","İLBANK"],["İşveren","SAFEGE – İO Çevre Ortak Girişimi"],["Finansman","Dünya Bankası, AB ve kamu kaynakları"]],
  scopeT:"Proje kapsamı",scope:[["İş türü","Kılavuz / el kitabı hazırlanması"],["Konu","Şebeke kayıpları (NRW) yönetimi"],["Kapsam","Metodoloji ve uygulama kılavuzu"],["Çıktı","Teknik kılavuz dokümanı"]],
  sv:["Mevcut Durum Analizi","NRW Strateji Geliştirme","Metodoloji ve Yaklaşım","Pilot Uygulama Desteği","Eğitim ve Kapasite Geliştirme","Kılavuz Dokümantasyonu"]},
@@ -2897,7 +2911,7 @@ var P=[
  meta:[["Ana işveren","İLBANK"],["İşveren","İZSU"],["Finansman","Dünya Bankası (TEFWER)"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Kanalizasyon şebekesi","31,7 km"],["Yağmursuyu şebekesi","52,4 km"],["Kapsam","Şebeke ayrıştırması (Konak-Bayraklı)"],["İş","Fizibilite, ÇED, ÇSYP"]],
  sv:["Fizibilite Raporları","Ekonomik ve Finansal Analiz","Çevresel Etki Taraması","Kredibilite Raporları","Çevresel ve Sosyal Yönetim Planı","Başlangıç Raporları"],oz:[["Teknik büyüklük", "Konak ve Bayraklı'da 3 atıksu ve yağmursuyu şebeke projesi"]],cs:{"rol": "Dokümanların hazırlanması", "dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)", "Çevresel Etki Tarama Raporu"], "acik": "Konak ve Bayraklı'daki atıksu ve yağmursuyu şebeke projeleri için Dünya Bankası direktifleri ve ulusal mevzuat doğrultusunda Çevresel Etki Tarama Raporlarını ve Çevresel ve Sosyal Yönetim Planlarını (ÇSYP) hazırladık."}},
-{id:"yenilenebilir-pid",t:"Yenilenebilir Enerji PID ve Fizibilite",s:"PUMREP — Kamu ve Belediye Binaları",loc:"Türkiye",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["gorsel-ges","p20"],fit:1,
+{id:"yenilenebilir-pid",ciz:"ges",t:"Yenilenebilir Enerji PID ve Fizibilite",s:"PUMREP — Kamu ve Belediye Binaları",loc:"Türkiye",kind:"Yenilenebilir enerji",cat:"enerji",st:"done",img:["gorsel-ges","p20"],fit:1,
  meta:[["İşveren","İller Bankası A.Ş. (İLBANK)"],["Finansman","Dünya Bankası"],["Kurulu güç","3,68 MW"]],
  scopeT:"Proje kapsamı",scope:[["GES lokasyonları (5 ilçe)","Arnavutköy, Çekerek, Cihanbeyli, Göreme, Yıldızeli"],["İş türü","Fizibilite ve PID"],["Tesis türü","Arazi tipi GES (5 adet)"],["Amaç","Öz tüketim amaçlı yenilenebilir enerji"]],
  sv:["Fizibilite Raporları","Teknik Çalışmalar","Ekonomik Analiz (Fayda-Maliyet)","Kredibilite Raporları","Çevresel ve Sosyal Yönetim","PID Hazırlanması"],oz:[["Teknik büyüklük", "5 arazi tipi GES: 0,50 + 1,20 + 0,64 + 0,50 + 0,84 MW (toplam 3,68 MW)"]]},
@@ -2917,7 +2931,7 @@ var P=[
  meta:[["Ana işveren","AYGM (Ulaştırma Bakanlığı)"],["İşveren","Optimal + Eptisa + Obermeyer + EFH"],["Finansman","Dünya Bankası"]],
  scopeT:"Proje kapsamı / kapasite",scope:[["Çift hatlı elektrikli demiryolu","36,1 km"],["Bağlantı hatları","5,5 km"],["İntermodal istasyon","5 adet"],["Demiryolu köprüsü","14 adet"],["Kutu menfez","36 adet"]],
  sv:["Tasarım","İhale Dokümanı Hazırlanması","İhale Aşaması Teknik Desteği"],oz:[["Teknik büyüklük", "36,1 km çift hatlı elektrikli demiryolu branşman hattı, 5,5 km bağlantı hattı, 5 intermodal istasyon, 14 köprü"]],cs:{"dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)"]}},
-{id:"izmir-kopruler",t:"Ödemiş, Kiraz, Bergama, Menderes ve Konak Köprüleri",s:"TEFWER — Acil Yeniden İnşa Projesi",loc:"İzmir",kind:"Ulaştırma",cat:"ulastirma",st:"done",img:["p25"],
+{id:"izmir-kopruler",ciz:"kopru",t:"Ödemiş, Kiraz, Bergama, Menderes ve Konak Köprüleri",s:"TEFWER — Acil Yeniden İnşa Projesi",loc:"İzmir",kind:"Ulaştırma",cat:"ulastirma",st:"done",img:["p25"],
  meta:[["Ana işveren","İzmir Büyükşehir Belediyesi"],["İşveren","NDS"],["Finansman","Dünya Bankası (TEFWER)"],["Kapsam","10 köprü / alt geçit"]],
  scopeT:"Proje kapsamı",scope:[["İlçeler","Ödemiş, Kiraz, Bergama, Menderes, Konak"],["Program","TEFWER (Acil Yeniden İnşa)"],["İş","Fizibilite, ÇED, ÇSYP, kredibilite"]],
  sv:["Fizibilite Raporları","Teknik Çalışmalar","Ekonomik Analiz (Fayda-Maliyet)","Kredibilite Raporları","Çevresel ve Sosyal Yönetim Planı"],oz:[["Teknik büyüklük", "9 karayolu köprüsü ve 1 karayolu alt geçidi"]],cs:{"rol": "Dokümanların hazırlanması", "dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)", "Çevresel Etki Tarama Formu"], "acik": "Ödemiş, Kiraz, Bergama, Menderes ve Konak'taki köprü ve alt geçit projeleri için Çevresel Etki Tarama Formlarını ve Çevresel ve Sosyal Yönetim Planı (ÇSYP) raporlarını hazırladık."}},
@@ -2929,7 +2943,7 @@ var P=[
  meta:[["Ana işveren","İPKB"],["İşveren","Optimal Proje Yönetimi"],["Finansman","Asya Altyapı Yatırım Bankası (AIIB)"],["Dağılım","Çok lokasyonlu"]],
  scopeT:"Proje kapsamı",scope:[["Okul binası","30 adet"],["Toplam inşaat alanı","320.000+ m²"],["ENVESU tasarımı","80.000 m²"],["Hizmet","Tasarım ve ihale dokümanları"]],
  sv:["Yatırım Fizibilitesi","Geoteknik Etüt ve Haritalama","Çok Disiplinli Tasarım","Satın Alma ve İhale Yönetimi","Risk ve Kalite Yönetimi","Zaman Yönetimi","Sözleşme Yönetimi","Kapsam Yönetimi","Bütçe ve Maliyet Yönetimi","İletişim Yönetimi"],oz:[["Teknik büyüklük", "30 okul binası, toplam 320.000 m²'nin üzerinde; ENVESU tasarımı 80.000 m²"]]},
-{id:"cdrcp",t:"İklim ve Afete Dayanıklı Şehirler Projesi",s:"Uygulama Destek Danışmanlığı — CDRCP",loc:"Kocaeli · Manisa · Tekirdağ",kind:"Kentleşme ve afet dayanıklılığı",cat:"kent",st:"live",img:["p28"],
+{id:"cdrcp",t:"İklim ve Afete Dayanıklı Şehirler Projesi",s:"Uygulama Destek Danışmanlığı — CDRCP",loc:"Kocaeli · Manisa · Tekirdağ",kind:"Kentleşme ve afet dayanıklılığı",cat:"kent",st:"live",img:["p28","gorsel-taskin"],
  meta:[["İşveren","UTP / PMU (ÇŞİDB)"],["Finansman","Dünya Bankası"],["Program","CDRCP"],["Başlangıç / süre","Mart 2026 / 24 ay"]],
  scopeT:"Proje kapsamı",scope:[["Toplam adam-ay","672 adam-ay"],["Sözleşme süresi","24 ay / 730 gün"],["İller","Kocaeli · Manisa · Tekirdağ"]],
  sv:["Uygulama Destek Danışmanlığı","Mülk Sahiplerine Teknik ve Hukuki Destek","Güçlendirme / Yeniden İnşa Kalite Güvencesi","Hukuki Destek (6306 Sayılı Kanun)","Mülk Sahibi-Yüklenici Sözleşme İncelemesi","Yüklenici Seçimi ve Tasarım Rehberliği","Tasarım / Ruhsat Doküman İncelemesi","İnşaat Kalite Kontrolü ve Sismik Uygunluk","İnşaat Sonrası Kalite Kontrolü ve Tapu","Ç&S / İSG İzleme ve Şikâyet"],oz:[["Teknik büyüklük", "3 il (Kocaeli, Manisa, Tekirdağ); 24 ayda 672 kişi-ay"]],cs:{"rol": "Uygulamanın izlenmesi ve denetimi", "dok": ["Şikâyet Mekanizması"], "acik": "Yüklenicilerin çevresel ve sosyal gerekliliklere, iş sağlığı ve güvenliğine (İSG) ve proje şartnamelerine uyumunu izliyor, denetliyor ve raporluyoruz; paydaş katılımı ve şikâyet yönetimi süreçlerinde Proje Yönetim Birimi'ne destek veriyoruz."}},
@@ -2937,7 +2951,7 @@ var P=[
  meta:[["İdare","T.C. ÇŞİDB / AB-IPA III"],["Finansman kaynağı","Avrupa Birliği (IPA III)"],["Süre","24 ay (2025–2027)"],["Yer","Ankara, Türkiye"]],
  scopeT:"Temel çıktılar ve teslimatlar",scope:[["Ulusal İklim Finansmanı Stratejisi",""],["Ulusal Yeşil Taksonomi Taslağı",""],["Sermaye Piyasaları Yeşil Finans Raporu",""],["ETS Gelir Fonu Fizibilite Çalışması",""],["Eğitim Programı","400+ katılımcı"],["AB Taksonomisi Çevirisi",""]],
  sv:["İklim Finansmanı Strateji Geliştirme","Politika Çerçevesi ve Mevzuat Analizi","Paydaş Haritalama ve Analizi","Temel Durum Analizi ve Değerlendirmesi","İzleme Metodolojisi Geliştirme","Eğitim ve Kapasite Geliştirme","Yeşil Taksonomi Taslağı Hazırlanması","AB Mevzuatı Taraması ve Karşılaştırması","Sermaye Piyasaları Analizi","ETS Gelir Fonu Fizibilite Çalışması","Sigorta Sektörü İklim Riski Analizi","E-Öğrenme Modülü ve Web Sitesi"]},
-{id:"tfdmp",t:"Türkiye Taşkın ve Kuraklık Yönetimi Projesi (TFDMP)",s:"Çevresel ve Sosyal Yönetim Planı (ÇSYP) Hazırlanması",loc:"Çorum Sungurlu · Artvin",kind:"Su ve çevre projesi",cat:"su",st:"live",img:["p30"],fit:1,
+{id:"tfdmp",ciz:"taskin",t:"Türkiye Taşkın ve Kuraklık Yönetimi Projesi (TFDMP)",s:"Çevresel ve Sosyal Yönetim Planı (ÇSYP) Hazırlanması",loc:"Çorum Sungurlu · Artvin",kind:"Su ve çevre projesi",cat:"su",st:"live",img:["p30"],fit:1,
  meta:[["İdare","DSİ Genel Müdürlüğü"],["Ortak girişim","Projetaş – ENVESU"],["Finansman","Dünya Bankası"],["Başlangıç","Aralık 2025 (120 gün)"]],
  scopeT:"Proje kapsamı — alt projeler",scope:[["Çorum Sungurlu — Budaközü Deresi","6.900 m beton istinat duvarı + 11 köprü"],["Çorum Sungurlu — Akçay Deresi","1.770 m taş duvar + 1 köprü"],["Çorum Sungurlu — Diği Deresi","3.750 m beton istinat duvarı + 6 köprü"],["Artvin — Kabisre Deresi (Arhavi)","Deniz deşarj yapısı inşaatı"],["Artvin — Sundura Deresi (Hopa)","3.650 m dere ıslahı + 2 köprü"]],
  sv:["Çevresel ve Sosyal Yönetim Planı (ÇSYP)","Mevcut Ç&S Temel Durum Analizi","Ç&S Risk Değerlendirmesi","Azaltıcı Önlemler ve İzleme Planı","Dünya Bankası Çevresel ve Sosyal Çerçevesi (ESF) Uyumu","Paydaş Katılım Toplantıları","ESS 1/2/3/4/5/6/8/10 Standartları","İSG Uzmanı Katılımı","Başlangıç + Taslak + Nihai ÇSYP Raporları"],oz:[["Teknik büyüklük", "Sungurlu: 6.900 + 1.770 + 3.750 m istinat duvarı ve 18 köprü; Artvin: 3.650 m dere ıslahı ve 2 köprü"], ["Çevresel-sosyal standart", "Dünya Bankası Çevresel ve Sosyal Çerçevesi (ESF)"]],cs:{"rol": "Dokümanların hazırlanması", "dok": ["Çevresel ve Sosyal Yönetim Planı (ÇSYP)"], "acik": "DSİ'nin Çorum Sungurlu ve Artvin'deki dere ıslahı ve taşkın kontrol işleri için Dünya Bankası Çevresel ve Sosyal Çerçevesi ilkelerine uygun Çevresel ve Sosyal Yönetim Planlarını (ÇSYP) hazırlıyoruz."}}
@@ -3241,13 +3255,36 @@ function blocks(g){return g.map(function(b){
   if(b[0]==="ul")return '<ul>'+b[1].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';
   if(b[0]==="ol")return '<ol class="art-ol">'+b[1].map(function(x){return '<li>'+(Array.isArray(x)?'<b>'+esc(x[0])+'</b> '+esc(x[1]):esc(x))+'</li>'}).join('')+'</ol>';
   if(b[0]==="table")return '<div class="art-tbl"><table><thead><tr>'+b[1][0].map(function(x){return '<th>'+esc(x)+'</th>'}).join('')+'</tr></thead><tbody>'+b[1].slice(1).map(function(r){return '<tr>'+r.map(function(x,i){return i?'<td>'+esc(x)+'</td>':'<th scope="row">'+esc(x)+'</th>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>';
+  if(b[0]==="sudengesi")return suDengesi();
   if(b[0]==="rel")return '<div class="art-rel"><p class="mono">İlgili sayfalar</p><ul>'+b[1].map(function(x){return '<li><a href="'+x[1]+'">'+esc(x[0])+'</a></li>'}).join('')+'</ul></div>';
   if(b[0]==="src")return '<div class="art-src"><p class="mono">Kaynaklar</p><ul>'+b[1].map(function(x){return '<li><a href="'+x[1]+'" target="_blank" rel="noopener">'+esc(x[0])+'</a></li>'}).join('')+'</ul></div>';
   return '<p>'+esc(b[1])+'</p>'}).join('')}
 function flat(x){return Array.isArray(x)?x.map(flat).join(" "):String(x)}
 function words(g){return g.reduce(function(n,b){return (b[0]==="video"||b[0]==="rel"||b[0]==="src")?n:n+flat(b[1]).split(/\s+/).length},0)}
 function vidFig(src,poster,cap){return '<figure class="vid"><img src="'+src+'" alt="'+esc(cap||"")+'" width="960" height="540" decoding="async" style="background-image:url('+poster+')">'+(cap?'<figcaption>'+esc(cap)+'</figcaption>':'')+'</figure>'}
-var VIDEOS={"nrw-kilavuzu":["media/nrw-animasyon.webp","media/nrw-poster.jpg","Şebeke kayıpları (NRW) animasyonu"]};
+var VIDEOS={};
+/* Standart su dengesi (IWA). Terimler: İçme Suyu Temin ve Dağıtım Sistemlerindeki Su Kayıplarının Kontrolü El Kitabı (2017).
+   Satır: [sütun, başlangıç satırı, satır sayısı, metin, grup(r=gelir getiren, n=gelir getirmeyen, k=kayıp), seviye] */
+var SUD=[
+ [1,1,9,"Sisteme giren su miktarı","",1],
+ [2,1,4,"İzinli tüketim","r",2],[2,5,5,"Su kayıpları","k",2],
+ [3,1,2,"Faturalandırılmış izinli tüketim","r",3],[3,3,2,"Faturalandırılmamış izinli tüketim","n",3],[3,5,2,"İdari kayıplar","k",3],[3,7,3,"Fiziki kayıplar","k",3],
+ [4,1,1,"Faturalandırılmış ölçülmüş kullanım","r",4],[4,2,1,"Faturalandırılmış ölçülmemiş kullanım","r",4],[4,3,1,"Faturalandırılmamış ölçülmüş kullanım","n",4],[4,4,1,"Faturalandırılmamış ölçülmemiş kullanım","n",4],
+ [4,5,1,"İzinsiz (kaçak) kullanım","k",4],[4,6,1,"Sayaç ölçüm hataları ve veri işleme hataları","k",4],[4,7,1,"İsale ve dağıtım hatlarındaki kayıp ve kaçaklar","k",4],[4,8,1,"Depolardaki kaçak ve taşmalar","k",4],[4,9,1,"Servis bağlantılarındaki kayıp ve kaçaklar","k",4],
+ [5,1,2,"Gelir getiren su","r",5],[5,3,7,"Gelir getirmeyen su","n",5]];
+function suDengesi(){
+  var g='<div class="sud" data-sud>'+SUD.map(function(c){return '<div class="sud-c l'+c[5]+(c[4]?' g-'+c[4]:'')+'" data-g="'+c[4]+'" style="grid-column:'+c[0]+';grid-row:'+c[1]+' / span '+c[2]+'">'+esc(c[3])+'</div>'}).join('')+'</div>';
+  var li=function(t,g,inner){return '<li class="g-'+g+'"><span>'+esc(t)+'</span>'+(inner?'<ul>'+inner+'</ul>':'')+'</li>'};
+  var m='<ul class="sud-m"><li><span>'+esc("Sisteme giren su miktarı")+'</span><ul>'+
+    li("İzinli tüketim","r",li("Faturalandırılmış izinli tüketim","r",li("Faturalandırılmış ölçülmüş kullanım","r")+li("Faturalandırılmış ölçülmemiş kullanım","r"))+li("Faturalandırılmamış izinli tüketim","n",li("Faturalandırılmamış ölçülmüş kullanım","n")+li("Faturalandırılmamış ölçülmemiş kullanım","n")))+
+    li("Su kayıpları","k",li("İdari kayıplar","k",li("İzinsiz (kaçak) kullanım","k")+li("Sayaç ölçüm hataları ve veri işleme hataları","k"))+li("Fiziki kayıplar","k",li("İsale ve dağıtım hatlarındaki kayıp ve kaçaklar","k")+li("Depolardaki kaçak ve taşmalar","k")+li("Servis bağlantılarındaki kayıp ve kaçaklar","k")))+
+    '</ul></li></ul>';
+  var f='<div class="sud-f"><p><b class="g-n">'+esc("Gelir getirmeyen su")+'</b> = <span>'+esc("Su kayıpları + Faturalandırılmamış izinli tüketim")+'</span></p><p><b class="g-k">'+esc("Su kayıpları")+'</b> = <span>'+esc("İdari kayıplar + Fiziki kayıplar")+'</span></p></div>';
+  var s='<p class="sud-s">'+esc("Kaynak: İçme Suyu Temin ve Dağıtım Sistemlerindeki Su Kayıplarının Kontrolü El Kitabı (2017) ve IWA standart su dengesi.")+'</p>';
+  return '<figure class="sud-w">'+g+m+'<figcaption>'+f+s+'</figcaption></figure>';
+}
+function sudSec(){return '<section class="sec tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Su dengesi</p><h2 class="h3">'+esc("Su nerede kayboluyor?")+'</h2>'+suDengesi()+'</div></section>'}
+document.addEventListener("mouseover",function(e){var c=e.target.closest&&e.target.closest(".sud-c");var w=e.target.closest&&e.target.closest("[data-sud]");if(!w)return;var g=c?c.getAttribute("data-g"):"";w.classList.toggle("hl",!!g);$$(".sud-c",w).forEach(function(x){x.classList.toggle("on",!!g&&(x.getAttribute("data-g")===g||(g==="n"&&x.getAttribute("data-g")==="k")))})});
 function rtime(a){return Math.max(2,Math.round(words(a.govde)/200))+" dk okuma"}
 function portrait(el){
   var ini=BASKAN.ad.split(" ").map(function(w){return w[0]}).join("");
@@ -3515,6 +3552,7 @@ function renderDetail(p){
     '</div>':'')+
   '</div></section>':'')+
   (p.ciz&&CIZIMLER[p.ciz]?cizSec(CIZIMLER[p.ciz]):'')+
+  (p.id==="nrw-kilavuzu"?sudSec():'')+
   (VIDEOS[p.id]?'<section class="sec tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Animasyon</p>'+vidFig(VIDEOS[p.id][0],VIDEOS[p.id][1],VIDEOS[p.id][2])+'</div></section>':'')+
   (p.img.length&&!p.ill?'<section class="sec mist tight"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">Proje görselleri</p><div class="gal'+(p.img.length>2?' many':'')+'">'+p.img.map(function(f){var im='<img src="img/'+f+'.jpg" alt="'+esc(p.t)+'" loading="lazy">';return '<figure'+(p.fit?' class="contain"':'')+'>'+(p.img.length>2?'<button type="button" class="gz" data-zoom="img/'+f+'.jpg" aria-label="'+esc(p.t)+'">'+im+'</button>':im)+(GTUR[f]?'<figcaption class="gt">'+esc(GTUR[f])+'</figcaption>':'')+'</figure>'}).join('')+'</div></div></section>':'')+
   '<section class="sec tight pd-rel"><div class="wrap" style="display:grid;gap:24px"><p class="kicker">İlgili projeler</p><div class="pgrid rel3">'+relOf(p).map(function(q,i){return pcard(q,i)}).join('')+'</div></div></section>'+
