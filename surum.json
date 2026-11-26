@@ -1,11 +1,11 @@
 {
- "surum": "2026.11.25-4",
- "olusturma": "2026-11-25T18:09:47",
+ "surum": "2026.11.25-5",
+ "olusturma": "2026-11-26T09:29:55",
  "paketler": [
   {
    "ad": "envesu-cekirdek.zip",
-   "sha256": "01a0375413b5ce20326b4f192b06f254e26ef2ff0f2c9a0399979d46c3effded",
-   "boyut": 3064531,
+   "sha256": "6d034c95846dfac4924e31f8cc41e59dea6577ee6f4fe8d823971250a2f02eeb",
+   "boyut": 3064212,
    "dosya": 578
   },
   {
@@ -22,8 +22,8 @@
   },
   {
    "ad": "envesu-img.zip",
-   "sha256": "81d94caa183b31bb8a461083269a934e2274a82641f93215195b5bd87fe8efd8",
-   "boyut": 43977022,
+   "sha256": "4e86bb14b2dda7a23b96a4b36e00c722322ba24f55023835757b77d5a8d1b30b",
+   "boyut": 43940283,
    "dosya": 379
   },
   {
